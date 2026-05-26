@@ -1,12 +1,34 @@
-/* ========================================================= */
-/* TIMPA BAGIAN INI SAJA DI ABOUTUS.CSS KAMU                 */
-/* ========================================================= */
+/* Import Font Quicksand dan Courgette dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@500;600&display=swap');
 
-/* --- Typography Hero Section --- */
+.about-page {
+  /* Warna background utama (krem terang) */
+  background-color: #FFF9F2; 
+  min-height: 100vh;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 50%, #FFB74D 100%); 
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
 .hero h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 48px;  /* Turun dari 80px agar lebih proporsional */
+  font-size: 48px;
   color: #000000;
   margin: 0 0 20px 0;
 }
@@ -14,7 +36,7 @@
 .hero p {
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
-  font-size: 16px;  /* Turun dari 18px */
+  font-size: 16px;
   color: #000000;
   margin: 0 auto 30px auto;
   max-width: 700px;
@@ -24,7 +46,7 @@
 .hero .breadcrumb {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 14px;  /* Turun dari 16px */
+  font-size: 14px;
 }
 
 .hero .home-link {
@@ -35,44 +57,78 @@
   color: #000000;
 }
 
-/* --- Styling Kartu Teks & Typography Vision Mission --- */
+/* --- Vision & Mission Section --- */
+.vision-mission-section {
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Baris Layout Zig-Zag */
+.vm-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.vm-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Styling Kartu Teks */
 .vm-text-card {
   flex: 1;
   background-color: #FFFFFF;
   border-radius: 24px;
-  padding: 40px; /* Padding dikurangi dari 60px agar tidak terlalu kopong */
+  padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Judul Vision */
+/* Styling Kartu Gambar */
+.vm-image-card {
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #E0E0E0; 
+  min-height: 350px;
+  display: flex;
+}
+
+.vm-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Typography Vision & Mission --- */
 .vision-title {
   font-family: 'Courgette', cursive;
-  font-weight: 400; 
-  font-size: 42px; /* Turun dari 60px */
+  font-weight: 400;
+  font-size: 42px;
   color: #1B1464;
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-/* Judul Mision */
 .mision-title {
   font-family: 'Courgette', cursive;
-  font-weight: 400; 
-  font-size: 42px; /* Turun dari 60px */
+  font-weight: 400;
+  font-size: 42px;
   color: #FDBE34;
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-/* Teks Deskripsi (Paragraf & List) */
 .vm-text-card p, 
 .vm-text-card ul {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; 
-  font-size: 16px; /* Turun drastis dari 25px ke standar web (16px) */
+  font-weight: 500;
+  font-size: 16px;
   color: #000000;
   line-height: 1.6;
   margin: 0;

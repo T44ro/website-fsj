@@ -1,18 +1,32 @@
 import React from 'react';
 import './Home.css';
 
+// =====================================================================
 // NANTI KALAU GAMBARNYA SUDAH DI-UPLOAD, HAPUS TANDA // DI BAWAH INI:
+// =====================================================================
 // import polaroidLeft from './assets/hero-polaroid-left.png';
 // import circleRight from './assets/hero-circle-right.png';
 // import arrowLeft from './assets/hero-arrow-left.png';
 // import polaroidRight from './assets/hero-polaroid-right.png';
 
+// Komponen Ikon Centang Bulat (Aman, tidak perlu upload gambar!)
+const CheckIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#121212" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="11"></circle>
+    <path d="M8 12l3 3 5-6"></path>
+  </svg>
+);
+
 const Home = () => {
   return (
     <div className="home-page">
+      
+      {/* ========================================= */}
+      {/* HERO SECTION (CENTERED)                   */}
+      {/* ========================================= */}
       <section className="home-hero-centered">
         
-        {/* BAGIAN GAMBAR SAYA MATIKAN SEMENTARA AGAR TIDAK ERROR */}
+        {/* BAGIAN GAMBAR DEKORASI SAYA MATIKAN SEMENTARA AGAR TIDAK ERROR */}
         {/* Nanti kalau gambarnya sudah ada, hapus tanda { / * dan * / } di bawah ini */}
         {/*
         <div className="hero-decorations">
@@ -63,8 +77,50 @@ const Home = () => {
             <span>Participants</span>
           </div>
         </div>
-
       </section>
+
+      {/* ========================================= */}
+      {/* ABOUT SECTION (NAVY BLUE BACKGROUND)      */}
+      {/* ========================================= */}
+      <section className="home-about-section">
+        
+        {/* Kolom Kiri: Teks */}
+        <div className="about-text-column">
+          <span className="about-eyebrow">About Us</span>
+          <h2 className="about-title">
+            Building Your Career from <br />
+            the <span className="about-highlight">First Step</span>
+          </h2>
+          <p className="about-desc">
+            FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects. To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
+          </p>
+          <button className="btn-learn-more">Learn More</button>
+        </div>
+
+        {/* Kolom Kanan: 3 Kartu Skill (Gradasi) */}
+        <div className="about-skills-column">
+          
+          {/* Kartu 1: Career Readiness */}
+          <div className="skill-pill pill-yellow">
+            <div className="skill-icon"><CheckIcon /></div>
+            <span className="skill-text text-navy">Career Readiness</span>
+          </div>
+
+          {/* Kartu 2: Self Development */}
+          <div className="skill-pill pill-blue">
+            <div className="skill-icon"><CheckIcon /></div>
+            <span className="skill-text text-yellow">Self Development</span>
+          </div>
+
+          {/* Kartu 3: Sustainability Skills */}
+          <div className="skill-pill pill-orange">
+            <div className="skill-icon"><CheckIcon /></div>
+            <span className="skill-text text-navy">Sustainability Skills</span>
+          </div>
+
+        </div>
+      </section>
+
     </div>
   );
 };

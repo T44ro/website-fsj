@@ -1,24 +1,27 @@
 import React from 'react';
 import './Home.css';
 
-// Import elemen dekorasi
-import polaroidLeft from './assets/hero-polaroid-left.png';
-import circleRight from './assets/hero-circle-right.png';
-import arrowLeft from './assets/hero-arrow-left.png';
-import polaroidRight from './assets/hero-polaroid-right.png';
+// NANTI KALAU GAMBARNYA SUDAH DI-UPLOAD, HAPUS TANDA // DI BAWAH INI:
+// import polaroidLeft from './assets/hero-polaroid-left.png';
+// import circleRight from './assets/hero-circle-right.png';
+// import arrowLeft from './assets/hero-arrow-left.png';
+// import polaroidRight from './assets/hero-polaroid-right.png';
 
 const Home = () => {
   return (
     <div className="home-page">
       <section className="home-hero-centered">
         
-        {/* Gambar Dekorasi Melayang */}
+        {/* BAGIAN GAMBAR SAYA MATIKAN SEMENTARA AGAR TIDAK ERROR */}
+        {/* Nanti kalau gambarnya sudah ada, hapus tanda { / * dan * / } di bawah ini */}
+        {/*
         <div className="hero-decorations">
           <img src={polaroidLeft} alt="Teamwork" className="decor-polaroid-left" />
           <img src={circleRight} alt="Circle Graphic" className="decor-circle-right" />
           <img src={arrowLeft} alt="Arrow Pointing" className="decor-arrow-left" />
           <img src={polaroidRight} alt="Togetherness" className="decor-polaroid-right" />
         </div>
+        */}
 
         {/* Konten Utama (Teks & Tombol) */}
         <div className="hero-main-content">

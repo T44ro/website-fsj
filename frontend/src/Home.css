@@ -1,0 +1,199 @@
+/* ========================================================= */
+/* CSS HOME PAGE - CENTERED LAYOUT                           */
+/* ========================================================= */
+
+.home-page {
+  background-color: #FFF9F2;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 5% 100px 5%;
+  position: relative;
+}
+
+/* ========================================================= */
+/* DEKORASI MELAYANG (ABSOLUTE POSITIONING)                  */
+/* ========================================================= */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Agar gambar tidak menghalangi klik tombol */
+  z-index: 1;
+}
+
+.decor-polaroid-left {
+  position: absolute;
+  top: 50px;
+  left: 8%;
+  width: 220px;
+  transform: rotate(-10deg);
+}
+
+.decor-circle-right {
+  position: absolute;
+  top: 80px;
+  right: 12%;
+  width: 120px;
+}
+
+.decor-arrow-left {
+  position: absolute;
+  top: 280px;
+  left: 20%;
+  width: 100px;
+}
+
+.decor-polaroid-right {
+  position: absolute;
+  top: 250px;
+  right: 10%;
+  width: 180px;
+  transform: rotate(5deg);
+}
+
+/* ========================================================= */
+/* TEKS & TOMBOL (Z-INDEX TINGGI AGAR BISA DIKLIK)           */
+/* ========================================================= */
+.hero-main-content {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.hero-main-content h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 56px; /* Proporsional raksasa */
+  color: #121212;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+}
+
+.hero-main-content p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 16px;
+  color: #636363;
+  line-height: 1.6;
+  margin: 0 auto 40px auto;
+}
+
+.hero-action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-primary-pill {
+  background-color: #FBB03B;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-pill:hover {
+  background-color: #EFA02A;
+}
+
+.btn-outline-pill {
+  background-color: #FFFFFF;
+  color: #FBB03B;
+  border: 1px solid #FBB03B;
+  padding: 12px 32px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-pill:hover {
+  background-color: #FFF9F2;
+}
+
+/* Ikon panah kecil di dalam tombol */
+.btn-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.explore-link {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 16px;
+  color: #FBB03B; /* Oranye agar terbaca */
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.explore-link:hover {
+  opacity: 0.8;
+}
+
+/* ========================================================= */
+/* KARTU STATISTIK (GRID)                                    */
+/* ========================================================= */
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 10;
+  margin-top: 40px;
+}
+
+.stat-card {
+  background-color: #FEF7ED; /* Warna krem kartu */
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.stat-card h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 42px;
+  color: #1B1464;
+  margin: 0 0 10px 0;
+}
+
+.stat-card span {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 16px;
+  color: #121212;
+}

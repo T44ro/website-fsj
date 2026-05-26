@@ -1,15 +1,24 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Home from './Home';
-import AboutUs from './AboutUs';
+import Home from './Home';       
+import AboutUs from './AboutUs'; 
+
+// === IMPORT GAMBAR HEADER DARI FOLDER ASSETS ===
+import logo from './assets/fsj-logo.png';
+import iconIg from './assets/icon-ig.png';
+import iconYt from './assets/icon-yt.png';
+import iconTiktok from './assets/icon-tiktok.png';
+// Ikon X sudah dihapus dari sini
 
 function App() {
-  const [activePage, setActivePage] = useState('home');
+  const [activePage, setActivePage] = useState('about'); // Default ke About Us
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
     if (hash === 'about') {
       setActivePage('about');
+    } else if (hash === 'home') {
+      setActivePage('home');
     }
   }, []);
 
@@ -22,37 +31,45 @@ function App() {
 
   return (
     <div className="site-shell">
-      {/* HEADER */}
+      {/* ========================================= */}
+      {/* HEADER NAVIGATION                         */}
+      {/* ========================================= */}
       <header className="topbar">
+        {/* Kiri: Logo */}
         <div className="brand">
-          <span className="brand-mark">1st</span>
-          <div>
-            <p className="brand-name">First Step</p>
-            <p className="brand-subtitle">Journey</p>
-          </div>
+          <img src={logo} alt="First Step Journey" className="header-logo" />
         </div>
+        
+        {/* Tengah: Menu Navigasi Bentuk Pil */}
         <nav className="topnav">
-          <a href="#home" onClick={(e) => changePage('home', e)}>Home</a>
-          <a href="#about" onClick={(e) => changePage('about', e)}>About</a>
-          <a href="#programs" onClick={(e) => changePage('home', e)}>Programs</a>
-          <a href="#impact" onClick={(e) => changePage('home', e)}>Impact</a>
-          <a href="#contact" onClick={(e) => changePage('home', e)}>Contact</a>
+          <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
+          <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
+          <a href="#programs" className="nav-item">Product & Programs</a>
+          <a href="#insights" className="nav-item">Insights</a>
+          <a href="#community" className="nav-item">Community</a>
+          <a href="#contacts" className="nav-item">Contacts</a>
         </nav>
+
+        {/* Kanan: Ikon Sosial Media (Tanpa X) */}
         <div className="social-links">
-          <button className="soft-btn">EN</button>
-          <button className="circle-btn">•</button>
-          <button className="circle-btn">•</button>
+          <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
+          <a href="#" className="social-btn"><img src={iconYt} alt="YouTube" /></a>
+          <a href="#" className="social-btn"><img src={iconTiktok} alt="TikTok" /></a>
         </div>
       </header>
 
-      {/* SAKLAR KONTEN TENGAH */}
+      {/* ========================================= */}
+      {/* SAKLAR KONTEN HALAMAN                     */}
+      {/* ========================================= */}
       {activePage === 'home' ? (
         <Home changePage={changePage} />
       ) : (
         <AboutUs />
       )}
 
-      {/* FOOTER */}
+      {/* ========================================= */}
+      {/* FOOTER                                    */}
+      {/* ========================================= */}
       <footer className="site-footer">
         <div className="footer-top">
           <div>

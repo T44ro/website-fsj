@@ -203,14 +203,17 @@
 /* 2. ABOUT US SECTION (NAVY BLUE BACKGROUND)                */
 /* ========================================================= */
 .home-about-section {
-  background-color: #1B1464; /* Warna Background Utama 1B1464 */
-  margin: 40px 5% 0 5%;
+  background-color: #1B1464; 
+  margin: 60px 10% 0 10%; /* Margin dirapatkan menjadi 10% */
+  max-width: 1200px; /* Batas lebar maksimal agar tidak terlalu melar */
+  margin-left: auto;
+  margin-right: auto;
   padding: 80px 6%;
-  border-radius: 32px; /* Sudut melengkung */
+  border-radius: 32px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   position: relative;
   overflow: hidden;
 }
@@ -225,7 +228,7 @@
   height: 400px;
   background-image: radial-gradient(#FBB03B 2px, transparent 2px);
   background-size: 20px 20px;
-  opacity: 0.15; /* Membuatnya tipis dan transparan */
+  opacity: 0.15; 
   z-index: 0;
 }
 
@@ -239,7 +242,7 @@
 
 .about-eyebrow {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-size: 16px;
   color: #FBB03B;
   display: block;
@@ -248,8 +251,8 @@
 
 .about-title {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
-  font-size: 44px; /* Proporsional */
+  font-weight: 700; 
+  font-size: 44px; 
   color: #FFFFFF;
   line-height: 1.2;
   margin: 0 0 20px 0;
@@ -257,13 +260,13 @@
 
 .about-highlight {
   font-family: 'Courgette', cursive;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   color: #FBB03B;
 }
 
 .about-desc {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-size: 16px;
   color: #FFFFFF;
   line-height: 1.6;
@@ -274,7 +277,7 @@
   background-color: #FBB03B;
   color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-size: 16px;
   border: none;
   border-radius: 999px;
@@ -292,7 +295,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Memaksa kartu merapat ke kanan */
+  align-items: flex-end; 
   gap: 24px;
   position: relative;
   z-index: 2;
@@ -307,13 +310,13 @@
   border-radius: 999px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Bayangan bawah agar muncul */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); 
   transition: transform 0.3s ease;
   cursor: default;
 }
 
 .skill-pill:hover {
-  transform: translateX(-10px); /* Efek geser ke kiri sedikit saat di-hover */
+  transform: translateX(-10px); 
 }
 
 .skill-icon {
@@ -325,7 +328,7 @@
 
 .skill-text {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-size: 18px;
 }
 

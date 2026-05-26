@@ -1,143 +1,89 @@
-/* Import Font Quicksand dan Courgette dari Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@500;600&display=swap');
-
-.about-page {
-  /* Warna background utama (krem terang) */
-  background-color: #FFF9F2; 
-  min-height: 100vh;
-}
-
-/* --- Hero Section --- */
-.hero {
-  background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 50%, #FFB74D 100%); 
+/* --- Our Culture Section --- */
+.culture-section {
+  padding: 0 10% 100px 10%; /* Jarak padding disesuaikan */
   text-align: center;
-  padding: 100px 20px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 10;
-  width: 100%;
+.culture-header {
+  margin-bottom: 50px;
 }
 
-.hero h1 {
+.culture-subtitle {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 48px;
-  color: #000000;
-  margin: 0 0 20px 0;
-}
-
-.hero p {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #000000;
-  margin: 0 auto 30px auto;
-  max-width: 700px;
-  line-height: 1.6;
-}
-
-.hero .breadcrumb {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.hero .home-link {
-  color: #1B1464;
-}
-
-.hero .about-link {
-  color: #000000;
-}
-
-/* --- Vision & Mission Section --- */
-.vision-mission-section {
-  padding: 80px 10%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* Baris Layout Zig-Zag */
-.vm-row {
-  display: flex;
-  gap: 40px;
-  align-items: stretch;
-}
-
-.vm-row.reverse {
-  flex-direction: row-reverse;
-}
-
-/* Styling Kartu Teks */
-.vm-text-card {
-  flex: 1;
-  background-color: #FFFFFF;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Styling Kartu Gambar */
-.vm-image-card {
-  flex: 1;
-  border-radius: 24px;
-  overflow: hidden;
-  background-color: #E0E0E0; 
-  min-height: 350px;
-  display: flex;
-}
-
-.vm-image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  font-weight: 700; /* Bold */
+  font-size: 18px;
+  color: #FBB03B;
   display: block;
+  margin-bottom: 12px;
 }
 
-/* --- Typography Vision & Mission --- */
-.vision-title {
-  font-family: 'Courgette', cursive;
-  font-weight: 400;
-  font-size: 42px;
-  color: #1B1464;
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.mision-title {
-  font-family: 'Courgette', cursive;
-  font-weight: 400;
-  font-size: 42px;
-  color: #FDBE34;
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.vm-text-card p, 
-.vm-text-card ul {
+.culture-title {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 700; /* Bold */
+  font-size: 42px;
   color: #000000;
-  line-height: 1.6;
   margin: 0;
 }
 
-.vm-text-card ul {
-  padding-left: 24px;
+.culture-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400; /* Regular */
+  font-size: 42px; /* Sama dengan .culture-title */
+  color: #FBB03B;
 }
 
-.vm-text-card li {
-  margin-bottom: 10px;
+/* Membagi area menjadi 3 kolom (Teks, Foto Jose, Grafis STEP) */
+.culture-content {
+  display: grid;
+  /* Kolom teks (kiri) dibuat sedikit lebih lebar agar paragrafnya tidak terlalu sempit */
+  grid-template-columns: 1.3fr 1fr 1fr; 
+  gap: 30px;
+  text-align: left;
+  align-items: center; /* Membuat gambar & teks sejajar di tengah secara vertikal */
+}
+
+/* Typography untuk Teks Culture */
+.culture-text p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.culture-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.culture-text li {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Menebalkan sub-judul di bullet point (Career Readiness, dll) */
+.culture-text li strong {
+  font-weight: 700; /* Bold */
+  display: block; /* Mendorong deskripsi ke baris baru */
+  margin-bottom: 4px;
+}
+
+/* Area Gambar */
+.culture-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.culture-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Memberi sudut melengkung pada gambar */
+  object-fit: contain;
 }

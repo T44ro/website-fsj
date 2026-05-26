@@ -1,13 +1,15 @@
 import React from 'react';
 import './AboutUs.css';
+/* DI BAWAH INI NAMA FILENYA SUDAH SAYA SESUAIKAN JADI about-hero-img.png */
+import aboutHeroBg from './assets/about-hero-img.png'; 
 
 const AboutUs = () => {
   return (
     <div className="about-page">
       {/* ========================================= */}
-      {/* 1. HERO SECTION (DENGAN BG IMAGE)         */}
+      {/* 1. HERO SECTION (DENGAN BACKGROUND IMAGE) */}
       {/* ========================================= */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${aboutHeroBg})` }}>
         <div className="hero-content">
           <h1>Who We Are</h1>
           <p>

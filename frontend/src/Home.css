@@ -1,5 +1,5 @@
 /* ========================================================= */
-/* CSS HOME PAGE - CENTERED LAYOUT                           */
+/* CSS HOME PAGE - FIRST STEP JOURNEY                        */
 /* ========================================================= */
 
 .home-page {
@@ -74,7 +74,7 @@
 .hero-main-content h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; /* Semibold */
-  font-size: 56px; /* Proporsional raksasa */
+  font-size: 52px; 
   color: #121212;
   line-height: 1.2;
   margin: 0 0 24px 0;
@@ -103,7 +103,7 @@
 }
 
 .btn-primary-pill {
-  background-color: #FBB03B;
+  background-color: #FDBE34;
   color: #FFFFFF;
   border: none;
   padding: 12px 32px;
@@ -119,13 +119,13 @@
 }
 
 .btn-primary-pill:hover {
-  background-color: #EFA02A;
+  background-color: #E6A92E;
 }
 
 .btn-outline-pill {
   background-color: #FFFFFF;
-  color: #FBB03B;
-  border: 1px solid #FBB03B;
+  color: #FDBE34;
+  border: 1px solid #FDBE34;
   padding: 12px 32px;
   border-radius: 999px;
   font-family: 'Quicksand', sans-serif;
@@ -142,7 +142,6 @@
   background-color: #FFF9F2;
 }
 
-/* Ikon panah kecil di dalam tombol */
 .btn-icon {
   font-size: 18px;
   font-weight: bold;
@@ -152,7 +151,7 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; /* Semibold */
   font-size: 16px;
-  color: #FBB03B; /* Oranye agar terbaca */
+  color: #FDBE34; 
   text-decoration: underline;
   transition: opacity 0.3s ease;
 }
@@ -162,7 +161,7 @@
 }
 
 /* ========================================================= */
-/* KARTU STATISTIK (GRID)                                    */
+/* KARTU STATISTIK (GRID) DENGAN KOTAK ORANYE                */
 /* ========================================================= */
 .hero-stats-grid {
   display: grid;
@@ -176,11 +175,23 @@
 }
 
 .stat-card {
-  background-color: #FEF7ED; /* Warna krem kartu */
+  background-color: #FFFCF7; /* Latar belakang kotak dibuat sedikit lebih terang */
   border-radius: 12px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  
+  /* Garis tepi tipis oranye */
+  border: 1px solid #FDE0A6; 
+  
+  /* Bayangan halus berwarna oranye */
+  box-shadow: 0 8px 24px rgba(253, 190, 52, 0.06); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek kotak terangkat saat disentuh mouse */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(253, 190, 52, 0.12);
 }
 
 .stat-card h2 {

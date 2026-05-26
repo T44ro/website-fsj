@@ -12,7 +12,7 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION (DENGAN BACKGROUND IMAGE TOTAL & FIX)     */
+/* 1. HERO SECTION (BACKGROUND DI-INJECT DARI JSX)           */
 /* ========================================================= */
 .hero {
   /* Padding disesuaikan agar proporsi gambar background pas */
@@ -25,10 +25,10 @@
   justify-content: center !important;
   align-items: center !important;
 
-  /* Warna cadangan oranye jika gambar gagal atau lambat dimuat */
+  /* Warna cadangan oranye jika gambar lambat dimuat */
   background-color: #FBB03B !important; 
-  /* Memanggil file background hasil export gabungan dari figma */
-  background-image: url('/about-hero-bg.png') !important;
+  
+  /* Ukuran dan posisi untuk gambar yang dipanggil dari JSX */
   background-size: cover !important; 
   background-position: center !important; 
   background-repeat: no-repeat !important;

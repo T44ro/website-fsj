@@ -1,0 +1,54 @@
+/* Import Font Quicksand dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap');
+
+.about-page {
+  /* ... (styling global lainnya nanti) ... */
+}
+
+/* --- Hero Section --- */
+.hero {
+  /* Gradien oranye sesuai gambar */
+  background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 50%, #FFB74D 100%); 
+  /* Efek pola titik (halftone) bisa ditambahkan nanti dengan gambar atau CSS khusus */
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 80px;  /* Ukuran 80 */
+  color: #000000;   /* Warna hitam */
+  margin: 0 0 20px 0;
+}
+
+.hero p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 18px;  /* Ukuran 18 */
+  color: #000000;   /* Warna hitam */
+  margin: 0 auto 40px auto;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+.hero .breadcrumb {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 16px;  /* Ukuran 16 */
+}
+
+.hero .home-link {
+  color: #1B1464; /* Warna biru gelap */
+}
+
+.hero .about-link {
+  color: #000000; /* Warna hitam */
+}

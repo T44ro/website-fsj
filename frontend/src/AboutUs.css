@@ -15,41 +15,43 @@
 /* 1. HERO SECTION (DENGAN BACKGROUND IMAGE TOTAL & FIX)     */
 /* ========================================================= */
 .hero {
-  /* Kita kurangi padding agar gambar tidak ter-zoom terlalu besar */
-  padding: 120px 20px; 
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* Padding disesuaikan agar proporsi gambar background pas */
+  padding: 120px 20px !important; 
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
 
-  /* Pastikan file about-hero-bg.png sudah diupload ke folder public */
-  background-image: url('/about-hero-bg.png');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
+  /* Warna cadangan oranye jika gambar gagal atau lambat dimuat */
+  background-color: #FBB03B !important; 
+  /* Memanggil file background hasil export gabungan dari figma */
+  background-image: url('/about-hero-bg.png') !important;
+  background-size: cover !important; 
+  background-position: center !important; 
+  background-repeat: no-repeat !important;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10; 
-  width: 100%;
-  /* Paksa semua isi di dalam container ini ke tengah */
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  position: relative !important;
+  z-index: 10 !important; 
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; 
   text-align: center !important; 
 }
 
-/* Kita gunakan !important agar tidak dikalahkan oleh App.css */
+/* Penggunaan !important untuk mengunci gaya teks visual agar tidak di-override */
 .hero h1 {
   font-family: 'Quicksand', sans-serif !important;
   font-weight: 600 !important; 
   font-size: 48px !important;  
   color: #000000 !important;
   margin: 0 0 20px 0 !important;
+  text-align: center !important;
 }
 
 .hero p {
@@ -67,6 +69,7 @@
   font-family: 'Quicksand', sans-serif !important;
   font-weight: 600 !important; 
   font-size: 14px !important;
+  text-align: center !important;
 }
 
 .hero .home-link {

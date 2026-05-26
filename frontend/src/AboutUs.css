@@ -12,26 +12,60 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION                                           */
+/* 1. HERO SECTION (LAYOUT DUA KOLOM & BACKGROUND EFEK)      */
 /* ========================================================= */
 .hero {
-  background: linear-gradient(90deg, #FFB74D 0%, #FFCC80 50%, #FFB74D 100%); 
-  text-align: center;
-  padding: 100px 20px;
+  /* Diubah menjadi rata kiri untuk teksnya */
+  text-align: left; 
+  padding: 80px 10%; /* Padding disesuaikan untuk layout samping */
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: center; /* Menjaga konten sejajar di tengah secara vertikal */
+
+  /* NEW: Implementasi Background Berlapis */
+  background-color: #FBB03B;
+  background-image:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 60%),
+    url('/left-halftone.png'),
+    url('/right-halftone.png');
+  background-position: center, left bottom, right bottom;
+  background-repeat: no-repeat;
+  background-size: auto auto, contain, contain;
 }
 
-.hero-content {
+/* NEW: Kontainer Dalam untuk Side-by-Side Layout */
+.hero-inner {
+  display: flex;
+  gap: 50px; /* Jarak antara teks dan gambar */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
   position: relative;
   z-index: 10;
-  width: 100%;
 }
 
-.hero h1 {
+/* Kolom Teks (Kiri) */
+.hero-copy {
+  flex: 1; /* Mengambil 50% ruang */
+}
+
+/* Kolom Ilustrasi (Kanan) */
+.hero-visual {
+  flex: 0.8; /* Mengambil sedikit kurang dari 50% ruang */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tipografi di Hero (Disesuaikan dengan .hero-copy) */
+.hero-copy h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; 
   font-size: 48px;  
@@ -39,17 +73,17 @@
   margin: 0 0 20px 0;
 }
 
-.hero p {
+.hero-copy p {
   font-family: 'Quicksand', sans-serif;
   font-weight: 500; 
   font-size: 16px;
   color: #000000;
-  margin: 0 auto 30px auto;
-  max-width: 700px;
+  margin: 0 0 30px 0;
+  max-width: none; /* Flex container sudah menangani lebarnya */
   line-height: 1.6;
 }
 
-.hero .breadcrumb {
+.hero-copy .breadcrumb {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; 
   font-size: 14px;
@@ -278,7 +312,7 @@
   margin: 0;
 }
 
-/* Kartu Utama */
+/* Kartu Utama Divisions */
 .div-card {
   position: relative;
   border-radius: 4px 32px 4px 32px; 

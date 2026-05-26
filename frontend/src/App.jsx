@@ -1,5 +1,6 @@
 import heroImg from './assets/hero.png'
 import './App.css'
+import AboutUs from './AboutUs' // <-- Ini pintu masuk untuk memanggil file buatanmu
 
 function App() {
   return (
@@ -67,29 +68,11 @@ function App() {
           </div>
         </section>
 
-        <section className="about-panel" id="about">
-          <div className="about-card">
-            <div>
-              <p className="eyebrow">About Us</p>
-              <h2>Building your career from the first step</h2>
-              <p>
-                We help young people develop practical skills, connect with mentors, and gain real experience through internship programs, training, and community events.
-              </p>
-            </div>
-            <button className="secondary-btn">Learn More</button>
-          </div>
-          <div className="feature-list">
-            <div className="feature-pill">
-              <span>Practical Skills</span>
-            </div>
-            <div className="feature-pill feature-pill-strong">
-              <span>Expert Mentorship</span>
-            </div>
-            <div className="feature-pill">
-              <span>Real Experience</span>
-            </div>
-          </div>
-        </section>
+        {/* DI SINI KITA MEMASANG HALAMAN ABOUT US BUATANMU */}
+        <div id="about" style={{ width: '100%', marginTop: '50px' }}>
+          <AboutUs />
+        </div>
+        {/* =============================================== */}
 
         <section className="offerings-panel" id="programs">
           <p className="eyebrow">What We Offer</p>

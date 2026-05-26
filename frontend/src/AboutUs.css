@@ -12,60 +12,42 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION (LAYOUT DUA KOLOM & BACKGROUND EFEK)      */
+/* 1. HERO SECTION (DENGAN BACKGROUND IMAGE TOTAL)           */
 /* ========================================================= */
 .hero {
-  /* Diubah menjadi rata kiri untuk teksnya */
-  text-align: left; 
-  padding: 80px 10%; /* Padding disesuaikan untuk layout samping */
+  text-align: center; /* Kembalikan teks rata tengah */
+  
+  /* Padding ditinggikan agar tinggi Hero pas dengan gambar Figma */
+  padding: 180px 20px; 
+  
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; /* Menjaga konten sejajar di tengah secara vertikal */
-
-  /* NEW: Implementasi Background Berlapis */
-  background-color: #FBB03B;
-  background-image:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 60%),
-    url('/left-halftone.png'),
-    url('/right-halftone.png');
-  background-position: center, left bottom, right bottom;
-  background-repeat: no-repeat;
-  background-size: auto auto, contain, contain;
-}
-
-/* NEW: Kontainer Dalam untuk Side-by-Side Layout */
-.hero-inner {
-  display: flex;
-  gap: 50px; /* Jarak antara teks dan gambar */
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
+
+  /* NEW: Memasang Full Background Image (Oranye + Titik + Ilustrasi) */
+  /* Pastikan file about-hero-bg.png sudah diupload ke folder public */
+  background-image: url('/about-hero-bg.png');
+  
+  /* Membuat gambar menutupi seluruh area hero secara proposional */
+  background-size: cover; 
+  
+  /* Memastikan gambar berada di posisi tengah */
+  background-position: center; 
+  
+  background-repeat: no-repeat;
+}
+
+.hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Memastikan teks selalu di atas background image */
+  width: 100%;
 }
 
-/* Kolom Teks (Kiri) */
-.hero-copy {
-  flex: 1; /* Mengambil 50% ruang */
-}
-
-/* Kolom Ilustrasi (Kanan) */
-.hero-visual {
-  flex: 0.8; /* Mengambil sedikit kurang dari 50% ruang */
-  display: flex;
-  justify-content: center;
-}
-
-.hero-visual img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Tipografi di Hero (Disesuaikan dengan .hero-copy) */
-.hero-copy h1 {
+/* Tipografi di Hero (Kembali ke standar proporsional) */
+.hero h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; 
   font-size: 48px;  
@@ -73,17 +55,17 @@
   margin: 0 0 20px 0;
 }
 
-.hero-copy p {
+.hero p {
   font-family: 'Quicksand', sans-serif;
   font-weight: 500; 
   font-size: 16px;
   color: #000000;
-  margin: 0 0 30px 0;
-  max-width: none; /* Flex container sudah menangani lebarnya */
+  margin: 0 auto 40px auto;
+  max-width: 700px; /* Batasi lebar teks di tengah agar nyaman dibaca */
   line-height: 1.6;
 }
 
-.hero-copy .breadcrumb {
+.hero .breadcrumb {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600; 
   font-size: 14px;

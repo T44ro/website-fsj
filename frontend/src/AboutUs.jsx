@@ -5,29 +5,18 @@ const AboutUs = () => {
   return (
     <div className="about-page">
       {/* ========================================= */}
-      {/* 1. HERO SECTION (DENGAN ILUSTRASI)        */}
+      {/* 1. HERO SECTION (DENGAN BG IMAGE)         */}
       {/* ========================================= */}
       <section className="hero">
-        <div className="hero-inner"> {/* Wrapper untuk layout dua kolom */}
-          
-          {/* Kolom Teks (Kiri) */}
-          <div className="hero-copy">
-            <h1>Who We Are</h1>
-            <p>
-              Discover thousands of fun and interactive learning activities
-              to support your child's growth and learning process.
-            </p>
-            <div className="breadcrumb">
-              <span className="home-link">Home</span> / <span className="about-link">About Us</span>
-            </div>
+        <div className="hero-content">
+          <h1>Who We Are</h1>
+          <p>
+            Discover thousands of fun and interactive learning activities<br />
+            to support your child's growth and learning process.
+          </p>
+          <div className="breadcrumb">
+            <span className="home-link">Home</span> / <span className="about-link">About Us</span>
           </div>
-
-          {/* Kolom Ilustrasi (Kanan) */}
-          <div className="hero-visual">
-            {/* Pastikan file about-hero-img.png sudah diupload ke folder public */}
-            <img src="/about-hero-img.png" alt="FSJ Journey Illustration" />
-          </div>
-
         </div>
       </section>
 

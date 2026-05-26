@@ -33,15 +33,15 @@
 
 .hero h1 {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Semibold */
-  font-size: 48px;  /* Proporsional standar web */
+  font-weight: 600; 
+  font-size: 48px;  
   color: #000000;
   margin: 0 0 20px 0;
 }
 
 .hero p {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-size: 16px;
   color: #000000;
   margin: 0 auto 30px auto;
@@ -51,7 +51,7 @@
 
 .hero .breadcrumb {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Medium/Semibold */
+  font-weight: 600; 
   font-size: 14px;
 }
 
@@ -73,7 +73,6 @@
   gap: 40px;
 }
 
-/* Baris Layout Zig-Zag */
 .vm-row {
   display: flex;
   gap: 40px;
@@ -84,7 +83,6 @@
   flex-direction: row-reverse;
 }
 
-/* Styling Kartu Teks */
 .vm-text-card {
   flex: 1;
   background-color: #FFFFFF;
@@ -96,7 +94,6 @@
   justify-content: center;
 }
 
-/* Styling Kartu Gambar */
 .vm-image-card {
   flex: 1;
   border-radius: 24px;
@@ -113,10 +110,9 @@
   display: block;
 }
 
-/* Typography Vision & Mission */
 .vision-title {
   font-family: 'Courgette', cursive;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   font-size: 42px;
   color: #1B1464;
   margin-top: 0;
@@ -125,7 +121,7 @@
 
 .mision-title {
   font-family: 'Courgette', cursive;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   font-size: 42px;
   color: #FDBE34;
   margin-top: 0;
@@ -135,7 +131,7 @@
 .vm-text-card p, 
 .vm-text-card ul {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-size: 16px;
   color: #000000;
   line-height: 1.6;
@@ -164,7 +160,7 @@
 
 .culture-subtitle {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-size: 18px;
   color: #FBB03B;
   display: block;
@@ -173,7 +169,7 @@
 
 .culture-title {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   font-size: 42px;
   color: #000000;
   margin: 0;
@@ -181,12 +177,11 @@
 
 .culture-highlight {
   font-family: 'Courgette', cursive;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   font-size: 42px; 
   color: #FBB03B;
 }
 
-/* Membagi area menjadi 3 kolom */
 .culture-content {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr; 
@@ -195,10 +190,9 @@
   align-items: center; 
 }
 
-/* Typography untuk Teks Culture */
 .culture-text p {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   font-size: 16px;
   color: #000000;
   line-height: 1.6;
@@ -213,7 +207,7 @@
 
 .culture-text li {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400; /* Regular */
+  font-weight: 400; 
   font-size: 16px;
   color: #000000;
   line-height: 1.6;
@@ -221,12 +215,11 @@
 }
 
 .culture-text li strong {
-  font-weight: 700; /* Bold */
+  font-weight: 700; 
   display: block; 
   margin-bottom: 4px;
 }
 
-/* Area Gambar Culture */
 .culture-image {
   width: 100%;
   display: flex;
@@ -238,4 +231,91 @@
   height: auto;
   border-radius: 16px; 
   object-fit: contain;
+}
+
+/* ========================================================= */
+/* 4. THE DIVISIONS SECTION                                  */
+/* ========================================================= */
+.divisions-section {
+  padding: 0 10% 100px 10%;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.divisions-header-card {
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.divisions-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 32px; 
+  color: #000000;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.divisions-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  font-size: 36px;
+  color: #1B1464;
+}
+
+.divisions-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 14px; 
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Kartu Utama */
+.div-card {
+  position: relative;
+  border-radius: 4px 32px 4px 32px; 
+  overflow: hidden;
+  height: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Variasi Gradien */
+.div-blue-gradient {
+  background: linear-gradient(180deg, rgba(27, 20, 100, 0.65) 0%, rgba(255, 255, 255, 1) 60%);
+}
+
+.div-orange-gradient {
+  background: linear-gradient(0deg, rgba(253, 190, 52, 0.7) 0%, rgba(255, 255, 255, 1) 60%);
+}
+
+/* Tipografi di Kartu */
+.div-card h3 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.2;
+  max-width: 90%;
+}
+
+/* Gambar Orang di Kartu */
+.div-card img {
+  position: absolute;
+  bottom: 0;
+  right: -10px; 
+  height: 85%;
+  object-fit: contain;
+  z-index: 1;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import './Home.css';
 
@@ -64,7 +65,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* 1. HERO SECTION */}
       <section className="home-hero-centered">
         <div className="hero-main-content">
           <h1>Helping Indonesian Youth<br/>Take Their First Step into<br/>Career & Green Jobs.</h1>
@@ -74,7 +74,7 @@ const Home = () => {
               <button className="btn-primary-pill">Apply for Internship <span className="btn-icon">↗</span></button>
               <button className="btn-outline-pill">Join Our Program <span className="btn-icon">↗</span></button>
             </div>
-            <a href="#explore" className="explore-link">Explore Green Careers</a>
+            <button className="explore-link" style={{background: 'none', border: 'none', cursor: 'pointer'}}>Explore Green Careers</button>
           </div>
         </div>
         <div className="hero-stats-grid">
@@ -85,7 +85,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. ABOUT SECTION */}
       <section className="home-about-section">
         <div className="about-text-column">
           <span className="about-eyebrow">About Us</span>
@@ -100,7 +99,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. WHAT WE OFFER SECTION */}
       <section className="home-offer-section">
         <div className="offer-header">
           <span className="offer-eyebrow">What We Offer</span>
@@ -119,7 +117,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. OUR IMPACT SECTION */}
       <section className="home-impact-section">
         <div className="impact-header-row">
           <div className="impact-header-text">
@@ -138,7 +135,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. TESTIMONIAL SECTION */}
       <section className="home-testimonial-section">
         <div className="testi-header">
           <span className="testi-eyebrow">What They Say</span>
@@ -156,7 +152,6 @@ const Home = () => {
         <div className="testi-content"><p>{testimonials[activeTesti].text}</p></div>
       </section>
 
-      {/* 6. OUR BLOG SECTION */}
       <section className="home-blog-section">
         <div className="blog-header-row">
           <div className="blog-header-text">

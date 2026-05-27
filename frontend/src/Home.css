@@ -75,6 +75,10 @@
   transition: all 0.3s ease;
 }
 
+.btn-primary-pill:hover {
+  background-color: #E6A92E;
+}
+
 .btn-outline-pill {
   background-color: #FFFFFF;
   color: #FDBE34;
@@ -88,6 +92,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-pill:hover {
+  background-color: #FFF9F2;
 }
 
 .explore-link {
@@ -156,6 +165,7 @@
 
 .about-highlight {
   font-family: 'Courgette', cursive;
+  font-weight: 400;
   color: #FBB03B;
 }
 
@@ -207,7 +217,7 @@
 .home-offer-section { padding: 100px 10%; text-align: center; }
 .offer-eyebrow { color: #FBB03B; font-weight: 700; margin-bottom: 12px; display: block; }
 .offer-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; }
-.offer-highlight-text { font-family: 'Courgette', cursive; color: #1B1464; position: relative; padding: 0 10px; }
+.offer-highlight-text { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464; position: relative; padding: 0 10px; }
 .scribble-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: 130%; z-index: -1; }
 
 .offer-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
@@ -223,61 +233,94 @@
 .impact-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
 .impact-eyebrow { color: #FBB03B; font-weight: 700; display: block; margin-bottom: 12px; }
 .impact-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; }
-.impact-highlight { font-family: 'Courgette', cursive; color: #1B1464; }
+.impact-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464; }
 .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .impact-card { position: relative; height: 250px; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 24px; transition: 0.3s; }
 .impact-card::after { content: ""; position: absolute; top: 10px; left: 10px; width: 100%; height: 100%; background: #1B1464; border-radius: 16px; z-index: 1; }
 .impact-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #E0E0E0; border: 3px solid #1B1464; border-radius: 16px; z-index: 2; }
 .impact-label { position: relative; z-index: 10; background: #FFF; color: #1B1464; font-weight: 700; padding: 10px 24px; border-radius: 999px; }
 
+
 /* ========================================================= */
-/* 5. TESTIMONIAL SECTION (FRESH LIGHT GRADIENT & CENTER)    */
+/* 5. TESTIMONIAL SECTION (SMOOTH CAROUSEL & SOFT GRADIENT)  */
 /* ========================================================= */
 .home-testimonial-section {
-  /* GRADASI BARU: Oranye yang jauh lebih muda dan fresh */
-  background: linear-gradient(180deg, #FFF9F2 0%, #FFF3DD 45%, #FFF3DD 60%, #FFF9F2 100%);
-  padding: 100px 0;
+  /* KEMBALI KE LINEAR GRADIENT dengan warna oranye pastel yang sangat soft (#FDE3A7) */
+  background: linear-gradient(180deg, #FFF9F2 0%, #FDE3A7 45%, #FDE3A7 60%, #FFF9F2 100%);
+  padding: 100px 0 120px 0;
   text-align: center;
+  position: relative;
 }
 
-.testi-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; }
-.testi-highlight { font-family: 'Courgette', cursive; color: #FBB03B; position: relative; display: inline-block; padding: 0 10px; }
+.testi-header {
+  margin-bottom: 50px;
+}
 
+.testi-eyebrow {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FBB03B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.testi-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  color: #121212;
+  margin: 0;
+}
+
+/* Memaksa font-weight 400 agar kembali kurus sesuai gaya font Courgette */
+.testi-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400 !important; 
+  color: #FBB03B;
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* --- Area Slider (Carousel) --- */
 .testi-carousel-wrapper {
   width: 100%;
-  overflow: visible; /* Biar bayangan tidak kepotong */
+  overflow: hidden; 
   margin: 60px 0;
-  position: relative;
+  padding: 40px 0; 
+  display: flex;
+  justify-content: center;
 }
 
 .testi-carousel-track {
   display: flex;
   align-items: center;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efek memantul halus */
-  will-change: transform;
+  gap: 40px; 
+  transition: transform 0.5s ease-in-out; 
 }
 
 .carousel-item {
-  flex: 0 0 180px; /* Lebar standar kartu */
-  height: 260px;
-  margin: 0 20px;
+  width: 200px;
+  height: 280px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.5s ease;
-  background-color: #8C8C8C;
-  opacity: 0.6;
-  transform: scale(0.9);
+  background-color: #A3A3A3;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.carousel-item.inactive {
+  transform: scale(0.85);
+  opacity: 0.5;
 }
 
 .carousel-item.active {
-  flex: 0 0 280px; /* Kartu tengah lebih lebar */
-  height: 400px;
+  transform: scale(1.35); 
   opacity: 1;
-  transform: scale(1.1);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   z-index: 10;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .carousel-placeholder {
@@ -285,15 +328,24 @@
   height: 100%;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Area Teks Testimoni --- */
 .testi-content {
   max-width: 700px;
-  margin: 30px auto 0;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .testi-content p {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
+  font-weight: 600; 
   font-size: 18px;
+  color: #000000;
   line-height: 1.6;
+  margin: 0;
 }

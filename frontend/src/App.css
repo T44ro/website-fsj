@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-/* GEMBOK ANTI DARK-MODE DARI HP (MEMAKSA TEMA TERANG) */
+/* GEMBOK ANTI DARK-MODE STANDAR */
 :root {
   color-scheme: only light !important;
 }
@@ -18,7 +18,8 @@ body {
   padding: 0;
   font-family: 'Quicksand', sans-serif;
   
-  /* Paksa warna krem di semua kondisi, abaikan paksaan hitam dari HP */
+  /* HACK ANTI-INVERT: Pakai gradient palsu agar HP mengira ini gambar */
+  background-image: linear-gradient(#FFF9F2, #FFF9F2) !important;
   background-color: #FFF9F2 !important; 
   color: #121212 !important; 
 }
@@ -37,7 +38,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 5%; 
-  background-color: #FFFFFF !important; /* Paksa navbar tetap putih */
+  /* HACK ANTI-INVERT */
+  background-image: linear-gradient(#FFFFFF, #FFFFFF) !important; 
+  background-color: #FFFFFF !important; 
   box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
   position: sticky; 
   top: 0;
@@ -57,10 +60,14 @@ body {
   padding: 8px 18px;
   border-radius: 999px; 
   border: 1px solid #E0E0E0; 
+  /* HACK ANTI-INVERT */
+  background-image: linear-gradient(#FFFFFF, #FFFFFF) !important;
   background-color: #FFFFFF !important;
   transition: all 0.3s ease;
 }
-.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
+.nav-item:hover { 
+  background-image: linear-gradient(#F9F9F9, #F9F9F9) !important;
+}
 .nav-item.active { color: #FBB03B !important; border-color: #FBB03B; }
 
 .social-links { display: flex; gap: 10px; align-items: center; }
@@ -72,6 +79,8 @@ body {
 /* 2. FOOTER STYLES                                          */
 /* ========================================================= */
 .site-footer {
+  /* HACK ANTI-INVERT */
+  background-image: linear-gradient(#FFF9F2, #FFF9F2) !important;
   background-color: #FFF9F2 !important;
   padding: 60px 10% 20px 10%;
   border-top: 1px solid #F0E6D8;
@@ -90,8 +99,9 @@ body {
   font-size: 14px; 
   outline: none; 
   width: 250px; 
-  background-color: #FFFFFF !important; 
-  color: #121212 !important; /* Mencegah teks input jadi putih saat dark mode */
+  /* HACK ANTI-INVERT */
+  background-image: linear-gradient(#FFFFFF, #FFFFFF) !important;
+  color: #121212 !important; 
 }
 .newsletter input:focus { border-color: #FBB03B; }
 

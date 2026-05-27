@@ -26,24 +26,117 @@
 .com-section { padding: 80px 10%; }
 .section-title-center { text-align: center; font-family: 'Quicksand', sans-serif; font-size: 38px; color: #000; margin-bottom: 60px; }
 
-/* 2. STRUCTURED PATHWAY */
-.pathway-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+/* ========================================================= */
+/* 2. STRUCTURED PATHWAY (REVISI TOTAL LAYOUT SEJAJAR KIRI)   */
+/* ========================================================= */
+.com-pathway {
+  padding: 60px 10%;
 }
 
-.pathway-text-center { text-align: center; flex: 1; }
-.pathway-text-center h2 { font-family: 'Quicksand', sans-serif; font-size: 36px; line-height: 1.2; color: #000; }
-.pathway-text-center h2 span { font-family: 'Courgette', cursive; color: #FBB03B; font-weight: 400; }
-.pathway-text-center p { font-family: 'Quicksand', sans-serif; margin: 24px 0 40px 0; color: #666; }
+.pathway-container {
+  display: flex;
+  align-items: center; /* Menjaga gambar kiri, tengah, kanan sejajar rapi secara vertikal */
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
 
-.btn-learn-more { background-color: #1B1464; color: #FFF; border: none; padding: 12px 32px; border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 600; cursor: pointer; }
+/* Pembungkus Gambar Kiri dan Kanan */
+.pathway-img-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.pathway-img-left, .pathway-img-right { flex: 1; }
-.pathway-img-left .img-placeholder { height: 350px; border-radius: 20px; background-color: #E0E0E0; transform: translateY(40px); }
-.pathway-img-right .img-placeholder { height: 300px; border-radius: 20px; background-color: #D6D6D6; transform: translateY(-20px); }
+.pathway-img-box .img-placeholder {
+  width: 100%;
+  height: 380px; /* Dikunci sama tinggi dengan kotak teks agar simetris atas bawah */
+  border-radius: 24px;
+  background-color: #E0E0E0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+}
+
+/* Kotak Konten Teks Tengah */
+.pathway-text-block {
+  flex: 1.2; 
+  background-color: #FFE4A8; /* Warna kuning pastel tumpul */
+  border-radius: 24px; /* Sudut tumpul */
+  padding: 45px 40px;
+  text-align: left; /* Teks Rata Kiri */
+  position: relative; /* Angkar untuk hiasan absolut */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 380px; /* Dikunci sama tinggi dengan gambar penyeimbang */
+  box-sizing: border-box;
+  box-shadow: 0 12px 35px rgba(253, 190, 52, 0.12);
+}
+
+.pathway-text-block h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.3;
+  color: #1B1464;
+  margin: 0 0 16px 0;
+}
+
+.pathway-text-block p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  max-width: 95%;
+}
+
+/* Style Tombol Baru dengan Arrow */
+.pathway-text-block .btn-learn-more {
+  background-color: #1B1464;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start; /* Memastikan tombol tidak melebar penuh */
+  transition: all 0.3s ease;
+}
+
+.pathway-text-block .btn-learn-more:hover {
+  background-color: #302683;
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.btn-learn-more:hover .btn-arrow {
+  transform: translate(3px, -3px); /* Efek panah meluncur ke kanan atas */
+}
+
+/* Ornamen Spiral di Pojok Kanan Bawah */
+.spiral-decoration {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  opacity: 0.25; /* Transparansi halus agar tidak mengalihkan pandangan dari teks */
+  pointer-events: none;
+}
+
+.spiral-decoration svg {
+  stroke: #1B1464;
+}
 
 /* 3. DISCOVER SCROLL */
 .discover-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
@@ -92,10 +185,13 @@
 .stat-item h4 { font-family: 'Quicksand', sans-serif; font-size: 36px; color: #1B1464; margin-bottom: 5px; }
 .stat-item span { color: #666; font-size: 14px; }
 
-/* RESPONSIVE */
+/* RESPONSIVE LAYOUT HP */
 @media screen and (max-width: 992px) {
-  .pathway-container { flex-direction: column; }
-  .pathway-img-left, .pathway-img-right { width: 100%; }
+  .pathway-container { flex-direction: column !important; gap: 24px; }
+  .pathway-img-box, .pathway-text-block { width: 100% !important; flex: none; }
+  .pathway-text-block { height: auto; padding: 40px 24px; }
+  .pathway-img-box .img-placeholder { height: 240px; }
+  
   .insights-grid, .impact-bento { grid-template-columns: 1fr; }
   .com-section { padding: 60px 5%; }
 }

@@ -1,156 +1,164 @@
 import React from 'react';
 import './AboutUs.css';
-/* DI BAWAH INI NAMA FILENYA SUDAH SAYA SESUAIKAN JADI about-hero-img.png */
-import aboutHeroBg from './assets/about-hero-img.png'; 
+
+// NANTI KALAU GAMBARNYA SUDAH DI-UPLOAD, HAPUS TANDA // DI BAWAH INI:
+// import heroBg from './assets/about-hero-bg.jpg';
+// import visionImg from './assets/vision-img.jpg';
+// import missionImg from './assets/mission-img.jpg';
+// import cultureImg from './assets/culture-img.png';
+
+// Import Foto Divisi (Sesuaikan nama file hasil export Figma-mu)
+// import divProduct from './assets/div-product.png';
+// import divVisual from './assets/div-visual.png';
+// import divOperation from './assets/div-operation.png';
+// import divBrand from './assets/div-brand.png';
+// import divHuman from './assets/div-human.png';
+// import divAdmin from './assets/div-admin.png';
+// import divDigital from './assets/div-digital.png';
 
 const AboutUs = () => {
+  // Objek inline style untuk background hero (tetap aman)
+  const heroStyle = {
+    // backgroundImage: `url(${heroBg})`,
+    backgroundColor: '#FBB03B'
+  };
+
   return (
     <div className="about-page">
-      {/* ========================================= */}
-      {/* 1. HERO SECTION (DENGAN BACKGROUND IMAGE) */}
-      {/* ========================================= */}
-      <section className="hero" style={{ backgroundImage: `url(${aboutHeroBg})` }}>
+      {/* 1. HERO SECTION (TETAP SAMA) */}
+      <section className="hero" style={heroStyle}>
         <div className="hero-content">
-          <h1>Who We Are</h1>
-          <p>
-            Discover thousands of fun and interactive learning activities<br />
-            to support your child's growth and learning process.
-          </p>
           <div className="breadcrumb">
-            <span className="home-link">Home</span> / <span className="about-link">About Us</span>
+            <span className="home-link">Home</span>
+            <span className="separator"> &gt; </span>
+            <span className="about-link">About Us</span>
           </div>
+          <h1>About Us</h1>
+          <p>
+            FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community-based, 
+            free programs, and live projects.
+          </p>
         </div>
       </section>
 
-      {/* ========================================= */}
-      {/* 2. VISION & MISSION SECTION               */}
-      {/* ========================================= */}
+      {/* 2. VISION & MISSION (TETAP SAMA) */}
       <section className="vision-mission-section">
         <div className="vm-row">
           <div className="vm-text-card">
-            <h2 className="vision-title">Vision</h2>
+            <h2 className="vision-title">Our Vision</h2>
             <p>
-              To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
+              To provide access for Indonesian youth — especially those with limited privilege — 
+              to take their first step, grow, and discover a meaningful career path 
+              through both soft and hard skills.
             </p>
           </div>
           <div className="vm-image-card">
-            <img src="/vision-img.jpg" alt="Youth discussing" />
+            {/* <img src={visionImg} alt="Vision" /> */}
           </div>
         </div>
-        
+
         <div className="vm-row reverse">
           <div className="vm-text-card">
-            <h2 className="mision-title">Mision</h2>
+            <h2 className="mision-title">Our Mision</h2>
             <ul>
-              <li>Bridge the gap in access to career guidance and development</li>
-              <li>Ignite first steps through education & mentoring</li>
-              <li>Cultivate growth mindset and social inclusion</li>
-              <li>Build a safe and empowering community space</li>
-              <li>Drive impact-Driven Movement through action, content, and cross-sector collaboration</li>
+              <li>Creating an inclusive ecosystem for students.</li>
+              <li>Provide free high-quality training and mentoring.</li>
+              <li>Collaborating with industry professionals.</li>
             </ul>
           </div>
           <div className="vm-image-card">
-            <img src="/mission-img.jpg" alt="Leader presenting" />
+            {/* <img src={missionImg} alt="Mission" /> */}
           </div>
         </div>
       </section>
 
-      {/* ========================================= */}
-      {/* 3. OUR CULTURE SECTION                    */}
-      {/* ========================================= */}
+      {/* 3. OUR CULTURE (TETAP SAMA) */}
       <section className="culture-section">
         <div className="culture-header">
           <span className="culture-subtitle">Our Culture</span>
           <h2 className="culture-title">
-            A Rapid Journey of <span className="culture-highlight">Impact</span>
+            Driving Growth <br />
+            with <span className="culture-highlight">Integrity</span>
           </h2>
         </div>
-        
         <div className="culture-content">
           <div className="culture-text">
-            <p>
-              FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects. To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
-            </p>
+            <p>At FSJ, we believe that a strong community is built on trust and shared values.</p>
             <ul>
-              <li>
-                <strong>Career Readiness</strong>
-                Equip yourself for the professional world. Master industry expectations, build a standout portfolio, and develop the work ethic to thrive from day one.
-              </li>
-              <li>
-                <strong>Self Development</strong>
-                Sharpen your soft skills and build a resilient mindset. Develop true ownership and the grit needed to conquer challenges and accelerate your growth.
-              </li>
-              <li>
-                <strong>Sustainability Skills</strong>
-                Future-proof your career. Apply ESG principles to your tech, design, or business skills for real impact.
-              </li>
+              <li><strong>Continuous Learning</strong>: We embrace curiosity.</li>
+              <li><strong>Inclusive Impact</strong>: Accessible for everyone.</li>
+              <li><strong>Collaborative Spirit</strong>: Growing together.</li>
             </ul>
           </div>
-          
           <div className="culture-image">
-            <img src="/jose-prima.png" alt="Jose Prima - CEO of FSJ" />
+            {/* <img src={cultureImg} alt="Culture Graphic" /> */}
           </div>
-          
-          <div className="culture-image">
-            <img src="/step-stairs.png" alt="STEP Framework" />
+          <div className="culture-text">
+             <p>Our members are encouraged to innovate and take ownership of their professional journey.</p>
           </div>
         </div>
       </section>
 
-      {/* ========================================= */}
-      {/* 4. THE DIVISIONS SECTION                  */}
-      {/* ========================================= */}
+      {/* 4. THE DIVISIONS SECTION (DESAIN BARU SESUAI GAMBAR) */}
       <section className="divisions-section">
         <div className="divisions-grid">
           
+          {/* Tile Judul & Deskripsi */}
           <div className="divisions-header-card">
             <h2 className="divisions-title">
-              The Divisions Driving <br />
-              <span className="divisions-highlight">Our Mission</span>
+              The Divisions <br />
+              Driving <span className="divisions-highlight">Our Mission</span>
             </h2>
             <p className="divisions-desc">
-              Behind every impactful initiative at First Step Journey is a dedicated team. Our divisions work collaboratively to design sustainable programs, foster inclusive communities, and empower Indonesian youth to reach their full potential.
+              Behind every impactful initiative at First Step Journey is a dedicated team. 
+              Our divisions work collaboratively to design sustainable programs.
             </p>
           </div>
 
-          <div className="div-card div-blue-gradient">
-            <h3 style={{ color: '#000000' }}>Product &<br/>Strategy</h3>
-            <img src="/div-person1.png" alt="Product & Strategy" />
+          {/* Kartu 1: Product & Strategy (Text Black) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
+            {/* <img src={divProduct} alt="Product & Strategy" /> */}
           </div>
 
-          <div className="div-card div-orange-gradient">
-            <h3 style={{ color: '#1B1464' }}>Visual<br/>Brand<br/>Communication</h3>
-            <img src="/div-person2.png" alt="Visual Brand Communication" />
+          {/* Kartu 2: Visual Brand (Text Navy) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
+            {/* <img src={divVisual} alt="Visual Brand" /> */}
           </div>
 
-          <div className="div-card div-blue-gradient">
-            <h3 style={{ color: '#000000' }}>Product &<br/>Strategy</h3>
-            <img src="/div-person3.png" alt="Product & Strategy" />
+          {/* Kartu 3: Operation (Text Black) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
+            {/* <img src={divOperation} alt="Operation" /> */}
           </div>
 
-          <div className="div-card div-blue-gradient">
-            <h3 style={{ color: '#000000' }}>Brand &<br/>Event</h3>
-            <img src="/div-person4.png" alt="Brand & Event" />
+          {/* Kartu 4: Brand & Event (Text Black) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Brand & <br/> Event</h3>
+            {/* <img src={divBrand} alt="Brand & Event" /> */}
           </div>
 
-          <div className="div-card div-orange-gradient">
-            <h3 style={{ color: '#1B1464' }}>Human Capital</h3>
-            <img src="/div-person5.png" alt="Human Capital" />
+          {/* Kartu 5: Human Capital (Text Navy) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-navy">Human <br/> Capital</h3>
+            {/* <img src={divHuman} alt="Human Capital" /> */}
           </div>
 
-          <div className="div-card div-blue-gradient">
-            <h3 style={{ color: '#000000' }}>Administration<br/>& Report</h3>
-            <img src="/div-person6.png" alt="Administration & Report" />
+          {/* Kartu 6: Administration (Text Black) */}
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Administration <br/> & Report</h3>
+            {/* <img src={divAdmin} alt="Administration" /> */}
           </div>
 
-          <div className="div-card div-orange-gradient">
-            <h3 style={{ color: '#1B1464' }}>Operations</h3>
-            <img src="/div-person7.png" alt="Operations" />
+          {/* Kartu 7: Digital Marketing (Text Navy + Blue Border) */}
+          <div className="div-card card-soft-beige card-highlighted">
+            <h3 className="text-navy">Digital <br/> Marketing</h3>
+            {/* <img src={divDigital} alt="Digital Marketing" /> */}
           </div>
 
         </div>
       </section>
-
     </div>
   );
 };

@@ -158,37 +158,30 @@
 .pp-feature-box h4 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
 .pp-feature-box p { font-family: 'Quicksand', sans-serif; font-size: 12px; color: #666; margin: 0; }
 
-/* ========================================================= */
-/* 3. WHAT IS GREEN JOBS (PERBAIKAN TOTAL LAYOUT & PILL)     */
-/* ========================================================= */
+/* 3. WHAT IS GREEN JOBS */
 .pp-greenjobs-section {
   display: flex;
   gap: 60px;
   align-items: center;
 }
 
-.pp-greenjobs-left { 
-  flex: 1.1; 
-}
-
-.pp-greenjobs-right { 
-  flex: 0.9; 
-}
+.pp-greenjobs-left { flex: 1.1; }
+.pp-greenjobs-right { flex: 0.9; }
 
 .pp-pill-list { 
   display: flex; 
   flex-direction: column; 
   gap: 16px; 
+  align-items: stretch;
 }
 
-/* KETIGA PILL SEKARANG SAMA BESAR DAN SEJAJAR SANGAT RAPI */
 .pp-pill {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 0 32px; /* Padding atas-bawah dilepas agar tinggi diatur oleh height */
-  height: 100px;   /* DIKUNCI 100px agar ketiganya berukuran persis sama */
-  border-radius: 999px; /* Bentuk kapsul sempurna */
+  padding: 0 32px;
+  height: 100px;
+  border-radius: 999px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   color: #121212;
@@ -197,94 +190,148 @@
   box-sizing: border-box;
 }
 
-.pp-pill span {
-  flex: 1;
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-.pill-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+.pp-pill span { flex: 1; font-size: 15px; line-height: 1.4; }
+.pill-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
 .pill-tech { background-color: #FFF3C9; border: 2px solid #FF9B00; .pill-icon { color: #FF9B00; } }
 .pill-design { background-color: #F9FAFC; border: 2px solid #013F84; .pill-icon { color: #013F84; } }
 .pill-business { background-color: #F0F0F0; border: 2px solid #1B1464; .pill-icon { color: #1B1464; } }
 
-/* TATA LETAK 3 GAMBAR ACAK/MELAYANG (PERSIS SEPERTI DESAIN) */
 .pp-collage {
   position: relative;
   width: 100%;
-  height: 440px; /* Wadah tinggi agar gambar bisa disusun melayang */
+  height: 440px; 
 }
 
 .pp-collage .img-placeholder {
   position: absolute;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
 }
 
-/* Gambar 1 (Kanan Atas - Agak Lebar) */
 .pp-collage .img-1 { 
-  top: 0;
-  right: 0;
-  width: 72%;
-  height: 175px;
-  background-color: #E0E0E0;
-  border-radius: 0 40px 0 40px; /* Efek Daun Kelopak 1 */
+  top: 0; right: 0; width: 72%; height: 175px; background-color: #E0E0E0; border-radius: 0 40px 0 40px; 
 }
-
-/* Gambar 2 (Kiri Bawah - Lebih Tinggi/Vertikal) */
 .pp-collage .img-2 { 
-  top: 130px; /* Sengaja dibuat overlap memotong tinggi Gambar 1 */
-  left: 0;
-  width: 58%;
-  height: 270px;
-  background-color: #D6D6D6;
-  border-radius: 40px 0 40px 0; /* Efek Daun Kelopak 2 (Kebalikan) */
-  z-index: 2;
+  top: 130px; left: 0; width: 58%; height: 270px; background-color: #D6D6D6; border-radius: 40px 0 40px 0; z-index: 2;
+}
+.pp-collage .img-3 { 
+  bottom: 10px; right: 0; width: 43%; height: 190px; background-color: #CCCCCC; border-radius: 0 40px 0 40px; z-index: 1;
 }
 
-/* Gambar 3 (Kanan Bawah - Kecil) */
-.pp-collage .img-3 { 
-  bottom: 10px;
-  right: 0;
-  width: 43%;
-  height: 190px;
-  background-color: #CCCCCC;
-  border-radius: 0 40px 0 40px; /* Efek Daun Kelopak 1 */
+/* ========================================================= */
+/* 4. YOUR PATH SECTION (DESAIN ZIG-ZAG MASONRY BARU)        */
+/* ========================================================= */
+
+.pp-path-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pp-center-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 42px;
+  color: #000000;
+  margin: 0;
+}
+
+/* Lingkaran Spidol Ala "Home Page" */
+.pp-highlight-circle {
+  font-family: 'Courgette', cursive;
+  color: #1B1464;
+  position: relative;
+  display: inline-block;
+  padding: 5px 15px;
   z-index: 1;
 }
 
-/* 4. YOUR PATH SECTION */
-.pp-center-title {
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 42px;
-  margin-bottom: 60px;
-}
-.pp-highlight-oval {
-  font-family: 'Courgette', cursive;
-  color: #1B1464;
+.pp-highlight-circle::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   border: 2px solid #FBB03B;
-  border-radius: 50%;
-  padding: 5px 20px;
+  border-radius: 50% / 80%; /* Membuat efek elips seperti digambar tangan */
+  transform: rotate(-2deg);
+  z-index: -1;
 }
 
-.pp-path-row { display: flex; align-items: center; gap: 60px; margin-bottom: 60px; }
-.pp-path-row.reverse { flex-direction: row-reverse; }
+/* Layout Grid 2 Kolom */
+.pp-path-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
 
-.pp-path-text { flex: 1; }
-.pp-path-image { flex: 1; }
-.step-label { color: #1B1464; font-weight: 700; font-size: 14px; margin-bottom: 10px; display: block; }
-.pp-path-text h3 { font-family: 'Quicksand', sans-serif; font-size: 28px; color: #1B1464; margin-bottom: 15px; }
-.pp-path-text p { font-family: 'Quicksand', sans-serif; font-size: 16px; color: #333; line-height: 1.6; }
+.pp-path-col {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
 
-/* 5. EXPLORE BENTO GRID */
+/* Style Teks Intro (Medium, 000000) */
+.path-intro p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; 
+  font-size: 18px; 
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 10px;
+}
+
+/* Kotak Konten Path */
+.path-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.path-item .img-placeholder {
+  width: 100%;
+  background-color: #E0E0E0;
+  border-radius: 12px;
+}
+
+/* Mengatur tinggi placeholder gambar seperti di desain */
+.img-step1 { height: 280px; }
+.img-step2 { height: 420px; }
+.img-step3 { height: 260px; }
+
+/* Tipografi Langkah 1, 2, 3 */
+.pp-step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-num {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 16px;
+  color: #000000;
+}
+
+.pp-step-text h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold */
+  font-size: 22px; /* Ukuran lebih besar dari step-num */
+  color: #1B1464;
+  margin: 0;
+}
+
+.pp-step-text p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; /* Regular style */
+  font-size: 14px; /* Ukuran lebih kecil */
+  color: #333333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================================= */
+/* 5. EXPLORE BENTO GRID                                     */
+/* ========================================================= */
 .pp-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -311,18 +358,27 @@
 .bento-card h3 { font-family: 'Quicksand', sans-serif; font-size: 24px; margin-bottom: 10px; color: #1B1464; }
 .bento-card p { font-family: 'Quicksand', sans-serif; font-size: 14px; color: #666; }
 
-/* RESPONSIVE UNTUK LAYAN HP */
+/* ========================================================= */
+/* RESPONSIVE UNTUK LAYAR HP                                 */
+/* ========================================================= */
 @media screen and (max-width: 992px) {
   .pp-future-section { 
     flex-direction: column !important; 
     background: linear-gradient(180deg, #1B1464 0%, #1B1464 20%, #FFF9F2 50%, #FFF9F2 100%); 
   }
-  .pp-greenjobs-section, .pp-path-row { flex-direction: column !important; }
+  .pp-greenjobs-section { flex-direction: column !important; }
   .pp-features-grid { grid-template-columns: repeat(2, 1fr); }
   .pp-bento-grid { grid-template-columns: 1fr; }
   .bento-card.tall, .bento-card.short { height: auto; min-height: 200px; }
-  .pp-pill { height: auto; padding: 20px 24px; } /* Kembalikan auto di HP agar teks tidak kepotong */
-  
+  .pp-pill { height: auto; padding: 20px 24px; }
   .pp-collage { display: flex; flex-direction: column; gap: 16px; min-height: auto; }
   .pp-collage .img-placeholder { position: static; width: 100% !important; height: 200px !important; border-radius: 20px !important; }
+  
+  /* Reset urutan Grid Zigzag Path untuk HP agar urutannya Intro -> 1 -> 2 -> 3 */
+  .pp-path-grid { display: flex; flex-direction: column; gap: 40px; }
+  .pp-path-col { display: contents; } 
+  .path-intro { order: 1; }
+  .path-step1 { order: 2; }
+  .path-step2 { order: 3; }
+  .path-step3 { order: 4; }
 }

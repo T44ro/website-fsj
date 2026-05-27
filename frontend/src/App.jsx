@@ -3,12 +3,12 @@ import './App.css';
 import Home from './Home';       
 import AboutUs from './AboutUs'; 
 
-// === IMPORT GAMBAR HEADER DARI FOLDER ASSETS ===
-import logo from './assets/fsj-logo.png';
-import iconIg from './assets/icon-ig.png';
-import iconYt from './assets/icon-yt.png';
-import iconTiktok from './assets/icon-tiktok.png';
-import iconX from './assets/icon-x.png';
+// === GAMBAR DI-COMMENT SEMENTARA AGAR VERCEL TIDAK ERROR ===
+// import logo from './assets/fsj-logo.png';
+// import iconIg from './assets/icon-ig.png';
+// import iconYt from './assets/icon-yt.png';
+// import iconTiktok from './assets/icon-tiktok.png';
+// import iconX from './assets/icon-x.png';
 
 function App() {
   const [activePage, setActivePage] = useState('about'); // Default ke About Us
@@ -32,12 +32,13 @@ function App() {
   return (
     <div className="site-shell">
       {/* ========================================= */}
-      {/* HEADER NAVIGATION (BARU)                  */}
+      {/* HEADER NAVIGATION                         */}
       {/* ========================================= */}
       <header className="topbar">
-        {/* Kiri: Logo */}
+        {/* Kiri: Logo (Sementara pakai teks) */}
         <div className="brand">
-          <img src={logo} alt="First Step Journey" className="header-logo" />
+          <h2 style={{ margin: 0, color: '#1B1464', fontFamily: 'Quicksand' }}>FSJ</h2>
+          {/* <img src={logo} alt="First Step Journey" className="header-logo" /> */}
         </div>
         
         {/* Tengah: Menu Navigasi Bentuk Pil */}
@@ -50,12 +51,13 @@ function App() {
           <a href="#contacts" className="nav-item">Contacts</a>
         </nav>
 
-        {/* Kanan: Ikon Sosial Media */}
+        {/* Kanan: Ikon Sosial Media (Sementara di-hide agar aman) */}
         <div className="social-links">
-          <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
+          {/* <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
           <a href="#" className="social-btn"><img src={iconYt} alt="YouTube" /></a>
           <a href="#" className="social-btn"><img src={iconTiktok} alt="TikTok" /></a>
-          <a href="#" className="social-btn"><img src={iconX} alt="X" /></a>
+          <a href="#" className="social-btn"><img src={iconX} alt="X" /></a> 
+          */}
         </div>
       </header>
 

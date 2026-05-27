@@ -1,0 +1,256 @@
+/* ========================================================= */
+/* CSS PRODUCTS & PROGRAMS - FIRST STEP JOURNEY              */
+/* ========================================================= */
+
+.pp-page {
+  background-color: #FFF9F2;
+  min-height: 100vh;
+}
+
+/* 1. HERO SECTION */
+.pp-hero {
+  padding: 120px 20px 80px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pp-hero-content {
+  text-align: center;
+  z-index: 10;
+}
+
+.pp-hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 52px;
+  color: #000000;
+  margin: 0 0 16px 0;
+}
+
+.pp-hero p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.pp-breadcrumb {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1B1464;
+}
+
+/* GENERAL SECTION STYLES */
+.pp-section {
+  padding: 80px 10%;
+}
+
+.pp-eyebrow {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #FBB03B;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pp-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.pp-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  color: #FBB03B;
+}
+
+.pp-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* 2. FUTURE PROOF CAREER */
+.pp-future-section {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.pp-future-left { flex: 1; }
+.pp-future-right { flex: 1.5; }
+
+.pp-polaroid-card {
+  background: linear-gradient(135deg, #1B1464 0%, #4A3E99 100%);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(27, 20, 100, 0.2);
+}
+
+.pp-polaroid-card h3 {
+  font-family: 'Quicksand', sans-serif;
+  color: #FFFFFF;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.pp-polaroid-img {
+  width: 80%;
+  height: 250px;
+  background-color: #E0E0E0;
+  border: 10px solid #FFFFFF;
+  border-bottom: 40px solid #FFFFFF;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.pp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.pp-feature-box {
+  background-color: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #FBB03B;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+}
+
+.pp-feature-box h4 { font-family: 'Quicksand', sans-serif; font-size: 14px; margin-bottom: 8px; }
+.pp-feature-box p { font-size: 12px; color: #666; margin: 0; }
+
+/* 3. WHAT IS GREEN JOBS */
+.pp-greenjobs-section {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.pp-greenjobs-left { flex: 1; }
+.pp-greenjobs-right { flex: 1; }
+
+.pp-pill-list { display: flex; flex-direction: column; gap: 15px; }
+.pp-pill {
+  background-color: #FFF1D6;
+  border: 2px solid #FBB03B;
+  padding: 15px 24px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #000;
+}
+.pp-pill.outline {
+  background-color: transparent;
+  border: 2px solid #E0E0E0;
+}
+
+.pp-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 150px;
+  gap: 20px;
+}
+.pp-collage .img-1 { grid-column: span 2; }
+.img-placeholder { background-color: #E0E0E0; border-radius: 20px; width: 100%; height: 100%; }
+
+/* 4. YOUR PATH SECTION */
+.pp-center-title {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+.pp-highlight-oval {
+  font-family: 'Courgette', cursive;
+  color: #1B1464;
+  border: 2px solid #FBB03B;
+  border-radius: 50%;
+  padding: 5px 20px;
+}
+
+.pp-path-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+.pp-path-row.reverse { flex-direction: row-reverse; }
+
+.pp-path-text { flex: 1; }
+.pp-path-image { flex: 1; }
+.step-label { color: #1B1464; font-weight: 700; font-size: 14px; margin-bottom: 10px; display: block; }
+.pp-path-text h3 { font-family: 'Quicksand', sans-serif; font-size: 28px; color: #1B1464; margin-bottom: 15px; }
+.pp-path-text p { font-family: 'Quicksand', sans-serif; font-size: 16px; color: #333; line-height: 1.6; }
+
+/* 5. EXPLORE BENTO GRID */
+.pp-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bento-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bento-card {
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-card.tall { height: 350px; }
+.bento-card.short { height: 200px; justify-content: flex-start; }
+
+.card-yellow { background-color: #FFFDE7; border: 2px solid #FDE0A6; }
+.card-white { background-color: #FFFFFF; border: 2px solid #E0E0E0; }
+.card-purple { background-color: #1B1464; color: #FFFFFF !important; }
+.card-purple h3, .card-purple p { color: #FFFFFF !important; }
+.card-image { background-color: #A3A3A3; justify-content: flex-end; }
+.card-image h3 { color: #FFFFFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+.bento-icon { width: 50px; height: 50px; background-color: #1B1464; border-radius: 12px; margin-bottom: 20px; }
+.bento-icon.small { width: 30px; height: 30px; }
+.card-purple .bento-icon { background-color: #FFFFFF; }
+
+.bento-card h3 { font-family: 'Quicksand', sans-serif; font-size: 24px; margin-bottom: 10px; color: #1B1464; }
+.bento-card p { font-family: 'Quicksand', sans-serif; font-size: 14px; color: #666; }
+
+/* RESPONSIVE */
+@media screen and (max-width: 992px) {
+  .pp-future-section, .pp-greenjobs-section, .pp-path-row { flex-direction: column !important; }
+  .pp-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .pp-bento-grid { grid-template-columns: 1fr; }
+  .bento-card.tall, .bento-card.short { height: auto; min-height: 200px; }
+}

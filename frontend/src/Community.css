@@ -25,6 +25,7 @@
 /* GENERAL */
 .com-section { padding: 80px 10%; }
 .section-title-center { text-align: center; font-family: 'Quicksand', sans-serif; font-size: 38px; color: #000; margin-bottom: 60px; }
+.no-margin-bottom { margin-bottom: 15px !important; }
 
 .com-eyebrow {
   font-family: 'Quicksand', sans-serif;
@@ -35,9 +36,7 @@
   margin-bottom: 12px;
 }
 
-/* ========================================================= */
-/* 2. STRUCTURED PATHWAY                                     */
-/* ========================================================= */
+/* 2. STRUCTURED PATHWAY */
 .com-pathway {
   padding: 60px 10%;
 }
@@ -135,9 +134,7 @@
 
 .spiral-decoration svg { stroke: #1B1464; }
 
-/* ========================================================= */
-/* 3. DISCOVER SCROLL (REVISI GRID 4 KOLOM PAS)              */
-/* ========================================================= */
+/* 3. DISCOVER SCROLL */
 .discover-header { 
   display: flex; 
   justify-content: space-between; 
@@ -147,16 +144,9 @@
 
 .discover-title-area { text-align: left; }
 .discover-header h2 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin: 0; }
-.nav-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #CCC; background: none; cursor: pointer; margin-left: 10px; }
 
-/* Menggunakan CSS Grid agar 4 kartu tercetak pas membelah lebar layar */
-.discover-scroll { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 24px; 
-}
+.discover-scroll { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
-/* Kartu sudah tidak perlu min-width karena sudah diatur Grid secara otomatis */
 .discover-card { 
   background-image: linear-gradient(#013F84, #013F84) !important; 
   border-radius: 20px; 
@@ -167,10 +157,7 @@
   border: none;
 }
 
-.discover-card:hover { 
-  transform: translateY(-8px); 
-  box-shadow: 0 15px 30px rgba(1, 63, 132, 0.3); 
-}
+.discover-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 63, 132, 0.3); }
 
 .card-img { height: 160px; width: 100%; background: #E0E0E0; border-radius: 0; }
 .card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -200,15 +187,116 @@
 .btn-discover-card:hover .bg-yellow { background-color: #1B1464; }
 
 /* ========================================================= */
-/* 4. INSIGHTS PREVIEW                                       */
+/* 4. INSIGHTS PREVIEW (DESAIN 2x2 HORIZONTAL)               */
 /* ========================================================= */
-.insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.ins-item { display: flex; flex-direction: column; }
-.ins-img { height: 200px; background: #E0E0E0; border-radius: 15px; margin-bottom: 20px; }
-.ins-date { font-size: 12px; color: #FBB03B; font-weight: 700; margin-bottom: 8px; }
-.ins-item h4 { font-family: 'Quicksand', sans-serif; font-size: 20px; margin-bottom: 12px; line-height: 1.3; }
-.ins-item p { font-size: 14px; color: #666; margin-bottom: 20px; flex-grow: 1; }
-.ins-item a { color: #1B1464; font-weight: 700; text-decoration: none; font-size: 14px; }
+.insights-header-center {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+}
+
+.center-eyebrow {
+  justify-content: center;
+  display: flex;
+}
+
+.insights-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.ins-item-horizontal {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF; 
+  border: 1px solid #EAEAEA;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 250px; /* Dikunci agar sama tinggi */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ins-item-horizontal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.ins-img-wrap {
+  width: 45%; /* Porsi gambar */
+  background-color: #E0E0E0;
+}
+
+.ins-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ins-text-wrap {
+  width: 55%; /* Porsi teks */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.ins-date {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+  color: #FBB03B;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ins-text-wrap h4 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  color: #000000;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.ins-text-wrap p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+  color: #333333;
+  margin: 0;
+  line-height: 1.5;
+  flex-grow: 1; /* Menekan link download ke posisi bawah */
+}
+
+.ins-link-wrap {
+  display: flex;
+  justify-content: flex-end; /* Memaksa link berada di kanan */
+  margin-top: 15px;
+}
+
+.ins-download-link {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1B1464;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.ins-download-link:hover {
+  color: #FBB03B;
+}
 
 /* ========================================================= */
 /* 5. CTA SECTION                                            */
@@ -248,10 +336,14 @@
   .pathway-img-box .img-placeholder { height: 240px; }
   
   .discover-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  
-  /* Di layar HP, 4 kartu ini akan otomatis memanjang ke bawah menjadi 1 kolom */
   .discover-scroll { grid-template-columns: 1fr; }
   
-  .insights-grid, .impact-bento { grid-template-columns: 1fr; }
+  /* Reset kartu horizontal menjadi vertikal saat di layar HP */
+  .insights-grid { grid-template-columns: 1fr; }
+  .ins-item-horizontal { flex-direction: column; height: auto; }
+  .ins-img-wrap { width: 100%; height: 200px; }
+  .ins-text-wrap { width: 100%; padding: 20px; }
+  
+  .impact-bento { grid-template-columns: 1fr; }
   .com-section { padding: 60px 5%; }
 }

@@ -3,7 +3,7 @@
 /* ========================================================= */
 
 .home-page {
-  /* HACK ANTI-INVERT */
+  /* HACK ANTI-INVERT: Mencegah HP memaksa dark mode */
   background-image: linear-gradient(#FFF9F2, #FFF9F2) !important;
   background-color: #FFF9F2;
   min-height: 100vh;
@@ -131,7 +131,7 @@
 .btn-more { border: 1px solid #43221C; color: #43221C !important; background: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; }
 
 /* ========================================================= */
-/* 4. OUR IMPACT                                             */
+/* 4. OUR IMPACT (DENGAN EFEK BOUNCE KARET)                  */
 /* ========================================================= */
 .home-impact-section { padding: 80px 10%; }
 .impact-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
@@ -140,8 +140,42 @@
 .impact-desc { color: #121212 !important; }
 .impact-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464 !important; }
 .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-.impact-card { position: relative; height: 250px; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 24px; transition: 0.3s; }
-.impact-card::after { content: ""; position: absolute; top: 10px; left: 10px; width: 100%; height: 100%; background-image: linear-gradient(#1B1464, #1B1464) !important; border-radius: 16px; z-index: 1; }
+
+/* EFEK PANTULAN: Transisi menggunakan cubic-bezier agar terasa membal */
+.impact-card { 
+  position: relative; 
+  height: 250px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: flex-end; 
+  padding-bottom: 24px; 
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Saat di-hover, kartu terangkat ke kiri atas */
+.impact-card:hover {
+  transform: translate(-4px, -4px);
+}
+
+.impact-card::after { 
+  content: ""; 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  width: 100%; 
+  height: 100%; 
+  background-image: linear-gradient(#1B1464, #1B1464) !important; 
+  border-radius: 16px; 
+  z-index: 1; 
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Mengunci posisi bayangan navy agar tetap di tempatnya saat kartu terangkat */
+.impact-card:hover::after {
+  top: 14px;
+  left: 14px;
+}
+
 .impact-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(#E0E0E0, #E0E0E0) !important; border: 3px solid #1B1464; border-radius: 16px; z-index: 2; }
 .impact-label { position: relative; z-index: 10; background-image: linear-gradient(#FFFFFF, #FFFFFF) !important; color: #1B1464 !important; font-weight: 700; padding: 10px 24px; border-radius: 999px; }
 
@@ -172,40 +206,14 @@
 .testi-content { max-width: 700px; margin: 0 auto; padding: 0 20px; }
 .testi-content p { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; color: #121212 !important; line-height: 1.6; margin: 0; }
 
-
 /* ========================================================= */
 /* 6. OUR BLOG SECTION                                       */
 /* ========================================================= */
-.home-blog-section { 
-  padding: 80px 10% 120px 10%; /* Ruang lega sebelum footer */
-}
+.home-blog-section { padding: 80px 10%; }
+.blog-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px; }
+.blog-eyebrow { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #FBB03B; display: block; margin-bottom: 12px; }
+.blog-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; color: #121212 !important; margin: 0; }
 
-/* --- Area Header Blog --- */
-.blog-header-row { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: flex-end; 
-  margin-bottom: 50px; 
-}
-
-.blog-eyebrow { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 16px; 
-  color: #FBB03B; 
-  display: block; 
-  margin-bottom: 12px; 
-}
-
-.blog-title { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 44px; 
-  color: #121212 !important; 
-  margin: 0;
-}
-
-/* Tombol Outline Khusus untuk Header (Warna Navy) */
 .btn-outline-navy {
   background-color: transparent;
   color: #1B1464 !important;
@@ -221,124 +229,35 @@
   gap: 12px;
   transition: all 0.3s ease;
 }
+.btn-outline-navy:hover { background-color: #1B1464; color: #FFFFFF !important; }
+.btn-icon-circle { width: 24px; height: 24px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+.bg-navy { background-color: #1B1464; transition: all 0.3s ease;}
+.bg-yellow { background-color: #FDBE34; transition: all 0.3s ease;}
+.btn-outline-navy:hover .bg-navy { background-color: rgba(255, 255, 255, 0.2); }
 
-.btn-outline-navy:hover {
-  background-color: #1B1464;
-  color: #FFFFFF !important;
-}
-
-/* Lingkaran kecil untuk ikon di dalam tombol */
-.btn-icon-circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-navy { background-color: #1B1464; }
-.bg-yellow { background-color: #FDBE34; }
-
-/* Saat header button di-hover, ganti lingkaran navy jadi transparan */
-.btn-outline-navy:hover .bg-navy {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-/* --- Area Grid 4 Kartu --- */
-.blog-grid { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 24px; 
-}
-
+.blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .blog-card {
-  background-image: linear-gradient(#013F84, #013F84) !important; /* Warna biru pekat ala desain */
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: linear-gradient(#013F84, #013F84) !important; 
+  border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 63, 132, 0.2); }
+.blog-img-wrapper { height: 200px; width: 100%; background-color: #E0E0E0; }
+.blog-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.blog-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.blog-content h4 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF !important; margin: 0 0 12px 0; line-height: 1.4; }
+.blog-content p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #FFFFFF !important; opacity: 0.9; line-height: 1.6; margin: 0 0 30px 0; flex-grow: 1; }
 
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(1, 63, 132, 0.2);
-}
-
-.blog-img-wrapper {
-  height: 200px;
-  width: 100%;
-  background-color: #E0E0E0; /* Cadangan abu-abu */
-}
-
-.blog-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.blog-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Memastikan tombol selalu sejajar di bawah walau teksnya beda panjang */
-}
-
-.blog-content h4 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Semibold */
-  font-size: 18px;
-  color: #FFFFFF !important;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
-}
-
-.blog-content p {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
-  font-size: 14px;
-  color: #FFFFFF !important;
-  opacity: 0.9;
-  line-height: 1.6;
-  margin: 0 0 30px 0;
-  flex-grow: 1; /* Mendorong tombol ke bawah */
-}
-
-/* Tombol Outline Khusus untuk dalam Kartu Blog (Warna Kuning) */
 .btn-blog-card {
-  background-color: transparent;
-  color: #FDBE34 !important;
-  border: 1px solid #FDBE34;
-  padding: 6px 14px 6px 20px;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  display: inline-flex; /* Agar lebarnya menyesuaikan isi */
-  align-items: center;
-  align-self: flex-start; /* Merapatkan posisi ke kiri */
-  gap: 10px;
-  transition: all 0.3s ease;
+  background-color: transparent; color: #FDBE34 !important; border: 1px solid #FDBE34; padding: 6px 14px 6px 20px; border-radius: 999px;
+  font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; align-self: flex-start; gap: 10px; transition: all 0.3s ease;
 }
-
-.btn-blog-card:hover {
-  background-color: #FDBE34;
-  color: #1B1464 !important;
-}
-
-/* Saat card button di-hover, ganti lingkaran kuning jadi navy */
-.btn-blog-card:hover .bg-yellow {
-  background-color: #1B1464;
-}
-
+.btn-blog-card:hover { background-color: #FDBE34; color: #1B1464 !important; }
+.btn-blog-card:hover .bg-yellow { background-color: #1B1464; }
 
 /* ========================================================= */
 /* 7. MOBILE RESPONSIVE (KHUSUS LAYAR HP MAKSIMAL 768PX)     */
 /* ========================================================= */
 @media screen and (max-width: 768px) {
-  
   .home-hero-centered { padding: 40px 5% 20px 5%; }
   .hero-main-content h1 { font-size: 36px; } 
   .hero-buttons { flex-direction: column; width: 100%; } 
@@ -364,8 +283,7 @@
   .testi-carousel-wrapper { padding: 40px 0; }
   .carousel-item.active { transform: scale(1.15) translate3d(0, 0, 0); } 
 
-  /* Perbaikan Blog Mobile */
   .blog-header-row { flex-direction: column; align-items: center; text-align: center; gap: 24px; margin-bottom: 40px; }
   .blog-title { font-size: 32px; }
-  .blog-grid { grid-template-columns: 1fr; /* Jadi 1 kolom bersusun ke bawah */ }
+  .blog-grid { grid-template-columns: 1fr; }
 }

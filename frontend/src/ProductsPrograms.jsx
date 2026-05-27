@@ -1,8 +1,11 @@
 import React from 'react';
 import './ProductsPrograms.css';
 
-// IMPORT BACKGROUND GAMBAR HERO (Menggunakan gambar yang sama dengan About Us)
+// 1. IMPORT BACKGROUND GAMBAR HERO
 import heroBg from './assets/about-hero-img.png';
+
+// Nanti hapus tanda // di bawah ini kalau gambar polaroidnya sudah di-upload!
+// import polaroidImg from './assets/polaroid-img.png';
 
 const ProductsPrograms = () => {
   const heroStyle = {
@@ -29,16 +32,23 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 2. FUTURE-PROOF CAREER SECTION */}
+      {/* 2. FUTURE-PROOF CAREER SECTION (DESAIN GRADASI BARU) */}
       <section className="pp-section pp-future-section">
+        {/* Kiri: Gradasi Biru + Teks Putih + Gambar Polaroid */}
         <div className="pp-future-left">
-          <div className="pp-polaroid-card">
-            <h3>First Step Journey<br/>Green Career</h3>
-            <div className="pp-polaroid-img"></div>
+          <h3 className="pp-future-left-title">First Step Journey<br/>Green Career</h3>
+          <div className="polaroid-wrapper">
+            {/* Tag img ini siap dipakai saat gambarnya sudah kamu upload */}
+            {/* <img src={polaroidImg} alt="FSJ Green Career" /> */}
+            
+            {/* Kotak abu-abu sementara sebelum gambar di-upload */}
+            <div className="polaroid-placeholder-img"></div>
           </div>
         </div>
+
+        {/* Kanan: Teks & Fitur */}
         <div className="pp-future-right">
-          <span className="pp-eyebrow">About Green Career</span>
+          <span className="pp-eyebrow">FSJ Green Career</span>
           <h2 className="pp-title">Future-Proof <span className="pp-highlight">Career</span></h2>
           <p className="pp-desc">
             Equip yourself for the professional world. Master industry expectations, build a standout portfolio, and develop the work ethic to thrive from day one. To provide access for Indonesian youth — especially those with limited privilege.
@@ -46,22 +56,22 @@ const ProductsPrograms = () => {
           <div className="pp-features-grid">
             <div className="pp-feature-box">
               <div className="icon-placeholder"></div>
-              <h4>First Step Journey</h4>
+              <h4>What are Green Jobs?</h4>
               <p>Prepare your career in the green economy.</p>
             </div>
             <div className="pp-feature-box">
               <div className="icon-placeholder"></div>
-              <h4>Meaningful Path</h4>
+              <h4>Industry Mapping</h4>
+              <p>Discover roles and specific industries.</p>
+            </div>
+            <div className="pp-feature-box">
+              <div className="icon-placeholder"></div>
+              <h4>Career Pathway</h4>
               <p>Build your skills and expand your network.</p>
             </div>
             <div className="pp-feature-box">
               <div className="icon-placeholder"></div>
-              <h4>Career Coaching</h4>
-              <p>Free mentoring and career guidance.</p>
-            </div>
-            <div className="pp-feature-box">
-              <div className="icon-placeholder"></div>
-              <h4>Inclusive Impact</h4>
+              <h4>FSJ Green Programs</h4>
               <p>Accessible programs for everyone.</p>
             </div>
           </div>
@@ -127,7 +137,6 @@ const ProductsPrograms = () => {
         <h2 className="pp-center-title">Explore the Green Economy</h2>
         <div className="pp-bento-grid">
           
-          {/* Kolom 1 */}
           <div className="bento-col">
             <div className="bento-card card-yellow tall">
               <div className="bento-icon"></div>
@@ -141,7 +150,6 @@ const ProductsPrograms = () => {
             </div>
           </div>
 
-          {/* Kolom 2 */}
           <div className="bento-col">
             <div className="bento-card card-white short">
               <div className="bento-icon small"></div>
@@ -155,7 +163,6 @@ const ProductsPrograms = () => {
             </div>
           </div>
 
-          {/* Kolom 3 */}
           <div className="bento-col">
             <div className="bento-card card-image tall">
               <h3>Sustainable Brand <br/>& Comms</h3>

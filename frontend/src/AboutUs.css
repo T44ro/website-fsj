@@ -1,235 +1,191 @@
 /* ========================================================= */
-/* ABOUT US PAGE SPECIFIC STYLES                             */
+/* CSS ABOUT US - UPDATED DIVISIONS STYLE                    */
 /* ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
+
 .about-page {
-  background-color: #FFF9F2;
+  background-color: #FFF9F2; 
+  min-height: 100vh;
 }
 
 /* 1. HERO SECTION */
 .hero {
-  background: linear-gradient(180deg, #FDB813 0%, #FBB03B 100%);
-  text-align: center;
-  padding: 80px 10%;
-  color: #121212;
+  padding: 120px 20px !important; 
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #FBB03B !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 16px;
+.hero-content {
+  position: relative !important;
+  z-index: 10 !important; 
+  text-align: center !important; 
 }
 
-.hero-content p {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto 30px auto;
-  line-height: 1.5;
-}
-
-.breadcrumb {
-  font-size: 0.9rem;
-  font-weight: 600;
+.hero h1 {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 600 !important; 
+  font-size: 48px !important;  
+  color: #000000 !important;
+  margin: 20px 0 !important;
 }
 
 /* 2. VISION & MISSION */
 .vision-mission-section {
-  padding: 60px 10%;
+  padding: 80px 10%;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.vm-row {
-  display: flex;
-  gap: 30px;
-  align-items: stretch;
-}
-
-.vm-row.reverse {
-  flex-direction: row-reverse;
-}
+.vm-row { display: flex; gap: 40px; align-items: stretch; }
+.vm-row.reverse { flex-direction: row-reverse; }
 
 .vm-text-card {
   flex: 1;
   background-color: #FFFFFF;
+  border-radius: 24px;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.vision-title {
-  color: #3C2E85; 
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 16px;
-}
-
-.mision-title {
-  color: #FBB03B; 
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 16px;
-}
-
-.vm-text-card p, .vm-text-card ul {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.vm-text-card ul {
-  padding-left: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .vm-image-card {
   flex: 1;
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 24px;
   background-color: #E0E0E0; 
   min-height: 300px;
 }
 
-.image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: #888;
-  font-weight: 500;
-}
+/* 3. OUR CULTURE */
+.culture-section { padding: 0 10% 100px 10%; text-align: center; }
+.culture-header { margin-bottom: 50px; }
+.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
+.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000; }
+.culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
 
-/* 3. CULTURE SECTION */
-.culture-section {
-  padding: 60px 10%;
-  text-align: center;
+/* Grid Culture diperbaiki agar tidak hancur saat gambar kosong */
+.culture-content { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px; 
+  text-align: left; 
+  align-items: center; 
 }
-
-.culture-subtitle {
-  color: #FBB03B;
-  font-weight: 700;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.culture-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 40px;
-}
-
-.culture-highlight {
-  color: #FBB03B;
-  font-style: italic;
-}
-
-.image-placeholder.large {
+.culture-image {
+  background-color: #E0E0E0; /* Placeholder abu-abu */
+  border-radius: 16px;
+  min-height: 250px;
   width: 100%;
-  height: 400px;
-  background-color: #E0E0E0;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* 4. DIVISIONS SECTION (CSS GRID) */
+/* 4. THE DIVISIONS SECTION */
 .divisions-section {
-  padding: 60px 10%;
+  padding: 0 10% 100px 10%;
 }
 
 .divisions-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; /* Jarak antar kartu sedikit diperlebar */
 }
 
 .divisions-header-card {
-  grid-column: span 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  grid-column: span 1; 
+  padding-right: 10px;
 }
 
 .divisions-title {
-  font-size: 2rem;
-  line-height: 1.2;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 32px; 
+  color: #000;
   margin-bottom: 16px;
+  line-height: 1.1;
 }
 
 .divisions-highlight {
-  color: #3C2E85;
-  font-style: italic;
+  font-family: 'Courgette', cursive;
+  color: #1B1464;
 }
 
 .divisions-desc {
-  font-size: 0.9rem;
-  color: #666;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px; 
+  color: #636363;
   line-height: 1.5;
 }
 
-/* Division Cards Styling */
+/* --- KARTU DIVISI UTAMA --- */
 .div-card {
-  border-radius: 16px;
+  position: relative;
+  border-radius: 16px; 
+  height: 240px; 
   padding: 24px;
-  height: 280px;
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05); /* Bayangan agar kartu terpisah dari background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* KELAS GRADASI BARU */
+.div-grad-blue {
+  /* Putih di atas, Gradasi Biru Lembut di bawah */
+  background: linear-gradient(180deg, #FFFFFF 40%, #4A81B7 100%);
+}
+
+.div-grad-yellow {
+  /* Putih di atas, Gradasi Kuning/Oranye di bawah */
+  background: linear-gradient(180deg, #FFFFFF 40%, #FBB03B 100%);
+}
+
+.card-highlighted {
+  border: 3px solid #005088; 
+}
+
+/* Tipografi di dalam Kartu */
+.div-card h3 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; 
+  font-size: 16px; /* Dikecilkan */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.text-black { color: #000000; }
+.text-navy { color: #1B1464; }
+
+/* Gambar Orang di Kartu */
+.div-card img {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  height: 90%; 
+  object-fit: contain;
+  z-index: 1;
 }
 
 .div-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
-.div-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0;
-  z-index: 2;
+/* Responsive Grid untuk Tablet/HP */
+@media screen and (max-width: 1024px) {
+  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.text-black { color: #121212; }
-.text-navy { color: #3C2E85; }
-
-/* Gradients sesuai desain */
-.div-grad-blue {
-  background: linear-gradient(180deg, #E6F0FA 0%, #99C2ED 100%);
-}
-
-.div-grad-yellow {
-  background: linear-gradient(180deg, #FFF5E6 0%, #FDE0B2 100%);
-}
-
-/* ========================================================= */
-/* RESPONSIVE DESIGN UNTUK HP / TABLET                       */
-/* ========================================================= */
-@media screen and (max-width: 992px) {
-  .divisions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .vm-row, .vm-row.reverse {
-    flex-direction: column;
-  }
-  .vm-image-card {
-    min-height: 250px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .divisions-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  .culture-title {
-    font-size: 2rem;
-  }
+@media screen and (max-width: 600px) {
+  .divisions-grid { grid-template-columns: 1fr; }
 }

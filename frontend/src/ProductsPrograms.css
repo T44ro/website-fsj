@@ -226,9 +226,9 @@
   font-size: 42px;
   color: #000000;
   margin: 0;
+  text-align: center;
 }
 
-/* Lingkaran Spidol Asli dari CSS Home Page */
 .pp-highlight-circle {
   font-family: 'Courgette', cursive;
   font-weight: 400 !important;
@@ -242,10 +242,7 @@
 
 .scribble-circle {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   transform: scale(1.1, 1.4);
   z-index: -1;
   pointer-events: none;
@@ -285,7 +282,6 @@
   border-radius: 12px;
 }
 
-/* Aturan untuk gambar asli agar proporsional dan tidak gepeng */
 .path-item img {
   width: 100%;
   height: auto; 
@@ -297,62 +293,134 @@
 .img-step2 { height: 420px; }
 .img-step3 { height: 260px; }
 
-.pp-step-text {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+.pp-step-text { display: flex; flex-direction: column; gap: 8px; }
+.step-num { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #000000; }
+.pp-step-text h3 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 22px; color: #1B1464; margin: 0; }
+.pp-step-text p { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.6; margin: 0; }
 
-.step-num {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500; 
-  font-size: 16px;
-  color: #000000;
-}
 
-.pp-step-text h3 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; 
-  font-size: 22px; 
-  color: #1B1464;
-  margin: 0;
-}
-
-.pp-step-text p {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 400; 
-  font-size: 14px; 
-  color: #333333;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* 5. EXPLORE BENTO GRID */
+/* ========================================================= */
+/* 5. EXPLORE BENTO GRID (DESAIN BARU)                       */
+/* ========================================================= */
 .pp-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-.bento-col { display: flex; flex-direction: column; gap: 30px; }
-.bento-card { border-radius: 24px; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+.bento-col { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 30px; 
+}
+
+.bento-card { 
+  border-radius: 24px; 
+  padding: 30px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  position: relative; /* Untuk membantu absolute positioning jika dibutuhkan */
+}
 
 .bento-card.tall { height: 350px; }
 .bento-card.short { height: 200px; justify-content: flex-start; }
 
+/* Font Style Khusus Judul Bento (Courgette Regular) */
+.courgette-title {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+}
+
+/* Warna Kartu */
 .card-yellow { background-color: #FFFDE7; border: 2px solid #FDE0A6; }
+.card-yellow .courgette-title { color: #1B1464; }
+
 .card-white { background-color: #FFFFFF; border: 2px solid #E0E0E0; }
-.card-purple { background-color: #1B1464; color: #FFFFFF !important; }
-.card-purple h3, .card-purple p { color: #FFFFFF !important; }
-.card-image { background-color: #A3A3A3; justify-content: flex-end; }
-.card-image h3 { color: #FFFFFF; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.card-white .courgette-title { color: #1B1464; }
 
-.bento-icon { width: 50px; height: 50px; background-color: #1B1464; border-radius: 12px; margin-bottom: 20px; }
-.bento-icon.small { width: 30px; height: 30px; }
-.card-purple .bento-icon { background-color: #FFFFFF; }
+.card-purple { background-color: #1B1464; color: #FFFFFF; }
+.card-purple .courgette-title { color: #FFFFFF; }
+.card-purple p { color: #FFFFFF !important; opacity: 0.9; }
 
-.bento-card h3 { font-family: 'Quicksand', sans-serif; font-size: 24px; margin-bottom: 10px; color: #1B1464; }
-.bento-card p { font-family: 'Quicksand', sans-serif; font-size: 14px; color: #666; }
+/* Kartu dengan Image Background */
+.card-image { 
+  justify-content: flex-end; 
+  overflow: hidden; /* Agar gambar tidak keluar kotak */
+}
+
+/* Kotak abu-abu untuk area belakang. Nanti tinggal ganti background-color jadi background-image di bawah ini */
+.bento-bg-placeholder {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #A3A3A3;
+  z-index: 0;
+}
+
+.text-white { color: #FFFFFF !important; }
+.relative-z { position: relative; z-index: 2; text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+
+/* Pengaturan Ikon */
+.bento-user-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #FBB03B; /* Warna sementara */
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.bento-user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bento-svg-icon {
+  margin-bottom: 16px;
+}
+
+.bento-svg-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.bento-svg-icon.large svg {
+  width: 64px;
+  height: 64px;
+  stroke-width: 1.2;
+}
+
+/* Ikon di Samping Teks (Khusus E-Commerce) */
+.bento-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.bento-title-row .courgette-title {
+  margin-bottom: 0;
+}
+
+.side-icon {
+  margin-bottom: 0; /* Menghilangkan margin bawah karena posisinya di samping */
+  opacity: 0.8;
+}
+
+.text-navy { color: #1B1464; }
+
+.bento-card p { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 500;
+  font-size: 14px; 
+  color: #666; 
+  position: relative;
+  z-index: 2;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 992px) {

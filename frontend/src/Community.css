@@ -1,0 +1,101 @@
+/* ========================================================= */
+/* CSS COMMUNITY - FIRST STEP JOURNEY                        */
+/* ========================================================= */
+
+.com-page {
+  background-color: #FFF9F2;
+  min-height: 100vh;
+}
+
+/* 1. HERO */
+.com-hero {
+  padding: 120px 20px 80px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.com-hero h1 { font-family: 'Quicksand', sans-serif; font-size: 52px; font-weight: 600; color: #000; margin: 0 0 16px 0; }
+.com-hero p { font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: 500; color: #333; margin-bottom: 40px; line-height: 1.6; }
+.com-breadcrumb { font-family: 'Quicksand', sans-serif; font-weight: 600; color: #1B1464; font-size: 14px; }
+
+/* GENERAL */
+.com-section { padding: 80px 10%; }
+.section-title-center { text-align: center; font-family: 'Quicksand', sans-serif; font-size: 38px; color: #000; margin-bottom: 60px; }
+
+/* 2. STRUCTURED PATHWAY */
+.pathway-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pathway-text-center { text-align: center; flex: 1; }
+.pathway-text-center h2 { font-family: 'Quicksand', sans-serif; font-size: 36px; line-height: 1.2; color: #000; }
+.pathway-text-center h2 span { font-family: 'Courgette', cursive; color: #FBB03B; font-weight: 400; }
+.pathway-text-center p { font-family: 'Quicksand', sans-serif; margin: 24px 0 40px 0; color: #666; }
+
+.btn-learn-more { background-color: #1B1464; color: #FFF; border: none; padding: 12px 32px; border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 600; cursor: pointer; }
+
+.pathway-img-left, .pathway-img-right { flex: 1; }
+.pathway-img-left .img-placeholder { height: 350px; border-radius: 20px; background-color: #E0E0E0; transform: translateY(40px); }
+.pathway-img-right .img-placeholder { height: 300px; border-radius: 20px; background-color: #D6D6D6; transform: translateY(-20px); }
+
+/* 3. DISCOVER SCROLL */
+.discover-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.discover-header h2 { font-family: 'Quicksand', sans-serif; font-size: 32px; }
+.nav-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #CCC; background: none; cursor: pointer; margin-left: 10px; }
+
+.discover-scroll { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 20px; scroll-behavior: smooth; }
+.discover-scroll::-webkit-scrollbar { height: 4px; }
+.discover-scroll::-webkit-scrollbar-thumb { background: #FBB03B; border-radius: 10px; }
+
+.discover-card { min-width: 280px; background: #FFF; border-radius: 20px; padding: 20px; border: 1px solid #EEE; }
+.card-img { height: 180px; background: #EAEAEA; border-radius: 15px; margin-bottom: 20px; }
+.discover-card h3 { font-family: 'Quicksand', sans-serif; font-size: 18px; margin-bottom: 10px; color: #1B1464; }
+.discover-card p { font-size: 14px; color: #666; line-height: 1.5; }
+
+/* 4. INSIGHTS PREVIEW */
+.insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.ins-item { display: flex; flex-direction: column; }
+.ins-img { height: 200px; background: #E0E0E0; border-radius: 15px; margin-bottom: 20px; }
+.ins-date { font-size: 12px; color: #FBB03B; font-weight: 700; margin-bottom: 8px; }
+.ins-item h4 { font-family: 'Quicksand', sans-serif; font-size: 20px; margin-bottom: 12px; line-height: 1.3; }
+.ins-item p { font-size: 14px; color: #666; margin-bottom: 20px; flex-grow: 1; }
+.ins-item a { color: #1B1464; font-weight: 700; text-decoration: none; font-size: 14px; }
+
+/* 5. CTA SECTION */
+.com-cta { background-color: #1B1464; padding: 80px 20px; text-align: center; color: #FFF; margin: 40px 10%; border-radius: 30px; }
+.com-cta h2 { font-family: 'Quicksand', sans-serif; font-size: 42px; margin-bottom: 20px; }
+.com-cta p { opacity: 0.8; line-height: 1.6; margin-bottom: 40px; }
+.btn-join-now { background-color: #FBB03B; color: #FFF; border: none; padding: 14px 40px; border-radius: 999px; font-weight: 700; cursor: pointer; font-family: 'Quicksand'; }
+
+/* 6. IMPACT BENTO */
+.impact-bento { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.impact-card-blue { background-color: #1B1464; color: #FFF; padding: 40px; border-radius: 25px; height: 100%; }
+.impact-card-blue h3 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin-bottom: 20px; }
+.logo-placeholder { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; margin: 30px 0; text-align: center; font-size: 12px; }
+.impact-sub { font-weight: 700; color: #FBB03B; }
+
+.impact-right-col { display: flex; flex-direction: column; gap: 30px; }
+.impact-card-white { background: #FFF; padding: 40px; border-radius: 25px; border: 1px solid #EEE; }
+.impact-card-white .eyebrow { color: #FBB03B; font-weight: 700; display: block; margin-bottom: 20px; }
+.partner-logos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.partner-logo { background: #F5F5F5; height: 40px; border-radius: 8px; }
+
+.impact-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.stat-item { background: #FFF; padding: 30px; border-radius: 25px; text-align: center; border: 1px solid #EEE; }
+.stat-item h4 { font-family: 'Quicksand', sans-serif; font-size: 36px; color: #1B1464; margin-bottom: 5px; }
+.stat-item span { color: #666; font-size: 14px; }
+
+/* RESPONSIVE */
+@media screen and (max-width: 992px) {
+  .pathway-container { flex-direction: column; }
+  .pathway-img-left, .pathway-img-right { width: 100%; }
+  .insights-grid, .impact-bento { grid-template-columns: 1fr; }
+  .com-section { padding: 60px 5%; }
+}

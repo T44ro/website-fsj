@@ -1,147 +1,164 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import Home from './Home';        
-import AboutUs from './AboutUs'; 
-import ProductsPrograms from './ProductsPrograms'; 
-import Insights from './Insights';
-import Community from './Community';
-import Contact from './Contact';         
-import Partnership from './Partnership'; 
+import React from 'react';
+import './AboutUs.css';
 
-// MEMASUKKAN LOGO BARU DARI ASSETS
-import fsjLogo from './assets/fsj-logo.png'; 
+// 1. IMPORT BACKGROUND GAMBAR HERO
+import heroBg from './assets/about-hero-img.png';
 
-// =====================================================================
-// KOMPONEN IKON SVG SOSMED
-// =====================================================================
-const InstagramIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-);
+// Nanti hapus tanda // di bawah ini kalau gambarnya sudah di-upload ke folder assets
+// import visionImg from './assets/vision-img.png';
+// import missionImg from './assets/mission-img.png';
+// import joseImg from './assets/jose-img.png';
+// import stepImg from './assets/step-img.png';
 
-const YoutubeIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.42 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.42-5.58z"></path>
-    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
-  </svg>
-);
-
-const TiktokIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-  </svg>
-);
-
-
-function App() {
-  const [activePage, setActivePage] = useState('home'); 
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      setActivePage(hash);
-    }
-  }, []);
-
-  const changePage = (pageName, event) => {
-    if (event) event.preventDefault();
-    setActivePage(pageName);
-    window.location.hash = pageName;
-    window.scrollTo(0, 0);
+const AboutUs = () => {
+  // 2. MASUKKAN GAMBAR & DARK OVERLAY (SAMA DENGAN PARTNERSHIP) KE DALAM STYLE BACKGROUND
+  const heroStyle = {
+    // Menggunakan gradasi gelap (navy ke hitam transparan) yang sama persis dengan Partnership page
+    backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.75), rgba(27, 20, 100, 0.8)), url(${heroBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: '#1B1464' // Warna dasar navy jika gambar gagal load
   };
 
   return (
-    <div className="site-shell">
-      
-      {/* HEADER / NAVIGATION BAR */}
-      <header className="topbar">
-        
-        {/* PILAR KIRI: BRAND DENGAN GAMBAR LOGO ASLI */}
-        <div className="brand" onClick={(e) => changePage('home', e)}>
-          <img src={fsjLogo} alt="First Step Journey Logo" className="header-logo" />
+    <div className="about-page">
+      {/* 1. HERO SECTION (PREMIUM DARK OVERLAY & WIDER) */}
+      <section className="hero" style={heroStyle}>
+        <div className="hero-content">
+          {/* Urutan Baru: H1 (Top) -> P (Middle) -> Breadcrumb (Bottom) */}
+          <h1>Who We Are</h1>
+          <p>
+            Discover thousands of fun and interactive learning activities <br/>
+            to support your child's growth and learning process.
+          </p>
+          <div className="breadcrumb">
+            <span className="home-link">HOME</span>
+            <span className="separator"> / </span>
+            <span className="about-link">ABOUT US</span>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. VISION & MISSION */}
+      <section className="vision-mission-section">
+        <div className="vm-row">
+          <div className="vm-text-card">
+            <h2 className="vision-title">Vision</h2>
+            <p>
+              To provide access for Indonesian youth — especially those with limited privilege — 
+              to take their first step, grow, and discover a meaningful career path 
+              through both soft and hard skills.
+            </p>
+          </div>
+          <div className="vm-image-card">
+            {/* <img src={visionImg} alt="Vision Illustration" /> */}
+          </div>
+        </div>
+
+        <div className="vm-row reverse">
+          <div className="vm-text-card">
+            <h2 className="mision-title">Mision</h2>
+            <ul>
+              <li>Bridge the gap in access to career guidance and development</li>
+              <li>Ignite first steps through education & mentoring</li>
+              <li>Cultivate growth mindset and social inclusion</li>
+              <li>Build a safe and empowering community space</li>
+              <li>Drive impact-Driven Movement through action, content, and cross-sector collaboration</li>
+            </ul>
+          </div>
+          <div className="vm-image-card">
+            {/* <img src={missionImg} alt="Mission Illustration" /> */}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. OUR CULTURE */}
+      <section className="culture-section">
+        <div className="culture-header">
+          <span className="culture-subtitle">Our Culture</span>
+          <h2 className="culture-title">
+            A Rapid Journey of <span className="culture-highlight">Impact</span>
+          </h2>
         </div>
         
-        {/* PILAR TENGAH: MENU NAVIGASI */}
-        <nav className="topnav">
-          <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
-          <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
-          <a href="#programs" className={activePage === 'programs' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('programs', e)}>Product & Programs</a>
-          <a href="#insights" className={activePage === 'insights' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('insights', e)}>Insights</a>
-          <a href="#community" className={activePage === 'community' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('community', e)}>Community</a>
+        <div className="culture-content">
+          {/* Kolom 1: Teks Kiri */}
+          <div className="culture-text">
+            <p className="culture-desc">
+              FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects. To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
+            </p>
+            <ul>
+              <li>
+                <strong>Career Readiness</strong><br/>
+                Equip yourself for the professional world. Master industry expectations, build a standout portfolio, and develop the work ethic to thrive from day one.
+              </li>
+              <li>
+                <strong>Self Development</strong><br/>
+                Sharpen your soft skills and build a resilient mindset. Develop true ownership and the grit needed to conquer challenges and accelerate your growth.
+              </li>
+              <li>
+                <strong>Sustainability Skills</strong><br/>
+                Future-proof your career. Apply ESG principles to your tech, design, or business skills for real impact.
+              </li>
+            </ul>
+          </div>
+
+          {/* Kolom 2: Gambar Jose */}
+          <div className="culture-image-card">
+            {/* <img src={joseImg} alt="Jose Prima - CEO" /> */}
+          </div>
+
+          {/* Kolom 3: Gambar Tangga STEP */}
+          <div className="culture-image-card">
+            {/* <img src={stepImg} alt="STEP Culture" /> */}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. THE DIVISIONS SECTION */}
+      <section className="divisions-section">
+        <div className="divisions-grid">
           
-          <div className="nav-item-dropdown">
-            <span className={activePage === 'contact' || activePage === 'partnership' ? 'nav-item active' : 'nav-item'}>
-              Contacts <span className="arrow-icon">▾</span>
-            </span>
-            <div className="dropdown-content">
-              <a href="#contact" onClick={(e) => changePage('contact', e)}>Contact</a>
-              <a href="#partnership" onClick={(e) => changePage('partnership', e)}>Partnership</a>
-            </div>
+          {/* Tile Judul & Deskripsi */}
+          <div className="divisions-header-card">
+            <h2 className="divisions-title">
+              The Divisions <br />
+              Driving <span className="divisions-highlight">Our Mission</span>
+            </h2>
+            <p className="divisions-desc">
+              Behind every impactful initiative at First Step Journey is a dedicated team. 
+              Our divisions work collaboratively to design sustainable programs.
+            </p>
           </div>
-        </nav>
 
-        {/* PILAR KANAN: SOCIAL MEDIA */}
-        <div className="social-links">
-          <a href="https://instagram.com/firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="Instagram FSJ">
-            <InstagramIcon />
-          </a>
-          <a href="https://youtube.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="YouTube FSJ">
-            <YoutubeIcon />
-          </a>
-          <a href="https://tiktok.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="TikTok FSJ">
-            <TiktokIcon />
-          </a>
-        </div>
-      </header>
-
-      {/* SAKLAR KONTEN UTAMA */}
-      <main className="main-content-wrapper">
-        {activePage === 'home' && <Home changePage={changePage} />}
-        {activePage === 'about' && <AboutUs />}
-        {activePage === 'programs' && <ProductsPrograms />}
-        {activePage === 'insights' && <Insights />}
-        {activePage === 'community' && <Community />}
-        {activePage === 'contact' && <Contact />}
-        {activePage === 'partnership' && <Partnership />}
-      </main>
-
-      {/* FOOTER */}
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div>
-            <p className="eyebrow">Stay Updated with First Step Journey!</p>
-            <div className="newsletter">
-              <input type="email" placeholder="Enter Your Email" />
-              <button className="primary-btn">Subscribe</button>
-            </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
           </div>
-          <div className="footer-links">
-            <div>
-              <h3>About FSJ</h3>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Vision & Mission</a>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Our Journey</a>
-            </div>
-            <div>
-              <h3>Programs</h3>
-              <a href="#programs" onClick={(e) => changePage('programs', e)}>Internships</a>
-              <a href="#programs" onClick={(e) => changePage('programs', e)}>Mini Training</a>
-            </div>
-            <div>
-              <h3>Contacts</h3>
-              <a href="#contact" onClick={(e) => changePage('contact', e)}>General Contact</a>
-              <a href="#partnership" onClick={(e) => changePage('partnership', e)}>Partnership</a>
-            </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
           </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
+          </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Brand & <br/> Event</h3>
+          </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-navy">Human <br/> Capital</h3>
+          </div>
+          <div className="div-card card-soft-beige">
+            <h3 className="text-black">Administration <br/> & Report</h3>
+          </div>
+          
+          <div className="div-card card-soft-beige">
+            <h3 className="text-navy">Digital <br/> Marketing</h3>
+          </div>
+
         </div>
-        <div className="footer-base">
-          <span>© 2026 Copyright • First Step Journey. All Rights Reserved.</span>
-        </div>
-      </footer>
+      </section>
     </div>
   );
-}
+};
 
-export default App;
+export default AboutUs;

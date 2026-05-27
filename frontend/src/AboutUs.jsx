@@ -1,47 +1,38 @@
 import React from 'react';
 import './AboutUs.css';
 
-// NANTI KALAU GAMBARNYA SUDAH DI-UPLOAD, HAPUS TANDA // DI BAWAH INI:
-// import heroBg from './assets/about-hero-bg.jpg';
-// import visionImg from './assets/vision-img.jpg';
-// import missionImg from './assets/mission-img.jpg';
-// import cultureImg from './assets/culture-img.png';
-
-// Import Foto Divisi (Sesuaikan nama file hasil export Figma-mu)
-// import divProduct from './assets/div-product.png';
-// import divVisual from './assets/div-visual.png';
-// import divOperation from './assets/div-operation.png';
-// import divBrand from './assets/div-brand.png';
-// import divHuman from './assets/div-human.png';
-// import divAdmin from './assets/div-admin.png';
-// import divDigital from './assets/div-digital.png';
+// 1. IMPORT BACKGROUND GAMBAR HERO
+import heroBg from './assets/about-hero-img.png';
 
 const AboutUs = () => {
-  // Objek inline style untuk background hero (tetap aman)
+  // 2. MASUKKAN GAMBAR KE DALAM STYLE BACKGROUND
   const heroStyle = {
-    // backgroundImage: `url(${heroBg})`,
-    backgroundColor: '#FBB03B'
+    backgroundImage: `url(${heroBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: '#FBB03B' // Warna cadangan saat gambar belum termuat
   };
 
   return (
     <div className="about-page">
-      {/* 1. HERO SECTION (TETAP SAMA) */}
+      {/* 1. HERO SECTION */}
       <section className="hero" style={heroStyle}>
         <div className="hero-content">
+          <h1>Who We Are</h1>
+          <p>
+            Discover thousands of fun and interactive learning activities <br/>
+            to support your child's growth and learning process.
+          </p>
           <div className="breadcrumb">
             <span className="home-link">Home</span>
-            <span className="separator"> &gt; </span>
+            <span className="separator"> / </span>
             <span className="about-link">About Us</span>
           </div>
-          <h1>About Us</h1>
-          <p>
-            FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community-based, 
-            free programs, and live projects.
-          </p>
         </div>
       </section>
 
-      {/* 2. VISION & MISSION (TETAP SAMA) */}
+      {/* 2. VISION & MISSION */}
       <section className="vision-mission-section">
         <div className="vm-row">
           <div className="vm-text-card">
@@ -72,7 +63,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 3. OUR CULTURE (TETAP SAMA) */}
+      {/* 3. OUR CULTURE */}
       <section className="culture-section">
         <div className="culture-header">
           <span className="culture-subtitle">Our Culture</span>
@@ -99,7 +90,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 4. THE DIVISIONS SECTION (DESAIN BARU SESUAI GAMBAR) */}
+      {/* 4. THE DIVISIONS SECTION */}
       <section className="divisions-section">
         <div className="divisions-grid">
           
@@ -115,46 +106,39 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Kartu 1: Product & Strategy (Text Black) */}
+          {/* Kartu 1: Product & Strategy */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
-            {/* <img src={divProduct} alt="Product & Strategy" /> */}
           </div>
 
-          {/* Kartu 2: Visual Brand (Text Navy) */}
+          {/* Kartu 2: Visual Brand */}
           <div className="div-card card-soft-beige">
             <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
-            {/* <img src={divVisual} alt="Visual Brand" /> */}
           </div>
 
-          {/* Kartu 3: Operation (Text Black) */}
+          {/* Kartu 3: Operation */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
-            {/* <img src={divOperation} alt="Operation" /> */}
           </div>
 
-          {/* Kartu 4: Brand & Event (Text Black) */}
+          {/* Kartu 4: Brand & Event */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Brand & <br/> Event</h3>
-            {/* <img src={divBrand} alt="Brand & Event" /> */}
           </div>
 
-          {/* Kartu 5: Human Capital (Text Navy) */}
+          {/* Kartu 5: Human Capital */}
           <div className="div-card card-soft-beige">
             <h3 className="text-navy">Human <br/> Capital</h3>
-            {/* <img src={divHuman} alt="Human Capital" /> */}
           </div>
 
-          {/* Kartu 6: Administration (Text Black) */}
+          {/* Kartu 6: Administration */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Administration <br/> & Report</h3>
-            {/* <img src={divAdmin} alt="Administration" /> */}
           </div>
 
-          {/* Kartu 7: Digital Marketing (Text Navy + Blue Border) */}
+          {/* Kartu 7: Digital Marketing */}
           <div className="div-card card-soft-beige card-highlighted">
             <h3 className="text-navy">Digital <br/> Marketing</h3>
-            {/* <img src={divDigital} alt="Digital Marketing" /> */}
           </div>
 
         </div>

@@ -4,14 +4,7 @@ import './ProductsPrograms.css';
 // 1. IMPORT BACKGROUND GAMBAR HERO
 import heroBg from './assets/about-hero-img.png';
 
-// === KOMPONEN LINGKARAN SPIDOL KUNING DARI HOME ===
-const ScribbleCircleYellow = () => (
-  <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
-  </svg>
-);
-
-// === IKON-IKON UNTUK TOMBOL GREEN JOBS ===
+// === IKON-IKON UNTUK GREEN JOBS PILLS ===
 const SettingIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="3"></circle>
@@ -42,6 +35,52 @@ const BuildingIcon = () => (
     <path d="M16 14h.01"></path>
     <path d="M8 10h.01"></path>
     <path d="M8 14h.01"></path>
+  </svg>
+);
+
+const ScribbleCircleYellow = () => (
+  <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
+  </svg>
+);
+
+// === IKON-IKON UNTUK BENTO GRID (BARU) ===
+const ShieldTickIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    <polyline points="9 12 11 14 15 10"></polyline>
+  </svg>
+);
+
+const SunIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+  </svg>
+);
+
+const FactoryIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 20h20v-10l-4 3v-3l-4 3v-3l-4 3v-3l-8 7z"></path>
+    <path d="M22 22H2"></path>
+    <path d="M18 20v-4"></path>
+    <path d="M14 20v-4"></path>
+    <path d="M10 20v-4"></path>
+  </svg>
+);
+
+const ShoppingBagIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <path d="M16 10a4 4 0 0 1-8 0"></path>
   </svg>
 );
 
@@ -123,12 +162,10 @@ const ProductsPrograms = () => {
               <div className="pill-icon"><SettingIcon /></div>
               <span>Tech & Data: Software solutions, data analytics, and system efficiency.</span>
             </div>
-            
             <div className="pp-pill pill-design">
               <div className="pill-icon"><PaletteIcon /></div>
               <span>Design & Product: Eco-friendly packaging & sustainable UI/UX design.</span>
             </div>
-            
             <div className="pp-pill pill-business">
               <div className="pill-icon"><BuildingIcon /></div>
               <span>Business & Strategy: Circular Economy models & ESG integration.</span>
@@ -158,7 +195,6 @@ const ProductsPrograms = () => {
         </div>
         
         <div className="pp-path-grid">
-          {/* Kolom Kiri */}
           <div className="pp-path-col left-col">
             <div className="path-item path-intro">
               <p>Step up and take charge of your future. Discover how your unique skills can drive real environmental impact and open doors to a purpose-driven profession.</p>
@@ -173,7 +209,6 @@ const ProductsPrograms = () => {
             </div>
           </div>
 
-          {/* Kolom Kanan */}
           <div className="pp-path-col right-col">
             <div className="path-item path-step1">
               <div className="img-placeholder img-step1"></div>
@@ -195,44 +230,61 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 5. EXPLORE GREEN ECONOMY */}
+      {/* 5. EXPLORE GREEN ECONOMY (DESAIN BARU) */}
       <section className="pp-section pp-explore-section">
-        <h2 className="pp-center-title">Explore the Green Economy</h2>
+        <h2 className="pp-center-title" style={{ marginBottom: '60px' }}>Explore the Green Economy</h2>
+        
         <div className="pp-bento-grid">
           
+          {/* Kolom 1 */}
           <div className="bento-col">
+            {/* Kartu: Sustainable Tech */}
             <div className="bento-card card-yellow tall">
-              <div className="bento-icon"></div>
-              <h3>Sustainable Tech <br/>& Innovation</h3>
+              <div className="bento-user-icon">
+                {/* Nanti ganti <div> ini dengan <img src={...} /> ikon aslimu */}
+              </div>
+              <h3 className="courgette-title">Sustainable Tech <br/>& Innovation</h3>
               <p>Technology driven sustainability.</p>
             </div>
+            {/* Kartu: Corporate ESG */}
             <div className="bento-card card-white short">
-              <div className="bento-icon small"></div>
-              <h3>Corporate ESG</h3>
+              <div className="bento-svg-icon text-navy"><ShieldTickIcon /></div>
+              <h3 className="courgette-title">Corporate ESG</h3>
               <p>Governance and social impact.</p>
             </div>
           </div>
 
+          {/* Kolom 2 */}
           <div className="bento-col">
+            {/* Kartu: Renewable Energy */}
             <div className="bento-card card-white short">
-              <div className="bento-icon small"></div>
-              <h3>Renewable Energy</h3>
+              <div className="bento-svg-icon text-navy"><SunIcon /></div>
+              <h3 className="courgette-title">Renewable Energy</h3>
               <p>Clean energy transition.</p>
             </div>
+            {/* Kartu: Circular Economy */}
             <div className="bento-card card-purple tall">
-              <div className="bento-icon"></div>
-              <h3>Circular Economy</h3>
+              <div className="bento-svg-icon large text-white"><FactoryIcon /></div>
+              <h3 className="courgette-title">Circular Economy</h3>
               <p>Waste reduction strategies.</p>
             </div>
           </div>
 
+          {/* Kolom 3 */}
           <div className="bento-col">
+            {/* Kartu: Sustainable Brand (Dengan Image Background) */}
             <div className="bento-card card-image tall">
-              <h3>Sustainable Brand <br/>& Comms</h3>
+              <div className="bento-bg-placeholder">
+                {/* Nanti ganti bagian style background-color CSS-nya jadi gambar */}
+              </div>
+              <h3 className="courgette-title text-white relative-z">Sustainable Brand <br/>& Comms</h3>
             </div>
+            {/* Kartu: E-Commerce (Ikon Shopping Bag di samping teks) */}
             <div className="bento-card card-white short">
-              <div className="bento-icon small"></div>
-              <h3>E-Commerce & <br/>Digital Trust</h3>
+              <div className="bento-title-row">
+                <h3 className="courgette-title">E-Commerce & <br/>Digital Trust</h3>
+                <div className="bento-svg-icon text-navy side-icon"><ShoppingBagIcon /></div>
+              </div>
               <p>Green marketplace.</p>
             </div>
           </div>

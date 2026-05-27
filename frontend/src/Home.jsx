@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 
 // =====================================================================
@@ -20,7 +20,15 @@ import './Home.css';
 // import impactImg5 from './assets/impact-img-5.jpg';
 // import impactImg6 from './assets/impact-img-6.jpg';
 
-// Komponen Ikon SVG (Aman, tidak butuh upload gambar)
+// import testi1 from './assets/testi-1.jpg';
+// import testi2 from './assets/testi-2.jpg';
+// import testi3 from './assets/testi-3.jpg';
+// import testi4 from './assets/testi-4.jpg';
+// import testi5 from './assets/testi-5.jpg';
+
+// =====================================================================
+// KOMPONEN IKON & GRAFIS BANTUAN (TIDAK PERLU UPLOAD)
+// =====================================================================
 const CheckIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#121212" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="11"></circle>
@@ -28,13 +36,31 @@ const CheckIcon = () => (
   </svg>
 );
 
-const ScribbleCircle = () => (
+const ScribbleCircleYellow = () => (
   <svg className="scribble-circle" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
   </svg>
 );
 
+const ScribbleCircleNavy = () => (
+  <svg className="scribble-circle" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#1B1464" strokeWidth="3" strokeLinecap="round" />
+  </svg>
+);
+
+// Data Dummy Testimoni
+const testimonials = [
+  { id: 0, img: null, text: "FSJ benar-benar membantu saya menemukan langkah pertama karir saya yang sesungguhnya. Programnya sangat interaktif!" },
+  { id: 1, img: null, text: "Mentor di sini sangat berpengalaman. Saya belajar banyak hal tentang public speaking dan cara menyusun CV yang baik." },
+  { id: 2, img: null, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip." },
+  { id: 3, img: null, text: "Komunitasnya sangat suportif. Menemukan teman-teman baru yang memiliki visi yang sama dalam membangun karir hijau." },
+  { id: 4, img: null, text: "Pelatihan Figma dan UI/UX-nya sangat detail. Cocok sekali untuk pemula seperti saya yang ingin beralih karir ke dunia digital." },
+];
+
 const Home = () => {
+  // State untuk melacak testimoni mana yang sedang aktif (berada di tengah)
+  const [activeTesti, setActiveTesti] = useState(2); // Default di tengah (indeks 2)
+
   return (
     <div className="home-page">
       
@@ -132,7 +158,7 @@ const Home = () => {
         <div className="offer-header">
           <span className="offer-eyebrow">What We Offer</span>
           <h2 className="offer-title">
-            Accelerate <span className="offer-highlight-text"><ScribbleCircle />Your Growth</span> With Us
+            Accelerate <span className="offer-highlight-text"><ScribbleCircleYellow />Your Growth</span> With Us
           </h2>
         </div>
 
@@ -173,7 +199,6 @@ const Home = () => {
       {/* ========================================= */}
       <section className="home-impact-section">
         
-        {/* Header Baris (Kiri Teks, Kanan Tombol) */}
         <div className="impact-header-row">
           <div className="impact-header-text">
             <span className="impact-eyebrow">Our Impact</span>
@@ -189,46 +214,67 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Galeri Grid 6 Gambar */}
         <div className="impact-grid">
-          
-          {/* Kartu 1 */}
           <div className="impact-card">
             {/* <img src={impactImg1} alt="FSJ X Gandengan" className="impact-img-bg" /> */}
             <span className="impact-label">FSJ X Gandengan</span>
           </div>
-
-          {/* Kartu 2 */}
           <div className="impact-card">
             {/* <img src={impactImg2} alt="FSJ Iftar" className="impact-img-bg" /> */}
             <span className="impact-label">FSJ Iftar</span>
           </div>
-
-          {/* Kartu 3 */}
           <div className="impact-card">
             {/* <img src={impactImg3} alt="Figma Training" className="impact-img-bg" /> */}
             <span className="impact-label">Figma Training</span>
           </div>
-
-          {/* Kartu 4 */}
           <div className="impact-card">
             {/* <img src={impactImg4} alt="People Development Training" className="impact-img-bg" /> */}
             <span className="impact-label">People Development Training</span>
           </div>
-
-          {/* Kartu 5 */}
           <div className="impact-card">
             {/* <img src={impactImg5} alt="Instagram Live Session" className="impact-img-bg" /> */}
             <span className="impact-label">Instagram Live Session</span>
           </div>
-
-          {/* Kartu 6 */}
           <div className="impact-card">
             {/* <img src={impactImg6} alt="Mini Training" className="impact-img-bg" /> */}
             <span className="impact-label">Mini Training</span>
           </div>
-
         </div>
+      </section>
+
+      {/* ========================================= */}
+      {/* 5. TESTIMONIAL SECTION (SLIDER CAROUSEL)  */}
+      {/* ========================================= */}
+      <section className="home-testimonial-section">
+        <div className="testi-header">
+          <span className="testi-eyebrow">What They Say</span>
+          <h2 className="testi-title">
+            Words from <span className="testi-highlight"><ScribbleCircleNavy />Our Steppers</span>
+          </h2>
+        </div>
+
+        {/* Container Slider Foto */}
+        <div className="testi-carousel">
+          {testimonials.map((item, index) => (
+            <div 
+              key={item.id} 
+              className={`carousel-item ${activeTesti === index ? 'active' : 'inactive'}`}
+              onClick={() => setActiveTesti(index)}
+            >
+              {/* Gambar aslinya jika sudah di-upload akan muncul di sini */}
+              {/* <img src={item.img} alt={`Stepper ${index + 1}`} /> */}
+              
+              {/* Cadangan agar bentuknya terlihat meski gambar belum ada */}
+              <div className="carousel-placeholder"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Teks Testimoni (Berubah sesuai gambar yang diklik) */}
+        <div className="testi-content">
+          <p>{testimonials[activeTesti].text}</p>
+        </div>
+
       </section>
 
     </div>

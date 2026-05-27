@@ -83,15 +83,15 @@
   margin-bottom: 40px;
 }
 
-/* 2. FUTURE PROOF CAREER (GRADASI BARU & JARAK DIPERBAIKI) */
+/* 2. FUTURE PROOF CAREER (GRADASI DIPERLEBAR AGAR PAS DI TENGAH) */
 .pp-future-section {
   display: flex;
   gap: 60px;
   align-items: center;
-  margin-top: 60px; /* Memberikan jarak dengan Hero Image di atasnya */
+  margin-top: 60px; 
   
-  /* Gradasi diubah: Navy dari 0% ke 25%, lalu memudar cepat ke krem di 40%, sisanya murni krem */
-  background: linear-gradient(90deg, #1B1464 0%, #1B1464 25%, #FFF9F2 40%, #FFF9F2 100%);
+  /* Biru Navy solid sampai 40% (menutupi kolom kiri), lalu memudar lembut di area kosong sampai 55%, sisanya krem murni */
+  background: linear-gradient(90deg, #1B1464 0%, #1B1464 40%, #FFF9F2 55%, #FFF9F2 100%);
 }
 
 .pp-future-left { 
@@ -272,8 +272,8 @@
 @media screen and (max-width: 992px) {
   .pp-future-section { 
     flex-direction: column !important; 
-    /* Di HP gradasinya diubah jadi vertikal (atas ke bawah) */
-    background: linear-gradient(180deg, #1B1464 0%, #1B1464 20%, #FFF9F2 35%, #FFF9F2 100%); 
+    /* Penyesuaian gradasi untuk layar HP agar tetap proporsional */
+    background: linear-gradient(180deg, #1B1464 0%, #1B1464 35%, #FFF9F2 50%, #FFF9F2 100%); 
   }
   .pp-greenjobs-section, .pp-path-row { flex-direction: column !important; }
   .pp-features-grid { grid-template-columns: repeat(2, 1fr); }

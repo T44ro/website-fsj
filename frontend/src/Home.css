@@ -7,7 +7,7 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding-bottom: 80px; 
+  /* Padding bottom dihapus karena sekarang ada section baru di bawahnya */
 }
 
 /* ========================================================= */
@@ -457,17 +457,17 @@
 }
 
 /* ========================================================= */
-/* 4. OUR IMPACT SECTION (UPDATED WITH SOLID SHADOW)         */
+/* 4. OUR IMPACT SECTION                                     */
 /* ========================================================= */
 .home-impact-section {
-  padding: 80px 10% 120px 10%; 
+  padding: 80px 10% 80px 10%; 
 }
 
 .impact-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px; /* Jarak ditambah sedikit */
+  margin-bottom: 60px; 
   gap: 40px;
 }
 
@@ -513,67 +513,43 @@
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px; /* Gap diperbesar sedikit agar bayangan tidak tumpang tindih */
+  gap: 40px; 
 }
 
-/* --- KOREKSI TOTAL PADA KARTU --- */
 .impact-card {
-  position: relative; /* Wajib untuk absolute children */
+  position: relative; 
   height: 250px;
-  background-color: transparent; /* Background asli dibuat transparan */
-  
-  /* Hilangkan overflow:hidden agar bayangan di belakang bisa terlihat */
+  background-color: transparent; 
   overflow: visible; 
-  
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 24px;
-  
-  /* Bayangan halus yang lama dihapus, kita ganti dengan bayangan solid */
   transition: transform 0.3s ease;
 }
 
 .impact-card:hover {
-  /* Efek angkat sedikit saat di-hover */
   transform: translate(-3px, -3px); 
 }
 
-/* TRICK: Pseudo-element ::after untuk membuat Bayangan Solid (Kotak Navy di belakang)
-*/
 .impact-card::after {
   content: "";
   position: absolute;
-  
-  /* Posisi digeser ke kanan dan bawah (offset) */
   top: 10px; 
   left: 10px;
-  
-  /* Ukuran 100% dari kartu asli */
   width: 100%;
   height: 100%;
-  
-  /* Warna bayangan solid (Navy tebal seperti desainmu) */
   background-color: #1B1464; 
-  
-  /* Samakan radius sudutnya */
   border-radius: 16px;
-  
-  /* Berada paling belakang */
   z-index: 1; 
-  
   transition: all 0.3s ease;
 }
 
-/* Efek saat di-hover, bayangan solidnya merapat sedikit (keren!) */
 .impact-card:hover::after {
   top: 6px;
   left: 6px;
 }
 
-/* TRICK: Pseudo-element ::before untuk membuat Bingkai dan Tempat Gambar
-  Ini menggantikan fungsi border dan overflow pada kartu utama.
-*/
 .impact-card::before {
   content: "";
   position: absolute;
@@ -581,22 +557,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
-  /* Warna background kartu tempat gambar (cadangan jika gambar gagal) */
   background-color: #E0E0E0; 
-  
-  /* Bingkai Navy tipis/sedang di sekeliling gambar */
   border: 3px solid #1B1464; 
   border-radius: 16px;
-  
-  /* Wajib overflow:hidden di sini agar gambar JPG/PNG tidak keluar dari sudut melengkung */
   overflow: hidden; 
-  
-  /* Berada di tengah (di atas bayangan, di bawah label teks) */
   z-index: 2; 
 }
 
-/* Gambar latar belakang sekarang harus dimasukkan ke dalam ::before atau diatur z-indexnya */
 .impact-img-bg {
   position: absolute;
   top: 0;
@@ -604,21 +571,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
-  /* Harus ikut melengkung sesuai ::before */
-  border-radius: 13px; /* Sedikit lebih kecil dari kartu utamanya agar pas */
-  
-  /* Berada di atas ::before tapi di bawah label */
+  border-radius: 13px; 
   z-index: 3; 
 }
 
-/* Label berbentuk pil putih */
 .impact-label {
   position: relative;
-  
-  /* Wajib z-index paling tinggi agar di depan gambar */
   z-index: 10; 
-  
   background-color: #FFFFFF;
   color: #1B1464;
   font-family: 'Quicksand', sans-serif;
@@ -629,4 +588,113 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: 85%;
+}
+
+
+/* ========================================================= */
+/* 5. TESTIMONIAL SECTION (GRADIENT & CAROUSEL)              */
+/* ========================================================= */
+.home-testimonial-section {
+  /* Gradasi Background yang menyatukan warna situs dengan warna kuning hangat */
+  background: linear-gradient(180deg, #FFF9F2 0%, #FDBE34 45%, #FDBE34 60%, #FFF9F2 100%);
+  padding: 100px 0 120px 0;
+  text-align: center;
+  overflow: hidden; /* Mencegah gambar slider meluber keluar layar */
+}
+
+.testi-header {
+  margin-bottom: 50px;
+}
+
+.testi-eyebrow {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FBB03B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.testi-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  color: #121212;
+  margin: 0;
+}
+
+.testi-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  color: #FBB03B; /* Warna khusus Our Steppers sesuai desain */
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* --- Area Slider (Carousel) --- */
+.testi-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 420px; /* Ruang yang cukup untuk gambar yang membesar */
+  margin: 0 auto;
+}
+
+.carousel-item {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transisi sangat mulus */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Gaya untuk gambar yang TIDAK SEDANG DIPILIH (berada di samping) */
+.carousel-item.inactive {
+  width: 180px;
+  height: 260px;
+  opacity: 0.7; /* Sedikit transparan agar fokus ke tengah */
+  transform: scale(0.9);
+}
+
+/* Gaya untuk gambar UTAMA (berada di tengah) */
+.carousel-item.active {
+  width: 280px;
+  height: 400px;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+  border: 4px solid #FFFFFF; /* Bingkai putih tipis untuk menonjolkan */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder cadangan selama gambar belum kamu upload */
+.carousel-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #8C8C8C; /* Abu-abu */
+}
+
+/* --- Area Teks Testimoni --- */
+.testi-content {
+  max-width: 650px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+.testi-content p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold sesuai instruksi */
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+  transition: opacity 0.3s ease;
 }

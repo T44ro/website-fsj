@@ -2,14 +2,6 @@ import React from 'react';
 import './Community.css';
 import heroBg from './assets/about-hero-img.png';
 
-// === IKON-IKON ===
-const ArrowRightIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"></line>
-    <polyline points="12 5 19 12 12 19"></polyline>
-  </svg>
-);
-
 const Community = () => {
   const heroStyle = {
     backgroundImage: `url(${heroBg})`,
@@ -34,20 +26,36 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 2. STRUCTURED PATHWAY SECTION (STAGGERED IMAGES) */}
+      {/* 2. STRUCTURED PATHWAY SECTION (REVISI SEJAJAR & KOTAK RATA KIRI) */}
       <section className="com-section com-pathway">
         <div className="pathway-container">
-          <div className="pathway-img-left">
+          
+          {/* Gambar Sisi Kiri */}
+          <div className="pathway-img-box">
              <div className="img-placeholder"></div>
           </div>
-          <div className="pathway-text-center">
-            <h2>Your Journey <br/> with FSJ is <br/> <span>Structured <br/> Pathway</span> to <br/> Success</h2>
+          
+          {/* Kotak Teks Tengah (Rata Kiri, Background #FFE4A8, Hiasan Spiral) */}
+          <div className="pathway-text-block">
+            <h2>Your Journey with FSJ: <br/>A Structured Pathway <br/>to Purposeful</h2>
             <p>From foundational learning to professional placement, we guide you every step of the way.</p>
-            <button className="btn-learn-more">Learn More</button>
+            <button className="btn-learn-more">
+              Learn More <span className="btn-arrow">↗</span>
+            </button>
+            
+            {/* Hiasan Spiral Coretan di Pojok Kanan Bawah */}
+            <div className="spiral-decoration">
+              <svg width="75" height="75" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M85,45 C85,68 68,82 48,82 C25,82 12,65 12,45 C12,23 30,10 50,10 C68,10 78,24 76,40 C74,54 62,64 50,62 C40,60 34,51 36,43 C38,36 44,32 50,34 C54,36 55,40 54,44" fill="none" stroke="#1B1464" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+            </div>
           </div>
-          <div className="pathway-img-right">
+          
+          {/* Gambar Sisi Kanan */}
+          <div className="pathway-img-box">
              <div className="img-placeholder"></div>
           </div>
+
         </div>
       </section>
 
@@ -130,7 +138,6 @@ const Community = () => {
               <h3>More Than 50+ <br/> Active Alumni</h3>
               <p>Successfully placed in sustainability roles.</p>
               <div className="alumni-logos">
-                 {/* Logo-logo institusi */}
                  <div className="logo-placeholder">CAMPUS LOGO</div>
               </div>
               <p className="impact-sub">Present in 50+ Campuses & Institutions</p>

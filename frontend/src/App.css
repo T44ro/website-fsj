@@ -2,19 +2,23 @@
 /* CSS GLOBAL (APP.CSS) - FIRST STEP JOURNEY                 */
 /* ========================================================= */
 
-/* Import Font Quicksand dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-/* --- Reset & Pengaturan Dasar --- */
+/* GEMBOK ANTI DARK-MODE DARI HP */
+:root {
+  color-scheme: light only;
+}
+
 html {
-  scroll-behavior: smooth; /* Membuat efek scroll mulus saat klik menu */
+  scroll-behavior: smooth; 
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background-color: #FFF9F2;
+  background-color: #FFF9F2 !important; /* Paksa warna krem di semua kondisi */
+  color: #121212;
 }
 
 .site-shell {
@@ -24,7 +28,7 @@ body {
 }
 
 /* ========================================================= */
-/* 1. HEADER (TOPBAR) STYLES BARU                            */
+/* 1. HEADER (TOPBAR)                                        */
 /* ========================================================= */
 .topbar {
   display: flex;
@@ -32,79 +36,35 @@ body {
   align-items: center;
   padding: 16px 5%; 
   background-color: #FFFFFF; 
-  box-shadow: 0 2px 15px rgba(0,0,0,0.03); /* Bayangan halus di bawah header */
-  position: sticky; /* Membuat header tetap di atas saat di-scroll */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
+  position: sticky; 
   top: 0;
   z-index: 1000;
 }
 
-/* Kiri: Logo */
-.brand {
-  display: flex;
-  align-items: center;
-}
+.brand { display: flex; align-items: center; }
+.header-logo { height: 40px; width: auto; object-fit: contain; }
 
-.header-logo {
-  height: 40px; /* Ukuran proporsional logo */
-  width: auto;
-  object-fit: contain;
-}
-
-/* Tengah: Navigasi */
-.topnav {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-/* Style tombol menu bentuk "Pil" melengkung */
+.topnav { display: flex; gap: 12px; align-items: center; }
 .nav-item {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-size: 14px;
   color: #333333;
   text-decoration: none;
   padding: 8px 18px;
-  border-radius: 999px; /* Bentuk kapsul/pil */
-  border: 1px solid #E0E0E0; /* Garis tepi abu-abu terang */
+  border-radius: 999px; 
+  border: 1px solid #E0E0E0; 
   background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
+.nav-item:hover { background-color: #F9F9F9; border-color: #CCCCCC; }
+.nav-item.active { color: #FBB03B; border-color: #FBB03B; }
 
-.nav-item:hover {
-  background-color: #F9F9F9;
-  border-color: #CCCCCC;
-}
-
-.nav-item.active {
-  color: #FBB03B; /* Warna Oranye FSJ */
-  border-color: #FBB03B;
-}
-
-/* Kanan: Ikon Sosial Media */
-.social-links {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.social-btn {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-btn img {
-  height: 36px; /* Menyesuaikan ukuran bulatan ikon */
-  width: 36px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.social-btn:hover img {
-  transform: scale(1.08); /* Efek membesar sedikit saat disentuh */
-}
+.social-links { display: flex; gap: 10px; align-items: center; }
+.social-btn { text-decoration: none; display: flex; align-items: center; justify-content: center; }
+.social-btn img { height: 36px; width: 36px; object-fit: contain; transition: transform 0.3s ease; }
+.social-btn:hover img { transform: scale(1.08); }
 
 /* ========================================================= */
 /* 2. FOOTER STYLES                                          */
@@ -113,100 +73,31 @@ body {
   background-color: #FFF9F2;
   padding: 60px 10% 20px 10%;
   border-top: 1px solid #F0E6D8;
-  margin-top: auto; /* Mendorong footer selalu ke bawah */
+  margin-top: auto; 
 }
 
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 50px;
-}
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
+.eyebrow { font-weight: 700; font-size: 14px; color: #FBB03B; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Newsletter Area */
-.eyebrow {
-  font-weight: 700;
-  font-size: 14px;
-  color: #FBB03B;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+.newsletter { display: flex; gap: 12px; }
+.newsletter input { padding: 12px 24px; border-radius: 999px; border: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 14px; outline: none; width: 250px; }
+.newsletter input:focus { border-color: #FBB03B; }
 
-.newsletter {
-  display: flex;
-  gap: 12px;
-}
+.primary-btn { background-color: #FBB03B; color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 28px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease; }
+.primary-btn:hover { background-color: #EFA02A; }
 
-.newsletter input {
-  padding: 12px 24px;
-  border-radius: 999px;
-  border: 1px solid #E0E0E0;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  outline: none;
-  width: 250px;
-}
+.footer-links { display: flex; gap: 80px; }
+.footer-links h3 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #1B1464; margin-top: 0; margin-bottom: 20px; }
+.footer-links a { display: block; font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333; text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
+.footer-links a:hover { color: #FBB03B; }
 
-.newsletter input:focus {
-  border-color: #FBB03B;
-}
+.footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888; }
 
-.primary-btn {
-  background-color: #FBB03B;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 999px;
-  padding: 12px 28px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.primary-btn:hover {
-  background-color: #EFA02A;
-}
-
-/* Footer Links Area */
-.footer-links {
-  display: flex;
-  gap: 80px;
-}
-
-.footer-links h3 {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: #1B1464; /* Warna Biru Navy FSJ */
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.footer-links a {
-  display: block;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #333333;
-  text-decoration: none;
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #FBB03B;
-}
-
-/* Footer Base (Copyright) */
-.footer-base {
-  text-align: center;
-  padding-top: 24px;
-  border-top: 1px solid #E0E0E0;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: #888888;
+/* --- RESPONSIVE HEADER & FOOTER UNTUK HP --- */
+@media screen and (max-width: 768px) {
+  .topbar { flex-direction: column; gap: 16px; padding: 16px; }
+  .topnav { flex-wrap: wrap; justify-content: center; }
+  .footer-links { flex-direction: column; gap: 30px; text-align: left; }
+  .newsletter { flex-direction: column; width: 100%; }
+  .newsletter input { width: 100%; box-sizing: border-box; }
 }

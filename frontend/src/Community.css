@@ -309,6 +309,9 @@
   background: linear-gradient(180deg, #FFF9F2 0%, #FFDFA6 60%, #FDBE34 100%);
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
+  
+  /* JARAK TAMBAHAN UNTUK MEMISAHKAN SECTION INI DENGAN FOOTER */
+  margin-bottom: 80px; 
 }
 
 .challenge-header-revised {
@@ -385,4 +388,5 @@
   .challenge-overlay-buttons button { width: 100%; }
   
   .com-section { padding: 60px 5%; }
+  .com-challenge-revised { margin-bottom: 60px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
 }

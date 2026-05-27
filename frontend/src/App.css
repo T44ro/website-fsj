@@ -55,7 +55,7 @@ body {
 
 /* Mengatur ukuran tinggi gambar logo agar pas dengan navbar */
 .header-logo { 
-  height: 36px; 
+  height: 56px; 
   width: auto; 
   object-fit: contain; 
 }

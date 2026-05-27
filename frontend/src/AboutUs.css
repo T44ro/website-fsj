@@ -10,7 +10,7 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION (DENGAN BACKGROUND GAMBAR)                */
+/* 1. HERO SECTION                                           */
 /* ========================================================= */
 .hero {
   padding: 120px 20px 80px 20px !important; 
@@ -21,7 +21,6 @@
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
-  /* Background image sudah diatur lewat inline-style di AboutUs.jsx */
 }
 
 .hero-content {
@@ -32,17 +31,17 @@
 
 .hero h1 {
   font-family: 'Quicksand', sans-serif !important;
-  font-weight: 600 !important; /* SemiBold */
+  font-weight: 600 !important; 
   font-size: 52px !important;  
-  color: #000000 !important; /* Hitam pekat */
+  color: #000000 !important; 
   margin: 0 0 16px 0 !important;
 }
 
 .hero p {
   font-family: 'Quicksand', sans-serif !important;
-  font-weight: 500 !important; /* Medium */
+  font-weight: 500 !important; 
   font-size: 16px !important;
-  color: #000000 !important; /* Hitam pekat */
+  color: #000000 !important; 
   margin: 0 auto 40px auto !important; 
   max-width: 600px;
   line-height: 1.6;
@@ -79,7 +78,6 @@
   justify-content: center;
 }
 
-/* Judul Vision (Courgette, Regular, Navy) */
 .vision-title {
   font-family: 'Courgette', cursive;
   font-weight: 400; 
@@ -88,7 +86,6 @@
   margin: 0 0 20px 0;
 }
 
-/* Judul Mision (Courgette, Regular, Yellow) */
 .mision-title {
   font-family: 'Courgette', cursive;
   font-weight: 400; 
@@ -97,35 +94,27 @@
   margin: 0 0 20px 0;
 }
 
-/* Teks Deskripsi (Quicksand, Medium, Hitam) */
 .vm-text-card p, 
 .vm-text-card ul {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
+  font-weight: 500; 
   font-size: 16px; 
   color: #000000;
   line-height: 1.6;
   margin: 0;
 }
 
-.vm-text-card ul {
-  padding-left: 20px;
-}
+.vm-text-card ul { padding-left: 20px; }
+.vm-text-card li { margin-bottom: 8px; }
 
-.vm-text-card li {
-  margin-bottom: 8px; /* Jarak antar list agar rapi */
-}
-
-/* Kotak Gambar */
 .vm-image-card {
   flex: 1;
   border-radius: 24px;
-  background-color: #E0E0E0; /* Warna abu-abu sementara untuk tempat gambar */
+  background-color: #E0E0E0; 
   min-height: 350px;
   overflow: hidden; 
 }
 
-/* Memastikan gambar nanti melengkung mengikuti kotak */
 .vm-image-card img {
   width: 100%;
   height: 100%;
@@ -133,21 +122,91 @@
 }
 
 /* ========================================================= */
-/* 3. OUR CULTURE                                            */
+/* 3. OUR CULTURE (DESAIN BARU)                              */
 /* ========================================================= */
 .culture-section { padding: 0 10% 100px 10%; text-align: center; }
-.culture-header { margin-bottom: 50px; }
-.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
-.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000; }
-.culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
-.culture-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; align-items: center; }
+.culture-header { margin-bottom: 60px; }
+
+.culture-subtitle { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; 
+  font-size: 16px; 
+  color: #FBB03B; 
+  display: block; 
+  margin-bottom: 12px; 
+}
+
+.culture-title { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; /* A Rapid Journey of: BOLD */
+  font-size: 42px; 
+  color: #000000; 
+  margin: 0;
+}
+
+.culture-highlight { 
+  font-family: 'Courgette', cursive; 
+  font-weight: 400 !important; /* Impact: REGULAR (dipaksa agar tidak ikut bold) */
+  color: #FBB03B; 
+}
+
+/* Grid 3 Kolom */
+.culture-content { 
+  display: grid; 
+  grid-template-columns: 1.2fr 1fr 1fr; 
+  gap: 30px; 
+  text-align: left; 
+  align-items: stretch; 
+}
+
+/* Tipografi Teks Culture */
+.culture-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; 
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.culture-text ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.culture-text li {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; 
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.culture-text li strong {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Kotak Gambar */
+.culture-image-card {
+  background-color: #E0E0E0;
+  border-radius: 20px;
+  min-height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.culture-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ========================================================= */
 /* 4. THE DIVISIONS SECTION                                  */
 /* ========================================================= */
-.divisions-section {
-  padding: 0 10% 100px 10%;
-}
+.divisions-section { padding: 0 10% 100px 10%; }
 
 .divisions-grid {
   display: grid;
@@ -155,10 +214,7 @@
   gap: 20px;
 }
 
-.divisions-header-card {
-  grid-column: span 1; 
-  padding-right: 10px;
-}
+.divisions-header-card { grid-column: span 1; padding-right: 10px; }
 
 .divisions-title {
   font-family: 'Quicksand', sans-serif;
@@ -169,10 +225,7 @@
   line-height: 1.1;
 }
 
-.divisions-highlight {
-  font-family: 'Courgette', cursive;
-  color: #1B1464;
-}
+.divisions-highlight { font-family: 'Courgette', cursive; color: #1B1464; }
 
 .divisions-desc {
   font-family: 'Quicksand', sans-serif;
@@ -193,13 +246,8 @@
   transition: transform 0.3s ease;
 }
 
-.card-soft-beige {
-  background-color: #F8F8F8; 
-}
-
-.card-highlighted {
-  border: 2px solid #005088; 
-}
+.card-soft-beige { background-color: #F8F8F8; }
+.card-highlighted { border: 2px solid #005088; }
 
 .div-card h3 {
   position: relative;
@@ -234,6 +282,8 @@
 @media screen and (max-width: 1024px) {
   .divisions-grid { grid-template-columns: repeat(2, 1fr); }
   .hero h1 { font-size: 42px !important; }
+  .culture-content { grid-template-columns: 1fr; } 
+  .culture-image-card { min-height: 250px; }
 }
 
 @media screen and (max-width: 600px) {
@@ -241,5 +291,4 @@
   .hero h1 { font-size: 36px !important; }
   .vision-title, .mision-title { font-size: 32px; }
   .vm-text-card { padding: 30px 20px; }
-  .culture-content { grid-template-columns: 1fr; }
 }

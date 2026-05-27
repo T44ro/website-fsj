@@ -1,7 +1,8 @@
 /* ========================================================= */
-/* CSS ABOUT US - UPDATED DIVISIONS STYLE                    */
+/* CSS ABOUT US - COMPLETE & FIXED VERSION                   */
 /* ========================================================= */
 
+/* 0. IMPORT FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
 
 .about-page {
@@ -9,7 +10,9 @@
   min-height: 100vh;
 }
 
-/* 1. HERO SECTION (TETAP) */
+/* ========================================================= */
+/* 1. HERO SECTION                                           */
+/* ========================================================= */
 .hero {
   padding: 120px 20px !important; 
   width: 100% !important;
@@ -22,11 +25,16 @@
   background-color: #FBB03B !important; 
   background-size: cover !important; 
   background-position: center !important; 
+  background-repeat: no-repeat !important;
 }
 
 .hero-content {
   position: relative !important;
   z-index: 10 !important; 
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; 
   text-align: center !important; 
 }
 
@@ -35,10 +43,34 @@
   font-weight: 600 !important; 
   font-size: 48px !important;  
   color: #000000 !important;
-  margin: 20px 0 !important;
+  margin: 0 0 20px 0 !important;
+  text-align: center !important;
 }
 
-/* 2. VISION & MISSION (TETAP) */
+.hero p {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 500 !important; 
+  font-size: 16px !important;
+  color: #000000 !important;
+  margin: 0 auto 30px auto !important;
+  max-width: 700px !important; 
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+
+.hero .breadcrumb {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 600 !important; 
+  font-size: 14px !important;
+  text-align: center !important;
+}
+
+.hero .home-link { color: #1B1464 !important; }
+.hero .about-link { color: #000000 !important; }
+
+/* ========================================================= */
+/* 2. VISION & MISSION SECTION                               */
+/* ========================================================= */
 .vision-mission-section {
   padding: 80px 10%;
   display: flex;
@@ -46,8 +78,15 @@
   gap: 40px;
 }
 
-.vm-row { display: flex; gap: 40px; align-items: stretch; }
-.vm-row.reverse { flex-direction: row-reverse; }
+.vm-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.vm-row.reverse {
+  flex-direction: row-reverse;
+}
 
 .vm-text-card {
   flex: 1;
@@ -55,37 +94,166 @@
   border-radius: 24px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .vm-image-card {
   flex: 1;
   border-radius: 24px;
+  overflow: hidden;
   background-color: #E0E0E0; 
   min-height: 300px;
+  display: flex;
 }
 
-/* 3. OUR CULTURE (TETAP) */
-.culture-section { padding: 0 10% 100px 10%; text-align: center; }
-.culture-header { margin-bottom: 50px; }
-.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
-.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000; }
-.culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
-.culture-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; align-items: center; }
+.vm-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-/* 4. THE DIVISIONS SECTION (DESAIN BARU) */
+.vision-title {
+  font-family: 'Courgette', cursive;
+  font-weight: 400; 
+  font-size: 42px;
+  color: #1B1464;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.mision-title {
+  font-family: 'Courgette', cursive;
+  font-weight: 400; 
+  font-size: 42px;
+  color: #FDBE34;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.vm-text-card p, 
+.vm-text-card ul {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; 
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vm-text-card ul {
+  padding-left: 24px;
+}
+
+.vm-text-card li {
+  margin-bottom: 10px;
+}
+
+/* ========================================================= */
+/* 3. OUR CULTURE SECTION                                    */
+/* ========================================================= */
+.culture-section {
+  padding: 0 10% 100px 10%; 
+  text-align: center;
+}
+
+.culture-header {
+  margin-bottom: 50px;
+}
+
+.culture-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; 
+  font-size: 18px;
+  color: #FBB03B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.culture-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; 
+  font-size: 42px;
+  color: #000000;
+  margin: 0;
+}
+
+.culture-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400; 
+  font-size: 42px; 
+  color: #FBB03B;
+}
+
+.culture-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px;
+  text-align: left;
+  align-items: center; 
+}
+
+.culture-text p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; 
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.culture-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.culture-text li {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400; 
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.culture-text li strong {
+  font-weight: 700; 
+  display: block; 
+  margin-bottom: 4px;
+}
+
+.culture-image {
+  background-color: #E0E0E0; 
+  border-radius: 16px;
+  min-height: 250px;
+  width: 100%;
+}
+
+.culture-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; 
+  object-fit: contain;
+}
+
+/* ========================================================= */
+/* 4. THE DIVISIONS SECTION (DESAIN FIX GRADASI)             */
+/* ========================================================= */
 .divisions-section {
   padding: 0 10% 100px 10%;
 }
 
 .divisions-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 Kolom sesuai gambar */
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; 
 }
 
-/* Header di dalam Grid */
 .divisions-header-card {
-  grid-column: span 1; /* Bisa span 1 atau 2 tergantung selera */
+  grid-column: span 1; 
   padding-right: 10px;
 }
 
@@ -115,18 +283,26 @@
 .div-card {
   position: relative;
   border-radius: 16px; 
-  height: 240px; /* Ukuran lebih proporsional */
+  height: 240px; 
   padding: 24px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: #F8F8F8; /* Warna krem sangat muda (hampir putih) */
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efek khusus untuk Digital Marketing (Border Biru) */
+/* KELAS GRADASI YANG DIPERBAIKI */
+.div-grad-blue {
+  background: linear-gradient(180deg, #FFFFFF 40%, #4A81B7 100%);
+}
+
+.div-grad-yellow {
+  background: linear-gradient(180deg, #FFFFFF 40%, #FBB03B 100%);
+}
+
 .card-highlighted {
-  border: 2px solid #005088; 
+  border: 3px solid #005088; 
 }
 
 /* Tipografi di dalam Kartu */
@@ -134,13 +310,12 @@
   position: relative;
   z-index: 2;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Semibold sesuai rincian */
-  font-size: 18px; /* Lebih kecil dari sebelumnya */
+  font-weight: 600; 
+  font-size: 16px; 
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-/* Variasi Warna Teks */
 .text-black { color: #000000; }
 .text-navy { color: #1B1464; }
 
@@ -149,18 +324,17 @@
   position: absolute;
   bottom: 0;
   right: 0; 
-  height: 90%; /* Menyesuaikan agar kepala tidak terpotong */
+  height: 90%; 
   object-fit: contain;
   z-index: 1;
 }
 
-/* Hover Effect */
 .div-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
-/* Responsive Grid untuk Tablet/HP */
+/* Responsive Grid */
 @media screen and (max-width: 1024px) {
   .divisions-grid { grid-template-columns: repeat(2, 1fr); }
 }

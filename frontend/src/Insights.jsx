@@ -1,6 +1,6 @@
 import React from 'react';
 import './Insights.css';
-import heroBg from './assets/about-hero-img.png'; // Menggunakan background hero yang ada
+import heroBg from './assets/about-hero-img.png'; 
 
 // === IKON-IKON ===
 const SearchIcon = () => (
@@ -81,16 +81,9 @@ const Insights = () => {
               </div>
             ))}
           </div>
+          
+          {/* Bagian Pagination (Angka 1, 2, 3) sudah dihapus dari sini */}
 
-          {/* Pagination */}
-          <div className="ins-pagination">
-            <span className="page-num">1</span>
-            <span className="page-num active">2</span>
-            <span className="page-num">3</span>
-            <span className="page-num">4</span>
-            <span className="page-dots">..</span>
-            <span className="page-num">8</span>
-          </div>
         </div>
 
         {/* KOLOM KANAN (SIDEBAR) */}

@@ -35,7 +35,9 @@
   margin-bottom: 12px;
 }
 
-/* 2. STRUCTURED PATHWAY */
+/* ========================================================= */
+/* 2. STRUCTURED PATHWAY                                     */
+/* ========================================================= */
 .com-pathway {
   padding: 60px 10%;
 }
@@ -131,36 +133,32 @@
   pointer-events: none;
 }
 
+.spiral-decoration svg { stroke: #1B1464; }
+
 /* ========================================================= */
-/* 3. DISCOVER SCROLL (REVISI ALIGNMENT & STYLE BLOG CARD)   */
+/* 3. DISCOVER SCROLL (REVISI GRID 4 KOLOM PAS)              */
 /* ========================================================= */
 .discover-header { 
   display: flex; 
   justify-content: space-between; 
-  align-items: flex-end; /* Rata bawah agar sejajar dengan navigasi */
+  align-items: flex-end; 
   margin-bottom: 40px; 
 }
 
-.discover-title-area {
-  text-align: left;
-}
-
-.discover-header h2 { 
-  font-family: 'Quicksand', sans-serif; 
-  font-size: 32px; 
-  margin: 0;
-}
-
+.discover-title-area { text-align: left; }
+.discover-header h2 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin: 0; }
 .nav-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #CCC; background: none; cursor: pointer; margin-left: 10px; }
 
-.discover-scroll { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 20px; scroll-behavior: smooth; }
-.discover-scroll::-webkit-scrollbar { height: 4px; }
-.discover-scroll::-webkit-scrollbar-thumb { background: #FBB03B; border-radius: 10px; }
+/* Menggunakan CSS Grid agar 4 kartu tercetak pas membelah lebar layar */
+.discover-scroll { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; 
+}
 
-/* KARTU DIUBAH MENJADI MODEL NAVY BLOG CARD */
+/* Kartu sudah tidak perlu min-width karena sudah diatur Grid secara otomatis */
 .discover-card { 
-  min-width: 320px; 
-  background-image: linear-gradient(#013F84, #013F84) !important; /* Warna Navy Terang */
+  background-image: linear-gradient(#013F84, #013F84) !important; 
   border-radius: 20px; 
   overflow: hidden; 
   display: flex; 
@@ -169,46 +167,16 @@
   border: none;
 }
 
-/* Efek bounce melambung ke atas saat di-hover */
 .discover-card:hover { 
   transform: translateY(-8px); 
   box-shadow: 0 15px 30px rgba(1, 63, 132, 0.3); 
 }
 
-.card-img { 
-  height: 190px; 
-  width: 100%;
-  background: #E0E0E0; 
-  border-radius: 0; /* Menempel rata dengan batas atas kartu */
-}
+.card-img { height: 160px; width: 100%; background: #E0E0E0; border-radius: 0; }
+.card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.discover-card h3 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; margin: 0 0 12px 0; color: #FFFFFF !important; }
+.discover-card p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 13px; color: #FFFFFF !important; opacity: 0.9; line-height: 1.6; margin: 0 0 24px 0; flex-grow: 1; }
 
-.card-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.discover-card h3 { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 600;
-  font-size: 18px; 
-  margin: 0 0 12px 0; 
-  color: #FFFFFF !important; /* Tulisan putih */
-}
-
-.discover-card p { 
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 14px; 
-  color: #FFFFFF !important; 
-  opacity: 0.9;
-  line-height: 1.6; 
-  margin: 0 0 24px 0;
-  flex-grow: 1;
-}
-
-/* Style Tombol Baru di dalam Kartu Discover */
 .btn-discover-card {
   background-color: transparent; 
   color: #FDBE34 !important; 
@@ -217,7 +185,7 @@
   border-radius: 999px;
   font-family: 'Quicksand', sans-serif; 
   font-weight: 600; 
-  font-size: 13px; 
+  font-size: 12px; 
   cursor: pointer; 
   display: inline-flex; 
   align-items: center; 
@@ -226,20 +194,8 @@
   transition: all 0.3s ease;
 }
 
-.btn-discover-card:hover { 
-  background-color: #FDBE34; 
-  color: #1B1464 !important; 
-}
-
-.btn-icon-circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+.btn-discover-card:hover { background-color: #FDBE34; color: #1B1464 !important; }
+.btn-icon-circle { width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 .bg-yellow { background-color: #FDBE34; transition: all 0.3s ease; }
 .btn-discover-card:hover .bg-yellow { background-color: #1B1464; }
 
@@ -254,13 +210,17 @@
 .ins-item p { font-size: 14px; color: #666; margin-bottom: 20px; flex-grow: 1; }
 .ins-item a { color: #1B1464; font-weight: 700; text-decoration: none; font-size: 14px; }
 
-/* 5. CTA SECTION */
+/* ========================================================= */
+/* 5. CTA SECTION                                            */
+/* ========================================================= */
 .com-cta { background-color: #1B1464; padding: 80px 20px; text-align: center; color: #FFF; margin: 40px 10%; border-radius: 30px; }
 .com-cta h2 { font-family: 'Quicksand', sans-serif; font-size: 42px; margin-bottom: 20px; }
 .com-cta p { opacity: 0.8; line-height: 1.6; margin-bottom: 40px; }
 .btn-join-now { background-color: #FBB03B; color: #FFF; border: none; padding: 14px 40px; border-radius: 999px; font-weight: 700; cursor: pointer; font-family: 'Quicksand'; }
 
-/* 6. IMPACT BENTO */
+/* ========================================================= */
+/* 6. IMPACT BENTO                                           */
+/* ========================================================= */
 .impact-bento { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .impact-card-blue { background-color: #1B1464; color: #FFF; padding: 40px; border-radius: 25px; height: 100%; }
 .impact-card-blue h3 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin-bottom: 20px; }
@@ -278,7 +238,9 @@
 .stat-item h4 { font-family: 'Quicksand', sans-serif; font-size: 36px; color: #1B1464; margin-bottom: 5px; }
 .stat-item span { color: #666; font-size: 14px; }
 
-/* RESPONSIVE LAYOUT HP */
+/* ========================================================= */
+/* RESPONSIVE LAYOUT HP & TABLET                             */
+/* ========================================================= */
 @media screen and (max-width: 992px) {
   .pathway-container { flex-direction: column !important; gap: 24px; }
   .pathway-img-box, .pathway-text-block { width: 100% !important; flex: none; }
@@ -286,8 +248,9 @@
   .pathway-img-box .img-placeholder { height: 240px; }
   
   .discover-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .discover-card { min-width: 280px; }
-  .btn-discover-card { padding: 8px 16px; }
+  
+  /* Di layar HP, 4 kartu ini akan otomatis memanjang ke bawah menjadi 1 kolom */
+  .discover-scroll { grid-template-columns: 1fr; }
   
   .insights-grid, .impact-bento { grid-template-columns: 1fr; }
   .com-section { padding: 60px 5%; }

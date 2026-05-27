@@ -4,9 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-/* GEMBOK ANTI DARK-MODE DARI HP */
+/* GEMBOK ANTI DARK-MODE DARI HP (MEMAKSA TEMA TERANG) */
 :root {
-  color-scheme: light only;
+  color-scheme: only light !important;
 }
 
 html {
@@ -17,8 +17,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background-color: #FFF9F2 !important; /* Paksa warna krem di semua kondisi */
-  color: #121212;
+  
+  /* Paksa warna krem di semua kondisi, abaikan paksaan hitam dari HP */
+  background-color: #FFF9F2 !important; 
+  color: #121212 !important; 
 }
 
 .site-shell {
@@ -35,7 +37,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 5%; 
-  background-color: #FFFFFF; 
+  background-color: #FFFFFF !important; /* Paksa navbar tetap putih */
   box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
   position: sticky; 
   top: 0;
@@ -55,11 +57,11 @@ body {
   padding: 8px 18px;
   border-radius: 999px; 
   border: 1px solid #E0E0E0; 
-  background-color: #FFFFFF;
+  background-color: #FFFFFF !important;
   transition: all 0.3s ease;
 }
-.nav-item:hover { background-color: #F9F9F9; border-color: #CCCCCC; }
-.nav-item.active { color: #FBB03B; border-color: #FBB03B; }
+.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
+.nav-item.active { color: #FBB03B !important; border-color: #FBB03B; }
 
 .social-links { display: flex; gap: 10px; align-items: center; }
 .social-btn { text-decoration: none; display: flex; align-items: center; justify-content: center; }
@@ -70,7 +72,7 @@ body {
 /* 2. FOOTER STYLES                                          */
 /* ========================================================= */
 .site-footer {
-  background-color: #FFF9F2;
+  background-color: #FFF9F2 !important;
   padding: 60px 10% 20px 10%;
   border-top: 1px solid #F0E6D8;
   margin-top: auto; 
@@ -80,20 +82,32 @@ body {
 .eyebrow { font-weight: 700; font-size: 14px; color: #FBB03B; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
 
 .newsletter { display: flex; gap: 12px; }
-.newsletter input { padding: 12px 24px; border-radius: 999px; border: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 14px; outline: none; width: 250px; }
+.newsletter input { 
+  padding: 12px 24px; 
+  border-radius: 999px; 
+  border: 1px solid #E0E0E0; 
+  font-family: 'Quicksand', sans-serif; 
+  font-size: 14px; 
+  outline: none; 
+  width: 250px; 
+  background-color: #FFFFFF !important; 
+  color: #121212 !important; /* Mencegah teks input jadi putih saat dark mode */
+}
 .newsletter input:focus { border-color: #FBB03B; }
 
 .primary-btn { background-color: #FBB03B; color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 28px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease; }
 .primary-btn:hover { background-color: #EFA02A; }
 
 .footer-links { display: flex; gap: 80px; }
-.footer-links h3 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #1B1464; margin-top: 0; margin-bottom: 20px; }
-.footer-links a { display: block; font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333; text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
-.footer-links a:hover { color: #FBB03B; }
+.footer-links h3 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #1B1464 !important; margin-top: 0; margin-bottom: 20px; }
+.footer-links a { display: block; font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333 !important; text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
+.footer-links a:hover { color: #FBB03B !important; }
 
-.footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888; }
+.footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888 !important; }
 
-/* --- RESPONSIVE HEADER & FOOTER UNTUK HP --- */
+/* ========================================================= */
+/* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
+/* ========================================================= */
 @media screen and (max-width: 768px) {
   .topbar { flex-direction: column; gap: 16px; padding: 16px; }
   .topnav { flex-wrap: wrap; justify-content: center; }

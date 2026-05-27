@@ -83,19 +83,18 @@
   margin-bottom: 40px;
 }
 
-/* 2. FUTURE PROOF CAREER (KEMBALI KE GRADASI VERSI 2) */
+/* 2. FUTURE PROOF CAREER (SEJAJAR & GRADASI HALUS) */
 .pp-future-section {
   display: flex;
   gap: 60px;
-  align-items: center;
+  align-items: stretch; /* Berubah jadi stretch agar kolom kiri & kanan tingginya sama */
   margin-top: 60px; 
   
-  /* Gradasi diubah: Navy dari 0% ke 25%, lalu memudar cepat ke krem di 40% */
-  background: linear-gradient(90deg, #1B1464 0%, #1B1464 25%, #FFF9F2 40%, #FFF9F2 100%);
+  /* Gradasi lebih halus: Navy pekat sampai 20%, memudar pelan ke krem sampai 50% */
+  background: linear-gradient(90deg, #1B1464 0%, #1B1464 20%, #FFF9F2 50%, #FFF9F2 100%);
 }
 
 .pp-future-left { 
-  /* Kolom kiri diperkecil porsinya agar pas di area biru */
   flex: 0.8; 
   display: flex;
   flex-direction: column;
@@ -106,8 +105,9 @@
 .pp-future-left-title {
   font-family: 'Quicksand', sans-serif;
   color: #FFFFFF;
-  font-size: 24px; /* Ukuran font diperkecil */
+  font-size: 24px;
   font-weight: 700;
+  margin-top: 0; 
   margin-bottom: 24px;
   line-height: 1.3;
 }
@@ -115,7 +115,8 @@
 /* Wrapper untuk gambar polaroid */
 .polaroid-wrapper {
   width: 90%;
-  max-width: 240px; /* Ukuran polaroid diperkecil */
+  max-width: 240px;
+  margin-top: auto; /* Mendorong polaroid mentok ke bagian paling bawah */
 }
 
 .polaroid-wrapper img, 
@@ -129,14 +130,16 @@
 }
 
 .pp-future-right { 
-  /* Kolom kanan diberi porsi lebih lega */
   flex: 1.8; 
+  display: flex;
+  flex-direction: column; /* Mengubah kolom kanan menjadi flex */
 }
 
 .pp-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+  margin-top: auto; /* Mendorong kotak fitur mentok ke bagian paling bawah agar sejajar polaroid */
 }
 
 .pp-feature-box {
@@ -274,8 +277,7 @@
 @media screen and (max-width: 992px) {
   .pp-future-section { 
     flex-direction: column !important; 
-    /* Di HP gradasinya diubah jadi vertikal agar tidak aneh */
-    background: linear-gradient(180deg, #1B1464 0%, #1B1464 25%, #FFF9F2 40%, #FFF9F2 100%); 
+    background: linear-gradient(180deg, #1B1464 0%, #1B1464 20%, #FFF9F2 50%, #FFF9F2 100%); 
   }
   .pp-greenjobs-section, .pp-path-row { flex-direction: column !important; }
   .pp-features-grid { grid-template-columns: repeat(2, 1fr); }

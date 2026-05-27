@@ -1,111 +1,124 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import Home from './Home';       
-import AboutUs from './AboutUs'; 
+import React from 'react';
+import './AboutUs.css'; 
 
-// === IMPORT GAMBAR HEADER DARI FOLDER ASSETS ===
-import logo from './assets/fsj-logo.png';
-import iconIg from './assets/icon-ig.png';
-import iconYt from './assets/icon-yt.png';
-import iconTiktok from './assets/icon-tiktok.png';
-// Ikon X sudah dihapus dari sini
-
-function App() {
-  const [activePage, setActivePage] = useState('about'); // Default ke About Us
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash === 'about') {
-      setActivePage('about');
-    } else if (hash === 'home') {
-      setActivePage('home');
-    }
-  }, []);
-
-  const changePage = (pageName, event) => {
-    if (event) event.preventDefault();
-    setActivePage(pageName);
-    window.location.hash = pageName;
-    window.scrollTo(0, 0);
-  };
-
+const AboutUs = () => {
   return (
-    <div className="site-shell">
-      {/* ========================================= */}
-      {/* HEADER NAVIGATION                         */}
-      {/* ========================================= */}
-      <header className="topbar">
-        {/* Kiri: Logo */}
-        <div className="brand">
-          <img src={logo} alt="First Step Journey" className="header-logo" />
-        </div>
-        
-        {/* Tengah: Menu Navigasi Bentuk Pil */}
-        <nav className="topnav">
-          <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
-          <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
-          <a href="#programs" className="nav-item">Product & Programs</a>
-          <a href="#insights" className="nav-item">Insights</a>
-          <a href="#community" className="nav-item">Community</a>
-          <a href="#contacts" className="nav-item">Contacts</a>
-        </nav>
-
-        {/* Kanan: Ikon Sosial Media (Tanpa X) */}
-        <div className="social-links">
-          <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
-          <a href="#" className="social-btn"><img src={iconYt} alt="YouTube" /></a>
-          <a href="#" className="social-btn"><img src={iconTiktok} alt="TikTok" /></a>
-        </div>
-      </header>
-
-      {/* ========================================= */}
-      {/* SAKLAR KONTEN HALAMAN                     */}
-      {/* ========================================= */}
-      {activePage === 'home' ? (
-        <Home changePage={changePage} />
-      ) : (
-        <AboutUs />
-      )}
-
-      {/* ========================================= */}
-      {/* FOOTER                                    */}
-      {/* ========================================= */}
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div>
-            <p className="eyebrow">Stay Updated with First Step Journey!</p>
-            <div className="newsletter">
-              <input type="email" placeholder="Enter Your Email" />
-              <button className="primary-btn">Subscribe</button>
-            </div>
-          </div>
-          <div className="footer-links">
-            <div>
-              <h3>About FSJ</h3>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Vision & Mission</a>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Our Journey</a>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Our Team</a>
-            </div>
-            <div>
-              <h3>Programs</h3>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Internships</a>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Mini Training</a>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Community Impact</a>
-            </div>
-            <div>
-              <h3>Insights</h3>
-              <a href="#blog">News</a>
-              <a href="#blog">Resources</a>
-              <a href="#blog">FAQ</a>
-            </div>
+    <div className="about-page">
+      {/* 1. HERO SECTION */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Who We Are</h1>
+          <p>
+            FSJ is an empowerment platform for Indonesian Youth (ages 17-25) by Community-based, 
+            free programs, and live projects.
+          </p>
+          <div className="breadcrumb">
+            <span className="home-link">Home</span>
+            <span className="separator"> / </span>
+            <span className="about-link">About Us</span>
           </div>
         </div>
-        <div className="footer-base">
-          <span>© 2026 Copyright • First Step Journey. All Rights Reserved.</span>
+      </section>
+
+      {/* 2. VISION & MISSION */}
+      <section className="vision-mission-section">
+        <div className="vm-row">
+          <div className="vm-text-card">
+            <h2 className="vision-title">Vision</h2>
+            <p>
+              To provide access for Indonesian youth — especially those with limited privilege — 
+              to take their first step, grow, and discover a meaningful career path 
+              through both soft and hard skills.
+            </p>
+          </div>
+          <div className="vm-image-card">
+            {/* <img src={visionImg} alt="Vision" /> */}
+            <div className="image-placeholder">Image Placeholder</div>
+          </div>
         </div>
-      </footer>
+
+        <div className="vm-row reverse">
+          <div className="vm-text-card">
+            <h2 className="mision-title">Mision</h2>
+            <ul>
+              <li>Bridge the gap in access to career guidance and development</li>
+              <li>Ignite first steps through education & mentoring</li>
+              <li>Cultivate growth mindset and social inclusion</li>
+              <li>Build a safe and empowering community space</li>
+              <li>Drive impact-driven movement through action</li>
+            </ul>
+          </div>
+          <div className="vm-image-card">
+            {/* <img src={missionImg} alt="Mission" /> */}
+            <div className="image-placeholder">Image Placeholder</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. OUR CULTURE */}
+      <section className="culture-section">
+        <div className="culture-header">
+          <span className="culture-subtitle">Our Culture</span>
+          <h2 className="culture-title">
+            A Rapid Journey of <span className="culture-highlight">Impact</span>
+          </h2>
+        </div>
+        <div className="culture-content">
+          {/* Sesuai desain, bagian ini menampilkan gambar step besar dan profil Jose Prima */}
+          <div className="culture-image-large">
+             {/* <img src={cultureImg} alt="Culture Graphic" /> */}
+             <div className="image-placeholder large">Culture Graphic / Image Placeholder</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. THE DIVISIONS SECTION */}
+      <section className="divisions-section">
+        <div className="divisions-grid">
+          
+          <div className="divisions-header-card">
+            <h2 className="divisions-title">
+              The Divisions <br />
+              Driving <span className="divisions-highlight">Our Mission</span>
+            </h2>
+            <p className="divisions-desc">
+              Behind every impactful initiative at First Step Journey is a dedicated team. 
+              Our divisions work collaboratively to design sustainable programs.
+            </p>
+          </div>
+
+          <div className="div-card div-grad-blue">
+            <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
+          </div>
+
+          <div className="div-card div-grad-yellow">
+            <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
+          </div>
+
+          <div className="div-card div-grad-blue">
+            <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
+          </div>
+
+          <div className="div-card div-grad-blue">
+            <h3 className="text-black">Brand & <br/> Event</h3>
+          </div>
+
+          <div className="div-card div-grad-yellow">
+            <h3 className="text-navy">Human <br/> Capital</h3>
+          </div>
+
+          <div className="div-card div-grad-blue">
+            <h3 className="text-black">Administration <br/> & Report</h3>
+          </div>
+
+          <div className="div-card div-grad-yellow">
+            <h3 className="text-navy">Digital <br/> Marketing</h3>
+          </div>
+
+        </div>
+      </section>
     </div>
-  )
-}
+  );
+};
 
-export default App;
+export default AboutUs;

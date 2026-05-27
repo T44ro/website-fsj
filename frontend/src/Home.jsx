@@ -13,6 +13,13 @@ import './Home.css';
 // import offerImg2 from './assets/offer-img-2.jpg';
 // import offerImg3 from './assets/offer-img-3.jpg';
 
+// import impactImg1 from './assets/impact-img-1.jpg';
+// import impactImg2 from './assets/impact-img-2.jpg';
+// import impactImg3 from './assets/impact-img-3.jpg';
+// import impactImg4 from './assets/impact-img-4.jpg';
+// import impactImg5 from './assets/impact-img-5.jpg';
+// import impactImg6 from './assets/impact-img-6.jpg';
+
 // Komponen Ikon SVG (Aman, tidak butuh upload gambar)
 const CheckIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#121212" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -131,11 +138,8 @@ const Home = () => {
 
         <div className="offer-cards-grid">
           
-          {/* KARTU 1 */}
           <div className="offer-card">
-            {/* Hapus tanda komentar di bawah jika gambar sudah di-upload */}
             {/* <img src={offerImg1} alt="Career Coaching" className="offer-img-bg" /> */}
-            
             <div className="offer-content">
               <h3>Free Career Coaching<br/>(Online & Offline)</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -143,11 +147,8 @@ const Home = () => {
             </div>
           </div>
 
-          {/* KARTU 2 */}
           <div className="offer-card">
-            {/* Hapus tanda komentar di bawah jika gambar sudah di-upload */}
             {/* <img src={offerImg2} alt="Soft Skills Training" className="offer-img-bg" /> */}
-            
             <div className="offer-content">
               <h3>Soft Skills Training: Public<br/>Speaking, CV Writing, etc</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -155,16 +156,76 @@ const Home = () => {
             </div>
           </div>
 
-          {/* KARTU 3 */}
           <div className="offer-card">
-            {/* Hapus tanda komentar di bawah jika gambar sudah di-upload */}
             {/* <img src={offerImg3} alt="Mentoring and Bootcamp" className="offer-img-bg" /> */}
-            
             <div className="offer-content">
               <h3>Mentoring and Bootcamp for<br/>students & fresh graduates</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <button className="btn-more">More &gt;</button>
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================= */}
+      {/* 4. OUR IMPACT SECTION                     */}
+      {/* ========================================= */}
+      <section className="home-impact-section">
+        
+        {/* Header Baris (Kiri Teks, Kanan Tombol) */}
+        <div className="impact-header-row">
+          <div className="impact-header-text">
+            <span className="impact-eyebrow">Our Impact</span>
+            <h2 className="impact-title">
+              Creating Real Impact <span className="impact-highlight">Together</span>
+            </h2>
+            <p className="impact-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div className="impact-header-action">
+            <button className="btn-primary-pill">Discover More</button>
+          </div>
+        </div>
+
+        {/* Galeri Grid 6 Gambar */}
+        <div className="impact-grid">
+          
+          {/* Kartu 1 */}
+          <div className="impact-card">
+            {/* <img src={impactImg1} alt="FSJ X Gandengan" className="impact-img-bg" /> */}
+            <span className="impact-label">FSJ X Gandengan</span>
+          </div>
+
+          {/* Kartu 2 */}
+          <div className="impact-card">
+            {/* <img src={impactImg2} alt="FSJ Iftar" className="impact-img-bg" /> */}
+            <span className="impact-label">FSJ Iftar</span>
+          </div>
+
+          {/* Kartu 3 */}
+          <div className="impact-card">
+            {/* <img src={impactImg3} alt="Figma Training" className="impact-img-bg" /> */}
+            <span className="impact-label">Figma Training</span>
+          </div>
+
+          {/* Kartu 4 */}
+          <div className="impact-card">
+            {/* <img src={impactImg4} alt="People Development Training" className="impact-img-bg" /> */}
+            <span className="impact-label">People Development Training</span>
+          </div>
+
+          {/* Kartu 5 */}
+          <div className="impact-card">
+            {/* <img src={impactImg5} alt="Instagram Live Session" className="impact-img-bg" /> */}
+            <span className="impact-label">Instagram Live Session</span>
+          </div>
+
+          {/* Kartu 6 */}
+          <div className="impact-card">
+            {/* <img src={impactImg6} alt="Mini Training" className="impact-img-bg" /> */}
+            <span className="impact-label">Mini Training</span>
           </div>
 
         </div>

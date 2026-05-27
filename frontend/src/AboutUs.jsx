@@ -50,7 +50,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="vm-image-card">
-            {/* <img src={visionImg} alt="Vision" /> */}
+            {/* <img src={visionImg} alt="Vision Illustration" /> */}
           </div>
         </div>
 
@@ -66,12 +66,12 @@ const AboutUs = () => {
             </ul>
           </div>
           <div className="vm-image-card">
-            {/* <img src={missionImg} alt="Mission" /> */}
+            {/* <img src={missionImg} alt="Mission Illustration" /> */}
           </div>
         </div>
       </section>
 
-      {/* 3. OUR CULTURE (DESAIN BARU) */}
+      {/* 3. OUR CULTURE */}
       <section className="culture-section">
         <div className="culture-header">
           <span className="culture-subtitle">Our Culture</span>
@@ -118,6 +118,7 @@ const AboutUs = () => {
       <section className="divisions-section">
         <div className="divisions-grid">
           
+          {/* Tile Judul & Deskripsi */}
           <div className="divisions-header-card">
             <h2 className="divisions-title">
               The Divisions <br />
@@ -147,7 +148,9 @@ const AboutUs = () => {
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Administration <br/> & Report</h3>
           </div>
-          <div className="div-card card-soft-beige card-highlighted">
+          
+          {/* Border Biru Digital Marketing Sudah Dihilangkan */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-navy">Digital <br/> Marketing</h3>
           </div>
 

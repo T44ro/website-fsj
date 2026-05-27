@@ -120,7 +120,6 @@ const Community = () => {
 
       {/* 4. INSIGHTS PREVIEW SECTION */}
       <section className="com-section com-insights-preview">
-        {/* BAGIAN JUDUL YANG KAMU MINTA ADA DI SINI */}
         <div className="insights-header-center">
           <span className="com-eyebrow center-eyebrow">Step 2 • Learn</span>
           <h2 className="section-title-center no-margin-bottom">Catch Up on Key Insights</h2>
@@ -141,7 +140,6 @@ const Community = () => {
               </div>
             </div>
           </div>
-          
           <div className="ins-item-horizontal">
             <div className="ins-img-wrap"></div>
             <div className="ins-text-wrap">
@@ -153,7 +151,6 @@ const Community = () => {
               </div>
             </div>
           </div>
-
           <div className="ins-item-horizontal">
             <div className="ins-img-wrap"></div>
             <div className="ins-text-wrap">
@@ -165,7 +162,6 @@ const Community = () => {
               </div>
             </div>
           </div>
-
           <div className="ins-item-horizontal">
             <div className="ins-img-wrap"></div>
             <div className="ins-text-wrap">
@@ -180,49 +176,84 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 5. CTA SECTION */}
-      <section className="com-cta">
-        <div className="cta-content">
-          <h2>Your Next Challenge Awaits</h2>
-          <p>Join our batch of changemakers and start your journey today. <br/> Limited slots available for the next intake!</p>
-          <button className="btn-join-now">Join Now</button>
+      {/* 5. TRUE IMPACT SECTION (DESAIN BARU - POSISI DITUKAR KE ATAS) */}
+      <section className="com-section com-impact-revised">
+        <div className="impact-header-revised">
+          <span className="com-eyebrow center-eyebrow">Result</span>
+          <h2 className="section-title-center no-margin-bottom">What is Our True Impact?</h2>
+          <p className="insights-desc">
+            Ultimately, a robust system must produce meaningful outputs. This final phase is no longer about oneself, but about how widely our collective work is felt by the ecosystem, turning individual growth into a widespread footprint.
+          </p>
+        </div>
+
+        <div className="impact-bento-revised">
+          {/* Kolom Kiri: Active Alumni */}
+          <div className="impact-col-left">
+            <div className="bento-blue-large">
+              <h3>More Than 50+<br/>Active Alumni</h3>
+              <p>Join a growing network of future leaders and professionals spread across the nation.</p>
+            </div>
+            <div className="bento-blue-small">
+              <div className="avatar-group">
+                <div className="avatar-circle"></div>
+                <div className="avatar-circle"></div>
+                <div className="avatar-circle"></div>
+                <div className="avatar-circle"></div>
+                <div className="avatar-circle badge-50">50+</div>
+              </div>
+              <h4>Present in 100+<br/>Campuses & Institutions</h4>
+            </div>
+          </div>
+
+          {/* Kolom Tengah: Top Partners */}
+          <div className="impact-col-center">
+            <div className="bento-white-card">
+              <div className="partner-logos-area">
+                {/* Tempat Logo Placeholder */}
+                <div className="logo-dummy">Logoipsum</div>
+                <div className="logo-dummy">LOCO</div>
+                <div className="logo-dummy">Logoipsum</div>
+              </div>
+              <h3 className="bento-title-dark">Collaborated With<br/>Top Partners</h3>
+              <p className="bento-desc-dark">From corporate leaders to top university organizations, our collaborations ensure every program is impactful and career-ready.</p>
+              <button className="btn-yellow-solid">View all partners</button>
+            </div>
+          </div>
+
+          {/* Kolom Kanan: Impact Scale */}
+          <div className="impact-col-right">
+            <div className="bento-white-card">
+              <h3 className="bento-title-dark">Our Impact Scale</h3>
+              
+              <div className="scale-stats">
+                <div className="scale-item">
+                  <h2>100+</h2>
+                  <p>Sustainable Projects Executed</p>
+                </div>
+                <div className="scale-item">
+                  <h2>400+</h2>
+                  <p>Total Event Participants</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 6. TRUE IMPACT SECTION */}
-      <section className="com-section com-impact">
-        <h2 className="section-title-center">What is Our True Impact?</h2>
-        <div className="impact-bento">
-          <div className="impact-left-col">
-            <div className="impact-card-blue">
-              <h3>More Than 50+ <br/> Active Alumni</h3>
-              <p>Successfully placed in sustainability roles.</p>
-              <div className="alumni-logos">
-                 <div className="logo-placeholder">CAMPUS LOGO</div>
-              </div>
-              <p className="impact-sub">Present in 50+ Campuses & Institutions</p>
-            </div>
-          </div>
-          <div className="impact-right-col">
-            <div className="impact-card-white">
-              <span className="eyebrow">Collaborated with Top Partners</span>
-              <div className="partner-logos-grid">
-                 <div className="partner-logo">LOGO</div>
-                 <div className="partner-logo">LOGO</div>
-                 <div className="partner-logo">LOGO</div>
-                 <div className="partner-logo">LOGO</div>
-              </div>
-            </div>
-            <div className="impact-card-stats">
-              <div className="stat-item">
-                <h4>100+</h4>
-                <span>Successful Projects</span>
-              </div>
-              <div className="stat-item">
-                <h4>400+</h4>
-                <span>Active Participants</span>
-              </div>
-            </div>
+      {/* 6. CTA SECTION: YOUR NEXT CHALLENGE (DESAIN BARU - POSISI DITUKAR KE BAWAH) */}
+      <section className="com-section com-challenge-revised">
+        <div className="challenge-header-revised">
+          <h2 className="section-title-center no-margin-bottom">Your Next Challenge Awaits</h2>
+          <p className="insights-desc">
+            Knowledge means nothing without execution. The next FSJ Internship batch is opening in mid-2026. Prepare yourself to validate your theories in a real-world setting and experience a truly transformative working environment.
+          </p>
+        </div>
+        
+        <div className="challenge-image-banner">
+          {/* Ini kotak untuk menaruh gambar aslimu nanti */}
+          <div className="challenge-overlay-buttons">
+            <button className="btn-outline-gold">Notify Me</button>
+            <button className="btn-yellow-solid">Join the Waitlist</button>
           </div>
         </div>
       </section>

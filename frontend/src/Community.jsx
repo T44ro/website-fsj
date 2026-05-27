@@ -2,6 +2,14 @@ import React from 'react';
 import './Community.css';
 import heroBg from './assets/about-hero-img.png';
 
+// === IKON ARROW UNTUK TOMBOL KARTU DISCOVER ===
+const ArrowUpRightIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+);
+
 const Community = () => {
   const heroStyle = {
     backgroundImage: `url(${heroBg})`,
@@ -26,69 +34,91 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 2. STRUCTURED PATHWAY SECTION (REVISI SEJAJAR & KOTAK RATA KIRI) */}
+      {/* 2. STRUCTURED PATHWAY SECTION */}
       <section className="com-section com-pathway">
         <div className="pathway-container">
-          
-          {/* Gambar Sisi Kiri */}
           <div className="pathway-img-box">
              <div className="img-placeholder"></div>
           </div>
-          
-          {/* Kotak Teks Tengah (Rata Kiri, Background #FFE4A8, Hiasan Spiral) */}
           <div className="pathway-text-block">
             <h2>Your Journey with FSJ: <br/>A Structured Pathway <br/>to Purposeful</h2>
             <p>From foundational learning to professional placement, we guide you every step of the way.</p>
             <button className="btn-learn-more">
               Learn More <span className="btn-arrow">↗</span>
             </button>
-            
-            {/* Hiasan Spiral Coretan di Pojok Kanan Bawah */}
             <div className="spiral-decoration">
               <svg width="75" height="75" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M85,45 C85,68 68,82 48,82 C25,82 12,65 12,45 C12,23 30,10 50,10 C68,10 78,24 76,40 C74,54 62,64 50,62 C40,60 34,51 36,43 C38,36 44,32 50,34 C54,36 55,40 54,44" fill="none" stroke="#1B1464" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
             </div>
           </div>
-          
-          {/* Gambar Sisi Kanan */}
           <div className="pathway-img-box">
              <div className="img-placeholder"></div>
           </div>
-
         </div>
       </section>
 
-      {/* 3. READY TO DISCOVER SECTION (HORIZONTAL CARDS) */}
+      {/* 3. READY TO DISCOVER SECTION (REVISI STYLE HOME PAGE) */}
       <section className="com-section com-discover">
         <div className="discover-header">
-          <h2>Ready to Discover Your Path?</h2>
+          <div className="discover-title-area">
+             {/* 1. EYEBROW ORANGE DI ATAS JUDUL */}
+             <span className="com-eyebrow">Step 1 • Explore</span>
+             <h2>Ready to Discover Your Path?</h2>
+          </div>
           <div className="discover-nav">
              <button className="nav-btn prev">←</button>
              <button className="nav-btn next">→</button>
           </div>
         </div>
+        
+        {/* 2. REVISI KARTU MENGIKUTI STYLE BLOG CARD HOME PAGE */}
         <div className="discover-scroll">
+          
           <div className="discover-card">
             <div className="card-img"></div>
-            <h3>Join Our Community</h3>
-            <p>Connect with 300+ like-minded peers across Indonesia.</p>
+            <div className="card-content">
+              <h3>Join Our Community</h3>
+              <p>Connect with 300+ like-minded peers across Indonesia.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
           </div>
+
           <div className="discover-card">
             <div className="card-img"></div>
-            <h3>Find Your Passion</h3>
-            <p>Explore various sectors in the green economy.</p>
+            <div className="card-content">
+              <h3>Find Your Passion</h3>
+              <p>Explore various sectors in the green economy.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
           </div>
+
           <div className="discover-card">
             <div className="card-img"></div>
-            <h3>Build Your Skills</h3>
-            <p>Access free mentoring and professional training.</p>
+            <div className="card-content">
+              <h3>Build Your Skills</h3>
+              <p>Access free mentoring and professional training.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
           </div>
+
           <div className="discover-card">
             <div className="card-img"></div>
-            <h3>Real World Impact</h3>
-            <p>Work on live projects with our top industry partners.</p>
+            <div className="card-content">
+              <h3>Real World Impact</h3>
+              <p>Work on live projects with our top industry partners.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -129,7 +159,7 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 6. TRUE IMPACT SECTION (BENTO STATS) */}
+      {/* 6. TRUE IMPACT SECTION */}
       <section className="com-section com-impact">
         <h2 className="section-title-center">What is Our True Impact?</h2>
         <div className="impact-bento">

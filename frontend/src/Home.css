@@ -59,10 +59,7 @@
   justify-content: center;
 }
 
-.btn-primary-pill {
-  background-color: #FDBE34;
-  color: #FFFFFF;
-  border: none;
+.btn-primary-pill, .btn-outline-pill {
   padding: 12px 32px;
   border-radius: 999px;
   font-family: 'Quicksand', sans-serif;
@@ -75,29 +72,11 @@
   transition: all 0.3s ease;
 }
 
-.btn-primary-pill:hover {
-  background-color: #E6A92E;
-}
+.btn-primary-pill { background-color: #FDBE34; color: #FFFFFF; border: none; }
+.btn-primary-pill:hover { background-color: #E6A92E; }
 
-.btn-outline-pill {
-  background-color: #FFFFFF;
-  color: #FDBE34;
-  border: 1px solid #FDBE34;
-  padding: 12px 32px;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-pill:hover {
-  background-color: #FFF9F2;
-}
+.btn-outline-pill { background-color: #FFFFFF; color: #FDBE34; border: 1px solid #FDBE34; }
+.btn-outline-pill:hover { background-color: #FFF9F2; }
 
 .explore-link {
   font-family: 'Quicksand', sans-serif;
@@ -147,61 +126,15 @@
   position: relative;
 }
 
-.about-eyebrow {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  color: #FBB03B;
-  display: block;
-  margin-bottom: 12px;
-}
+.about-eyebrow { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
+.about-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; color: #FFFFFF; margin: 0 0 20px 0; }
+.about-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #FBB03B; }
+.about-desc { color: #FFFFFF; font-family: 'Quicksand', sans-serif; font-weight: 500; margin-bottom: 40px; }
 
-.about-title {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 44px;
-  color: #FFFFFF;
-  margin: 0 0 20px 0;
-}
+.btn-learn-more { background-color: #FBB03B; color: #FFFFFF; border: none; padding: 14px 36px; border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 700; cursor: pointer; }
 
-.about-highlight {
-  font-family: 'Courgette', cursive;
-  font-weight: 400;
-  color: #FBB03B;
-}
-
-.about-desc {
-  color: #FFFFFF;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-.btn-learn-more {
-  background-color: #FBB03B;
-  color: #FFFFFF;
-  border: none;
-  padding: 14px 36px;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.about-skills-column {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.skill-pill {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 32px;
-  border-radius: 999px;
-  width: 380px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
+.about-skills-column { display: flex; flex-direction: column; gap: 24px; }
+.skill-pill { display: flex; align-items: center; gap: 16px; padding: 16px 32px; border-radius: 999px; width: 380px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); }
 
 .skill-text { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; }
 .text-navy { color: #1B1464; }
@@ -218,8 +151,6 @@
 .offer-eyebrow { color: #FBB03B; font-weight: 700; margin-bottom: 12px; display: block; }
 .offer-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; }
 .offer-highlight-text { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464; position: relative; padding: 0 10px; }
-.scribble-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130%; height: 130%; z-index: -1; }
-
 .offer-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
 .offer-card { height: 520px; border-radius: 16px; background-color: #E0E0E0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
 .offer-content { padding: 40px 24px; text-align: left; background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(253,190,52,1) 100%); backdrop-filter: blur(6px); }
@@ -232,7 +163,7 @@
 .home-impact-section { padding: 80px 10%; }
 .impact-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
 .impact-eyebrow { color: #FBB03B; font-weight: 700; display: block; margin-bottom: 12px; }
-.impact-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; }
+.impact-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; margin: 0 0 20px 0;}
 .impact-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464; }
 .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .impact-card { position: relative; height: 250px; display: flex; justify-content: center; align-items: flex-end; padding-bottom: 24px; transition: 0.3s; }
@@ -240,9 +171,8 @@
 .impact-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #E0E0E0; border: 3px solid #1B1464; border-radius: 16px; z-index: 2; }
 .impact-label { position: relative; z-index: 10; background: #FFF; color: #1B1464; font-weight: 700; padding: 10px 24px; border-radius: 999px; }
 
-
 /* ========================================================= */
-/* 5. TESTIMONIAL SECTION (FIXED ANTI-ALIASING BUG)          */
+/* 5. TESTIMONIAL SECTION                                    */
 /* ========================================================= */
 .home-testimonial-section {
   background: linear-gradient(180deg, #FFF9F2 0%, #FDE3A7 45%, #FDE3A7 60%, #FFF9F2 100%);
@@ -250,113 +180,63 @@
   text-align: center;
   position: relative;
 }
+.testi-header { margin-bottom: 50px; }
+.testi-eyebrow { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #FBB03B; display: block; margin-bottom: 12px; }
+.testi-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 44px; color: #121212; margin: 0; }
+.testi-highlight { font-family: 'Courgette', cursive; font-weight: 400 !important; color: #FBB03B; position: relative; display: inline-block; padding: 0 10px; }
 
-.testi-header {
-  margin-bottom: 50px;
-}
-
-.testi-eyebrow {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: #FBB03B;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.testi-title {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 44px;
-  color: #121212;
-  margin: 0;
-}
-
-.testi-highlight {
-  font-family: 'Courgette', cursive;
-  font-weight: 400 !important; 
-  color: #FBB03B;
-  position: relative;
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.testi-carousel-wrapper {
-  width: 100%;
-  overflow: hidden; 
-  margin: 60px 0;
-  padding: 80px 0; 
-  display: flex;
-  justify-content: center;
-}
-
-.testi-carousel-track {
-  display: flex;
-  align-items: center;
-  gap: 40px; 
-  transition: transform 0.5s ease-in-out; 
-}
-
-/* --- KOREKSI TOTAL KOTAK CAROUSEL --- */
+.testi-carousel-wrapper { width: 100%; overflow: hidden; margin: 60px 0; padding: 80px 0; display: flex; justify-content: center; }
+.testi-carousel-track { display: flex; align-items: center; gap: 40px; transition: transform 0.5s ease-in-out; }
 .carousel-item {
-  width: 200px;
-  height: 280px;
-  border-radius: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: #A3A3A3;
-  
-  /* JURUS SAKTI 1: Memaksa Browser Pakai GPU agar Anti-Aliasing Mulus */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: 1px solid transparent; 
-  
-  /* JURUS SAKTI 2: Mencegah warna background bocor melewati border */
-  background-clip: padding-box; 
-  
-  /* Menghapus border tipis dari kode sebelumnya */
-  border: none;
-  
+  width: 200px; height: 280px; border-radius: 20px; overflow: hidden; cursor: pointer; background-color: #A3A3A3;
+  -webkit-backface-visibility: hidden; backface-visibility: hidden; outline: 1px solid transparent; background-clip: padding-box; border: none;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
+.carousel-item.inactive { transform: scale(0.85) translate3d(0, 0, 0); opacity: 0.5; }
+.carousel-item.active { transform: scale(1.35) translate3d(0, 0, 0); opacity: 1; border: 3px solid #FFFFFF; box-shadow: 0 20px 40px rgba(0,0,0,0.15); z-index: 10; }
+.carousel-placeholder, .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+.testi-content { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+.testi-content p { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; color: #000000; line-height: 1.6; margin: 0; }
 
-.carousel-item.inactive {
-  /* Harus ditambahkan translate3d(0,0,0) agar sinkron dengan GPU */
-  transform: scale(0.85) translate3d(0, 0, 0);
-  opacity: 0.5;
-}
 
-.carousel-item.active {
-  /* Sama, tambahkan translate3d(0,0,0) */
-  transform: scale(1.35) translate3d(0, 0, 0); 
-  opacity: 1;
-  border: 3px solid #FFFFFF; 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  z-index: 10;
-}
+/* ========================================================= */
+/* 6. MOBILE RESPONSIVE (KHUSUS LAYAR HP MAKSIMAL 768PX)     */
+/* ========================================================= */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Hero Mobile */
+  .home-hero-centered { padding: 40px 5% 20px 5%; }
+  .hero-main-content h1 { font-size: 36px; } /* Teks dikecilkan */
+  .hero-buttons { flex-direction: column; width: 100%; } /* Tombol jadi atas bawah */
+  .btn-primary-pill, .btn-outline-pill { width: 100%; justify-content: center; }
+  .hero-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 30px; } /* Jadi 2 kolom */
+  .stat-card h2 { font-size: 32px; }
 
-.carousel-placeholder {
-  width: 100%;
-  height: 100%;
-}
+  /* 2. About Mobile */
+  .home-about-section { 
+    flex-direction: column; /* Teks dan kotak skill jadi atas bawah */
+    margin: 40px 5% 0 5%; 
+    padding: 50px 20px; 
+    border-radius: 20px; 
+    text-align: center;
+  }
+  .about-text-column { max-width: 100%; }
+  .about-title { font-size: 32px; }
+  .about-skills-column { align-items: center; width: 100%; }
+  .skill-pill { width: 100%; max-width: 100%; padding: 12px 20px; box-sizing: border-box; }
 
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  /* 3. Offer Mobile */
+  .offer-cards-grid { grid-template-columns: 1fr; gap: 20px; } /* Kartu jadi memanjang ke bawah (1 kolom) */
+  .offer-title { font-size: 32px; }
+  .offer-card { height: 400px; }
 
-.testi-content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+  /* 4. Impact Mobile */
+  .impact-header-row { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .impact-grid { grid-template-columns: 1fr; gap: 30px; } /* Galeri jadi ke bawah (1 kolom) */
+  .impact-title { font-size: 32px; }
 
-.testi-content p {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; 
-  font-size: 18px;
-  color: #000000;
-  line-height: 1.6;
-  margin: 0;
+  /* 5. Testimonial Mobile */
+  .testi-title { font-size: 32px; }
+  .testi-carousel-wrapper { padding: 40px 0; }
+  .carousel-item.active { transform: scale(1.15) translate3d(0, 0, 0); } /* Zoom tidak terlalu besar di HP */
 }

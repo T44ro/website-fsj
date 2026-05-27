@@ -242,10 +242,9 @@
 
 
 /* ========================================================= */
-/* 5. TESTIMONIAL SECTION (SMOOTH CAROUSEL & SOFT GRADIENT)  */
+/* 5. TESTIMONIAL SECTION (FIXED CLIPPING)                   */
 /* ========================================================= */
 .home-testimonial-section {
-  /* KEMBALI KE LINEAR GRADIENT dengan warna oranye pastel yang sangat soft (#FDE3A7) */
   background: linear-gradient(180deg, #FFF9F2 0%, #FDE3A7 45%, #FDE3A7 60%, #FFF9F2 100%);
   padding: 100px 0 120px 0;
   text-align: center;
@@ -273,7 +272,6 @@
   margin: 0;
 }
 
-/* Memaksa font-weight 400 agar kembali kurus sesuai gaya font Courgette */
 .testi-highlight {
   font-family: 'Courgette', cursive;
   font-weight: 400 !important; 
@@ -286,9 +284,12 @@
 /* --- Area Slider (Carousel) --- */
 .testi-carousel-wrapper {
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden; /* Sabuk pengaman agar tidak luber kiri-kanan */
   margin: 60px 0;
-  padding: 40px 0; 
+  
+  /* BARU: Jarak vertical dilonggarkan agar saat di-zoom atas-bawahnya tidak kepotong */
+  padding: 80px 0; 
+  
   display: flex;
   justify-content: center;
 }
@@ -316,7 +317,7 @@
 }
 
 .carousel-item.active {
-  transform: scale(1.35); 
+  transform: scale(1.35); /* Zoom in besar */
   opacity: 1;
   border: 3px solid #FFFFFF;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);

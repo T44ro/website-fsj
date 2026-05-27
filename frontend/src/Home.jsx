@@ -36,14 +36,15 @@ const CheckIcon = () => (
   </svg>
 );
 
+/* PERBAIKAN: Ditambahkan preserveAspectRatio="none" agar lingkarannya presisi */
 const ScribbleCircleYellow = () => (
-  <svg className="scribble-circle" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
   </svg>
 );
 
 const ScribbleCircleNavy = () => (
-  <svg className="scribble-circle" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#1B1464" strokeWidth="3" strokeLinecap="round" />
   </svg>
 );
@@ -169,7 +170,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. TESTIMONIAL SECTION (SMOOTH CAROUSEL & NEW GRADIENT) */}
+      {/* 5. TESTIMONIAL SECTION */}
       <section className="home-testimonial-section">
         <div className="testi-header">
           <span className="testi-eyebrow">What They Say</span>

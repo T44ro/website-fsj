@@ -2,17 +2,11 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './Home';       
 import AboutUs from './AboutUs'; 
-import ProductsPrograms from './ProductsPrograms'; // <-- Import halaman baru
-
-// === GAMBAR DI-COMMENT SEMENTARA AGAR VERCEL TIDAK ERROR ===
-// import logo from './assets/fsj-logo.png';
-// import iconIg from './assets/icon-ig.png';
-// import iconYt from './assets/icon-yt.png';
-// import iconTiktok from './assets/icon-tiktok.png';
-// import iconX from './assets/icon-x.png';
+import ProductsPrograms from './ProductsPrograms'; 
+import Insights from './Insights'; // <-- 1. Import halaman Insights
 
 function App() {
-  const [activePage, setActivePage] = useState('about'); // Default ke About Us
+  const [activePage, setActivePage] = useState('about'); 
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
@@ -20,8 +14,10 @@ function App() {
       setActivePage('about');
     } else if (hash === 'home') {
       setActivePage('home');
-    } else if (hash === 'programs') { // <-- Pengecekan halaman programs
+    } else if (hash === 'programs') { 
       setActivePage('programs');
+    } else if (hash === 'insights') { // <-- 2. Pengecekan route insights
+      setActivePage('insights');
     }
   }, []);
 
@@ -29,54 +25,39 @@ function App() {
     if (event) event.preventDefault();
     setActivePage(pageName);
     window.location.hash = pageName;
-    window.scrollTo(0, 0); // Gulir otomatis ke atas saat pindah halaman
+    window.scrollTo(0, 0); 
   };
 
   return (
     <div className="site-shell">
-      {/* ========================================= */}
-      {/* HEADER NAVIGATION                         */}
-      {/* ========================================= */}
+      {/* HEADER NAVIGATION */}
       <header className="topbar">
-        {/* Kiri: Logo (Sementara pakai teks) */}
         <div className="brand">
           <h2 style={{ margin: 0, color: '#1B1464', fontFamily: 'Quicksand' }}>FSJ</h2>
-          {/* <img src={logo} alt="First Step Journey" className="header-logo" /> */}
         </div>
         
-        {/* Tengah: Menu Navigasi Bentuk Pil */}
         <nav className="topnav">
           <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
           <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
-          
-          {/* <-- Menu Product & Programs sudah ditambahkan onClick --> */}
           <a href="#programs" className={activePage === 'programs' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('programs', e)}>Product & Programs</a>
           
-          <a href="#insights" className="nav-item">Insights</a>
+          {/* <-- 3. Menu Insights dibuat bisa diklik --> */}
+          <a href="#insights" className={activePage === 'insights' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('insights', e)}>Insights</a>
+          
           <a href="#community" className="nav-item">Community</a>
           <a href="#contacts" className="nav-item">Contacts</a>
         </nav>
 
-        {/* Kanan: Ikon Sosial Media (Sementara di-hide agar aman) */}
-        <div className="social-links">
-          {/* <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
-          <a href="#" className="social-btn"><img src={iconYt} alt="YouTube" /></a>
-          <a href="#" className="social-btn"><img src={iconTiktok} alt="TikTok" /></a>
-          <a href="#" className="social-btn"><img src={iconX} alt="X" /></a> 
-          */}
-        </div>
+        <div className="social-links"></div>
       </header>
 
-      {/* ========================================= */}
-      {/* SAKLAR KONTEN HALAMAN                     */}
-      {/* ========================================= */}
+      {/* SAKLAR KONTEN HALAMAN */}
       {activePage === 'home' && <Home changePage={changePage} />}
       {activePage === 'about' && <AboutUs />}
       {activePage === 'programs' && <ProductsPrograms />}
+      {activePage === 'insights' && <Insights />} {/* <-- 4. Tampilkan halaman Insights */}
 
-      {/* ========================================= */}
-      {/* FOOTER                                    */}
-      {/* ========================================= */}
+      {/* FOOTER */}
       <footer className="site-footer">
         <div className="footer-top">
           <div>
@@ -101,9 +82,9 @@ function App() {
             </div>
             <div>
               <h3>Insights</h3>
-              <a href="#blog">News</a>
-              <a href="#blog">Resources</a>
-              <a href="#blog">FAQ</a>
+              <a href="#insights" onClick={(e) => changePage('insights', e)}>Frameworks</a>
+              <a href="#insights" onClick={(e) => changePage('insights', e)}>Mindset</a>
+              <a href="#insights" onClick={(e) => changePage('insights', e)}>Latest News</a>
             </div>
           </div>
         </div>

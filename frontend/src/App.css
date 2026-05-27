@@ -27,13 +27,14 @@ body {
 }
 
 /* ========================================================= */
-/* 1. HEADER (TOPBAR TIGA PILAR)                             */
+/* 1. HEADER (TOPBAR TIGA PILAR - DIPERBAIKI)                */
 /* ========================================================= */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 5%; 
+  /* Kurangi padding vertikal agar header tidak terlalu tinggi */
+  padding: 12px 5%; 
   background-color: #FFFFFF !important; 
   box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
   position: sticky; 
@@ -41,86 +42,113 @@ body {
   z-index: 1000;
 }
 
-/* KIRI: Logo FSJ */
+/* --- Pilar Kiri: Brand --- */
 .brand { 
-  flex: 1; 
+  flex: 1; /* Ambil 1 bagian ruang */
   display: flex; 
   align-items: center; 
   justify-content: flex-start;
 }
-.header-logo { height: 40px; width: auto; object-fit: contain; }
 
-/* TENGAH: Menu Navigasi */
+/* --- Pilar Tengah: Menu Navigasi (Pusat Perbaikan) --- */
 .topnav { 
-  flex: 2; /* Mengambil ruang lebih agar menu bisa presisi di tengah */
+  flex: 3; /* Ambil lebih banyak ruang agar menu tidak desak-desakan */
   display: flex; 
-  gap: 12px; 
+  gap: 8px; /* Jarak antar tombol dipersempit */
   align-items: center; 
   justify-content: center;
 }
+
 .nav-item {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 500; 
-  font-size: 14px;
+  font-weight: 600; /* Sedikit lebih tebal agar jelas walau kecil */
+  font-size: 13px; /* DIKECILKAN dari 14px */
   color: #333333;
   text-decoration: none;
-  padding: 8px 18px;
+  /* Padding DIRAMPINGKAN: atas-bawah 6px, kiri-kanan 14px */
+  padding: 6px 14px; 
   border-radius: 999px; 
   border: 1px solid #E0E0E0; 
   background-color: #FFFFFF !important;
   transition: all 0.3s ease;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; /* Mencegah teks turun ke bawah */
 }
-.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
-.nav-item.active { color: #FBB03B !important; border-color: #FBB03B; }
 
-/* KANAN: Ikon Sosial Media */
+.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
+.nav-item.active { 
+  color: #FBB03B !important; 
+  border-color: #FBB03B; 
+  background-color: #FFF9F2 !important; /* Tambah background tipis saat aktif */
+}
+
+/* --- Pilar Kanan: Sosial Media (DENGAN SVG) --- */
 .social-links { 
-  flex: 1;
+  flex: 1; /* Ambil 1 bagian ruang */
   display: flex; 
-  gap: 10px; 
+  gap: 14px; /* Jarak antar ikon */
   align-items: center; 
   justify-content: flex-end;
 }
-.social-btn { text-decoration: none; display: flex; align-items: center; justify-content: center; }
-.social-btn img { height: 36px; width: 36px; object-fit: contain; transition: transform 0.3s ease; }
-.social-btn:hover img { transform: scale(1.08); }
 
-/* Lingkaran Kuning Sementara untuk Sosmed */
-.placeholder-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #FBB03B;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  transition: transform 0.3s ease;
+.social-btn { 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #555555; /* Warna ikon standar (abu-abu gelap) */
+  transition: all 0.3s ease;
+  padding: 4px; /* Area klik sedikit lebih luas */
 }
-.social-btn:hover .placeholder-icon { transform: scale(1.08); }
+
+/* Efek Hover Ikon Sosmed: Berubah jadi warna kuning FSJ */
+.social-btn:hover { 
+  color: #FBB03B; 
+  transform: translateY(-2px); /* Efek melayang sedikit */
+}
 
 
 /* --------------------------------------------------------- */
-/* PENGATURAN MENU DROPDOWN CONTACTS                         */
+/* PENGATURAN MENU DROPDOWN CONTACTS (Disesuaikan)           */
 /* --------------------------------------------------------- */
 .nav-item-dropdown { position: relative; display: inline-block; }
+
+/* Mengatur Span di dalam dropdown agar sejajar ukurannya */
+.nav-item-dropdown span.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.arrow-icon {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
 .dropdown-content {
   display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); 
   background-color: #FFFFFF; min-width: 160px; box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
-  border-radius: 16px; padding: 12px 0; z-index: 1001; margin-top: 8px; border: 1px solid #E0E0E0;
+  border-radius: 16px; padding: 12px 0; z-index: 1001; margin-top: 10px; border: 1px solid #E0E0E0;
 }
 .nav-item-dropdown:hover .dropdown-content { display: flex; flex-direction: column; }
-.dropdown-content a { color: #333333; padding: 10px 24px; text-decoration: none; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 14px; transition: all 0.3s ease; text-align: center; }
+
+.dropdown-content a { 
+  color: #333333; 
+  padding: 10px 24px; 
+  text-decoration: none; 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 600; 
+  font-size: 13px; /* Sesuaikan ukuran font dropdown */
+  transition: all 0.3s ease; 
+  text-align: center; 
+}
 .dropdown-content a:hover { background-color: #FFF9F2; color: #FBB03B; }
 
 
 /* ========================================================= */
-/* 2. FOOTER STYLES                                          */
+/* 2. FOOTER STYLES (TETAP)                                  */
 /* ========================================================= */
 .site-footer { background-color: #FFF9F2 !important; padding: 60px 10% 20px 10%; border-top: 1px solid #F0E6D8; margin-top: auto; }
 .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
@@ -141,12 +169,19 @@ body {
 /* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
 /* ========================================================= */
 @media screen and (max-width: 900px) {
-  .topbar { flex-direction: column; gap: 16px; padding: 20px; }
-  .brand, .topnav, .social-links { justify-content: center; }
-  .topnav { flex-wrap: wrap; }
+  /* Tampilan Tablet/HP mengecil: Ubah susunan jadi vertikal */
+  .topbar { flex-direction: column; gap: 16px; padding: 20px 5%; }
+  .brand, .social-links { justify-content: center; width: 100%; }
+  .brand { flex: none; order: 1; }
+  .topnav { flex: none; order: 2; flex-wrap: wrap; justify-content: center; gap: 6px; width: 100%; }
+  .social-links { flex: none; order: 3; margin-top: 10px; }
+  
+  .nav-item { font-size: 12px; padding: 5px 10px; }
+
   .footer-links { flex-direction: column; gap: 30px; text-align: left; }
   .newsletter { flex-direction: column; width: 100%; }
   .newsletter input { width: 100%; box-sizing: border-box; }
+  
   .dropdown-content { position: static; transform: none; box-shadow: none; border: none; background-color: transparent; padding: 0; }
   .dropdown-content a { text-align: center; padding: 8px 0; }
 }

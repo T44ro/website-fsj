@@ -4,8 +4,39 @@ import './ProductsPrograms.css';
 // 1. IMPORT BACKGROUND GAMBAR HERO
 import heroBg from './assets/about-hero-img.png';
 
-// Nanti hapus tanda // di bawah ini kalau gambar polaroidnya sudah di-upload!
-// import polaroidImg from './assets/polaroid-img.png';
+// === IKON-IKON UNTUK TOMBOL GREEN JOBS ===
+const SettingIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3"></circle>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+  </svg>
+);
+
+const PaletteIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+  </svg>
+);
+
+const BuildingIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+    <path d="M9 22v-4h6v4"></path>
+    <path d="M8 6h.01"></path>
+    <path d="M16 6h.01"></path>
+    <path d="M12 6h.01"></path>
+    <path d="M12 10h.01"></path>
+    <path d="M12 14h.01"></path>
+    <path d="M16 10h.01"></path>
+    <path d="M16 14h.01"></path>
+    <path d="M8 10h.01"></path>
+    <path d="M8 14h.01"></path>
+  </svg>
+);
 
 const ProductsPrograms = () => {
   const heroStyle = {
@@ -32,21 +63,14 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 2. FUTURE-PROOF CAREER SECTION (DESAIN GRADASI BARU) */}
+      {/* 2. FUTURE-PROOF CAREER SECTION */}
       <section className="pp-section pp-future-section">
-        {/* Kiri: Gradasi Biru + Teks Putih + Gambar Polaroid */}
         <div className="pp-future-left">
           <h3 className="pp-future-left-title">First Step Journey<br/>Green Career</h3>
           <div className="polaroid-wrapper">
-            {/* Tag img ini siap dipakai saat gambarnya sudah kamu upload */}
-            {/* <img src={polaroidImg} alt="FSJ Green Career" /> */}
-            
-            {/* Kotak abu-abu sementara sebelum gambar di-upload */}
             <div className="polaroid-placeholder-img"></div>
           </div>
         </div>
-
-        {/* Kanan: Teks & Fitur */}
         <div className="pp-future-right">
           <span className="pp-eyebrow">FSJ Green Career</span>
           <h2 className="pp-title">Future-Proof <span className="pp-highlight">Career</span></h2>
@@ -84,14 +108,31 @@ const ProductsPrograms = () => {
           <span className="pp-eyebrow">About Green Career</span>
           <h2 className="pp-title">What is Green Jobs?</h2>
           <p className="pp-desc">
-            Green jobs are decent jobs that contribute to preserve or restore the environment, be they in traditional sectors such as manufacturing and construction, or in new, emerging green sectors.
+            Green Jobs encompass any profession that contributes to preserving the environment. Whether you are building energy-efficient software using Information Systems, crafting sustainable visual brand communications, or mapping out circular business frameworks, you are part of the green workforce.
           </p>
+          
+          {/* DESAIN PILL BARU DENGAN IKON */}
           <div className="pp-pill-list">
-            <div className="pp-pill">Tech & Data: Build sustainable software</div>
-            <div className="pp-pill outline">Design: Product & Eco-friendly packaging</div>
-            <div className="pp-pill outline">Business & Strategy: Circular economy</div>
+            
+            <div className="pp-pill pill-tech">
+              <div className="pill-icon"><SettingIcon /></div>
+              <span>Tech & Data: Software solutions, data analytics, and system efficiency.</span>
+            </div>
+            
+            <div className="pp-pill pill-design">
+              <div className="pill-icon"><PaletteIcon /></div>
+              <span>Design & Product: Eco-friendly packaging & sustainable UI/UX design.</span>
+            </div>
+            
+            <div className="pp-pill pill-business">
+              <div className="pill-icon"><BuildingIcon /></div>
+              <span>Business & Strategy: Circular Economy models & ESG integration.</span>
+            </div>
+
           </div>
         </div>
+        
+        {/* KOLASE GAMBAR (Layout Disempurnakan) */}
         <div className="pp-greenjobs-right">
           <div className="pp-collage">
             <div className="img-placeholder img-1"></div>

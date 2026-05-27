@@ -362,7 +362,6 @@
   margin: 0;
 }
 
-/* Teks Your Growth dengan font script dan lingkaran di belakangnya */
 .offer-highlight-text {
   font-family: 'Courgette', cursive;
   font-weight: 400; 
@@ -379,10 +378,9 @@
   transform: translate(-50%, -50%);
   width: 130%;
   height: 130%;
-  z-index: -1; /* Berada di belakang teks */
+  z-index: -1; 
 }
 
-/* --- Area Grid 3 Kartu --- */
 .offer-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -395,15 +393,14 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  height: 520px; /* Tinggi proporsional */
+  height: 520px; 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Memaksa konten teks berada di bawah */
-  background-color: #E0E0E0; /* Warna cadangan jika gambar belum diupload */
+  justify-content: flex-end; 
+  background-color: #E0E0E0; 
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Gambar latar belakang kartu */
 .offer-img-bg {
   position: absolute;
   top: 0;
@@ -414,16 +411,13 @@
   z-index: 1;
 }
 
-/* Kotak teks di bagian bawah kartu dengan efek Frosted Glass Gradient */
 .offer-content {
   position: relative;
   z-index: 2;
   padding: 40px 24px 30px 24px;
   text-align: left;
-  
-  /* Gradasi transparan/putih ke solid oranye di bagian bawah */
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(253, 190, 52, 0.95) 75%, rgba(253, 190, 52, 1) 100%);
-  backdrop-filter: blur(6px); /* Efek kaca buram ala glassmorphism */
+  backdrop-filter: blur(6px); 
 }
 
 .offer-content h3 {
@@ -437,7 +431,7 @@
 
 .offer-content p {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400; /* Reguler */
+  font-weight: 400; 
   font-size: 13px;
   color: #000000;
   line-height: 1.6;
@@ -448,7 +442,7 @@
   background-color: transparent;
   color: #43221C;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400; /* Reguler */
+  font-weight: 400; 
   font-size: 13px;
   border: 1px solid #43221C;
   border-radius: 4px;
@@ -460,4 +454,112 @@
 .btn-more:hover {
   background-color: #43221C;
   color: #FFFFFF;
+}
+
+/* ========================================================= */
+/* 4. OUR IMPACT SECTION                                     */
+/* ========================================================= */
+.home-impact-section {
+  padding: 80px 10% 120px 10%; /* Padding bawah yang luas sebelum footer */
+}
+
+/* --- Area Header Impact --- */
+.impact-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  gap: 40px;
+}
+
+.impact-header-text {
+  flex: 1;
+  max-width: 750px;
+  text-align: left;
+}
+
+.impact-eyebrow {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FBB03B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.impact-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  color: #121212;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.impact-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  color: #1B1464;
+}
+
+.impact-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #636363;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Area Grid Galeri --- */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.impact-card {
+  position: relative;
+  height: 250px; /* Tinggi proporsional galeri */
+  border-radius: 16px;
+  border: 4px solid #1B1464; /* Bingkai Navy tebal */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 24px;
+  background-color: #E0E0E0; /* Warna cadangan */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-5px); /* Efek melayang saat di-hover */
+}
+
+/* Gambar latar belakang galeri */
+.impact-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Label berbentuk pil putih di bagian bawah gambar */
+.impact-label {
+  position: relative;
+  z-index: 2;
+  background-color: #FFFFFF;
+  color: #1B1464;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 999px; /* Bentuk pil melengkung penuh */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 85%; /* Menjaga teks tidak melebar keluar batas */
 }

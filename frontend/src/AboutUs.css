@@ -10,10 +10,11 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION                                           */
+/* 1. HERO SECTION (DARK OVERLAY & COMPACT SIZE)             */
 /* ========================================================= */
 .hero {
-  padding: 120px 20px 80px 20px !important; 
+  /* Padding dikurangi agar tidak terlalu tinggi/lebar */
+  padding: 80px 20px !important; 
   width: 100% !important;
   position: relative !important;
   overflow: hidden !important;
@@ -27,32 +28,41 @@
   position: relative !important;
   z-index: 10 !important; 
   text-align: center !important; 
+  display: flex;
+  flex-direction: column-reverse; /* Breadcrumb pindah ke atas h1 */
+  align-items: center;
 }
 
 .hero h1 {
   font-family: 'Quicksand', sans-serif !important;
-  font-weight: 600 !important; 
-  font-size: 52px !important;  
-  color: #000000 !important; 
-  margin: 0 0 16px 0 !important;
+  font-weight: 700 !important; 
+  font-size: 48px !important;  
+  color: #FFFFFF !important; /* Teks Putih */
+  margin: 16px 0 16px 0 !important;
 }
 
 .hero p {
   font-family: 'Quicksand', sans-serif !important;
   font-weight: 500 !important; 
   font-size: 16px !important;
-  color: #000000 !important; 
-  margin: 0 auto 40px auto !important; 
-  max-width: 600px;
+  color: #E0E0E0 !important; /* Abu-abu terang agar kontras */
+  margin: 0 auto 0 auto !important; 
+  max-width: 650px; /* Dibatasi agar tidak melebar jelek */
   line-height: 1.6;
 }
 
 .breadcrumb {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #1B1464; 
+  font-weight: 700;
+  font-size: 13px;
+  color: #FBB03B; 
+  letter-spacing: 2px;
 }
+.home-link { color: #FFFFFF; cursor: pointer; transition: color 0.3s; }
+.home-link:hover { color: #FBB03B; }
+.about-link { color: #FBB03B; }
+.separator { margin: 0 8px; color: #FFFFFF; }
+
 
 /* ========================================================= */
 /* 2. VISION & MISSION                                       */
@@ -120,6 +130,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 /* ========================================================= */
 /* 3. OUR CULTURE                                            */
@@ -200,6 +211,7 @@
   object-fit: cover;
 }
 
+
 /* ========================================================= */
 /* 4. THE DIVISIONS SECTION                                  */
 /* ========================================================= */
@@ -276,6 +288,7 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
+
 /* ========================================================= */
 /* RESPONSIVE GRID UNTUK TABLET/HP                           */
 /* ========================================================= */
@@ -288,6 +301,7 @@
 
 @media screen and (max-width: 600px) {
   .divisions-grid { grid-template-columns: 1fr; }
+  .hero { padding: 60px 20px !important; }
   .hero h1 { font-size: 36px !important; }
   .vision-title, .mision-title { font-size: 32px; }
   .culture-title, .divisions-title { font-size: 32px; }

@@ -111,9 +111,7 @@ const ProductsPrograms = () => {
             Green Jobs encompass any profession that contributes to preserving the environment. Whether you are building energy-efficient software using Information Systems, crafting sustainable visual brand communications, or mapping out circular business frameworks, you are part of the green workforce.
           </p>
           
-          {/* DESAIN PILL BARU DENGAN IKON */}
           <div className="pp-pill-list">
-            
             <div className="pp-pill pill-tech">
               <div className="pill-icon"><SettingIcon /></div>
               <span>Tech & Data: Software solutions, data analytics, and system efficiency.</span>
@@ -128,11 +126,9 @@ const ProductsPrograms = () => {
               <div className="pill-icon"><BuildingIcon /></div>
               <span>Business & Strategy: Circular Economy models & ESG integration.</span>
             </div>
-
           </div>
         </div>
         
-        {/* KOLASE GAMBAR (Layout Disempurnakan) */}
         <div className="pp-greenjobs-right">
           <div className="pp-collage">
             <div className="img-placeholder img-1"></div>
@@ -142,38 +138,54 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 4. YOUR PATH SECTION */}
+      {/* 4. YOUR PATH SECTION (DESAIN BARU) */}
       <section className="pp-section pp-path-section">
-        <h2 className="pp-center-title"><span className="pp-highlight-oval">Your Path</span> to a Green Career</h2>
+        <div className="pp-path-header">
+          <span className="pp-eyebrow" style={{ textAlign: 'center', marginBottom: '8px' }}>Career Pathway</span>
+          <h2 className="pp-center-title">
+            <span className="pp-highlight-circle">Your Path</span> to a Green Career
+          </h2>
+        </div>
         
-        <div className="pp-path-row">
-          <div className="pp-path-text">
-            <h3>Step up and take charge of your future.</h3>
-            <p>Discover how your unique skills can drive real environmental impact and open doors to a purpose-driven profession.</p>
+        <div className="pp-path-grid">
+          {/* Kolom Kiri */}
+          <div className="pp-path-col left-col">
+            <div className="path-item path-intro">
+              <p>Step up and take charge of your future. Discover how your unique skills can drive real environmental impact and open doors to a purpose-driven profession.</p>
+            </div>
+            <div className="path-item path-step2">
+              <div className="img-placeholder img-step2"></div>
+              <div className="pp-step-text">
+                <span className="step-num">Step 2</span>
+                <h3>Equip the Skills with GRIT</h3>
+                <p>Combine your passion with perseverance. Stay consistent despite the challenges to master your core skills whether in tech, design, or business—and adapt them to sustainability frameworks.</p>
+              </div>
+            </div>
           </div>
-          <div className="pp-path-image"><div className="img-placeholder tall"></div></div>
-        </div>
 
-        <div className="pp-path-row reverse">
-          <div className="pp-path-text">
-            <span className="step-label">Step 1</span>
-            <h3>Build an Ownership Mentality</h3>
-            <p>Take true accountability for your career. Own your journey, embrace challenges, and commit to continuous learning.</p>
+          {/* Kolom Kanan */}
+          <div className="pp-path-col right-col">
+            <div className="path-item path-step1">
+              <div className="img-placeholder img-step1"></div>
+              <div className="pp-step-text">
+                <span className="step-num">Step 1</span>
+                <h3>Build an Ownership Mentality</h3>
+                <p>Take full accountability for your impact. Put your heart into your work, face environmental challenges head-on, and focus on finding solutions rather than making excuses.</p>
+              </div>
+            </div>
+            <div className="path-item path-step3">
+              <div className="img-placeholder img-step3"></div>
+              <div className="pp-step-text">
+                <span className="step-num">Step 3</span>
+                <h3>Execute & Impact</h3>
+                <p>A brilliant plan means nothing without real execution. Step into the industry, implement your ideas, and become the forward-thinking leader the future needs.</p>
+              </div>
+            </div>
           </div>
-          <div className="pp-path-image"><div className="img-placeholder wide"></div></div>
-        </div>
-
-        <div className="pp-path-row">
-          <div className="pp-path-text">
-            <span className="step-label">Step 2</span>
-            <h3>Equip the Skills with GRIT</h3>
-            <p>Develop resilience and determination. Push through obstacles and stay focused on long-term sustainability goals.</p>
-          </div>
-          <div className="pp-path-image"><div className="img-placeholder wide"></div></div>
         </div>
       </section>
 
-      {/* 5. EXPLORE GREEN ECONOMY (BENTO GRID) */}
+      {/* 5. EXPLORE GREEN ECONOMY */}
       <section className="pp-section pp-explore-section">
         <h2 className="pp-center-title">Explore the Green Economy</h2>
         <div className="pp-bento-grid">

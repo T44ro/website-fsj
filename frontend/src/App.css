@@ -5,139 +5,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 /* GEMBOK ANTI DARK-MODE STANDAR */
-:root { 
-  color-scheme: only light !important; 
+:root {
+  color-scheme: only light !important;
 }
 
-html { 
+html {
   scroll-behavior: smooth; 
 }
 
-body { 
-  margin: 0; 
-  padding: 0; 
-  font-family: 'Quicksand', sans-serif; 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
   background-color: #FFF9F2 !important; 
   color: #121212 !important; 
 }
 
-.site-shell { 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
+.site-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ========================================================= */
 /* 1. HEADER (TOPBAR)                                        */
 /* ========================================================= */
-.topbar { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 5%; 
   background-color: #FFFFFF !important; 
   box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
   position: sticky; 
-  top: 0; 
-  z-index: 1000; 
+  top: 0;
+  z-index: 1000;
 }
 
-.brand { 
-  display: flex; 
-  align-items: center; 
-}
+.brand { display: flex; align-items: center; }
+.header-logo { height: 40px; width: auto; object-fit: contain; }
 
-.header-logo { 
-  height: 40px; 
-  width: auto; 
-  object-fit: contain; 
-}
+.topnav { display: flex; gap: 12px; align-items: center; }
 
-.topnav { 
-  display: flex; 
-  gap: 12px; 
-  align-items: center; 
-}
-
-.nav-item { 
-  font-family: 'Quicksand', sans-serif; 
+.nav-item {
+  font-family: 'Quicksand', sans-serif;
   font-weight: 500; 
-  font-size: 14px; 
-  color: #333333; 
-  text-decoration: none; 
-  padding: 8px 18px; 
+  font-size: 14px;
+  color: #333333;
+  text-decoration: none;
+  padding: 8px 18px;
   border-radius: 999px; 
   border: 1px solid #E0E0E0; 
-  background-color: #FFFFFF !important; 
-  transition: all 0.3s ease; 
+  background-color: #FFFFFF !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
 }
 
-.nav-item:hover { 
-  background-color: #F9F9F9 !important; 
-  border-color: #CCCCCC; 
+.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
+.nav-item.active { color: #FBB03B !important; border-color: #FBB03B; }
+
+/* --------------------------------------------------------- */
+/* PENGATURAN MENU DROPDOWN CONTACTS                         */
+/* --------------------------------------------------------- */
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.nav-item.active { 
-  color: #FBB03B !important; 
-  border-color: #FBB03B; 
+/* Kotak isi dropdown disembunyikan secara default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Muncul tepat di bawah tombol */
+  left: 50%;
+  transform: translateX(-50%); /* Memastikan posisi tengah sejajar dengan tombol */
+  background-color: #FFFFFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 12px 0;
+  z-index: 1001;
+  margin-top: 8px; /* Jarak antara tombol dan menu */
+  border: 1px solid #E0E0E0;
 }
 
-.social-links { 
-  display: flex; 
-  gap: 10px; 
-  align-items: center; 
+/* Memunculkan kotak dropdown saat tombol "Contacts" di-hover */
+.nav-item-dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
 }
 
-.social-btn { 
-  text-decoration: none; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+/* Mengatur gaya link di dalam dropdown */
+.dropdown-content a {
+  color: #333333;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.social-btn img { 
-  height: 36px; 
-  width: 36px; 
-  object-fit: contain; 
-  transition: transform 0.3s ease; 
-}
-
-.social-btn:hover img { 
-  transform: scale(1.08); 
+/* Hover efek untuk link di dalam dropdown */
+.dropdown-content a:hover {
+  background-color: #FFF9F2;
+  color: #FBB03B;
 }
 
 /* ========================================================= */
 /* 2. FOOTER STYLES                                          */
 /* ========================================================= */
-.site-footer { 
-  background-color: #FFF9F2 !important; 
-  padding: 60px 10% 20px 10%; 
-  border-top: 1px solid #F0E6D8; 
+.site-footer {
+  background-color: #FFF9F2 !important;
+  padding: 60px 10% 20px 10%;
+  border-top: 1px solid #F0E6D8;
   margin-top: auto; 
 }
 
-.footer-top { 
-  display: flex; 
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-  gap: 40px; 
-  margin-bottom: 50px; 
-}
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
+.eyebrow { font-weight: 700; font-size: 14px; color: #FBB03B; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
 
-.eyebrow { 
-  font-weight: 700; 
-  font-size: 14px; 
-  color: #FBB03B; 
-  margin-bottom: 16px; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-}
-
-.newsletter { 
-  display: flex; 
-  gap: 12px; 
-}
-
+.newsletter { display: flex; gap: 12px; }
 .newsletter input { 
   padding: 12px 24px; 
   border-radius: 999px; 
@@ -149,91 +139,29 @@ body {
   background-color: #FFFFFF !important; 
   color: #121212 !important; 
 }
+.newsletter input:focus { border-color: #FBB03B; }
 
-.newsletter input:focus { 
-  border-color: #FBB03B; 
-}
+.primary-btn { background-color: #FBB03B; color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 28px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease; }
+.primary-btn:hover { background-color: #EFA02A; }
 
-.primary-btn { 
-  background-color: #FBB03B; 
-  color: #FFFFFF; 
-  border: none; 
-  border-radius: 999px; 
-  padding: 12px 28px; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 14px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
-}
+.footer-links { display: flex; gap: 80px; }
+.footer-links h3 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #1B1464 !important; margin-top: 0; margin-bottom: 20px; }
+.footer-links a { display: block; font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333 !important; text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
+.footer-links a:hover { color: #FBB03B !important; }
 
-.primary-btn:hover { 
-  background-color: #EFA02A; 
-}
-
-.footer-links { 
-  display: flex; 
-  gap: 80px; 
-}
-
-.footer-links h3 { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 16px; 
-  color: #1B1464 !important; 
-  margin-top: 0; 
-  margin-bottom: 20px; 
-}
-
-.footer-links a { 
-  display: block; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 500; 
-  font-size: 14px; 
-  color: #333333 !important; 
-  text-decoration: none; 
-  margin-bottom: 12px; 
-  transition: color 0.3s ease; 
-}
-
-.footer-links a:hover { 
-  color: #FBB03B !important; 
-}
-
-.footer-base { 
-  text-align: center; 
-  padding-top: 24px; 
-  border-top: 1px solid #E0E0E0; 
-  font-family: 'Quicksand', sans-serif; 
-  font-size: 12px; 
-  font-weight: 500; 
-  color: #888888 !important; 
-}
+.footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888 !important; }
 
 /* ========================================================= */
 /* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
 /* ========================================================= */
 @media screen and (max-width: 768px) {
-  .topbar { 
-    flex-direction: column; 
-    gap: 16px; 
-    padding: 16px; 
-  }
-  .topnav { 
-    flex-wrap: wrap; 
-    justify-content: center; 
-  }
-  .footer-links { 
-    flex-direction: column; 
-    gap: 30px; 
-    text-align: left; 
-  }
-  .newsletter { 
-    flex-direction: column; 
-    width: 100%; 
-  }
-  .newsletter input { 
-    width: 100%; 
-    box-sizing: border-box; 
-  }
+  .topbar { flex-direction: column; gap: 16px; padding: 16px; }
+  .topnav { flex-wrap: wrap; justify-content: center; }
+  .footer-links { flex-direction: column; gap: 30px; text-align: left; }
+  .newsletter { flex-direction: column; width: 100%; }
+  .newsletter input { width: 100%; box-sizing: border-box; }
+  
+  /* Penyesuaian Dropdown di HP */
+  .dropdown-content { position: static; transform: none; box-shadow: none; border: none; background-color: transparent; padding: 0; }
+  .dropdown-content a { text-align: center; padding: 8px 0; }
 }

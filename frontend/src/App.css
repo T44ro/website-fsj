@@ -104,12 +104,242 @@ body {
 .footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888 !important; }
 
 /* ========================================================= */
-/* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
+/* 3. ABOUT US PAGE SPECIFIC STYLES                          */
 /* ========================================================= */
+
+.about-page {
+  background-color: #FFF9F2;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  background: linear-gradient(180deg, #FDB813 0%, #FBB03B 100%);
+  text-align: center;
+  padding: 80px 10%;
+  color: #121212;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- VISION & MISSION --- */
+.vision-mission-section {
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.vm-row {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.vm-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.vm-text-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vision-title {
+  color: #3C2E85; 
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.mision-title {
+  color: #FBB03B; 
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.vm-text-card p, .vm-text-card ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.vm-text-card ul {
+  padding-left: 20px;
+}
+
+.vm-image-card {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #E0E0E0; 
+  min-height: 300px;
+}
+
+/* --- CULTURE SECTION --- */
+.culture-section {
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.culture-subtitle {
+  color: #FBB03B;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.culture-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.culture-highlight {
+  color: #FBB03B;
+  font-style: italic;
+}
+
+.image-placeholder.large {
+  width: 100%;
+  height: 400px;
+  background-color: #E0E0E0;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- DIVISIONS SECTION (CSS GRID) --- */
+.divisions-section {
+  padding: 60px 10%;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.divisions-header-card {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divisions-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.divisions-highlight {
+  color: #3C2E85;
+  font-style: italic;
+}
+
+.divisions-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Division Cards Styling */
+.div-card {
+  border-radius: 16px;
+  padding: 24px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.div-card:hover {
+  transform: translateY(-5px);
+}
+
+.div-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  z-index: 2;
+}
+
+.text-black { color: #121212; }
+.text-navy { color: #3C2E85; }
+
+/* Gradients sesuai desain */
+.div-grad-blue {
+  background: linear-gradient(180deg, #E6F0FA 0%, #99C2ED 100%);
+}
+
+.div-grad-yellow {
+  background: linear-gradient(180deg, #FFF5E6 0%, #FDE0B2 100%);
+}
+
+
+/* ========================================================= */
+/* 4. RESPONSIVE DESIGN (HP & TABLET)                        */
+/* ========================================================= */
+@media screen and (max-width: 992px) {
+  /* Divisions Responsive */
+  .divisions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Vision Mission Responsive */
+  .vm-row, .vm-row.reverse {
+    flex-direction: column;
+  }
+  .vm-image-card {
+    min-height: 250px;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  /* Header & Footer Responsive */
   .topbar { flex-direction: column; gap: 16px; padding: 16px; }
   .topnav { flex-wrap: wrap; justify-content: center; }
   .footer-links { flex-direction: column; gap: 30px; text-align: left; }
   .newsletter { flex-direction: column; width: 100%; }
   .newsletter input { width: 100%; box-sizing: border-box; }
+}
+
+@media screen and (max-width: 576px) {
+  /* Mobile Layout */
+  .divisions-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .culture-title {
+    font-size: 2rem;
+  }
 }

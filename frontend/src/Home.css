@@ -457,18 +457,17 @@
 }
 
 /* ========================================================= */
-/* 4. OUR IMPACT SECTION                                     */
+/* 4. OUR IMPACT SECTION (UPDATED WITH SOLID SHADOW)         */
 /* ========================================================= */
 .home-impact-section {
-  padding: 80px 10% 120px 10%; /* Padding bawah yang luas sebelum footer */
+  padding: 80px 10% 120px 10%; 
 }
 
-/* --- Area Header Impact --- */
 .impact-header-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 60px; /* Jarak ditambah sedikit */
   gap: 40px;
 }
 
@@ -511,33 +510,93 @@
   margin: 0;
 }
 
-/* --- Area Grid Galeri --- */
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px; /* Gap diperbesar sedikit agar bayangan tidak tumpang tindih */
 }
 
+/* --- KOREKSI TOTAL PADA KARTU --- */
 .impact-card {
-  position: relative;
-  height: 250px; /* Tinggi proporsional galeri */
-  border-radius: 16px;
-  border: 4px solid #1B1464; /* Bingkai Navy tebal */
-  overflow: hidden;
+  position: relative; /* Wajib untuk absolute children */
+  height: 250px;
+  background-color: transparent; /* Background asli dibuat transparan */
+  
+  /* Hilangkan overflow:hidden agar bayangan di belakang bisa terlihat */
+  overflow: visible; 
+  
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 24px;
-  background-color: #E0E0E0; /* Warna cadangan */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  
+  /* Bayangan halus yang lama dihapus, kita ganti dengan bayangan solid */
   transition: transform 0.3s ease;
 }
 
 .impact-card:hover {
-  transform: translateY(-5px); /* Efek melayang saat di-hover */
+  /* Efek angkat sedikit saat di-hover */
+  transform: translate(-3px, -3px); 
 }
 
-/* Gambar latar belakang galeri */
+/* TRICK: Pseudo-element ::after untuk membuat Bayangan Solid (Kotak Navy di belakang)
+*/
+.impact-card::after {
+  content: "";
+  position: absolute;
+  
+  /* Posisi digeser ke kanan dan bawah (offset) */
+  top: 10px; 
+  left: 10px;
+  
+  /* Ukuran 100% dari kartu asli */
+  width: 100%;
+  height: 100%;
+  
+  /* Warna bayangan solid (Navy tebal seperti desainmu) */
+  background-color: #1B1464; 
+  
+  /* Samakan radius sudutnya */
+  border-radius: 16px;
+  
+  /* Berada paling belakang */
+  z-index: 1; 
+  
+  transition: all 0.3s ease;
+}
+
+/* Efek saat di-hover, bayangan solidnya merapat sedikit (keren!) */
+.impact-card:hover::after {
+  top: 6px;
+  left: 6px;
+}
+
+/* TRICK: Pseudo-element ::before untuk membuat Bingkai dan Tempat Gambar
+  Ini menggantikan fungsi border dan overflow pada kartu utama.
+*/
+.impact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Warna background kartu tempat gambar (cadangan jika gambar gagal) */
+  background-color: #E0E0E0; 
+  
+  /* Bingkai Navy tipis/sedang di sekeliling gambar */
+  border: 3px solid #1B1464; 
+  border-radius: 16px;
+  
+  /* Wajib overflow:hidden di sini agar gambar JPG/PNG tidak keluar dari sudut melengkung */
+  overflow: hidden; 
+  
+  /* Berada di tengah (di atas bayangan, di bawah label teks) */
+  z-index: 2; 
+}
+
+/* Gambar latar belakang sekarang harus dimasukkan ke dalam ::before atau diatur z-indexnya */
 .impact-img-bg {
   position: absolute;
   top: 0;
@@ -545,21 +604,29 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  
+  /* Harus ikut melengkung sesuai ::before */
+  border-radius: 13px; /* Sedikit lebih kecil dari kartu utamanya agar pas */
+  
+  /* Berada di atas ::before tapi di bawah label */
+  z-index: 3; 
 }
 
-/* Label berbentuk pil putih di bagian bawah gambar */
+/* Label berbentuk pil putih */
 .impact-label {
   position: relative;
-  z-index: 2;
+  
+  /* Wajib z-index paling tinggi agar di depan gambar */
+  z-index: 10; 
+  
   background-color: #FFFFFF;
   color: #1B1464;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   font-size: 14px;
   padding: 10px 24px;
-  border-radius: 999px; /* Bentuk pil melengkung penuh */
+  border-radius: 999px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 85%; /* Menjaga teks tidak melebar keluar batas */
+  max-width: 85%;
 }

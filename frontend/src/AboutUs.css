@@ -1,8 +1,20 @@
 /* ========================================================= */
-/* 1. HERO SECTION (DIKEMBALIKAN KE LAYOUT ASLI)             */
+/* CSS ABOUT US - COMPLETE & FIXED VERSION                   */
+/* ========================================================= */
+
+/* 0. IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
+
+.about-page {
+  background-color: #FFF9F2; 
+  min-height: 100vh;
+}
+
+/* ========================================================= */
+/* 1. HERO SECTION (RATA KIRI & RAPI)                        */
 /* ========================================================= */
 .hero {
-  padding: 80px 10%; /* Menyesuaikan garis tepi kiri-kanan dengan konten bawah */
+  padding: 80px 10%; 
   width: 100%;
   box-sizing: border-box;
   background-color: #FBB03B; 
@@ -11,13 +23,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Memaksa konten merapat ke kiri */
+  align-items: flex-start; /* Merapatkan konten ke kiri */
 }
 
 .hero-content {
   position: relative;
   z-index: 10; 
-  max-width: 700px; /* Agar teks tidak terlalu memanjang ke kanan */
+  max-width: 700px; 
   text-align: left; 
 }
 
@@ -49,4 +61,280 @@
   margin: 0;
   line-height: 1.6;
   text-align: left;
+}
+
+/* ========================================================= */
+/* 2. VISION & MISSION SECTION                               */
+/* ========================================================= */
+.vision-mission-section {
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.vm-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.vm-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.vm-text-card {
+  flex: 1;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vm-image-card {
+  flex: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #E0E0E0; 
+  min-height: 300px;
+  display: flex;
+}
+
+.vm-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vision-title, .mision-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; 
+  font-size: 32px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.vm-text-card p, 
+.vm-text-card ul {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; 
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vm-text-card ul {
+  padding-left: 24px;
+}
+
+.vm-text-card li {
+  margin-bottom: 10px;
+}
+
+/* ========================================================= */
+/* 3. OUR CULTURE SECTION                                    */
+/* ========================================================= */
+.culture-section {
+  padding: 0 10% 100px 10%; 
+  text-align: center;
+}
+
+.culture-header {
+  margin-bottom: 50px;
+}
+
+.culture-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; 
+  font-size: 16px;
+  color: #FBB03B;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.culture-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700; 
+  font-size: 42px;
+  color: #000000;
+  margin: 0;
+}
+
+.culture-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400; 
+  color: #FBB03B;
+}
+
+.culture-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px;
+  text-align: left;
+  align-items: center; 
+}
+
+.culture-text p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; 
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.culture-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.culture-text li {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500; 
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.culture-text li strong {
+  font-weight: 700; 
+}
+
+.culture-image {
+  background-color: #E0E0E0; 
+  border-radius: 16px;
+  min-height: 250px;
+  width: 100%;
+}
+
+.culture-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; 
+  object-fit: contain;
+}
+
+/* ========================================================= */
+/* 4. THE DIVISIONS SECTION (GRADASI, WARNA & BORDER BIRU)   */
+/* ========================================================= */
+.divisions-section {
+  padding: 0 10% 100px 10%;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; 
+}
+
+.divisions-header-card {
+  grid-column: span 1; 
+  padding-right: 10px;
+}
+
+.divisions-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 32px; 
+  color: #000;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.divisions-highlight {
+  font-family: 'Courgette', cursive;
+  font-weight: 400;
+  color: #1B1464;
+}
+
+.divisions-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px; 
+  color: #636363;
+  line-height: 1.5;
+}
+
+/* --- KARTU DIVISI --- */
+.div-card {
+  position: relative;
+  border-radius: 16px; 
+  height: 240px; 
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* KELAS GRADASI */
+.div-grad-blue {
+  background: linear-gradient(180deg, #FFFFFF 40%, #4A81B7 100%);
+}
+
+.div-grad-yellow {
+  background: linear-gradient(180deg, #FFFFFF 40%, #FBB03B 100%);
+}
+
+/* Border Khusus Digital Marketing */
+.card-highlighted {
+  border: 3px solid #005088; 
+}
+
+/* Tipografi di dalam Kartu */
+.div-card h3 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; 
+  font-size: 16px; 
+  margin: 0;
+  line-height: 1.3;
+}
+
+.text-black { color: #000000; }
+.text-navy { color: #1B1464; }
+
+/* Gambar Orang di Kartu */
+.div-card img {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  height: 90%; 
+  object-fit: contain;
+  z-index: 1;
+}
+
+.div-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* ========================================================= */
+/* 5. MOBILE RESPONSIVE UNTUK ABOUT US                       */
+/* ========================================================= */
+@media screen and (max-width: 1024px) {
+  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
+  .culture-content { grid-template-columns: 1fr; text-align: center; }
+  .culture-text { text-align: center; }
+}
+
+@media screen and (max-width: 768px) {
+  .hero { padding: 60px 5%; align-items: center; text-align: center; }
+  .hero h1, .hero p, .hero .breadcrumb { text-align: center; }
+  
+  .vm-row, .vm-row.reverse { flex-direction: column; }
+  .vision-mission-section { padding: 40px 5%; }
+  
+  .divisions-grid { grid-template-columns: 1fr; }
+  .divisions-section { padding: 0 5% 60px 5%; }
 }

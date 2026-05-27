@@ -1,91 +1,112 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import './App.css'; // Memanggil CSS Global (Header & Footer)
+import { useState, useEffect } from 'react';
+import './App.css';
+import Home from './Home';       
+import AboutUs from './AboutUs'; 
 
-// Import Halaman
-import Home from './Home';
-import AboutUs from './AboutUs';
-
-// Komponen Pembantu untuk Navigasi Aktif
-const Navigation = () => {
-  const location = useLocation();
-  return (
-    <nav className="topnav">
-      <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-      <Link to="/about" className={`nav-item ${location.pathname === '/about' ? 'active' : ''}`}>About Us</Link>
-      {/* Tambahkan menu lain di sini jika ada */}
-    </nav>
-  );
-};
+// === IMPORT GAMBAR HEADER DARI FOLDER ASSETS ===
+import logo from './assets/fsj-logo.png';
+import iconIg from './assets/icon-ig.png';
+import iconYt from './assets/icon-yt.png';
+import iconTiktok from './assets/icon-tiktok.png';
+import iconX from './assets/icon-x.png';
 
 function App() {
+  const [activePage, setActivePage] = useState('about'); // Default ke About Us
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash === 'about') {
+      setActivePage('about');
+    } else if (hash === 'home') {
+      setActivePage('home');
+    }
+  }, []);
+
+  const changePage = (pageName, event) => {
+    if (event) event.preventDefault();
+    setActivePage(pageName);
+    window.location.hash = pageName;
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <Router>
-      <div className="site-shell">
+    <div className="site-shell">
+      {/* ========================================= */}
+      {/* HEADER NAVIGATION (BARU)                  */}
+      {/* ========================================= */}
+      <header className="topbar">
+        {/* Kiri: Logo */}
+        <div className="brand">
+          <img src={logo} alt="First Step Journey" className="header-logo" />
+        </div>
         
-        {/* ========================================= */}
-        {/* HEADER (TOPBAR) AKAN MUNCUL DI SEMUA PAGE */}
-        {/* ========================================= */}
-        <header className="topbar">
-          <div className="brand">
-            {/* Ganti tulisan FSJ ini dengan tag <img src={logo} ... /> jika sudah ada logonya */}
-            <h2 style={{ margin: 0, color: '#1B1464' }}>FSJ</h2> 
+        {/* Tengah: Menu Navigasi Bentuk Pil */}
+        <nav className="topnav">
+          <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
+          <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
+          <a href="#programs" className="nav-item">Product & Programs</a>
+          <a href="#insights" className="nav-item">Insights</a>
+          <a href="#community" className="nav-item">Community</a>
+          <a href="#contacts" className="nav-item">Contacts</a>
+        </nav>
+
+        {/* Kanan: Ikon Sosial Media */}
+        <div className="social-links">
+          <a href="#" className="social-btn"><img src={iconIg} alt="Instagram" /></a>
+          <a href="#" className="social-btn"><img src={iconYt} alt="YouTube" /></a>
+          <a href="#" className="social-btn"><img src={iconTiktok} alt="TikTok" /></a>
+          <a href="#" className="social-btn"><img src={iconX} alt="X" /></a>
+        </div>
+      </header>
+
+      {/* ========================================= */}
+      {/* SAKLAR KONTEN HALAMAN                     */}
+      {/* ========================================= */}
+      {activePage === 'home' ? (
+        <Home changePage={changePage} />
+      ) : (
+        <AboutUs />
+      )}
+
+      {/* ========================================= */}
+      {/* FOOTER                                    */}
+      {/* ========================================= */}
+      <footer className="site-footer">
+        <div className="footer-top">
+          <div>
+            <p className="eyebrow">Stay Updated with First Step Journey!</p>
+            <div className="newsletter">
+              <input type="email" placeholder="Enter Your Email" />
+              <button className="primary-btn">Subscribe</button>
+            </div>
           </div>
-          
-          <Navigation />
-
-          <div className="social-links">
-             {/* Tempat icon sosmed */}
-          </div>
-        </header>
-
-        {/* ========================================= */}
-        {/* KONTEN TENGAH BERUBAH TERGANTUNG URL      */}
-        {/* ========================================= */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-        </Routes>
-
-        {/* ========================================= */}
-        {/* FOOTER AKAN MUNCUL DI BAWAH SEMUA PAGE    */}
-        {/* ========================================= */}
-        <footer className="site-footer">
-          <div className="footer-top">
+          <div className="footer-links">
             <div>
-              <h3 className="eyebrow">Stay Updated with First Step Journey!</h3>
-              <div className="newsletter">
-                <input type="email" placeholder="Enter Your Email" />
-                <button className="primary-btn">Subscribe</button>
-              </div>
+              <h3>About FSJ</h3>
+              <a href="#about" onClick={(e) => changePage('about', e)}>Vision & Mission</a>
+              <a href="#about" onClick={(e) => changePage('about', e)}>Our Journey</a>
+              <a href="#about" onClick={(e) => changePage('about', e)}>Our Team</a>
             </div>
-            
-            <div className="footer-links">
-              <div>
-                <h3>About FSJ</h3>
-                <Link to="/about">Who Is Stepper</Link>
-                <Link to="#">Our Journey</Link>
-                <Link to="#">Partners</Link>
-                <Link to="#">Contact Us</Link>
-              </div>
-              <div>
-                <h3>Programs</h3>
-                <Link to="#">Internships</Link>
-                <Link to="#">Mini Training</Link>
-                <Link to="#">Live Projects</Link>
-                <Link to="#">Community Impact</Link>
-              </div>
+            <div>
+              <h3>Programs</h3>
+              <a href="#programs" onClick={(e) => changePage('home', e)}>Internships</a>
+              <a href="#programs" onClick={(e) => changePage('home', e)}>Mini Training</a>
+              <a href="#programs" onClick={(e) => changePage('home', e)}>Community Impact</a>
+            </div>
+            <div>
+              <h3>Insights</h3>
+              <a href="#blog">News</a>
+              <a href="#blog">Resources</a>
+              <a href="#blog">FAQ</a>
             </div>
           </div>
-          
-          <div className="footer-base">
-            © 2024 Copyright • First Step Journey. All Rights Reserved.
-          </div>
-        </footer>
-
-      </div>
-    </Router>
-  );
+        </div>
+        <div className="footer-base">
+          <span>© 2026 Copyright • First Step Journey. All Rights Reserved.</span>
+        </div>
+      </footer>
+    </div>
+  )
 }
 
 export default App;

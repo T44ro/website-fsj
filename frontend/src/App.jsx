@@ -8,8 +8,11 @@ import Community from './Community';
 import Contact from './Contact';         
 import Partnership from './Partnership'; 
 
+// MEMASUKKAN LOGO BARU DARI ASSETS
+import fsjLogo from './assets/fsj-logo.png'; 
+
 // =====================================================================
-// KOMPONEN IKON SVG SOSMED (Profesional, Ringan, Tajam)
+// KOMPONEN IKON SVG SOSMED
 // =====================================================================
 const InstagramIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,15 +56,15 @@ function App() {
   return (
     <div className="site-shell">
       
-      {/* HEADER / NAVIGATION BAR (TIGA PILAR SEIMBANG) */}
+      {/* HEADER / NAVIGATION BAR */}
       <header className="topbar">
         
-        {/* PILAR KIRI: BRAND */}
-        <div className="brand">
-          <h2 style={{ margin: 0, color: '#1B1464', fontFamily: 'Quicksand', fontWeight: 700, fontSize: '24px', cursor: 'pointer' }} onClick={(e) => changePage('home', e)}>FSJ</h2>
+        {/* PILAR KIRI: BRAND DENGAN GAMBAR LOGO ASLI */}
+        <div className="brand" onClick={(e) => changePage('home', e)}>
+          <img src={fsjLogo} alt="First Step Journey Logo" className="header-logo" />
         </div>
         
-        {/* PILAR TENGAH: MENU NAVIGASI (Dikecilkan & Dirampingkan) */}
+        {/* PILAR TENGAH: MENU NAVIGASI */}
         <nav className="topnav">
           <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
           <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
@@ -80,7 +83,7 @@ function App() {
           </div>
         </nav>
 
-        {/* PILAR KANAN: SOCIAL MEDIA (DENGAN IKON SVG ASLI) */}
+        {/* PILAR KANAN: SOCIAL MEDIA */}
         <div className="social-links">
           <a href="https://instagram.com/firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="Instagram FSJ">
             <InstagramIcon />

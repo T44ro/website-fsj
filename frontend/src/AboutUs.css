@@ -10,11 +10,11 @@
 }
 
 /* ========================================================= */
-/* 1. HERO SECTION (DARK OVERLAY & COMPACT SIZE)             */
+/* 1. HERO SECTION (DARK OVERLAY, WIDER & NEW ORDER)        */
 /* ========================================================= */
 .hero {
-  /* Padding dikurangi agar tidak terlalu tinggi/lebar */
-  padding: 80px 20px !important; 
+  /* Padding vertikal dinaikkan (140px) agar lebih tinggi/lebar secara visual */
+  padding: 140px 20px !important; 
   width: 100% !important;
   position: relative !important;
   overflow: hidden !important;
@@ -29,34 +29,37 @@
   z-index: 10 !important; 
   text-align: center !important; 
   display: flex;
-  flex-direction: column-reverse; /* Breadcrumb pindah ke atas h1 */
+  flex-direction: column; /* Urutan standar: Atas ke Bawah */
   align-items: center;
 }
 
 .hero h1 {
   font-family: 'Quicksand', sans-serif !important;
   font-weight: 700 !important; 
-  font-size: 48px !important;  
+  font-size: 56px !important;  /* Sedikit dibesarkan agar megah */
   color: #FFFFFF !important; /* Teks Putih */
-  margin: 16px 0 16px 0 !important;
+  margin: 0 0 24px 0 !important; /* Jarak ke deskripsi */
+  line-height: 1.2;
 }
 
 .hero p {
   font-family: 'Quicksand', sans-serif !important;
   font-weight: 500 !important; 
-  font-size: 16px !important;
+  font-size: 18px !important; /* Font deskripsi sedikit lebih besar */
   color: #E0E0E0 !important; /* Abu-abu terang agar kontras */
-  margin: 0 auto 0 auto !important; 
-  max-width: 650px; /* Dibatasi agar tidak melebar jelek */
+  margin: 0 auto 40px auto !important; /* Jarak ke breadcrumb */
+  max-width: 700px; /* Lebar teks dibatasi agar enak dibaca */
   line-height: 1.6;
 }
 
+/* Breadcrumb di paling bawah */
 .breadcrumb {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: #FBB03B; 
   letter-spacing: 2px;
+  margin-top: 0;
 }
 .home-link { color: #FFFFFF; cursor: pointer; transition: color 0.3s; }
 .home-link:hover { color: #FBB03B; }
@@ -65,7 +68,7 @@
 
 
 /* ========================================================= */
-/* 2. VISION & MISSION                                       */
+/* 2. VISION & MISSION (TETAP)                               */
 /* ========================================================= */
 .vision-mission-section {
   padding: 80px 10%;
@@ -133,7 +136,7 @@
 
 
 /* ========================================================= */
-/* 3. OUR CULTURE                                            */
+/* 3. OUR CULTURE (TETAP)                                    */
 /* ========================================================= */
 .culture-section { padding: 0 10% 100px 10%; text-align: center; }
 .culture-header { margin-bottom: 60px; }
@@ -213,7 +216,7 @@
 
 
 /* ========================================================= */
-/* 4. THE DIVISIONS SECTION                                  */
+/* 4. THE DIVISIONS SECTION (TETAP)                          */
 /* ========================================================= */
 .divisions-section { padding: 0 10% 100px 10%; }
 
@@ -290,19 +293,21 @@
 
 
 /* ========================================================= */
-/* RESPONSIVE GRID UNTUK TABLET/HP                           */
+/* RESPONSIVE GRID UNTUK TABLET/HP (SESUAIKAN HERO BARU)     */
 /* ========================================================= */
 @media screen and (max-width: 1024px) {
   .divisions-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero h1 { font-size: 42px !important; }
+  .hero h1 { font-size: 48px !important; }
   .culture-content { grid-template-columns: 1fr; } 
   .culture-image-card { min-height: 250px; }
 }
 
 @media screen and (max-width: 600px) {
   .divisions-grid { grid-template-columns: 1fr; }
-  .hero { padding: 60px 20px !important; }
-  .hero h1 { font-size: 36px !important; }
+  /* Padding Hero di HP dikurangi agar tidak terlalu melar */
+  .hero { padding: 80px 20px !important; }
+  .hero h1 { font-size: 36px !important; margin-bottom: 16px !important; }
+  .hero p { font-size: 16px !important; }
   .vision-title, .mision-title { font-size: 32px; }
   .culture-title, .divisions-title { font-size: 32px; }
   .vm-text-card { padding: 30px 20px; }

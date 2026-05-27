@@ -285,6 +285,14 @@
   border-radius: 12px;
 }
 
+/* Aturan untuk gambar asli agar proporsional dan tidak gepeng */
+.path-item img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  border-radius: 12px;
+}
+
 .img-step1 { height: 280px; }
 .img-step2 { height: 420px; }
 .img-step3 { height: 260px; }

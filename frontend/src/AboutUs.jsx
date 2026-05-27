@@ -4,6 +4,12 @@ import './AboutUs.css';
 // 1. IMPORT BACKGROUND GAMBAR HERO
 import heroBg from './assets/about-hero-img.png';
 
+// Nanti hapus tanda // di bawah ini kalau gambarnya sudah di-upload ke folder assets
+// import visionImg from './assets/vision-img.png';
+// import missionImg from './assets/mission-img.png';
+// import joseImg from './assets/jose-img.png';
+// import stepImg from './assets/step-img.png';
+
 const AboutUs = () => {
   // 2. MASUKKAN GAMBAR KE DALAM STYLE BACKGROUND
   const heroStyle = {
@@ -11,7 +17,7 @@ const AboutUs = () => {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: '#FBB03B' // Warna cadangan saat gambar belum termuat
+    backgroundColor: '#FBB03B' 
   };
 
   return (
@@ -65,29 +71,45 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 3. OUR CULTURE */}
+      {/* 3. OUR CULTURE (DESAIN BARU) */}
       <section className="culture-section">
         <div className="culture-header">
           <span className="culture-subtitle">Our Culture</span>
           <h2 className="culture-title">
-            Driving Growth <br />
-            with <span className="culture-highlight">Integrity</span>
+            A Rapid Journey of <span className="culture-highlight">Impact</span>
           </h2>
         </div>
+        
         <div className="culture-content">
+          {/* Kolom 1: Teks Kiri */}
           <div className="culture-text">
-            <p>At FSJ, we believe that a strong community is built on trust and shared values.</p>
+            <p className="culture-desc">
+              FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects. To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
+            </p>
             <ul>
-              <li><strong>Continuous Learning</strong>: We embrace curiosity.</li>
-              <li><strong>Inclusive Impact</strong>: Accessible for everyone.</li>
-              <li><strong>Collaborative Spirit</strong>: Growing together.</li>
+              <li>
+                <strong>Career Readiness</strong><br/>
+                Equip yourself for the professional world. Master industry expectations, build a standout portfolio, and develop the work ethic to thrive from day one.
+              </li>
+              <li>
+                <strong>Self Development</strong><br/>
+                Sharpen your soft skills and build a resilient mindset. Develop true ownership and the grit needed to conquer challenges and accelerate your growth.
+              </li>
+              <li>
+                <strong>Sustainability Skills</strong><br/>
+                Future-proof your career. Apply ESG principles to your tech, design, or business skills for real impact.
+              </li>
             </ul>
           </div>
-          <div className="culture-image">
-            {/* <img src={cultureImg} alt="Culture Graphic" /> */}
+
+          {/* Kolom 2: Gambar Jose */}
+          <div className="culture-image-card">
+            {/* <img src={joseImg} alt="Jose Prima - CEO" /> */}
           </div>
-          <div className="culture-text">
-             <p>Our members are encouraged to innovate and take ownership of their professional journey.</p>
+
+          {/* Kolom 3: Gambar Tangga STEP */}
+          <div className="culture-image-card">
+            {/* <img src={stepImg} alt="STEP Culture" /> */}
           </div>
         </div>
       </section>
@@ -96,7 +118,6 @@ const AboutUs = () => {
       <section className="divisions-section">
         <div className="divisions-grid">
           
-          {/* Tile Judul & Deskripsi */}
           <div className="divisions-header-card">
             <h2 className="divisions-title">
               The Divisions <br />
@@ -108,37 +129,24 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Kartu 1: Product & Strategy */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
           </div>
-
-          {/* Kartu 2: Visual Brand */}
           <div className="div-card card-soft-beige">
             <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
           </div>
-
-          {/* Kartu 3: Operation */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
           </div>
-
-          {/* Kartu 4: Brand & Event */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Brand & <br/> Event</h3>
           </div>
-
-          {/* Kartu 5: Human Capital */}
           <div className="div-card card-soft-beige">
             <h3 className="text-navy">Human <br/> Capital</h3>
           </div>
-
-          {/* Kartu 6: Administration */}
           <div className="div-card card-soft-beige">
             <h3 className="text-black">Administration <br/> & Report</h3>
           </div>
-
-          {/* Kartu 7: Digital Marketing */}
           <div className="div-card card-soft-beige card-highlighted">
             <h3 className="text-navy">Digital <br/> Marketing</h3>
           </div>

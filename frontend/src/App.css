@@ -1,170 +1,47 @@
 /* ========================================================= */
-/* CSS ABOUT US - UPDATED DIVISIONS STYLE                    */
+/* CSS GLOBAL (APP.CSS) - FIRST STEP JOURNEY                 */
 /* ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-.about-page {
-  background-color: #FFF9F2; 
-  min-height: 100vh;
-}
+:root { color-scheme: only light !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; background-color: #FFF9F2 !important; color: #121212 !important; }
+.site-shell { display: flex; flex-direction: column; min-height: 100vh; }
 
-/* 1. HERO SECTION (TETAP) */
-.hero {
-  padding: 120px 20px !important; 
-  width: 100% !important;
-  position: relative !important;
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-color: #FBB03B !important; 
-  background-size: cover !important; 
-  background-position: center !important; 
-}
+/* HEADER (TOPBAR) */
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 5%; background-color: #FFFFFF !important; box-shadow: 0 2px 15px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+.brand { display: flex; align-items: center; }
+.header-logo { height: 40px; width: auto; object-fit: contain; }
+.topnav { display: flex; gap: 12px; align-items: center; }
+.nav-item { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333; text-decoration: none; padding: 8px 18px; border-radius: 999px; border: 1px solid #E0E0E0; background-color: #FFFFFF !important; transition: all 0.3s ease; }
+.nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
+.nav-item.active { color: #FBB03B !important; border-color: #FBB03B; }
+.social-links { display: flex; gap: 10px; align-items: center; }
+.social-btn { text-decoration: none; display: flex; align-items: center; justify-content: center; }
+.social-btn img { height: 36px; width: 36px; object-fit: contain; transition: transform 0.3s ease; }
+.social-btn:hover img { transform: scale(1.08); }
 
-.hero-content {
-  position: relative !important;
-  z-index: 10 !important; 
-  text-align: center !important; 
-}
+/* FOOTER STYLES */
+.site-footer { background-color: #FFF9F2 !important; padding: 60px 10% 20px 10%; border-top: 1px solid #F0E6D8; margin-top: auto; }
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
+.eyebrow { font-weight: 700; font-size: 14px; color: #FBB03B; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.newsletter { display: flex; gap: 12px; }
+.newsletter input { padding: 12px 24px; border-radius: 999px; border: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 14px; outline: none; width: 250px; background-color: #FFFFFF !important; color: #121212 !important; }
+.newsletter input:focus { border-color: #FBB03B; }
+.primary-btn { background-color: #FBB03B; color: #FFFFFF; border: none; border-radius: 999px; padding: 12px 28px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease; }
+.primary-btn:hover { background-color: #EFA02A; }
+.footer-links { display: flex; gap: 80px; }
+.footer-links h3 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #1B1464 !important; margin-top: 0; margin-bottom: 20px; }
+.footer-links a { display: block; font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333 !important; text-decoration: none; margin-bottom: 12px; transition: color 0.3s ease; }
+.footer-links a:hover { color: #FBB03B !important; }
+.footer-base { text-align: center; padding-top: 24px; border-top: 1px solid #E0E0E0; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 500; color: #888888 !important; }
 
-.hero h1 {
-  font-family: 'Quicksand', sans-serif !important;
-  font-weight: 600 !important; 
-  font-size: 48px !important;  
-  color: #000000 !important;
-  margin: 20px 0 !important;
-}
-
-/* 2. VISION & MISSION (TETAP) */
-.vision-mission-section {
-  padding: 80px 10%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.vm-row { display: flex; gap: 40px; align-items: stretch; }
-.vm-row.reverse { flex-direction: row-reverse; }
-
-.vm-text-card {
-  flex: 1;
-  background-color: #FFFFFF;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-}
-
-.vm-image-card {
-  flex: 1;
-  border-radius: 24px;
-  background-color: #E0E0E0; 
-  min-height: 300px;
-}
-
-/* 3. OUR CULTURE (TETAP) */
-.culture-section { padding: 0 10% 100px 10%; text-align: center; }
-.culture-header { margin-bottom: 50px; }
-.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
-.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000; }
-.culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
-.culture-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; align-items: center; }
-
-/* 4. THE DIVISIONS SECTION (DESAIN BARU) */
-.divisions-section {
-  padding: 0 10% 100px 10%;
-}
-
-.divisions-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 Kolom sesuai gambar */
-  gap: 20px;
-}
-
-/* Header di dalam Grid */
-.divisions-header-card {
-  grid-column: span 1; /* Bisa span 1 atau 2 tergantung selera */
-  padding-right: 10px;
-}
-
-.divisions-title {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 32px; 
-  color: #000;
-  margin-bottom: 16px;
-  line-height: 1.1;
-}
-
-.divisions-highlight {
-  font-family: 'Courgette', cursive;
-  color: #1B1464;
-}
-
-.divisions-desc {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500;
-  font-size: 13px; 
-  color: #636363;
-  line-height: 1.5;
-}
-
-/* --- KARTU DIVISI BARU --- */
-.div-card {
-  position: relative;
-  border-radius: 16px; 
-  height: 240px; /* Ukuran lebih proporsional */
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background-color: #F8F8F8; /* Warna krem sangat muda (hampir putih) */
-  transition: transform 0.3s ease;
-}
-
-/* Efek khusus untuk Digital Marketing (Border Biru) */
-.card-highlighted {
-  border: 2px solid #005088; 
-}
-
-/* Tipografi di dalam Kartu */
-.div-card h3 {
-  position: relative;
-  z-index: 2;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Semibold sesuai rincian */
-  font-size: 18px; /* Lebih kecil dari sebelumnya */
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* Variasi Warna Teks */
-.text-black { color: #000000; }
-.text-navy { color: #1B1464; }
-
-/* Gambar Orang di Kartu */
-.div-card img {
-  position: absolute;
-  bottom: 0;
-  right: 0; 
-  height: 90%; /* Menyesuaikan agar kepala tidak terpotong */
-  object-fit: contain;
-  z-index: 1;
-}
-
-/* Hover Effect */
-.div-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* Responsive Grid untuk Tablet/HP */
-@media screen and (max-width: 1024px) {
-  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media screen and (max-width: 600px) {
-  .divisions-grid { grid-template-columns: 1fr; }
+/* RESPONSIVE HEADER & FOOTER UNTUK HP */
+@media screen and (max-width: 768px) {
+  .topbar { flex-direction: column; gap: 16px; padding: 16px; }
+  .topnav { flex-wrap: wrap; justify-content: center; }
+  .footer-links { flex-direction: column; gap: 30px; text-align: left; }
+  .newsletter { flex-direction: column; width: 100%; }
+  .newsletter input { width: 100%; box-sizing: border-box; }
 }

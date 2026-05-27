@@ -4,6 +4,13 @@ import './ProductsPrograms.css';
 // 1. IMPORT BACKGROUND GAMBAR HERO
 import heroBg from './assets/about-hero-img.png';
 
+// === KOMPONEN LINGKARAN SPIDOL KUNING DARI HOME ===
+const ScribbleCircleYellow = () => (
+  <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
+  </svg>
+);
+
 // === IKON-IKON UNTUK TOMBOL GREEN JOBS ===
 const SettingIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -138,12 +145,16 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 4. YOUR PATH SECTION (DESAIN BARU) */}
+      {/* 4. YOUR PATH SECTION */}
       <section className="pp-section pp-path-section">
         <div className="pp-path-header">
           <span className="pp-eyebrow" style={{ textAlign: 'center', marginBottom: '8px' }}>Career Pathway</span>
           <h2 className="pp-center-title">
-            <span className="pp-highlight-circle">Your Path</span> to a Green Career
+            {/* LINGKARAN SVG DIMASUKKAN KE SINI */}
+            <span className="pp-highlight-circle">
+              <ScribbleCircleYellow />
+              Your Path
+            </span> to a Green Career
           </h2>
         </div>
         

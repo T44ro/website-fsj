@@ -53,7 +53,6 @@ const ScribbleCircleNavy = () => (
   </svg>
 );
 
-// Ikon Panah Serong Kanan Atas
 const ArrowUpRightIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -73,6 +72,40 @@ const testimonials = [
 const Home = () => {
   const [activeTesti, setActiveTesti] = useState(2); 
 
+  // =====================================================================
+  // LOGIKA SENSOR SWIPE UNTUK HP
+  // =====================================================================
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 40; // Sensitivitas geseran (minimal 40px agar terhitung swipe)
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(null); // Reset titik akhir tiap kali mulai menyentuh
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && activeTesti < testimonials.length - 1) {
+      // Geser ke kiri (Next)
+      setActiveTesti(prev => prev + 1);
+    }
+    if (isRightSwipe && activeTesti > 0) {
+      // Geser ke kanan (Prev)
+      setActiveTesti(prev => prev - 1);
+    }
+  };
+
+  // Kalkulasi pergeseran posisi foto di tengah layar
   const shiftAmount = (2 - activeTesti) * 240;
 
   return (
@@ -180,13 +213,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. TESTIMONIAL SECTION */}
+      {/* 5. TESTIMONIAL SECTION (DILENGKAPI SENSOR SWIPE) */}
       <section className="home-testimonial-section">
         <div className="testi-header">
           <span className="testi-eyebrow">What They Say</span>
           <h2 className="testi-title">Words from <span className="testi-highlight"><ScribbleCircleNavy />Our Steppers</span></h2>
         </div>
-        <div className="testi-carousel-wrapper">
+        
+        {/* Tambahkan sensor sentuh di wrapper ini */}
+        <div 
+          className="testi-carousel-wrapper"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="testi-carousel-track" style={{ transform: `translateX(${shiftAmount}px)` }}>
             {testimonials.map((item, index) => (
               <div 
@@ -200,17 +240,14 @@ const Home = () => {
             ))}
           </div>
         </div>
+        
         <div className="testi-content">
           <p>{testimonials[activeTesti].text}</p>
         </div>
       </section>
 
-      {/* ========================================= */}
-      {/* 6. OUR BLOG SECTION                       */}
-      {/* ========================================= */}
+      {/* 6. OUR BLOG SECTION */}
       <section className="home-blog-section">
-        
-        {/* Header Baris (Kiri Teks, Kanan Tombol) */}
         <div className="blog-header-row">
           <div className="blog-header-text">
             <span className="blog-eyebrow">Our Blog</span>
@@ -224,69 +261,47 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Grid 4 Kartu Blog */}
         <div className="blog-grid">
-          
-          {/* Kartu 1 */}
           <div className="blog-card">
-            <div className="blog-img-wrapper">
-              {/* <img src={blog1} alt="Design Thinking" /> */}
-            </div>
+            <div className="blog-img-wrapper"></div>
             <div className="blog-content">
               <h4>Design Thinking for Visual Brands</h4>
               <p>Build trusted visual identities using human-centered design.</p>
               <button className="btn-blog-card">
-                Learn more 
-                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
               </button>
             </div>
           </div>
-
-          {/* Kartu 2 */}
           <div className="blog-card">
-            <div className="blog-img-wrapper">
-              {/* <img src={blog2} alt="Self-Acceptance" /> */}
-            </div>
+            <div className="blog-img-wrapper"></div>
             <div className="blog-content">
               <h4>The Power of Self-Acceptance</h4>
               <p>Overcome self-doubt and build lasting professional confidence.</p>
               <button className="btn-blog-card">
-                Learn more 
-                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
               </button>
             </div>
           </div>
-
-          {/* Kartu 3 */}
           <div className="blog-card">
-            <div className="blog-img-wrapper">
-              {/* <img src={blog3} alt="Green Career Hub" /> */}
-            </div>
+            <div className="blog-img-wrapper"></div>
             <div className="blog-content">
               <h4>Launching the Green Career Hub</h4>
               <p>Essential strategies to enter the green workforce.</p>
               <button className="btn-blog-card">
-                Learn more 
-                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
               </button>
             </div>
           </div>
-
-          {/* Kartu 4 */}
           <div className="blog-card">
-            <div className="blog-img-wrapper">
-              {/* <img src={blog4} alt="User Experiences" /> */}
-            </div>
+            <div className="blog-img-wrapper"></div>
             <div className="blog-content">
               <h4>Structuring Effective User Experiences</h4>
               <p>Design intuitive user flows and seamless digital interactions.</p>
               <button className="btn-blog-card">
-                Learn more 
-                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
               </button>
             </div>
           </div>
-
         </div>
       </section>
 

@@ -150,7 +150,6 @@ const ProductsPrograms = () => {
         <div className="pp-path-header">
           <span className="pp-eyebrow" style={{ textAlign: 'center', marginBottom: '8px' }}>Career Pathway</span>
           <h2 className="pp-center-title">
-            {/* LINGKARAN SVG DIMASUKKAN KE SINI */}
             <span className="pp-highlight-circle">
               <ScribbleCircleYellow />
               Your Path

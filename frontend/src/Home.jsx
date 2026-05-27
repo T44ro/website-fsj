@@ -27,7 +27,7 @@ import './Home.css';
 // import testi5 from './assets/testi-5.jpg';
 
 // =====================================================================
-// KOMPONEN IKON & GRAFIS BANTUAN (TIDAK PERLU UPLOAD)
+// KOMPONEN IKON & GRAFIS BANTUAN
 // =====================================================================
 const CheckIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#121212" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -58,7 +58,11 @@ const testimonials = [
 ];
 
 const Home = () => {
-  const [activeTesti, setActiveTesti] = useState(2); // Indeks tengah
+  const [activeTesti, setActiveTesti] = useState(2); // Indeks tengah (default)
+
+  // Logika untuk menggeser jalur (track) foto agar yang diklik selalu di tengah
+  // 240px didapat dari: lebar gambar 200px + gap 40px
+  const shiftAmount = (2 - activeTesti) * 240;
 
   return (
     <div className="home-page">
@@ -112,9 +116,18 @@ const Home = () => {
           <h2 className="offer-title">Accelerate <span className="offer-highlight-text"><ScribbleCircleYellow />Your Growth</span> With Us</h2>
         </div>
         <div className="offer-cards-grid">
-          <div className="offer-card"><div className="offer-content"><h3>Free Career Coaching<br/>(Online & Offline)</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div></div>
-          <div className="offer-card"><div className="offer-content"><h3>Soft Skills Training: Public<br/>Speaking, CV Writing, etc</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div></div>
-          <div className="offer-card"><div className="offer-content"><h3>Mentoring and Bootcamp for<br/>students & fresh graduates</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div></div>
+          <div className="offer-card">
+            {/* <img src={offerImg1} alt="Career Coaching" className="offer-img-bg" /> */}
+            <div className="offer-content"><h3>Free Career Coaching<br/>(Online & Offline)</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div>
+          </div>
+          <div className="offer-card">
+            {/* <img src={offerImg2} alt="Soft Skills Training" className="offer-img-bg" /> */}
+            <div className="offer-content"><h3>Soft Skills Training: Public<br/>Speaking, CV Writing, etc</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div>
+          </div>
+          <div className="offer-card">
+            {/* <img src={offerImg3} alt="Mentoring and Bootcamp" className="offer-img-bg" /> */}
+            <div className="offer-content"><h3>Mentoring and Bootcamp for<br/>students & fresh graduates</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button className="btn-more">More &gt;</button></div>
+          </div>
         </div>
       </section>
 
@@ -129,16 +142,34 @@ const Home = () => {
           <div className="impact-header-action"><button className="btn-primary-pill">Discover More</button></div>
         </div>
         <div className="impact-grid">
-          <div className="impact-card"><span className="impact-label">FSJ X Gandengan</span></div>
-          <div className="impact-card"><span className="impact-label">FSJ Iftar</span></div>
-          <div className="impact-card"><span className="impact-label">Figma Training</span></div>
-          <div className="impact-card"><span className="impact-label">People Development Training</span></div>
-          <div className="impact-card"><span className="impact-label">Instagram Live Session</span></div>
-          <div className="impact-card"><span className="impact-label">Mini Training</span></div>
+          <div className="impact-card">
+            {/* <img src={impactImg1} alt="FSJ X Gandengan" className="impact-img-bg" /> */}
+            <span className="impact-label">FSJ X Gandengan</span>
+          </div>
+          <div className="impact-card">
+            {/* <img src={impactImg2} alt="FSJ Iftar" className="impact-img-bg" /> */}
+            <span className="impact-label">FSJ Iftar</span>
+          </div>
+          <div className="impact-card">
+            {/* <img src={impactImg3} alt="Figma Training" className="impact-img-bg" /> */}
+            <span className="impact-label">Figma Training</span>
+          </div>
+          <div className="impact-card">
+            {/* <img src={impactImg4} alt="People Development" className="impact-img-bg" /> */}
+            <span className="impact-label">People Development Training</span>
+          </div>
+          <div className="impact-card">
+            {/* <img src={impactImg5} alt="Instagram Live" className="impact-img-bg" /> */}
+            <span className="impact-label">Instagram Live Session</span>
+          </div>
+          <div className="impact-card">
+            {/* <img src={impactImg6} alt="Mini Training" className="impact-img-bg" /> */}
+            <span className="impact-label">Mini Training</span>
+          </div>
         </div>
       </section>
 
-      {/* 5. TESTIMONIAL SECTION (AUTO-CENTERING) */}
+      {/* 5. TESTIMONIAL SECTION (SMOOTH CAROUSEL & NEW GRADIENT) */}
       <section className="home-testimonial-section">
         <div className="testi-header">
           <span className="testi-eyebrow">What They Say</span>
@@ -146,10 +177,9 @@ const Home = () => {
         </div>
 
         <div className="testi-carousel-wrapper">
-          {/* Track yang bergeser secara otomatis berdasarkan state activeTesti */}
           <div 
             className="testi-carousel-track" 
-            style={{ transform: `translateX(calc(50% - (${activeTesti} * 220px) - 110px))` }}
+            style={{ transform: `translateX(${shiftAmount}px)` }}
           >
             {testimonials.map((item, index) => (
               <div 
@@ -157,6 +187,8 @@ const Home = () => {
                 className={`carousel-item ${activeTesti === index ? 'active' : 'inactive'}`}
                 onClick={() => setActiveTesti(index)}
               >
+                {/* Nanti ganti null dengan img src jika foto sudah siap */}
+                {/* <img src={item.img} alt={`Stepper ${index + 1}`} /> */}
                 <div className="carousel-placeholder"></div>
               </div>
             ))}

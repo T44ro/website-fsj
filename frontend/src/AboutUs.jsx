@@ -17,7 +17,7 @@ import './AboutUs.css';
 // import divDigital from './assets/div-digital.png';
 
 const AboutUs = () => {
-  // Objek inline style untuk background hero
+  // Objek inline style untuk background hero (tetap aman)
   const heroStyle = {
     // backgroundImage: `url(${heroBg})`,
     backgroundColor: '#FBB03B'
@@ -25,7 +25,7 @@ const AboutUs = () => {
 
   return (
     <div className="about-page">
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (TETAP SAMA) */}
       <section className="hero" style={heroStyle}>
         <div className="hero-content">
           <div className="breadcrumb">
@@ -41,7 +41,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 2. VISION & MISSION */}
+      {/* 2. VISION & MISSION (TETAP SAMA) */}
       <section className="vision-mission-section">
         <div className="vm-row">
           <div className="vm-text-card">
@@ -72,7 +72,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 3. OUR CULTURE */}
+      {/* 3. OUR CULTURE (TETAP SAMA) */}
       <section className="culture-section">
         <div className="culture-header">
           <span className="culture-subtitle">Our Culture</span>
@@ -99,7 +99,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* 4. THE DIVISIONS SECTION (DENGAN GRADASI BARU) */}
+      {/* 4. THE DIVISIONS SECTION (DESAIN BARU SESUAI GAMBAR) */}
       <section className="divisions-section">
         <div className="divisions-grid">
           
@@ -115,44 +115,44 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Kartu 1: Product & Strategy (Gradasi Biru) */}
-          <div className="div-card div-grad-blue">
+          {/* Kartu 1: Product & Strategy (Text Black) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-black">Product & <br/> Strategy <br/> Marketing</h3>
             {/* <img src={divProduct} alt="Product & Strategy" /> */}
           </div>
 
-          {/* Kartu 2: Visual Brand (Gradasi Kuning) */}
-          <div className="div-card div-grad-yellow">
+          {/* Kartu 2: Visual Brand (Text Navy) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-navy">Visual <br/> Brand <br/> Communication</h3>
             {/* <img src={divVisual} alt="Visual Brand" /> */}
           </div>
 
-          {/* Kartu 3: Operation (Gradasi Biru) */}
-          <div className="div-card div-grad-blue">
+          {/* Kartu 3: Operation (Text Black) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-black">Operation & <br/> Program <br/> Execution</h3>
             {/* <img src={divOperation} alt="Operation" /> */}
           </div>
 
-          {/* Kartu 4: Brand & Event (Gradasi Biru) */}
-          <div className="div-card div-grad-blue">
+          {/* Kartu 4: Brand & Event (Text Black) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-black">Brand & <br/> Event</h3>
             {/* <img src={divBrand} alt="Brand & Event" /> */}
           </div>
 
-          {/* Kartu 5: Human Capital (Gradasi Kuning) */}
-          <div className="div-card div-grad-yellow">
+          {/* Kartu 5: Human Capital (Text Navy) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-navy">Human <br/> Capital</h3>
             {/* <img src={divHuman} alt="Human Capital" /> */}
           </div>
 
-          {/* Kartu 6: Administration (Gradasi Biru) */}
-          <div className="div-card div-grad-blue">
+          {/* Kartu 6: Administration (Text Black) */}
+          <div className="div-card card-soft-beige">
             <h3 className="text-black">Administration <br/> & Report</h3>
             {/* <img src={divAdmin} alt="Administration" /> */}
           </div>
 
-          {/* Kartu 7: Digital Marketing (Gradasi Kuning + Border Biru) */}
-          <div className="div-card div-grad-yellow card-highlighted">
+          {/* Kartu 7: Digital Marketing (Text Navy + Blue Border) */}
+          <div className="div-card card-soft-beige card-highlighted">
             <h3 className="text-navy">Digital <br/> Marketing</h3>
             {/* <img src={divDigital} alt="Digital Marketing" /> */}
           </div>

@@ -11,30 +11,31 @@ import heroBg from './assets/about-hero-img.png';
 // import stepImg from './assets/step-img.png';
 
 const AboutUs = () => {
-  // 2. MASUKKAN GAMBAR KE DALAM STYLE BACKGROUND
+  // 2. MASUKKAN GAMBAR & DARK OVERLAY KE DALAM STYLE BACKGROUND
   const heroStyle = {
-    backgroundImage: `url(${heroBg})`,
+    // Menambahkan gradasi gelap (navy ke hitam transparan) di atas gambar
+    backgroundImage: `linear-gradient(rgba(27, 20, 100, 0.75), rgba(18, 18, 18, 0.85)), url(${heroBg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: '#FBB03B' 
+    backgroundColor: '#1B1464' 
   };
 
   return (
     <div className="about-page">
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (DARK OVERLAY) */}
       <section className="hero" style={heroStyle}>
         <div className="hero-content">
+          <div className="breadcrumb">
+            <span className="home-link">HOME</span>
+            <span className="separator"> / </span>
+            <span className="about-link">ABOUT US</span>
+          </div>
           <h1>Who We Are</h1>
           <p>
             Discover thousands of fun and interactive learning activities <br/>
             to support your child's growth and learning process.
           </p>
-          <div className="breadcrumb">
-            <span className="home-link">Home</span>
-            <span className="separator"> / </span>
-            <span className="about-link">About Us</span>
-          </div>
         </div>
       </section>
 

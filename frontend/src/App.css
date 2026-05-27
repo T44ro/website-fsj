@@ -1,72 +1,170 @@
 /* ========================================================= */
-/* HEADER (TOPBAR) STYLES BARU                               */
+/* CSS ABOUT US - UPDATED DIVISIONS STYLE                    */
 /* ========================================================= */
-.topbar {
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
+
+.about-page {
+  background-color: #FFF9F2; 
+  min-height: 100vh;
+}
+
+/* 1. HERO SECTION (TETAP) */
+.hero {
+  padding: 120px 20px !important; 
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #FBB03B !important; 
+  background-size: cover !important; 
+  background-position: center !important; 
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 10 !important; 
+  text-align: center !important; 
+}
+
+.hero h1 {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 600 !important; 
+  font-size: 48px !important;  
+  color: #000000 !important;
+  margin: 20px 0 !important;
+}
+
+/* 2. VISION & MISSION (TETAP) */
+.vision-mission-section {
+  padding: 80px 10%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 5%; 
-  background-color: #FFFFFF; 
-  box-shadow: 0 2px 15px rgba(0,0,0,0.03); /* Bayangan sangat halus */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* Ukuran Logo Kiri */
-.header-logo {
-  height: 40px; /* Tingginya disesuaikan agar rapi */
-  width: auto;
-  object-fit: contain;
-}
+.vm-row { display: flex; gap: 40px; align-items: stretch; }
+.vm-row.reverse { flex-direction: row-reverse; }
 
-/* Navigasi Tengah */
-.topnav {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-/* Style tombol menu bentuk "Pil" melengkung */
-.nav-item {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 500; /* Medium */
-  font-size: 14px;
-  color: #333333;
-  text-decoration: none;
-  padding: 8px 18px;
-  border-radius: 999px; /* Membuat bentuk kapsul/pil */
-  border: 1px solid #E0E0E0; /* Garis tepi abu-abu terang */
+.vm-text-card {
+  flex: 1;
   background-color: #FFFFFF;
-  transition: all 0.3s ease;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-/* Efek saat mouse mengambang di atas menu */
-.nav-item:hover {
-  background-color: #F9F9F9;
-  border-color: #CCCCCC;
+.vm-image-card {
+  flex: 1;
+  border-radius: 24px;
+  background-color: #E0E0E0; 
+  min-height: 300px;
 }
 
-/* Style saat menu sedang aktif (Contoh: Halaman About Us) */
-.nav-item.active {
-  color: #FBB03B;
-  border-color: #FBB03B;
+/* 3. OUR CULTURE (TETAP) */
+.culture-section { padding: 0 10% 100px 10%; text-align: center; }
+.culture-header { margin-bottom: 50px; }
+.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
+.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000; }
+.culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
+.culture-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; align-items: center; }
+
+/* 4. THE DIVISIONS SECTION (DESAIN BARU) */
+.divisions-section {
+  padding: 0 10% 100px 10%;
 }
 
-/* Area Ikon Sosial Media (Kanan) */
-.social-links {
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Kolom sesuai gambar */
+  gap: 20px;
+}
+
+/* Header di dalam Grid */
+.divisions-header-card {
+  grid-column: span 1; /* Bisa span 1 atau 2 tergantung selera */
+  padding-right: 10px;
+}
+
+.divisions-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 32px; 
+  color: #000;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.divisions-highlight {
+  font-family: 'Courgette', cursive;
+  color: #1B1464;
+}
+
+.divisions-desc {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 13px; 
+  color: #636363;
+  line-height: 1.5;
+}
+
+/* --- KARTU DIVISI BARU --- */
+.div-card {
+  position: relative;
+  border-radius: 16px; 
+  height: 240px; /* Ukuran lebih proporsional */
+  padding: 24px;
   display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.social-btn img {
-  height: 36px; /* Menyesuaikan ukuran bulatan kuning */
-  width: 36px;
-  object-fit: contain;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #F8F8F8; /* Warna krem sangat muda (hampir putih) */
   transition: transform 0.3s ease;
 }
 
-.social-btn:hover img {
-  transform: scale(1.08); /* Efek membesar sedikit saat disentuh */
+/* Efek khusus untuk Digital Marketing (Border Biru) */
+.card-highlighted {
+  border: 2px solid #005088; 
+}
+
+/* Tipografi di dalam Kartu */
+.div-card h3 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; /* Semibold sesuai rincian */
+  font-size: 18px; /* Lebih kecil dari sebelumnya */
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Variasi Warna Teks */
+.text-black { color: #000000; }
+.text-navy { color: #1B1464; }
+
+/* Gambar Orang di Kartu */
+.div-card img {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  height: 90%; /* Menyesuaikan agar kepala tidak terpotong */
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* Hover Effect */
+.div-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Responsive Grid untuk Tablet/HP */
+@media screen and (max-width: 1024px) {
+  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 600px) {
+  .divisions-grid { grid-template-columns: 1fr; }
 }

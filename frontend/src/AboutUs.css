@@ -1,5 +1,5 @@
 /* ========================================================= */
-/* CSS ABOUT US - UPDATED DIVISIONS STYLE                    */
+/* CSS ABOUT US - FIRST STEP JOURNEY                         */
 /* ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
@@ -9,9 +9,12 @@
   min-height: 100vh;
 }
 
-/* 1. HERO SECTION (TETAP) */
+/* ========================================================= */
+/* 1. HERO SECTION (DENGAN BACKGROUND GAMBAR)                */
+/* ========================================================= */
 .hero {
-  padding: 120px 20px !important; 
+  /* Padding bawah diatur agar teks pas di tengah */
+  padding: 120px 20px 80px 20px !important; 
   width: 100% !important;
   position: relative !important;
   overflow: hidden !important;
@@ -19,9 +22,7 @@
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
-  background-color: #FBB03B !important; 
-  background-size: cover !important; 
-  background-position: center !important; 
+  /* Catatan: Background image sudah diatur melalui inline-style di AboutUs.jsx */
 }
 
 .hero-content {
@@ -32,13 +33,32 @@
 
 .hero h1 {
   font-family: 'Quicksand', sans-serif !important;
-  font-weight: 600 !important; 
-  font-size: 48px !important;  
-  color: #000000 !important;
-  margin: 20px 0 !important;
+  font-weight: 600 !important; /* SemiBold */
+  font-size: 52px !important;  
+  color: #000000 !important; /* Hitam pekat */
+  margin: 0 0 16px 0 !important;
 }
 
-/* 2. VISION & MISSION (TETAP) */
+.hero p {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 500 !important; /* Medium */
+  font-size: 16px !important;
+  color: #000000 !important; /* Hitam pekat */
+  margin: 0 auto 40px auto !important; /* Jarak 40px ke breadcrumb di bawahnya */
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.breadcrumb {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1B1464; /* Navy khas FSJ */
+}
+
+/* ========================================================= */
+/* 2. VISION & MISSION                                       */
+/* ========================================================= */
 .vision-mission-section {
   padding: 80px 10%;
   display: flex;
@@ -64,7 +84,9 @@
   min-height: 300px;
 }
 
-/* 3. OUR CULTURE (TETAP) */
+/* ========================================================= */
+/* 3. OUR CULTURE                                            */
+/* ========================================================= */
 .culture-section { padding: 0 10% 100px 10%; text-align: center; }
 .culture-header { margin-bottom: 50px; }
 .culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
@@ -72,7 +94,9 @@
 .culture-highlight { font-family: 'Courgette', cursive; color: #FBB03B; }
 .culture-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: left; align-items: center; }
 
-/* 4. THE DIVISIONS SECTION (DESAIN BARU) */
+/* ========================================================= */
+/* 4. THE DIVISIONS SECTION                                  */
+/* ========================================================= */
 .divisions-section {
   padding: 0 10% 100px 10%;
 }
@@ -83,9 +107,8 @@
   gap: 20px;
 }
 
-/* Header di dalam Grid */
 .divisions-header-card {
-  grid-column: span 1; /* Bisa span 1 atau 2 tergantung selera */
+  grid-column: span 1; 
   padding-right: 10px;
 }
 
@@ -111,60 +134,61 @@
   line-height: 1.5;
 }
 
-/* --- KARTU DIVISI BARU --- */
 .div-card {
   position: relative;
   border-radius: 16px; 
-  height: 240px; /* Ukuran lebih proporsional */
+  height: 240px; 
   padding: 24px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: #F8F8F8; /* Warna krem sangat muda (hampir putih) */
   transition: transform 0.3s ease;
 }
 
-/* Efek khusus untuk Digital Marketing (Border Biru) */
+.card-soft-beige {
+  background-color: #F8F8F8; /* Warna krem sangat muda */
+}
+
 .card-highlighted {
   border: 2px solid #005088; 
 }
 
-/* Tipografi di dalam Kartu */
 .div-card h3 {
   position: relative;
   z-index: 2;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Semibold sesuai rincian */
-  font-size: 18px; /* Lebih kecil dari sebelumnya */
+  font-weight: 600; 
+  font-size: 18px; 
   margin: 0;
   line-height: 1.2;
 }
 
-/* Variasi Warna Teks */
 .text-black { color: #000000; }
 .text-navy { color: #1B1464; }
 
-/* Gambar Orang di Kartu */
 .div-card img {
   position: absolute;
   bottom: 0;
   right: 0; 
-  height: 90%; /* Menyesuaikan agar kepala tidak terpotong */
+  height: 90%; 
   object-fit: contain;
   z-index: 1;
 }
 
-/* Hover Effect */
 .div-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* Responsive Grid untuk Tablet/HP */
+/* ========================================================= */
+/* RESPONSIVE GRID UNTUK TABLET/HP                           */
+/* ========================================================= */
 @media screen and (max-width: 1024px) {
   .divisions-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 42px !important; }
 }
 
 @media screen and (max-width: 600px) {
   .divisions-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px !important; }
 }

@@ -26,6 +26,11 @@ import './Home.css';
 // import testi4 from './assets/testi-4.jpg';
 // import testi5 from './assets/testi-5.jpg';
 
+// import blog1 from './assets/blog-1.jpg';
+// import blog2 from './assets/blog-2.jpg';
+// import blog3 from './assets/blog-3.jpg';
+// import blog4 from './assets/blog-4.jpg';
+
 // =====================================================================
 // KOMPONEN IKON & GRAFIS BANTUAN
 // =====================================================================
@@ -36,7 +41,6 @@ const CheckIcon = () => (
   </svg>
 );
 
-/* PERBAIKAN: Ditambahkan preserveAspectRatio="none" agar lingkarannya presisi */
 const ScribbleCircleYellow = () => (
   <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#FBB03B" strokeWidth="3" strokeLinecap="round" />
@@ -46,6 +50,14 @@ const ScribbleCircleYellow = () => (
 const ScribbleCircleNavy = () => (
   <svg className="scribble-circle" preserveAspectRatio="none" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
     <path d="M10,35 C30,10 170,5 190,25 C210,45 40,65 15,40 C5,30 20,20 40,15" fill="none" stroke="#1B1464" strokeWidth="3" strokeLinecap="round" />
+  </svg>
+);
+
+// Ikon Panah Serong Kanan Atas
+const ArrowUpRightIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
   </svg>
 );
 
@@ -59,10 +71,8 @@ const testimonials = [
 ];
 
 const Home = () => {
-  const [activeTesti, setActiveTesti] = useState(2); // Indeks tengah (default)
+  const [activeTesti, setActiveTesti] = useState(2); 
 
-  // Logika untuk menggeser jalur (track) foto agar yang diklik selalu di tengah
-  // 240px didapat dari: lebar gambar 200px + gap 40px
   const shiftAmount = (2 - activeTesti) * 240;
 
   return (
@@ -176,28 +186,107 @@ const Home = () => {
           <span className="testi-eyebrow">What They Say</span>
           <h2 className="testi-title">Words from <span className="testi-highlight"><ScribbleCircleNavy />Our Steppers</span></h2>
         </div>
-
         <div className="testi-carousel-wrapper">
-          <div 
-            className="testi-carousel-track" 
-            style={{ transform: `translateX(${shiftAmount}px)` }}
-          >
+          <div className="testi-carousel-track" style={{ transform: `translateX(${shiftAmount}px)` }}>
             {testimonials.map((item, index) => (
               <div 
                 key={item.id} 
                 className={`carousel-item ${activeTesti === index ? 'active' : 'inactive'}`}
                 onClick={() => setActiveTesti(index)}
               >
-                {/* Nanti ganti null dengan img src jika foto sudah siap */}
                 {/* <img src={item.img} alt={`Stepper ${index + 1}`} /> */}
                 <div className="carousel-placeholder"></div>
               </div>
             ))}
           </div>
         </div>
-
         <div className="testi-content">
           <p>{testimonials[activeTesti].text}</p>
+        </div>
+      </section>
+
+      {/* ========================================= */}
+      {/* 6. OUR BLOG SECTION                       */}
+      {/* ========================================= */}
+      <section className="home-blog-section">
+        
+        {/* Header Baris (Kiri Teks, Kanan Tombol) */}
+        <div className="blog-header-row">
+          <div className="blog-header-text">
+            <span className="blog-eyebrow">Our Blog</span>
+            <h2 className="blog-title">Explore Latest News & Inspiration</h2>
+          </div>
+          <div className="blog-header-action">
+            <button className="btn-outline-navy">
+              Learn more 
+              <span className="btn-icon-circle bg-navy"><ArrowUpRightIcon /></span>
+            </button>
+          </div>
+        </div>
+
+        {/* Grid 4 Kartu Blog */}
+        <div className="blog-grid">
+          
+          {/* Kartu 1 */}
+          <div className="blog-card">
+            <div className="blog-img-wrapper">
+              {/* <img src={blog1} alt="Design Thinking" /> */}
+            </div>
+            <div className="blog-content">
+              <h4>Design Thinking for Visual Brands</h4>
+              <p>Build trusted visual identities using human-centered design.</p>
+              <button className="btn-blog-card">
+                Learn more 
+                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu 2 */}
+          <div className="blog-card">
+            <div className="blog-img-wrapper">
+              {/* <img src={blog2} alt="Self-Acceptance" /> */}
+            </div>
+            <div className="blog-content">
+              <h4>The Power of Self-Acceptance</h4>
+              <p>Overcome self-doubt and build lasting professional confidence.</p>
+              <button className="btn-blog-card">
+                Learn more 
+                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu 3 */}
+          <div className="blog-card">
+            <div className="blog-img-wrapper">
+              {/* <img src={blog3} alt="Green Career Hub" /> */}
+            </div>
+            <div className="blog-content">
+              <h4>Launching the Green Career Hub</h4>
+              <p>Essential strategies to enter the green workforce.</p>
+              <button className="btn-blog-card">
+                Learn more 
+                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
+          </div>
+
+          {/* Kartu 4 */}
+          <div className="blog-card">
+            <div className="blog-img-wrapper">
+              {/* <img src={blog4} alt="User Experiences" /> */}
+            </div>
+            <div className="blog-content">
+              <h4>Structuring Effective User Experiences</h4>
+              <p>Design intuitive user flows and seamless digital interactions.</p>
+              <button className="btn-blog-card">
+                Learn more 
+                <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </section>
 

@@ -84,19 +84,19 @@
 }
 
 /* ========================================================= */
-/* 2. FUTURE PROOF CAREER (REVISI LAYOUT & UKURAN)           */
+/* 2. FUTURE PROOF CAREER                                    */
 /* ========================================================= */
 .pp-future-section {
   display: flex;
   gap: 60px;
   align-items: stretch;
   margin-top: 60px; 
-  /* Gradasi dipercepat pudarnya: di 42% sudah full krem agar aman untuk teks */
-  background: linear-gradient(90deg, #1B1464 0%, #1B1464 25%, #FFF9F2 42%, #FFF9F2 100%);
+  /* Gradasi diperhalus rentangnya (22% ke 48%) agar lebih natural tapi aman dari teks */
+  background: linear-gradient(90deg, #1B1464 0%, #1B1464 22%, #FFF9F2 48%, #FFF9F2 100%);
 }
 
 .pp-future-left { 
-  flex: 1; /* Porsi kiri dinaikkan agar mendorong area kanan lebih jauh */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,38 +130,35 @@
 }
 
 .pp-future-right { 
-  flex: 1.2; /* Porsi disempitkan agar tidak melebar menabrak gradasi */
+  flex: 1.2; 
   display: flex;
   flex-direction: column; 
-  padding-left: 20px; /* Dorongan tambahan ke kanan */
+  padding-left: 20px; 
 }
 
-/* Memaksa teks menumpuk ke bawah (tidak kepanjangan ke samping) */
 .pp-future-right .pp-desc {
   max-width: 550px; 
   margin-bottom: 30px;
 }
 
-/* Grid kotak dikecilkan */
 .pp-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px; /* Jarak antar kotak diperkecil */
-  max-width: 620px; /* Memaksa kotak tidak merenggang terlalu lebar */
+  gap: 12px; 
+  max-width: 620px; 
   margin-top: auto; 
 }
 
-/* Ukuran padding dan font dalam kotak diperkecil */
 .pp-feature-box {
   background-color: #FFFFFF;
   border: 1px solid #EAEAEA;
   border-radius: 14px;
-  padding: 16px 10px; /* Padding dikecilkan */
+  padding: 16px 10px; 
   text-align: center;
 }
 
 .icon-placeholder {
-  width: 36px; /* Ikon dikecilkan */
+  width: 36px; 
   height: 36px;
   background-color: #FBB03B;
   border-radius: 50%;
@@ -171,13 +168,13 @@
 .pp-feature-box h4 { 
   font-family: 'Quicksand', sans-serif; 
   font-weight: 700; 
-  font-size: 13px; /* Font dikecilkan */
+  font-size: 13px; 
   margin-bottom: 6px; 
 }
 
 .pp-feature-box p { 
   font-family: 'Quicksand', sans-serif; 
-  font-size: 11px; /* Font dikecilkan */
+  font-size: 11px; 
   color: #666; 
   margin: 0; 
 }
@@ -382,9 +379,8 @@
 /* RESPONSIVE UNTUK HP                                       */
 /* ========================================================= */
 @media screen and (max-width: 992px) {
-  .pp-future-section { flex-direction: column !important; background: linear-gradient(180deg, #1B1464 0%, #1B1464 25%, #FFF9F2 42%, #FFF9F2 100%); }
+  .pp-future-section { flex-direction: column !important; background: linear-gradient(180deg, #1B1464 0%, #1B1464 22%, #FFF9F2 45%, #FFF9F2 100%); }
   
-  /* Hilangkan dorongan di HP agar otomatis center */
   .pp-future-right { padding-left: 0; }
   .pp-future-right .pp-desc { max-width: 100%; }
   .pp-features-grid { max-width: 100%; }

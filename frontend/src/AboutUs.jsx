@@ -36,7 +36,7 @@ const AboutUs = () => {
       <section className="vision-mission-section">
         <div className="vm-row">
           <div className="vm-text-card">
-            <h2 className="vision-title">Our Vision</h2>
+            <h2 className="vision-title">Vision</h2>
             <p>
               To provide access for Indonesian youth — especially those with limited privilege — 
               to take their first step, grow, and discover a meaningful career path 
@@ -50,11 +50,13 @@ const AboutUs = () => {
 
         <div className="vm-row reverse">
           <div className="vm-text-card">
-            <h2 className="mision-title">Our Mision</h2>
+            <h2 className="mision-title">Mision</h2>
             <ul>
-              <li>Creating an inclusive ecosystem for students.</li>
-              <li>Provide free high-quality training and mentoring.</li>
-              <li>Collaborating with industry professionals.</li>
+              <li>Bridge the gap in access to career guidance and development</li>
+              <li>Ignite first steps through education & mentoring</li>
+              <li>Cultivate growth mindset and social inclusion</li>
+              <li>Build a safe and empowering community space</li>
+              <li>Drive impact-Driven Movement through action, content, and cross-sector collaboration</li>
             </ul>
           </div>
           <div className="vm-image-card">

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './Home';       
 import AboutUs from './AboutUs'; 
+import ProductsPrograms from './ProductsPrograms'; // <-- Import halaman baru
 
 // === GAMBAR DI-COMMENT SEMENTARA AGAR VERCEL TIDAK ERROR ===
 // import logo from './assets/fsj-logo.png';
@@ -19,6 +20,8 @@ function App() {
       setActivePage('about');
     } else if (hash === 'home') {
       setActivePage('home');
+    } else if (hash === 'programs') { // <-- Pengecekan halaman programs
+      setActivePage('programs');
     }
   }, []);
 
@@ -26,7 +29,7 @@ function App() {
     if (event) event.preventDefault();
     setActivePage(pageName);
     window.location.hash = pageName;
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Gulir otomatis ke atas saat pindah halaman
   };
 
   return (
@@ -45,7 +48,10 @@ function App() {
         <nav className="topnav">
           <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
           <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
-          <a href="#programs" className="nav-item">Product & Programs</a>
+          
+          {/* <-- Menu Product & Programs sudah ditambahkan onClick --> */}
+          <a href="#programs" className={activePage === 'programs' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('programs', e)}>Product & Programs</a>
+          
           <a href="#insights" className="nav-item">Insights</a>
           <a href="#community" className="nav-item">Community</a>
           <a href="#contacts" className="nav-item">Contacts</a>
@@ -64,11 +70,9 @@ function App() {
       {/* ========================================= */}
       {/* SAKLAR KONTEN HALAMAN                     */}
       {/* ========================================= */}
-      {activePage === 'home' ? (
-        <Home changePage={changePage} />
-      ) : (
-        <AboutUs />
-      )}
+      {activePage === 'home' && <Home changePage={changePage} />}
+      {activePage === 'about' && <AboutUs />}
+      {activePage === 'programs' && <ProductsPrograms />}
 
       {/* ========================================= */}
       {/* FOOTER                                    */}
@@ -91,9 +95,9 @@ function App() {
             </div>
             <div>
               <h3>Programs</h3>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Internships</a>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Mini Training</a>
-              <a href="#programs" onClick={(e) => changePage('home', e)}>Community Impact</a>
+              <a href="#programs" onClick={(e) => changePage('programs', e)}>Internships</a>
+              <a href="#programs" onClick={(e) => changePage('programs', e)}>Mini Training</a>
+              <a href="#programs" onClick={(e) => changePage('programs', e)}>Community Impact</a>
             </div>
             <div>
               <h3>Insights</h3>

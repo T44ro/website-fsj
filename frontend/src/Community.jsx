@@ -2,11 +2,19 @@ import React from 'react';
 import './Community.css';
 import heroBg from './assets/about-hero-img.png';
 
-// === IKON ARROW UNTUK TOMBOL KARTU DISCOVER ===
+// === IKON ===
 const ArrowUpRightIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
     <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+);
+
+const DownloadIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+    <polyline points="7 10 12 15 17 10"></polyline>
+    <line x1="12" y1="15" x2="12" y2="3"></line>
   </svg>
 );
 
@@ -58,23 +66,15 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 3. READY TO DISCOVER SECTION (REVISI STYLE HOME PAGE) */}
+      {/* 3. READY TO DISCOVER SECTION */}
       <section className="com-section com-discover">
         <div className="discover-header">
           <div className="discover-title-area">
-             {/* 1. EYEBROW ORANGE DI ATAS JUDUL */}
              <span className="com-eyebrow">Step 1 • Explore</span>
              <h2>Ready to Discover Your Path?</h2>
           </div>
-          <div className="discover-nav">
-             <button className="nav-btn prev">←</button>
-             <button className="nav-btn next">→</button>
-          </div>
         </div>
-        
-        {/* 2. REVISI KARTU MENGIKUTI STYLE BLOG CARD HOME PAGE */}
         <div className="discover-scroll">
-          
           <div className="discover-card">
             <div className="card-img"></div>
             <div className="card-content">
@@ -85,7 +85,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-
           <div className="discover-card">
             <div className="card-img"></div>
             <div className="card-content">
@@ -96,7 +95,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-
           <div className="discover-card">
             <div className="card-img"></div>
             <div className="card-content">
@@ -107,7 +105,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-
           <div className="discover-card">
             <div className="card-img"></div>
             <div className="card-content">
@@ -118,34 +115,67 @@ const Community = () => {
               </button>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* 4. INSIGHTS PREVIEW SECTION */}
       <section className="com-section com-insights-preview">
-        <h2 className="section-title-center">Catch Up on Key Insights</h2>
+        {/* BAGIAN JUDUL YANG KAMU MINTA ADA DI SINI */}
+        <div className="insights-header-center">
+          <span className="com-eyebrow center-eyebrow">Step 2 • Learn</span>
+          <h2 className="section-title-center no-margin-bottom">Catch Up on Key Insights</h2>
+          <p className="insights-desc">
+            Missed our previous sessions? We've got you covered. Browse through the highlights of our past trainings and access the curated summaries to seamlessly extract real-world expertise from our experts.
+          </p>
+        </div>
+
         <div className="insights-grid">
-          <div className="ins-item">
-            <div className="ins-img"></div>
-            <span className="ins-date">March 10, 2026 • Frameworks</span>
-            <h4>Design Thinking for Visual Brands</h4>
-            <p>Build trusted visual identities using human-centered design.</p>
-            <a href="#insights">Learn More →</a>
+          <div className="ins-item-horizontal">
+            <div className="ins-img-wrap"></div>
+            <div className="ins-text-wrap">
+              <span className="ins-date">March 2026</span>
+              <h4>Strategic Visual Branding & UI/UX Masterclass</h4>
+              <p>Over 150+ talents explored the intersection of design, user experience, and building consumer trust with industry leaders.</p>
+              <div className="ins-link-wrap">
+                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
+              </div>
+            </div>
           </div>
-          <div className="ins-item">
-            <div className="ins-img"></div>
-            <span className="ins-date">March 05, 2026 • Mindset</span>
-            <h4>The Power of Self-Acceptance</h4>
-            <p>Overcome self-doubt and build lasting professional confidence.</p>
-            <a href="#insights">Learn More →</a>
+          
+          <div className="ins-item-horizontal">
+            <div className="ins-img-wrap"></div>
+            <div className="ins-text-wrap">
+              <span className="ins-date">March 28, 2026</span>
+              <h4>UI/UX Portfolio Cheatsheet</h4>
+              <p>A step-by-step guide to structuring your portfolio and showcasing your design logic to recruiters.</p>
+              <div className="ins-link-wrap">
+                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
+              </div>
+            </div>
           </div>
-          <div className="ins-item">
-            <div className="ins-img"></div>
-            <span className="ins-date">Feb 28, 2026 • News</span>
-            <h4>Launching the Green Career Hub</h4>
-            <p>Essential strategies to enter the green workforce today.</p>
-            <a href="#insights">Learn More →</a>
+
+          <div className="ins-item-horizontal">
+            <div className="ins-img-wrap"></div>
+            <div className="ins-text-wrap">
+              <span className="ins-date">April 15, 2026</span>
+              <h4>The Brand Trust Framework</h4>
+              <p>Key takeaways on building credibility and trust through strategic visual communication.</p>
+              <div className="ins-link-wrap">
+                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
+              </div>
+            </div>
+          </div>
+
+          <div className="ins-item-horizontal">
+            <div className="ins-img-wrap"></div>
+            <div className="ins-text-wrap">
+              <span className="ins-date">February 10, 2026</span>
+              <h4>Consumer Behavior & Tech Adoption</h4>
+              <p>Analytical insights on how users interact, trust, and adopt modern digital platforms.</p>
+              <div className="ins-link-wrap">
+                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

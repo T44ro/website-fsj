@@ -27,45 +27,54 @@ body {
 }
 
 /* ========================================================= */
-/* 1. HEADER (TOPBAR TIGA PILAR - DIPERBAIKI)                */
+/* 1. HEADER (TOPBAR ANTI-TENGGELAM)                         */
 /* ========================================================= */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Kurangi padding vertikal agar header tidak terlalu tinggi */
   padding: 12px 5%; 
   background-color: #FFFFFF !important; 
   box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
-  position: sticky; 
-  top: 0;
-  z-index: 1000;
+  
+  /* GEMBOK LOCK HEADER AGAR TETAP MENEMPEL SAAT SCROLL */
+  position: -webkit-sticky !important;
+  position: sticky !important; 
+  top: 0 !important;
+  z-index: 9999 !important; /* Angka z-index dinaikkan maksimal */
 }
 
-/* --- Pilar Kiri: Brand --- */
+/* KIRI: Area Logo Gambar */
 .brand { 
-  flex: 1; /* Ambil 1 bagian ruang */
+  flex: 1; 
   display: flex; 
   align-items: center; 
   justify-content: flex-start;
+  cursor: pointer;
 }
 
-/* --- Pilar Tengah: Menu Navigasi (Pusat Perbaikan) --- */
+/* Mengatur ukuran tinggi gambar logo agar pas dengan navbar */
+.header-logo { 
+  height: 36px; 
+  width: auto; 
+  object-fit: contain; 
+}
+
+/* TENGAH: Menu Navigasi */
 .topnav { 
-  flex: 3; /* Ambil lebih banyak ruang agar menu tidak desak-desakan */
+  flex: 3; 
   display: flex; 
-  gap: 8px; /* Jarak antar tombol dipersempit */
+  gap: 8px; 
   align-items: center; 
   justify-content: center;
 }
 
 .nav-item {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600; /* Sedikit lebih tebal agar jelas walau kecil */
-  font-size: 13px; /* DIKECILKAN dari 14px */
+  font-weight: 600; 
+  font-size: 13px; 
   color: #333333;
   text-decoration: none;
-  /* Padding DIRAMPINGKAN: atas-bawah 6px, kiri-kanan 14px */
   padding: 6px 14px; 
   border-radius: 999px; 
   border: 1px solid #E0E0E0; 
@@ -74,21 +83,21 @@ body {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  white-space: nowrap; /* Mencegah teks turun ke bawah */
+  white-space: nowrap; 
 }
 
 .nav-item:hover { background-color: #F9F9F9 !important; border-color: #CCCCCC; }
 .nav-item.active { 
   color: #FBB03B !important; 
   border-color: #FBB03B; 
-  background-color: #FFF9F2 !important; /* Tambah background tipis saat aktif */
+  background-color: #FFF9F2 !important; 
 }
 
-/* --- Pilar Kanan: Sosial Media (DENGAN SVG) --- */
+/* KANAN: Ikon Sosial Media */
 .social-links { 
-  flex: 1; /* Ambil 1 bagian ruang */
+  flex: 1;
   display: flex; 
-  gap: 14px; /* Jarak antar ikon */
+  gap: 14px; 
   align-items: center; 
   justify-content: flex-end;
 }
@@ -98,57 +107,40 @@ body {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  color: #555555; /* Warna ikon standar (abu-abu gelap) */
+  color: #555555; 
   transition: all 0.3s ease;
-  padding: 4px; /* Area klik sedikit lebih luas */
+  padding: 4px; 
 }
 
-/* Efek Hover Ikon Sosmed: Berubah jadi warna kuning FSJ */
 .social-btn:hover { 
   color: #FBB03B; 
-  transform: translateY(-2px); /* Efek melayang sedikit */
+  transform: translateY(-2px); 
 }
 
 
 /* --------------------------------------------------------- */
-/* PENGATURAN MENU DROPDOWN CONTACTS (Disesuaikan)           */
+/* PENGATURAN MENU DROPDOWN CONTACTS                         */
 /* --------------------------------------------------------- */
 .nav-item-dropdown { position: relative; display: inline-block; }
-
-/* Mengatur Span di dalam dropdown agar sejajar ukurannya */
-.nav-item-dropdown span.nav-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.arrow-icon {
-  font-size: 10px;
-  margin-top: 2px;
-}
+.nav-item-dropdown span.nav-item { display: inline-flex; align-items: center; gap: 5px; }
+.arrow-icon { font-size: 10px; margin-top: 2px; }
 
 .dropdown-content {
   display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); 
   background-color: #FFFFFF; min-width: 160px; box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
-  border-radius: 16px; padding: 12px 0; z-index: 1001; margin-top: 10px; border: 1px solid #E0E0E0;
+  border-radius: 16px; padding: 12px 0; z-index: 10001; margin-top: 10px; border: 1px solid #E0E0E0;
 }
 .nav-item-dropdown:hover .dropdown-content { display: flex; flex-direction: column; }
 
 .dropdown-content a { 
-  color: #333333; 
-  padding: 10px 24px; 
-  text-decoration: none; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 600; 
-  font-size: 13px; /* Sesuaikan ukuran font dropdown */
-  transition: all 0.3s ease; 
-  text-align: center; 
+  color: #333333; padding: 10px 24px; text-decoration: none; font-family: 'Quicksand', sans-serif; 
+  font-weight: 600; font-size: 13px; transition: all 0.3s ease; text-align: center; 
 }
 .dropdown-content a:hover { background-color: #FFF9F2; color: #FBB03B; }
 
 
 /* ========================================================= */
-/* 2. FOOTER STYLES (TETAP)                                  */
+/* 2. FOOTER STYLES                                          */
 /* ========================================================= */
 .site-footer { background-color: #FFF9F2 !important; padding: 60px 10% 20px 10%; border-top: 1px solid #F0E6D8; margin-top: auto; }
 .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
@@ -169,15 +161,13 @@ body {
 /* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
 /* ========================================================= */
 @media screen and (max-width: 900px) {
-  /* Tampilan Tablet/HP mengecil: Ubah susunan jadi vertikal */
-  .topbar { flex-direction: column; gap: 16px; padding: 20px 5%; }
+  .topbar { flex-direction: column; gap: 16px; padding: 20px 5%; position: relative !important; }
   .brand, .social-links { justify-content: center; width: 100%; }
   .brand { flex: none; order: 1; }
   .topnav { flex: none; order: 2; flex-wrap: wrap; justify-content: center; gap: 6px; width: 100%; }
   .social-links { flex: none; order: 3; margin-top: 10px; }
   
   .nav-item { font-size: 12px; padding: 5px 10px; }
-
   .footer-links { flex-direction: column; gap: 30px; text-align: left; }
   .newsletter { flex-direction: column; width: 100%; }
   .newsletter input { width: 100%; box-sizing: border-box; }

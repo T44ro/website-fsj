@@ -8,7 +8,7 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
 .site-shell { display: flex; flex-direction: column; min-height: 100vh; }
 
 /* ========================================================= */
-/* HEADER & NAVIGATION BAR (REVISI CENTER MENU & SOSMED)     */
+/* HEADER & NAVIGATION BAR (REVISI LOGO & RESPONSIVE)        */
 /* ========================================================= */
 .topbar {
   position: fixed;
@@ -16,24 +16,33 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
   background-color: #FFF9F2;
   display: flex; 
   align-items: center; 
-  justify-content: space-between; /* Membagi menjadi 3 area */
+  justify-content: space-between; 
   padding: 0 5%; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
   z-index: 1000;
 }
 
-/* Mengatur lebar area kiri dan kanan agar menu tengah benar-benar presisi di tengah */
-.header-left, .header-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
+.header-left, .header-right { flex: 1; display: flex; align-items: center; }
 .header-right { justify-content: flex-end; }
 
-.brand h2 { font-weight: 700; font-size: 28px; color: #1B1464; margin: 0; cursor: pointer; }
+/* Styling Khusus Gambar Logo */
+.header-logo {
+  height: 48px; 
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.header-logo:hover { transform: scale(1.05); }
 
-/* Menu Navigasi di Tengah */
+/* Tombol Hamburger di HP disembunyikan di versi Laptop */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: #1B1464;
+  cursor: pointer;
+}
+
 .topnav {
   display: flex; 
   align-items: center; 
@@ -51,7 +60,6 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
 .nav-item:hover { background-color: rgba(251, 176, 59, 0.2); }
 .nav-item.active { background-color: #FBB03B; color: #FFFFFF; }
 
-/* Dropdown */
 .nav-item-dropdown { position: relative; display: inline-block; cursor: pointer; }
 .dropdown-content {
   display: none; position: absolute; background-color: #FFFFFF; min-width: 160px;
@@ -62,16 +70,13 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
 .dropdown-content a:hover { background-color: #FFF9F2; color: #FBB03B; }
 .nav-item-dropdown:hover .dropdown-content { display: block; }
 
-/* Ikon Sosial Media di Header */
 .social-header { display: flex; gap: 18px; }
-.social-header a {
-  color: #1B1464;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
+.social-header a { color: #1B1464; font-size: 18px; transition: all 0.3s ease; }
 .social-header a:hover { color: #FBB03B; transform: translateY(-2px); }
 
-/* Main Content */
+/* Sembunyikan social media versi HP di tampilan desktop */
+.mobile-socials { display: none; }
+
 .main-content-wrapper { flex: 1; margin-top: 90px; }
 
 /* ========================================================= */
@@ -105,8 +110,16 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
 
 .footer-middle-row { display: flex; justify-content: space-between; gap: 60px; margin-bottom: 50px; }
 .footer-brand-info { flex: 1; max-width: 320px; }
-.footer-logo-text { font-size: 42px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; font-family: 'Courgette', cursive; }
-.footer-brand-info p { font-size: 14px; font-weight: 600; color: #121212; line-height: 1.6; }
+
+/* Styling Khusus Logo di Footer */
+.footer-logo {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.footer-brand-info p { font-size: 14px; font-weight: 600; color: #121212; line-height: 1.6; margin: 0; }
 
 .footer-links-grid { display: flex; gap: 60px; }
 .footer-col h3 { font-size: 16px; font-weight: 800; margin-bottom: 18px; }
@@ -116,12 +129,79 @@ body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #
 .footer-bottom-row { text-align: center; padding-top: 25px; border-top: 1px solid rgba(27, 20, 100, 0.1); }
 .footer-bottom-row p { font-size: 13px; font-weight: 600; }
 
-/* Responsive HP */
+/* ========================================================= */
+/* RESPONSIVE DESIGN (HP & TABLET)                           */
+/* ========================================================= */
 @media screen and (max-width: 992px) {
-  .topbar { position: relative; padding: 20px; flex-direction: column; height: auto; gap: 20px; }
-  .header-left, .header-right { flex: none; justify-content: center; width: 100%; }
+  .topbar { 
+    position: fixed; 
+    padding: 0 20px; 
+    height: 80px; 
+    flex-direction: row; 
+    justify-content: space-between; 
+  }
+  
+  .main-content-wrapper { margin-top: 80px; }
+
+  /* Menyesuaikan Header Atas (Logo Kiri, Hamburger Kanan) */
+  .header-left { flex: none; }
+  .header-right.desktop-socials { display: none; } /* Sembunyikan sosmed desktop */
+  .hamburger { display: block; } /* Tampilkan tombol Hamburger */
+
+  /* Menu Navigasi berubah menjadi Dropdown Lebar Layar */
+  .topnav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    
+    /* Animasi Buka/Tutup Menu */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    border: none;
+  }
+  
+  .topnav.open {
+    max-height: 500px;
+    padding: 20px;
+    border-top: 1px solid #EAEAEA;
+  }
+
+  .nav-item { width: 100%; margin-bottom: 5px; padding: 12px 20px; border-radius: 8px; }
+  .nav-item-dropdown { width: 100%; margin-bottom: 5px; }
+  .nav-item-dropdown span { width: 100%; display: block; padding: 12px 20px; border-radius: 8px; }
+
+  /* Dropdown Submenu di HP terbuka ke bawah (tidak melayang) */
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    min-width: 100%;
+    padding: 5px 0 0 15px;
+    background-color: transparent;
+  }
+
+  /* Tampilkan sosial media di dalam menu dropdown HP */
+  .mobile-socials {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-top: 1px solid #EAEAEA;
+  }
+
+  /* Penyesuaian Footer untuk HP */
   .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
   .newsletter-box { width: 100%; }
   .footer-middle-row { flex-direction: column; gap: 40px; }
-  .footer-links-grid { flex-wrap: wrap; gap: 30px; }
+  .footer-links-grid { flex-direction: column; gap: 30px; }
 }

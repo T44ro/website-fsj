@@ -1,392 +1,52 @@
-/* ========================================================= */
-/* CSS COMMUNITY - FIRST STEP JOURNEY                        */
-/* ========================================================= */
+/* COMMUNITY PAGE CSS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-.com-page {
-  background-color: #FFF9F2;
-  min-height: 100vh;
-}
+.community-page { background-color: #FAFAFA; min-height: 100vh; }
 
-/* 1. HERO */
-.com-hero {
-  padding: 120px 20px 80px 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+.section-eyebrow { display: block; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #FBB03B; letter-spacing: 2px; margin-bottom: 12px; }
+.section-header-center { text-align: center; margin-bottom: 50px; }
+.section-header-center h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #1B1464; margin: 0 0 16px 0; }
+.approach-sub { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #636363; margin: 0; }
 
-.com-hero h1 { font-family: 'Quicksand', sans-serif; font-size: 52px; font-weight: 600; color: #000; margin: 0 0 16px 0; }
-.com-hero p { font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: 500; color: #333; margin-bottom: 40px; line-height: 1.6; }
-.com-breadcrumb { font-family: 'Quicksand', sans-serif; font-weight: 600; color: #1B1464; font-size: 14px; }
+/* HERO */
+.comm-hero { padding: 140px 20px !important; width: 100% !important; position: relative !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
+.comm-hero .hero-content { position: relative !important; z-index: 10 !important; text-align: center !important; display: flex; flex-direction: column; align-items: center; }
+.comm-hero h1 { font-family: 'Quicksand', sans-serif !important; font-weight: 700 !important; font-size: 56px !important; color: #FFFFFF !important; margin: 0 0 24px 0 !important; line-height: 1.2; }
+.comm-hero p { font-family: 'Quicksand', sans-serif !important; font-weight: 500 !important; font-size: 18px !important; color: #E0E0E0 !important; margin: 0 auto 40px auto !important; max-width: 750px; line-height: 1.6; }
+.breadcrumb { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #FBB03B; letter-spacing: 2px; }
+.home-link { color: #FFFFFF; cursor: pointer; transition: color 0.3s; }
+.home-link:hover { color: #FBB03B; }
+.separator { margin: 0 8px; color: #FFFFFF; }
 
-/* GENERAL */
-.com-section { padding: 80px 10%; }
-.section-title-center { text-align: center; font-family: 'Quicksand', sans-serif; font-size: 38px; color: #000; margin-bottom: 60px; }
-.no-margin-bottom { margin-bottom: 15px !important; }
+/* OUR APPROACH */
+.approach-section { padding: 100px 10%; background-color: #FFFFFF; }
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.approach-card { background-color: #FFF9F2; border-radius: 20px; padding: 40px 30px; transition: all 0.3s ease; border-top: 4px solid #FBB03B; position: relative; overflow: hidden; }
+.approach-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(27, 20, 100, 0.08); }
+.appr-number { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 60px; color: rgba(251, 176, 59, 0.15); position: absolute; top: 10px; right: 20px; line-height: 1; }
+.approach-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #1B1464; margin: 0 0 16px 0; position: relative; z-index: 2; }
+.approach-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 15px; color: #636363; line-height: 1.6; margin: 0; position: relative; z-index: 2; }
 
-.com-eyebrow {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  color: #FBB03B;
-  font-size: 16px;
-  display: block;
-  margin-bottom: 12px;
-}
+/* GALLERY */
+.gallery-section { padding: 60px 10% 100px 10%; background-color: #FAFAFA; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 250px; gap: 20px; }
+.gallery-item { background-color: #E0E0E0; border-radius: 16px; display: flex; justify-content: center; align-items: center; font-family: 'Quicksand', sans-serif; color: #888; font-weight: 600; overflow: hidden; transition: transform 0.3s ease; }
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
 
-/* 2. STRUCTURED PATHWAY */
-.com-pathway { padding: 60px 10%; }
+/* CTA SECTION */
+.cta-join-section { padding: 0 10% 100px 10%; }
+.cta-box { background: linear-gradient(135deg, #1B1464, #2A1F96); border-radius: 24px; padding: 60px 40px; text-align: center; color: #FFFFFF; box-shadow: 0 20px 40px rgba(27, 20, 100, 0.2); }
+.cta-box h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; margin: 0 0 16px 0; }
+.cta-box p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #E0E0E0; margin: 0 auto 30px auto; max-width: 600px; }
+.btn-join-now { background-color: #FBB03B; color: #FFFFFF; border: none; padding: 16px 40px; border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s ease; }
+.btn-join-now:hover { background-color: #EFA02A; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(251, 176, 59, 0.4); }
 
-.pathway-container {
-  display: flex; align-items: center; justify-content: center; gap: 32px; width: 100%;
-}
-
-.pathway-img-box { flex: 1; display: flex; align-items: center; justify-content: center; }
-.pathway-img-box .img-placeholder { width: 100%; height: 380px; border-radius: 24px; background-color: #E0E0E0; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03); }
-
-.pathway-text-block {
-  flex: 1.2; background-color: #FFE4A8; border-radius: 24px; padding: 45px 40px;
-  text-align: left; position: relative; overflow: hidden; display: flex; flex-direction: column;
-  justify-content: center; height: 380px; box-sizing: border-box; box-shadow: 0 12px 35px rgba(253, 190, 52, 0.12);
-}
-
-.pathway-text-block h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.3; color: #1B1464; margin: 0 0 16px 0; }
-.pathway-text-block p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 14px; color: #333333; line-height: 1.6; margin: 0 0 30px 0; max-width: 95%; }
-
-.pathway-text-block .btn-learn-more {
-  background-color: #1B1464; color: #FFFFFF; border: none; padding: 12px 30px; border-radius: 999px;
-  font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; cursor: pointer; display: inline-flex;
-  align-items: center; gap: 10px; align-self: flex-start; transition: all 0.3s ease;
-}
-
-.pathway-text-block .btn-learn-more:hover { background-color: #302683; transform: translateY(-2px); }
-.btn-arrow { font-size: 15px; transition: transform 0.3s ease; }
-.btn-learn-more:hover .btn-arrow { transform: translate(3px, -3px); }
-
-.spiral-decoration { position: absolute; bottom: -4px; right: -4px; opacity: 0.25; pointer-events: none; }
-.spiral-decoration svg { stroke: #1B1464; }
-
-/* 3. DISCOVER SCROLL */
-.discover-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
-.discover-title-area { text-align: left; }
-.discover-header h2 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin: 0; }
-
-.discover-scroll { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.discover-card { background-image: linear-gradient(#013F84, #013F84) !important; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; }
-.discover-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 63, 132, 0.3); }
-
-.card-img { height: 160px; width: 100%; background: #E0E0E0; border-radius: 0; }
-.card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-.discover-card h3 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; margin: 0 0 12px 0; color: #FFFFFF !important; }
-.discover-card p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 13px; color: #FFFFFF !important; opacity: 0.9; line-height: 1.6; margin: 0 0 24px 0; flex-grow: 1; }
-
-.btn-discover-card {
-  background-color: transparent; color: #FDBE34 !important; border: 1px solid #FDBE34; padding: 6px 14px 6px 20px;
-  border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 12px; cursor: pointer;
-  display: inline-flex; align-items: center; align-self: flex-start; gap: 10px; transition: all 0.3s ease;
-}
-.btn-discover-card:hover { background-color: #FDBE34; color: #1B1464 !important; }
-.btn-icon-circle { width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-.bg-yellow { background-color: #FDBE34; transition: all 0.3s ease; }
-.btn-discover-card:hover .bg-yellow { background-color: #1B1464; }
-
-/* 4. INSIGHTS PREVIEW */
-.insights-header-center { text-align: center; max-width: 750px; margin: 0 auto 50px auto; }
-.center-eyebrow { justify-content: center; display: flex; }
-.insights-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 15px; color: #666; line-height: 1.6; }
-
-.insights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-.ins-item-horizontal { display: flex; flex-direction: row; background-color: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 16px; overflow: hidden; height: 250px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.ins-item-horizontal:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
-.ins-img-wrap { width: 45%; background-color: #E0E0E0; }
-.ins-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.ins-text-wrap { width: 55%; padding: 24px; display: flex; flex-direction: column; box-sizing: border-box; }
-.ins-date { font-family: 'Quicksand', sans-serif; font-size: 13px; color: #FBB03B; font-weight: 700; margin-bottom: 8px; }
-.ins-text-wrap h4 { font-family: 'Quicksand', sans-serif; font-size: 20px; color: #000000; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3; }
-.ins-text-wrap p { font-family: 'Quicksand', sans-serif; font-size: 13px; color: #333333; margin: 0; line-height: 1.5; flex-grow: 1; }
-.ins-link-wrap { display: flex; justify-content: flex-end; margin-top: 15px; }
-.ins-download-link { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 14px; color: #1B1464; text-decoration: underline; display: flex; align-items: center; gap: 6px; transition: color 0.3s ease; }
-.ins-download-link:hover { color: #FBB03B; }
-
-
-/* ========================================================= */
-/* 5. IMPACT SECTION (REVISI BENTO GRID 3 KOLOM)             */
-/* ========================================================= */
-.com-impact-revised {
-  padding: 80px 10%;
-  background-color: #FFF9F2;
-}
-
-.impact-header-revised {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-}
-
-.impact-bento-revised {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-}
-
-/* Kolom Kiri: Alumni Biru */
-.impact-col-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.bento-blue-large {
-  background-color: #1B1464;
-  border-radius: 20px;
-  padding: 30px;
-  flex: 1.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.bento-blue-large h3 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 28px;
-  color: #FFFFFF;
-  margin: 0 0 12px 0;
-  line-height: 1.3;
-}
-
-.bento-blue-large p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  color: #FFFFFF;
-  opacity: 0.8;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.bento-blue-small {
-  background-color: #013F84;
-  border-radius: 20px;
-  padding: 24px 30px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.avatar-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.avatar-circle {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: #E0E0E0;
-  border: 2px solid #013F84;
-  margin-left: -10px;
-}
-
-.avatar-circle:first-child { margin-left: 0; }
-
-.badge-50 {
-  background-color: #FDBE34;
-  color: #1B1464;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #013F84;
-}
-
-.bento-blue-small h4 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 18px;
-  color: #FFFFFF;
-  margin: 0;
-  line-height: 1.3;
-}
-
-
-/* Kolom Tengah & Kanan: Kartu Putih */
-.impact-col-center, .impact-col-right {
-  display: flex;
-  flex-direction: column;
-}
-
-.bento-white-card {
-  background-color: #FFFFFF;
-  border: 1px solid #EAEAEA;
-  border-radius: 20px;
-  padding: 40px 30px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.partner-logos-area {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.logo-dummy {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #1B1464;
-  background-color: #F5F5F5;
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-
-.bento-title-dark {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 26px;
-  color: #000000;
-  margin: 0 0 16px 0;
-  line-height: 1.3;
-}
-
-.bento-desc-dark {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  color: #666666;
-  margin: 0 0 30px 0;
-  line-height: 1.6;
-}
-
-.btn-yellow-solid {
-  background-color: #FDBE34;
-  color: #FFFFFF;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: background-color 0.3s ease;
-}
-
-.btn-yellow-solid:hover { background-color: #E6A92E; }
-
-.scale-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-.scale-item h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 42px;
-  color: #000000;
-  margin: 0 0 5px 0;
-}
-
-.scale-item p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  color: #666666;
-  margin: 0;
-}
-
-/* ========================================================= */
-/* 6. CHALLENGE SECTION (GAMBAR TANGAN & TOMBOL OVERLAY)     */
-/* ========================================================= */
-.com-challenge-revised {
-  padding: 80px 10%;
-  background: linear-gradient(180deg, #FFF9F2 0%, #FFDFA6 60%, #FDBE34 100%);
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  
-  /* JARAK TAMBAHAN UNTUK MEMISAHKAN SECTION INI DENGAN FOOTER */
-  margin-bottom: 80px; 
-}
-
-.challenge-header-revised {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-}
-
-.challenge-image-banner {
-  width: 100%;
-  height: 400px;
-  background-color: #A3A3A3; /* Placeholder Abu-abu. Nanti diganti gambar */
-  border-radius: 30px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Supaya tombol lebih jelas jika gambar aslinya terang/gelap */
-.challenge-image-banner::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.3); 
-  z-index: 1;
-}
-
-.challenge-overlay-buttons {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  gap: 20px;
-}
-
-.btn-outline-gold {
-  background-color: transparent;
-  color: #FDBE34;
-  border: 1px solid #FDBE34;
-  padding: 12px 32px;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-gold:hover {
-  background-color: rgba(253, 190, 52, 0.1);
-}
-
-/* ========================================================= */
-/* RESPONSIVE LAYOUT HP & TABLET                             */
-/* ========================================================= */
-@media screen and (max-width: 992px) {
-  .pathway-container { flex-direction: column !important; gap: 24px; }
-  .pathway-img-box, .pathway-text-block { width: 100% !important; flex: none; }
-  .pathway-text-block { height: auto; padding: 40px 24px; }
-  .pathway-img-box .img-placeholder { height: 240px; }
-  
-  .discover-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .discover-scroll { grid-template-columns: 1fr; }
-  
-  .insights-grid { grid-template-columns: 1fr; }
-  .ins-item-horizontal { flex-direction: column; height: auto; }
-  .ins-img-wrap { width: 100%; height: 200px; }
-  .ins-text-wrap { width: 100%; padding: 20px; }
-  
-  .impact-bento-revised { grid-template-columns: 1fr; }
-  .challenge-overlay-buttons { flex-direction: column; width: 80%; }
-  .challenge-overlay-buttons button { width: 100%; }
-  
-  .com-section { padding: 60px 5%; }
-  .com-challenge-revised { margin-bottom: 60px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .approach-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .gallery-item.large, .gallery-item.wide { grid-column: span 1; grid-row: span 1; }
+  .comm-hero h1 { font-size: 36px !important; }
 }

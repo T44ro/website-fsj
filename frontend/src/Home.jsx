@@ -4,11 +4,10 @@ import './Home.css';
 
 // =====================================================================
 // 1. IMPORT GAMBAR DARI FOLDER ASSETS
-// Pastikan nama file gambar di dalam folder src/assets sama persis dengan yang ada di dalam tanda kutip ini.
 // =====================================================================
 
 // Gambar Hero
-import heroBg from './assets/home-hero.png'; 
+import heroBg from './assets/hero.png'; 
 
 // Gambar What We Offer
 import offerCoaching from './assets/offer-coaching.png';
@@ -35,7 +34,6 @@ import testi2 from './assets/testi-2.png';
 import testi3 from './assets/testi-3.png';
 import testi4 from './assets/testi-4.png';
 import testi5 from './assets/testi-5.png';
-
 
 // === IKON ===
 const CheckIcon = () => (
@@ -98,7 +96,6 @@ const Home = () => {
 
   const shiftAmount = (2 - activeTesti) * 240;
 
-  // Style untuk memasukkan Hero Image lokal
   const heroPremiumStyle = {
     background: `linear-gradient(rgba(18, 18, 18, 0.7), rgba(27, 20, 100, 0.75)), url(${heroBg}) center/cover no-repeat`
   };
@@ -219,7 +216,6 @@ const Home = () => {
           <div className="testi-carousel-track" style={{ transform: `translateX(${shiftAmount}px)` }}>
             {testimonials.map((item, index) => (
               <div key={item.id} className={`carousel-item ${activeTesti === index ? 'active' : 'inactive'}`} onClick={() => setActiveTesti(index)}>
-                {/* Memanggil gambar array testimonial */}
                 <img src={item.img} alt="Stepper" className="carousel-placeholder" />
               </div>
             ))}

@@ -1,143 +1,332 @@
-/* ABOUT US PAGE CSS */
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
+/* ========================================================= */
+/* CSS GLOBAL (APP.CSS) - FIRST STEP JOURNEY                 */
+/* ========================================================= */
 
-.about-page { background-color: #FFF9F2; min-height: 100vh; }
-.section-eyebrow { display: block; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #FBB03B; letter-spacing: 2px; margin-bottom: 12px; }
-.section-header-center { text-align: center; margin-bottom: 50px; }
-.section-header-center h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #1B1464; margin: 0; }
-.section-header-center.text-white h2 { color: #FFFFFF; }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
-/* HERO */
-.about-hero { padding: 140px 20px !important; width: 100% !important; position: relative !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
-.hero-content { position: relative !important; z-index: 10 !important; text-align: center !important; display: flex; flex-direction: column; align-items: center; }
-.hero-content h1 { font-family: 'Quicksand', sans-serif !important; font-weight: 700 !important; font-size: 56px !important; color: #FFFFFF !important; margin: 0 0 24px 0 !important; line-height: 1.2; }
-.hero-content p { font-family: 'Quicksand', sans-serif !important; font-weight: 500 !important; font-size: 18px !important; color: #E0E0E0 !important; margin: 0 auto 40px auto !important; max-width: 700px; line-height: 1.6; }
-.breadcrumb { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 13px; color: #FBB03B; letter-spacing: 2px; }
-.home-link { color: #FFFFFF; cursor: pointer; transition: color 0.3s; }
-.home-link:hover { color: #FBB03B; }
-.separator { margin: 0 8px; color: #FFFFFF; }
-
-/* WHY FSJ */
-.why-fsj-section { padding: 100px 10%; background-color: #FFFFFF; }
-.why-content { display: flex; align-items: center; gap: 60px; }
-.why-text-area { flex: 1.2; }
-.why-anim-area { flex: 1; }
-.why-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #1B1464; margin: 0 0 20px 0; }
-.why-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 20px; color: #121212; margin: 0 0 16px 0; line-height: 1.5; }
-.why-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #636363; margin: 0 0 20px 0; line-height: 1.6; }
-.why-desc strong { color: #FBB03B; font-size: 18px; }
-.why-list { padding-left: 20px; margin: 0; }
-.why-list li { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: #1B1464; margin-bottom: 12px; }
-.why-image { width: 100%; height: 400px; object-fit: cover; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); }
-
-/* VISION MISSION */
-.vision-mission-section { padding: 80px 10%; display: flex; flex-direction: column; gap: 40px; }
-.vm-row { display: flex; gap: 40px; align-items: stretch; }
-.vm-row.reverse { flex-direction: row-reverse; }
-.vm-text-card { flex: 1; background-color: #FFFFFF; border-radius: 24px; padding: 50px 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; justify-content: center; }
-.vision-title { font-family: 'Courgette', cursive; font-weight: 400; font-size: 42px; color: #1B1464; margin: 0 0 20px 0; }
-.mision-title { font-family: 'Courgette', cursive; font-weight: 400; font-size: 42px; color: #FDBE34; margin: 0 0 20px 0; }
-.vm-text-card p, .vm-text-card ul { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #000000; line-height: 1.6; margin: 0; }
-.vm-text-card ul { padding-left: 20px; }
-.vm-text-card li { margin-bottom: 8px; }
-.vm-image-card { flex: 1; border-radius: 24px; object-fit: cover; min-height: 350px; width: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-
-/* PILLARS */
-.pillars-section { padding: 100px 10%; background-color: #1B1464; }
-.pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.pillar-box { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
-.pillar-box:hover { background-color: rgba(255, 255, 255, 0.1); border-color: #FBB03B; transform: translateY(-5px); }
-.pillar-icon { width: 60px; height: 60px; background-color: rgba(251, 176, 59, 0.1); border-radius: 14px; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px auto; }
-.pillar-box h4 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0 0 12px 0; }
-.pillar-box p { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 13px; color: #E0E0E0; line-height: 1.5; margin: 0; }
-
-/* CULTURE & DIVISIONS */
-.culture-section { padding: 100px 10% 40px 10%; text-align: center; }
-.culture-header { margin-bottom: 60px; }
-.culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #FBB03B; display: block; margin-bottom: 12px; }
-.culture-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000000; margin: 0; }
-.culture-highlight { font-family: 'Courgette', cursive; font-weight: 400 !important; color: #FBB03B; }
-.culture-content { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 30px; text-align: left; }
-.culture-text ul { padding-left: 20px; margin: 0; }
-.culture-text li { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 14px; color: #000000; line-height: 1.6; margin-bottom: 16px; }
-.culture-image-card { object-fit: cover; border-radius: 20px; width: 100%; height: 350px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-
-/* DIVISIONS DENGAN GAMBAR BACKGROUND, OVERLAY & NAMA PIC */
-.divisions-section { padding: 40px 10% 100px 10%; }
-.divisions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.divisions-header-card { grid-column: span 1; padding-right: 10px; }
-.divisions-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #000000; margin: 0 0 16px 0; line-height: 1.1; }
-.divisions-highlight { font-family: 'Courgette', cursive; font-weight: 400 !important; color: #1B1464; }
-.divisions-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 13px; color: #636363; line-height: 1.5; }
-
-.div-card { 
-  position: relative; 
-  border-radius: 16px; 
-  height: 240px; 
-  padding: 24px; 
-  display: flex; 
-  flex-direction: column; 
-  overflow: hidden; 
-  transition: transform 0.3s ease; 
-  background-color: #1B1464; 
+:root {
+  color-scheme: only light !important;
 }
 
-.div-bg-image { 
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-  object-fit: cover; z-index: 0; transition: transform 0.4s ease; 
-}
-.div-card:hover .div-bg-image { transform: scale(1.1); }
-.div-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-
-/* Lapisan gelap (Overlay) agar teks putih selalu terbaca */
-.div-card::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(180deg, rgba(27, 20, 100, 0.95) 0%, rgba(27, 20, 100, 0.4) 100%);
-  z-index: 1;
+html {
+  scroll-behavior: smooth; 
 }
 
-/* Wrapper teks agar title di atas dan nama di bawah */
-.div-text-content {
-  position: relative;
-  z-index: 2;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #FFF9F2 !important; 
+  color: #121212 !important; 
+}
+
+.site-shell {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  min-height: 100vh;
 }
 
-.div-title-overlay { 
+/* ========================================================= */
+/* 1. HEADER (TOPBAR ANTI-TENGGELAM)                         */
+/* ========================================================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%; 
+  background-color: #FFFFFF !important; 
+  box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
+  
+  /* GEMBOK LOCK HEADER AGAR TETAP MENEMPEL SAAT SCROLL */
+  position: -webkit-sticky !important;
+  position: sticky !important; 
+  top: 0 !important;
+  z-index: 9999 !important; 
+}
+
+/* KIRI: Area Logo Gambar */
+.brand { 
+  flex: 1; 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+/* Mengatur ukuran tinggi gambar logo agar pas dengan navbar */
+.header-logo { 
+  height: 56px; 
+  width: auto; 
+  object-fit: contain; 
+}
+
+/* TENGAH: Menu Navigasi */
+.topnav { 
+  flex: 3; 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.nav-item {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600; 
+  font-size: 13px; 
+  color: #333333;
+  text-decoration: none;
+  padding: 6px 14px; 
+  border-radius: 999px; 
+  border: 1px solid #E0E0E0; 
+  background-color: #FFFFFF !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; 
+}
+
+.nav-item:hover { 
+  background-color: #F9F9F9 !important; 
+  border-color: #CCCCCC; 
+}
+
+.nav-item.active { 
+  color: #FBB03B !important; 
+  border-color: #FBB03B; 
+  background-color: #FFF9F2 !important; 
+}
+
+/* KANAN: Ikon Sosial Media */
+.social-links { 
+  flex: 1;
+  display: flex; 
+  gap: 14px; 
+  align-items: center; 
+  justify-content: flex-end;
+}
+
+.social-btn { 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #555555; 
+  transition: all 0.3s ease;
+  padding: 4px; 
+}
+
+.social-btn:hover { 
+  color: #FBB03B; 
+  transform: translateY(-2px); 
+}
+
+/* --------------------------------------------------------- */
+/* PENGATURAN MENU DROPDOWN CONTACTS                         */
+/* --------------------------------------------------------- */
+.nav-item-dropdown { 
+  position: relative; 
+  display: inline-block; 
+}
+
+.nav-item-dropdown span.nav-item { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 5px; 
+}
+
+.arrow-icon { 
+  font-size: 10px; 
+  margin-top: 2px; 
+}
+
+.dropdown-content {
+  display: none; 
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #FFFFFF; 
+  min-width: 160px; 
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
+  border-radius: 16px; 
+  padding: 12px 0; 
+  z-index: 10001; 
+  margin-top: 10px; 
+  border: 1px solid #E0E0E0;
+}
+
+.nav-item-dropdown:hover .dropdown-content { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.dropdown-content a { 
+  color: #333333; 
+  padding: 10px 24px; 
+  text-decoration: none; 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 600; 
+  font-size: 13px; 
+  transition: all 0.3s ease; 
+  text-align: center; 
+}
+
+.dropdown-content a:hover { 
+  background-color: #FFF9F2; 
+  color: #FBB03B; 
+}
+
+/* ========================================================= */
+/* 2. FOOTER STYLES                                          */
+/* ========================================================= */
+.site-footer { 
+  background-color: #FFF9F2 !important; 
+  padding: 60px 10% 20px 10%; 
+  border-top: 1px solid #F0E6D8; 
+  margin-top: auto; 
+}
+
+.footer-top { 
+  display: flex; 
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  gap: 40px; 
+  margin-bottom: 50px; 
+}
+
+.eyebrow { 
+  font-weight: 700; 
+  font-size: 14px; 
+  color: #FBB03B; 
+  margin-bottom: 16px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+.newsletter { 
+  display: flex; 
+  gap: 12px; 
+}
+
+.newsletter input { 
+  padding: 12px 24px; 
+  border-radius: 999px; 
+  border: 1px solid #E0E0E0; 
+  font-family: 'Quicksand', sans-serif; 
+  font-size: 14px; 
+  outline: none; 
+  width: 250px; 
+  background-color: #FFFFFF !important; 
+  color: #121212 !important; 
+}
+
+.newsletter input:focus { 
+  border-color: #FBB03B; 
+}
+
+.primary-btn { 
+  background-color: #FBB03B; 
+  color: #FFFFFF; 
+  border: none; 
+  border-radius: 999px; 
+  padding: 12px 28px; 
   font-family: 'Quicksand', sans-serif; 
   font-weight: 700; 
-  font-size: 18px; 
-  color: #FFFFFF; 
-  margin: 0; 
-  line-height: 1.3; 
+  font-size: 14px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
-.div-person-name {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #FBB03B;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.primary-btn:hover { 
+  background-color: #EFA02A; 
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 1024px) {
-  .why-content { flex-direction: column; }
-  .vm-row, .vm-row.reverse { flex-direction: column; }
-  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
-  .culture-content { grid-template-columns: 1fr; }
-  .culture-image-card { height: 250px; }
-  .divisions-grid { grid-template-columns: repeat(2, 1fr); }
+.footer-links { 
+  display: flex; 
+  gap: 80px; 
 }
-@media screen and (max-width: 600px) {
-  .about-hero { padding: 80px 20px !important; }
-  .hero-content h1 { font-size: 36px !important; }
-  .pillars-grid, .divisions-grid { grid-template-columns: 1fr; }
+
+.footer-links h3 { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; 
+  font-size: 16px; 
+  color: #1B1464 !important; 
+  margin-top: 0; 
+  margin-bottom: 20px; 
+}
+
+.footer-links a { 
+  display: block; 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 500; 
+  font-size: 14px; 
+  color: #333333 !important; 
+  text-decoration: none; 
+  margin-bottom: 12px; 
+  transition: color 0.3s ease; 
+}
+
+.footer-links a:hover { 
+  color: #FBB03B !important; 
+}
+
+.footer-base { 
+  text-align: center; 
+  padding-top: 24px; 
+  border-top: 1px solid #E0E0E0; 
+  font-family: 'Quicksand', sans-serif; 
+  font-size: 12px; 
+  font-weight: 500; 
+  color: #888888 !important; 
+}
+
+/* ========================================================= */
+/* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
+/* ========================================================= */
+@media screen and (max-width: 900px) {
+  .topbar { 
+    flex-direction: column; 
+    gap: 16px; 
+    padding: 20px 5%; 
+    position: relative !important; 
+  }
+  
+  .brand, .social-links { 
+    justify-content: center; 
+    width: 100%; 
+  }
+  
+  .brand { flex: none; order: 1; }
+  
+  .topnav { 
+    flex: none; 
+    order: 2; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 6px; 
+    width: 100%; 
+  }
+  
+  .social-links { flex: none; order: 3; margin-top: 10px; }
+  .nav-item { font-size: 12px; padding: 5px 10px; }
+  
+  .footer-links { flex-direction: column; gap: 30px; text-align: left; }
+  
+  .newsletter { flex-direction: column; width: 100%; }
+  .newsletter input { width: 100%; box-sizing: border-box; }
+  
+  .dropdown-content { 
+    position: static; 
+    transform: none; 
+    box-shadow: none; 
+    border: none; 
+    background-color: transparent; 
+    padding: 0; 
+  }
+  
+  .dropdown-content a { 
+    text-align: center; 
+    padding: 8px 0; 
+  }
 }

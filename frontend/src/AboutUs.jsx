@@ -29,27 +29,28 @@ const TargetIcon = () => (<svg width="32" height="32" viewBox="0 0 24 24" fill="
 const TrendingIcon = () => (<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBB03B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>);
 
 const AboutUs = () => {
-  // Gradien biru/ungu DIHAPUS, disamakan persis dengan halaman Program
   const heroStyle = {
-    backgroundImage: `url(${heroBg})`,
+    backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.75), rgba(27, 20, 100, 0.8)), url(${heroBg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: '#FBB03B'
+    backgroundColor: '#1B1464'
   };
 
   return (
     <div className="about-page">
-      {/* 1. HERO SECTION (SUDAH DISAMAKAN DENGAN PAGE PROGRAMS) */}
+      {/* 1. HERO SECTION */}
       <section className="about-hero" style={heroStyle}>
-        <div className="about-hero-content">
+        <div className="hero-content">
           <h1>Who We Are</h1>
           <p>
             FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) <br/>
             driven by Community-based learning, free programs, and live projects.
           </p>
-          <div className="about-breadcrumb">
-            <span>Home</span> <span className="separator"> / </span> <span>About Us</span>
+          <div className="breadcrumb">
+            <span className="home-link">HOME</span>
+            <span className="separator"> / </span>
+            <span className="about-link">ABOUT US</span>
           </div>
         </div>
       </section>
@@ -145,6 +146,10 @@ const AboutUs = () => {
         </div>
         <div className="culture-content">
           <div className="culture-text">
+            {/* Teks Pengantar yang baru ditambahkan */}
+            <p style={{ fontFamily: 'Quicksand', fontWeight: 500, fontSize: '15px', color: '#333333', lineHeight: '1.6', margin: '0 0 24px 0', paddingRight: '15px' }}>
+              FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects. To provide access for Indonesian youth — especially those with limited privilege — to take their first step, grow, and discover a meaningful career path through both soft and hard skills.
+            </p>
             <ul>
               <li><strong>Career Readiness:</strong> Equip yourself for the professional world. Master industry expectations and build a standout portfolio.</li>
               <li><strong>Self Development:</strong> Sharpen soft skills and build a resilient mindset to conquer challenges.</li>

@@ -1,23 +1,19 @@
 /* ========================================================= */
-/* CSS GLOBAL (APP.CSS) - FIRST STEP JOURNEY                 */
+/* GLOBAL STYLES & RESET (APP.CSS)                           */
 /* ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
-
-:root {
-  color-scheme: only light !important;
-}
-
-html {
-  scroll-behavior: smooth; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background-color: #FFF9F2 !important; 
-  color: #121212 !important; 
+  background-color: #FFF9F2;
+  color: #333333;
+  overflow-x: hidden;
 }
 
 .site-shell {
@@ -27,306 +23,244 @@ body {
 }
 
 /* ========================================================= */
-/* 1. HEADER (TOPBAR ANTI-TENGGELAM)                         */
+/* HEADER & NAVIGATION BAR                                   */
 /* ========================================================= */
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 5%; 
-  background-color: #FFFFFF !important; 
-  box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
-  
-  /* GEMBOK LOCK HEADER AGAR TETAP MENEMPEL SAAT SCROLL */
-  position: -webkit-sticky !important;
-  position: sticky !important; 
-  top: 0 !important;
-  z-index: 9999 !important; 
+  justify-content: space-between;
+  padding: 0 5%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
-/* KIRI: Area Logo Gambar */
-.brand { 
-  flex: 1; 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start;
-  cursor: pointer;
+.brand h2 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #1B1464;
 }
 
-/* Mengatur ukuran tinggi gambar logo agar pas dengan navbar */
-.header-logo { 
-  height: 56px; 
-  width: auto; 
-  object-fit: contain; 
-}
-
-/* TENGAH: Menu Navigasi */
-.topnav { 
-  flex: 3; 
-  display: flex; 
-  gap: 8px; 
-  align-items: center; 
-  justify-content: center;
+/* Kapsul Menu Navigasi */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #FFF9F2;
+  padding: 8px 12px;
+  border-radius: 999px;
 }
 
 .nav-item {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600; 
-  font-size: 13px; 
-  color: #333333;
   text-decoration: none;
-  padding: 6px 14px; 
-  border-radius: 999px; 
-  border: 1px solid #E0E0E0; 
-  background-color: #FFFFFF !important;
+  color: #1B1464;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 999px;
   transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(251, 176, 59, 0.2);
+}
+
+.nav-item.active {
+  background-color: #FBB03B;
+  color: #FFFFFF;
+}
+
+/* Dropdown Menu Contacts */
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap; 
-}
-
-.nav-item:hover { 
-  background-color: #F9F9F9 !important; 
-  border-color: #CCCCCC; 
-}
-
-.nav-item.active { 
-  color: #FBB03B !important; 
-  border-color: #FBB03B; 
-  background-color: #FFF9F2 !important; 
-}
-
-/* KANAN: Ikon Sosial Media */
-.social-links { 
-  flex: 1;
-  display: flex; 
-  gap: 14px; 
-  align-items: center; 
-  justify-content: flex-end;
-}
-
-.social-btn { 
-  text-decoration: none; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: #555555; 
-  transition: all 0.3s ease;
-  padding: 4px; 
-}
-
-.social-btn:hover { 
-  color: #FBB03B; 
-  transform: translateY(-2px); 
-}
-
-/* --------------------------------------------------------- */
-/* PENGATURAN MENU DROPDOWN CONTACTS                         */
-/* --------------------------------------------------------- */
-.nav-item-dropdown { 
-  position: relative; 
-  display: inline-block; 
-}
-
-.nav-item-dropdown span.nav-item { 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 5px; 
-}
-
-.arrow-icon { 
-  font-size: 10px; 
-  margin-top: 2px; 
 }
 
 .dropdown-content {
-  display: none; 
-  position: absolute; 
-  top: 100%; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  background-color: #FFFFFF; 
-  min-width: 160px; 
-  box-shadow: 0px 8px 24px rgba(0,0,0,0.08);
-  border-radius: 16px; 
-  padding: 12px 0; 
-  z-index: 10001; 
-  margin-top: 10px; 
-  border: 1px solid #E0E0E0;
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 24px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  z-index: 1000;
+  padding: 10px 0;
+  margin-top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
 }
 
-.nav-item-dropdown:hover .dropdown-content { 
-  display: flex; 
-  flex-direction: column; 
+.dropdown-content a {
+  color: #1B1464;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
 }
 
-.dropdown-content a { 
-  color: #333333; 
-  padding: 10px 24px; 
-  text-decoration: none; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 600; 
-  font-size: 13px; 
-  transition: all 0.3s ease; 
-  text-align: center; 
+.dropdown-content a:hover {
+  background-color: #FFF9F2;
+  color: #FBB03B;
 }
 
-.dropdown-content a:hover { 
-  background-color: #FFF9F2; 
-  color: #FBB03B; 
+.nav-item-dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* ========================================================= */
-/* 2. FOOTER STYLES                                          */
+/* MAIN CONTENT WRAPPER                                      */
 /* ========================================================= */
-.site-footer { 
-  background-color: #FFF9F2 !important; 
-  padding: 60px 10% 20px 10%; 
-  border-top: 1px solid #F0E6D8; 
-  margin-top: auto; 
+.main-content-wrapper {
+  flex: 1;
+  /* Jarak atas agar konten tidak tertutup Navbar yang Fixed */
+  margin-top: 80px; 
 }
 
-.footer-top { 
-  display: flex; 
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-  gap: 40px; 
-  margin-bottom: 50px; 
-}
-
-.eyebrow { 
-  font-weight: 700; 
-  font-size: 14px; 
-  color: #FBB03B; 
-  margin-bottom: 16px; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-}
-
-.newsletter { 
-  display: flex; 
-  gap: 12px; 
-}
-
-.newsletter input { 
-  padding: 12px 24px; 
-  border-radius: 999px; 
-  border: 1px solid #E0E0E0; 
-  font-family: 'Quicksand', sans-serif; 
-  font-size: 14px; 
-  outline: none; 
-  width: 250px; 
-  background-color: #FFFFFF !important; 
-  color: #121212 !important; 
-}
-
-.newsletter input:focus { 
-  border-color: #FBB03B; 
-}
-
-.primary-btn { 
+/* ========================================================= */
+/* FOOTER                                                    */
+/* ========================================================= */
+.site-footer {
   background-color: #FBB03B; 
-  color: #FFFFFF; 
-  border: none; 
-  border-radius: 999px; 
-  padding: 12px 28px; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 14px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
+  padding: 60px 10% 20px 10%;
+  color: #1B1464;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.primary-btn:hover { 
-  background-color: #EFA02A; 
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.footer-links { 
-  display: flex; 
-  gap: 80px; 
+.footer-top > div:first-child {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
 }
 
-.footer-links h3 { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 16px; 
-  color: #1B1464 !important; 
-  margin-top: 0; 
-  margin-bottom: 20px; 
+.footer-top .eyebrow {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000000;
+  line-height: 1.3;
 }
 
-.footer-links a { 
-  display: block; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 500; 
-  font-size: 14px; 
-  color: #333333 !important; 
-  text-decoration: none; 
-  margin-bottom: 12px; 
-  transition: color 0.3s ease; 
+.newsletter {
+  display: flex;
+  gap: 10px;
+  background: #FFFFFF;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid #1B1464;
 }
 
-.footer-links a:hover { 
-  color: #FBB03B !important; 
+.newsletter input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
 }
 
-.footer-base { 
-  text-align: center; 
-  padding-top: 24px; 
-  border-top: 1px solid #E0E0E0; 
-  font-family: 'Quicksand', sans-serif; 
-  font-size: 12px; 
-  font-weight: 500; 
-  color: #888888 !important; 
+.primary-btn {
+  background-color: #1B1464;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #013F84;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-links h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.footer-links a {
+  display: block;
+  text-decoration: none;
+  color: #1B1464;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-base {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(27, 20, 100, 0.1);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1B1464;
 }
 
 /* ========================================================= */
-/* 3. RESPONSIVE HEADER & FOOTER UNTUK HP                    */
+/* RESPONSIVE DESIGN UNTUK HP / TABLET                       */
 /* ========================================================= */
-@media screen and (max-width: 900px) {
-  .topbar { 
-    flex-direction: column; 
-    gap: 16px; 
-    padding: 20px 5%; 
-    position: relative !important; 
+@media screen and (max-width: 992px) {
+  .topbar {
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   
-  .brand, .social-links { 
-    justify-content: center; 
-    width: 100%; 
+  .topnav {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .main-content-wrapper {
+    margin-top: 140px; 
+  }
+
+  .footer-top {
+    flex-direction: column;
   }
   
-  .brand { flex: none; order: 1; }
-  
-  .topnav { 
-    flex: none; 
-    order: 2; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 6px; 
-    width: 100%; 
-  }
-  
-  .social-links { flex: none; order: 3; margin-top: 10px; }
-  .nav-item { font-size: 12px; padding: 5px 10px; }
-  
-  .footer-links { flex-direction: column; gap: 30px; text-align: left; }
-  
-  .newsletter { flex-direction: column; width: 100%; }
-  .newsletter input { width: 100%; box-sizing: border-box; }
-  
-  .dropdown-content { 
-    position: static; 
-    transform: none; 
-    box-shadow: none; 
-    border: none; 
-    background-color: transparent; 
-    padding: 0; 
-  }
-  
-  .dropdown-content a { 
-    text-align: center; 
-    padding: 8px 0; 
+  .footer-links {
+    gap: 40px;
   }
 }

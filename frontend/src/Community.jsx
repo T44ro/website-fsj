@@ -4,7 +4,7 @@ import heroBg from './assets/about-hero-img.png';
 
 // === IKON ===
 const ArrowUpRightIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1464" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
     <polyline points="7 7 17 7 17 17"></polyline>
   </svg>
@@ -58,7 +58,7 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 3. READY TO DISCOVER SECTION (STYLE NEWS & INSPIRATION) */}
+      {/* 3. READY TO DISCOVER SECTION (KONTEN DIUBAH SESUAI GAMBAR) */}
       <section className="com-section com-discover">
         <div className="discover-header">
           <div className="discover-title-area">
@@ -66,53 +66,57 @@ const Community = () => {
              <h2>Ready to Discover Your Path?</h2>
           </div>
         </div>
-        <div className="news-grid">
-          
-          <div className="news-card">
-            <div className="news-img-wrap"></div>
-            <div className="news-content">
-              <span className="news-tag">Network</span>
-              <h3>Join Our Community</h3>
-              <p>Connect with 300+ like-minded peers across Indonesia.</p>
-              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
+        
+        <div className="discover-scroll">
+          {/* Card 1 */}
+          <div className="discover-card">
+            <div className="card-img"></div>
+            <div className="card-content">
+              <h3>Design Thinking for Visual Brands</h3>
+              <p>Build trusted visual identities using human-centered design.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
             </div>
           </div>
-          
-          <div className="news-card">
-            <div className="news-img-wrap"></div>
-            <div className="news-content">
-              <span className="news-tag">Career</span>
-              <h3>Find Your Passion</h3>
-              <p>Explore various sectors in the green economy.</p>
-              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
+          {/* Card 2 */}
+          <div className="discover-card">
+            <div className="card-img"></div>
+            <div className="card-content">
+              <h3>The Power of Self-Acceptance</h3>
+              <p>Overcome self-doubt and build lasting professional confidence.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
             </div>
           </div>
-          
-          <div className="news-card">
-            <div className="news-img-wrap"></div>
-            <div className="news-content">
-              <span className="news-tag">Education</span>
-              <h3>Build Your Skills</h3>
-              <p>Access free mentoring and professional training.</p>
-              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
+          {/* Card 3 */}
+          <div className="discover-card">
+            <div className="card-img"></div>
+            <div className="card-content">
+              <h3>Launching the Green Career Hub</h3>
+              <p>Essential strategies to enter the green workforce.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
             </div>
           </div>
-          
-          <div className="news-card">
-            <div className="news-img-wrap"></div>
-            <div className="news-content">
-              <span className="news-tag">Action</span>
-              <h3>Real World Impact</h3>
-              <p>Work on live projects with our top industry partners.</p>
-              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
+          {/* Card 4 */}
+          <div className="discover-card">
+            <div className="card-img"></div>
+            <div className="card-content">
+              <h3>Structuring Effective User Experiences</h3>
+              <p>Design intuitive user flows and seamless digital interactions.</p>
+              <button className="btn-discover-card">
+                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
+              </button>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* 4. GALLERY / LIFE AT FSJ SECTION (SECTION BARU) */}
-      <section className="com-section gallery-section">
+      {/* 4. GALLERY / LIFE AT FSJ SECTION (DESAIN GRID PROPORSIONAL BARU) */}
+      <section className="com-section com-gallery-new">
         <div className="insights-header-center">
           <span className="com-eyebrow center-eyebrow">GALLERY</span>
           <h2 className="section-title-center no-margin-bottom">Life at FSJ</h2>
@@ -121,12 +125,19 @@ const Community = () => {
           </p>
         </div>
 
-        <div className="gallery-grid">
-          {/* Nanti ganti teks di bawah dengan tag <img src={...} /> */}
-          <div className="gallery-item large">Photo 1 (Workshop)</div>
-          <div className="gallery-item">Photo 2 (Mentoring)</div>
-          <div className="gallery-item">Photo 3 (Networking)</div>
-          <div className="gallery-item wide">Photo 4 (Community Chat)</div>
+        <div className="gallery-grid-proportional">
+          <div className="gal-item gal-main">
+            <span className="gal-label">Workshop Sessions</span>
+          </div>
+          <div className="gal-item gal-top-right">
+            <span className="gal-label">Community Networking</span>
+          </div>
+          <div className="gal-item gal-bottom-right-1">
+            <span className="gal-label">Mentoring</span>
+          </div>
+          <div className="gal-item gal-bottom-right-2">
+            <span className="gal-label">Live Projects</span>
+          </div>
         </div>
       </section>
 
@@ -141,7 +152,7 @@ const Community = () => {
         </div>
 
         <div className="impact-bento-revised">
-          {/* Kolom Kiri: Active Alumni */}
+          {/* Kolom Kiri */}
           <div className="impact-col-left">
             <div className="bento-blue-large">
               <h3>More Than 50+<br/>Active Alumni</h3>
@@ -159,7 +170,7 @@ const Community = () => {
             </div>
           </div>
 
-          {/* Kolom Tengah: Top Partners */}
+          {/* Kolom Tengah */}
           <div className="impact-col-center">
             <div className="bento-white-card">
               <div className="partner-logos-area">
@@ -173,7 +184,7 @@ const Community = () => {
             </div>
           </div>
 
-          {/* Kolom Kanan: Impact Scale */}
+          {/* Kolom Kanan */}
           <div className="impact-col-right">
             <div className="bento-white-card">
               <h3 className="bento-title-dark">Our Impact Scale</h3>
@@ -192,7 +203,7 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 6. CTA SECTION: YOUR NEXT CHALLENGE */}
+      {/* 6. CTA SECTION */}
       <section className="com-section com-challenge-revised">
         <div className="challenge-header-revised">
           <h2 className="section-title-center no-margin-bottom">Your Next Challenge Awaits</h2>

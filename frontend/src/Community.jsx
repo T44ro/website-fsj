@@ -4,17 +4,9 @@ import heroBg from './assets/about-hero-img.png';
 
 // === IKON ===
 const ArrowUpRightIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
     <polyline points="7 7 17 7 17 17"></polyline>
-  </svg>
-);
-
-const DownloadIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-    <polyline points="7 10 12 15 17 10"></polyline>
-    <line x1="12" y1="15" x2="12" y2="3"></line>
   </svg>
 );
 
@@ -66,117 +58,79 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 3. READY TO DISCOVER SECTION */}
+      {/* 3. READY TO DISCOVER SECTION (STYLE NEWS & INSPIRATION) */}
       <section className="com-section com-discover">
         <div className="discover-header">
           <div className="discover-title-area">
-             <span className="com-eyebrow">Step 1 • Explore</span>
+             <span className="com-eyebrow">EXPLORE</span>
              <h2>Ready to Discover Your Path?</h2>
           </div>
         </div>
-        <div className="discover-scroll">
-          <div className="discover-card">
-            <div className="card-img"></div>
-            <div className="card-content">
+        <div className="news-grid">
+          
+          <div className="news-card">
+            <div className="news-img-wrap"></div>
+            <div className="news-content">
+              <span className="news-tag">Network</span>
               <h3>Join Our Community</h3>
               <p>Connect with 300+ like-minded peers across Indonesia.</p>
-              <button className="btn-discover-card">
-                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
-              </button>
+              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
             </div>
           </div>
-          <div className="discover-card">
-            <div className="card-img"></div>
-            <div className="card-content">
+          
+          <div className="news-card">
+            <div className="news-img-wrap"></div>
+            <div className="news-content">
+              <span className="news-tag">Career</span>
               <h3>Find Your Passion</h3>
               <p>Explore various sectors in the green economy.</p>
-              <button className="btn-discover-card">
-                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
-              </button>
+              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
             </div>
           </div>
-          <div className="discover-card">
-            <div className="card-img"></div>
-            <div className="card-content">
+          
+          <div className="news-card">
+            <div className="news-img-wrap"></div>
+            <div className="news-content">
+              <span className="news-tag">Education</span>
               <h3>Build Your Skills</h3>
               <p>Access free mentoring and professional training.</p>
-              <button className="btn-discover-card">
-                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
-              </button>
+              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
             </div>
           </div>
-          <div className="discover-card">
-            <div className="card-img"></div>
-            <div className="card-content">
+          
+          <div className="news-card">
+            <div className="news-img-wrap"></div>
+            <div className="news-content">
+              <span className="news-tag">Action</span>
               <h3>Real World Impact</h3>
               <p>Work on live projects with our top industry partners.</p>
-              <button className="btn-discover-card">
-                Learn more <span className="btn-icon-circle bg-yellow"><ArrowUpRightIcon /></span>
-              </button>
+              <a href="#read" className="news-link">Learn more <ArrowUpRightIcon /></a>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* 4. INSIGHTS PREVIEW SECTION */}
-      <section className="com-section com-insights-preview">
+      {/* 4. GALLERY / LIFE AT FSJ SECTION (SECTION BARU) */}
+      <section className="com-section gallery-section">
         <div className="insights-header-center">
-          <span className="com-eyebrow center-eyebrow">Step 2 • Learn</span>
-          <h2 className="section-title-center no-margin-bottom">Catch Up on Key Insights</h2>
+          <span className="com-eyebrow center-eyebrow">GALLERY</span>
+          <h2 className="section-title-center no-margin-bottom">Life at FSJ</h2>
           <p className="insights-desc">
-            Missed our previous sessions? We've got you covered. Browse through the highlights of our past trainings and access the curated summaries to seamlessly extract real-world expertise from our experts.
+            Take a peek into our dynamic community! From interactive workshops to real-world project collaborations, here is where growth happens.
           </p>
         </div>
 
-        <div className="insights-grid">
-          <div className="ins-item-horizontal">
-            <div className="ins-img-wrap"></div>
-            <div className="ins-text-wrap">
-              <span className="ins-date">March 2026</span>
-              <h4>Strategic Visual Branding & UI/UX Masterclass</h4>
-              <p>Over 150+ talents explored the intersection of design, user experience, and building consumer trust with industry leaders.</p>
-              <div className="ins-link-wrap">
-                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
-              </div>
-            </div>
-          </div>
-          <div className="ins-item-horizontal">
-            <div className="ins-img-wrap"></div>
-            <div className="ins-text-wrap">
-              <span className="ins-date">March 28, 2026</span>
-              <h4>UI/UX Portfolio Cheatsheet</h4>
-              <p>A step-by-step guide to structuring your portfolio and showcasing your design logic to recruiters.</p>
-              <div className="ins-link-wrap">
-                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
-              </div>
-            </div>
-          </div>
-          <div className="ins-item-horizontal">
-            <div className="ins-img-wrap"></div>
-            <div className="ins-text-wrap">
-              <span className="ins-date">April 15, 2026</span>
-              <h4>The Brand Trust Framework</h4>
-              <p>Key takeaways on building credibility and trust through strategic visual communication.</p>
-              <div className="ins-link-wrap">
-                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
-              </div>
-            </div>
-          </div>
-          <div className="ins-item-horizontal">
-            <div className="ins-img-wrap"></div>
-            <div className="ins-text-wrap">
-              <span className="ins-date">February 10, 2026</span>
-              <h4>Consumer Behavior & Tech Adoption</h4>
-              <p>Analytical insights on how users interact, trust, and adopt modern digital platforms.</p>
-              <div className="ins-link-wrap">
-                <a href="#download" className="ins-download-link">Download Recap <DownloadIcon /></a>
-              </div>
-            </div>
-          </div>
+        <div className="gallery-grid">
+          {/* Nanti ganti teks di bawah dengan tag <img src={...} /> */}
+          <div className="gallery-item large">Photo 1 (Workshop)</div>
+          <div className="gallery-item">Photo 2 (Mentoring)</div>
+          <div className="gallery-item">Photo 3 (Networking)</div>
+          <div className="gallery-item wide">Photo 4 (Community Chat)</div>
         </div>
       </section>
 
-      {/* 5. TRUE IMPACT SECTION (DESAIN BARU - POSISI DITUKAR KE ATAS) */}
+      {/* 5. TRUE IMPACT SECTION */}
       <section className="com-section com-impact-revised">
         <div className="impact-header-revised">
           <span className="com-eyebrow center-eyebrow">Result</span>
@@ -209,7 +163,6 @@ const Community = () => {
           <div className="impact-col-center">
             <div className="bento-white-card">
               <div className="partner-logos-area">
-                {/* Tempat Logo Placeholder */}
                 <div className="logo-dummy">Logoipsum</div>
                 <div className="logo-dummy">LOCO</div>
                 <div className="logo-dummy">Logoipsum</div>
@@ -224,7 +177,6 @@ const Community = () => {
           <div className="impact-col-right">
             <div className="bento-white-card">
               <h3 className="bento-title-dark">Our Impact Scale</h3>
-              
               <div className="scale-stats">
                 <div className="scale-item">
                   <h2>100+</h2>
@@ -240,7 +192,7 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 6. CTA SECTION: YOUR NEXT CHALLENGE (DESAIN BARU - POSISI DITUKAR KE BAWAH) */}
+      {/* 6. CTA SECTION: YOUR NEXT CHALLENGE */}
       <section className="com-section com-challenge-revised">
         <div className="challenge-header-revised">
           <h2 className="section-title-center no-margin-bottom">Your Next Challenge Awaits</h2>
@@ -250,7 +202,6 @@ const Community = () => {
         </div>
         
         <div className="challenge-image-banner">
-          {/* Ini kotak untuk menaruh gambar aslimu nanti */}
           <div className="challenge-overlay-buttons">
             <button className="btn-outline-gold">Notify Me</button>
             <button className="btn-yellow-solid">Join the Waitlist</button>

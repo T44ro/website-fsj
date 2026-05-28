@@ -1,5 +1,5 @@
 /* ========================================================= */
-/* CSS HOME PAGE - REVISI TOTAL (TYPOGRAPHY & DARK HERO)     */
+/* CSS HOME PAGE - REVISI TYPOGRAPHY & HERO                  */
 /* ========================================================= */
 
 .home-page {
@@ -12,10 +12,21 @@
 }
 
 /* ========================================================= */
-/* 1. PREMIUM DARK HERO SECTION                              */
+/* GLOBAL EYEBROW STYLE (Penyeragaman Warna & Font Oranye)   */
+/* ========================================================= */
+.section-eyebrow {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: #FBB03B !important;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* ========================================================= */
+/* 1. HERO SECTION (Tanpa Overlay Gelap)                     */
 /* ========================================================= */
 .home-hero-premium {
-  /* Background gambar sekarang diatur lewat inline-style di JSX */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,11 +41,11 @@
   max-width: 800px;
 }
 
-/* JUDUL DIKECILKAN 2 KALI (DARI 52px ke 26-28px) */
+/* JUDUL DI NAIKKAN SEDIKIT (38px) AGAR PAS */
 .hero-main-content h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 28px; 
+  font-size: 38px; 
   color: #FFFFFF !important;
   line-height: 1.3;
   margin: 0 0 24px 0;
@@ -93,7 +104,7 @@
   backdrop-filter: blur(10px);
   border-radius: 16px; padding: 24px 15px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); 
 }
-.stat-card h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #FDBE34 !important; margin: 0 0 5px 0; }
+.stat-card h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 32px; color: #FDBE34 !important; margin: 0 0 5px 0; }
 .stat-card span { color: #FFFFFF !important; font-size: 13px; font-weight: 600; }
 
 /* ========================================================= */
@@ -103,10 +114,9 @@
   background-color: #1B1464 !important;
   margin: 80px 10% 0 10%; padding: 60px 6%; border-radius: 32px; display: flex; justify-content: space-between; align-items: center; gap: 40px; 
 }
-.about-eyebrow { font-family: 'Quicksand', sans-serif; font-weight: 700; color: #FBB03B; display: block; margin-bottom: 12px; }
 
-/* JUDUL DIKECILKAN 2 KALI (DARI 44px ke 22-24px) */
-.about-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF !important; margin: 0 0 20px 0; line-height: 1.3; }
+/* JUDUL SECTION DINAIKKAN KE 36px */
+.about-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; color: #FFFFFF !important; margin: 0 0 20px 0; line-height: 1.3; }
 .about-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #FBB03B; }
 .about-desc { color: #E0E0E0 !important; font-family: 'Quicksand', sans-serif; font-weight: 500; margin-bottom: 40px; font-size: 15px; line-height: 1.6; }
 .btn-learn-more { background-color: #FBB03B; color: #FFFFFF; border: none; padding: 14px 36px; border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
@@ -123,10 +133,9 @@
 /* 3. WHAT WE OFFER                                          */
 /* ========================================================= */
 .home-offer-section { padding: 100px 10%; text-align: center; }
-.offer-eyebrow { color: #FBB03B; font-weight: 700; margin-bottom: 12px; display: block; }
 
-/* JUDUL DIKECILKAN */
-.offer-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #121212 !important; }
+/* JUDUL SECTION 36px */
+.offer-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; color: #121212 !important; }
 .offer-highlight-text { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464 !important; position: relative; display: inline-block; padding: 0 10px; z-index: 2; }
 .scribble-circle { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scale(1.1, 1.4); z-index: -1; pointer-events: none; }
 
@@ -143,10 +152,9 @@
 /* ========================================================= */
 .home-impact-section { padding: 80px 10%; }
 .impact-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
-.impact-eyebrow { color: #FBB03B; font-weight: 700; display: block; margin-bottom: 12px; }
 
-/* JUDUL DIKECILKAN */
-.impact-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #121212 !important; margin: 0; }
+/* JUDUL SECTION 36px */
+.impact-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; color: #121212 !important; margin: 0; }
 .impact-highlight { font-family: 'Courgette', cursive; font-weight: 400; color: #1B1464 !important; }
 
 .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
@@ -166,8 +174,8 @@
   background: linear-gradient(180deg, #FFF9F2 0%, #FDE3A7 45%, #FDE3A7 60%, #FFF9F2 100%);
   padding: 100px 0 120px 0; text-align: center;
 }
-/* JUDUL DIKECILKAN */
-.testi-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #121212 !important; margin: 0; line-height: 1.3; }
+/* JUDUL SECTION 36px */
+.testi-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; color: #121212 !important; margin: 0; line-height: 1.3; }
 .testi-highlight { font-family: 'Courgette', cursive; font-weight: 400 !important; color: #FBB03B !important; position: relative; display: inline-block; padding: 0 10px; white-space: nowrap; z-index: 2; }
 
 .testi-carousel-wrapper { width: 100%; overflow: hidden; margin: 40px 0; padding: 60px 0; display: flex; justify-content: center; }
@@ -184,10 +192,11 @@
 /* 6. BLOG SECTION                                           */
 /* ========================================================= */
 .home-blog-section { padding: 80px 10%; }
-/* JUDUL DIKECILKAN */
-.blog-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 24px; color: #121212 !important; margin: 0; }
+/* JUDUL SECTION 36px */
+.blog-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 36px; color: #121212 !important; margin: 0; }
 .blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 50px; }
 .blog-card { background-color: #013F84 !important; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease; }
+.blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 63, 132, 0.2); }
 .blog-img-wrapper { height: 160px; width: 100%; background-color: #E0E0E0; overflow: hidden; }
 .blog-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .blog-card:hover .blog-img-wrapper img { transform: scale(1.05); }
@@ -201,9 +210,12 @@
 /* 7. RESPONSIVE                                             */
 /* ========================================================= */
 @media screen and (max-width: 768px) {
-  .hero-main-content h1, .about-title, .offer-title, .impact-title, .testi-title, .blog-title { font-size: 20px !important; }
+  /* Teks responsif di HP sedikit diperbesar */
+  .hero-main-content h1 { font-size: 28px !important; }
+  .about-title, .offer-title, .impact-title, .testi-title, .blog-title { font-size: 26px !important; }
+  
   .offer-cards-grid, .impact-grid, .blog-grid { grid-template-columns: 1fr; }
-  .stat-card h2 { font-size: 20px; }
+  .stat-card h2 { font-size: 24px; }
   .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .skill-pill { width: 100%; }
   .home-about-section { flex-direction: column; padding: 40px 20px; margin: 40px 5% 0 5%; }

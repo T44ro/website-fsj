@@ -5,16 +5,12 @@ import './Home.css';
 // =====================================================================
 // 1. IMPORT GAMBAR DARI FOLDER ASSETS
 // =====================================================================
-
-// Gambar Hero
 import heroBg from './assets/hero.png'; 
 
-// Gambar What We Offer
 import offerCoaching from './assets/offer-coaching.png';
 import offerSoftSkills from './assets/offer-softskills.png';
 import offerBootcamp from './assets/offer-bootcamp.png';
 
-// Gambar Our Impact
 import impactGandengan from './assets/impact-gandengan.png';
 import impactIftar from './assets/impact-iftar.png';
 import impactFigma from './assets/impact-figma.png';
@@ -22,13 +18,11 @@ import impactPeopleDev from './assets/impact-peopledev.png';
 import impactStepTalk from './assets/impact-steptalk.png';
 import impactStepUp from './assets/impact-stepup.png';
 
-// Gambar Blog
 import blogDesign from './assets/blog-design.png';
 import blogSelfAcceptance from './assets/blog-selfacceptance.png';
 import blogGreenCareer from './assets/blog-greencareer.png';
 import blogUX from './assets/blog-ux.png';
 
-// Gambar Testimonial (Our Steppers)
 import testi1 from './assets/testi-1.png';
 import testi2 from './assets/testi-2.png';
 import testi3 from './assets/testi-3.png';
@@ -96,8 +90,9 @@ const Home = () => {
 
   const shiftAmount = (2 - activeTesti) * 240;
 
+  // REVISI: Mengembalikan efek gelap (Dark Overlay) seperti Partnership Page
   const heroPremiumStyle = {
-    background: `linear-gradient(rgba(18, 18, 18, 0.7), rgba(27, 20, 100, 0.75)), url(${heroBg}) center/cover no-repeat`
+    background: `linear-gradient(rgba(18, 18, 18, 0.75), rgba(27, 20, 100, 0.8)), url(${heroBg}) center/cover no-repeat`,
   };
 
   return (
@@ -126,7 +121,7 @@ const Home = () => {
       {/* 2. ABOUT US */}
       <section className="home-about-section">
         <div className="about-text-column">
-          <span className="about-eyebrow">About Us</span>
+          <span className="section-eyebrow">About Us</span>
           <h2 className="about-title">Building Your Career from <br />the <span className="about-highlight">First Step</span></h2>
           <p className="about-desc">FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) by Community - based, free programs, and live projects.</p>
           <button className="btn-learn-more">Learn More</button>
@@ -141,7 +136,7 @@ const Home = () => {
       {/* 3. WHAT WE OFFER */}
       <section className="home-offer-section">
         <div className="offer-header">
-          <span className="offer-eyebrow">What We Offer</span>
+          <span className="section-eyebrow">What We Offer</span>
           <h2 className="offer-title">Accelerate <span className="offer-highlight-text"><ScribbleCircleYellow />Your Growth</span> With Us</h2>
         </div>
         <div className="offer-cards-grid">
@@ -173,7 +168,7 @@ const Home = () => {
       <section className="home-impact-section">
         <div className="impact-header-row">
           <div className="impact-header-text">
-            <span className="impact-eyebrow">Our Impact</span>
+            <span className="section-eyebrow">Our Impact</span>
             <h2 className="impact-title">Creating Real Impact <span className="impact-highlight">Together</span></h2>
           </div>
           <div className="impact-header-action"><button className="btn-primary-pill">Discover More</button></div>
@@ -209,7 +204,7 @@ const Home = () => {
       {/* 5. OUR STEPPERS */}
       <section className="home-testimonial-section">
         <div className="testi-header">
-          <span className="testi-eyebrow">What They Say</span>
+          <span className="section-eyebrow">What They Say</span>
           <h2 className="testi-title">Words from <span className="testi-highlight"><ScribbleCircleNavy />Our Steppers</span></h2>
         </div>
         <div className="testi-carousel-wrapper" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
@@ -228,11 +223,8 @@ const Home = () => {
       <section className="home-blog-section">
         <div className="blog-header-row">
           <div className="blog-header-text">
-            <span className="blog-eyebrow">Our Blog</span>
+            <span className="section-eyebrow">Our Blog</span>
             <h2 className="blog-title">Explore Latest News & Inspiration</h2>
-          </div>
-          <div className="blog-header-action">
-            <button className="btn-outline-navy">Learn more <span className="btn-icon-circle bg-navy"><ArrowUpRightIcon /></span></button>
           </div>
         </div>
         <div className="blog-grid">

@@ -1,8 +1,20 @@
 import React from 'react';
 import './ProductsPrograms.css';
 
-// 1. IMPORT BACKGROUND GAMBAR HERO
+// =====================================================================
+// 1. IMPORT BACKGROUND & GAMBAR-GAMBAR BARU
+// Pastikan 8 file ini sudah di-upload ke folder src/assets/
+// =====================================================================
 import heroBg from './assets/about-hero-img.png';
+
+import progFuture from './assets/prog-future.png';
+import progGreen1 from './assets/prog-green-1.png';
+import progGreen2 from './assets/prog-green-2.png';
+import progGreen3 from './assets/prog-green-3.png';
+import progStep1 from './assets/prog-step-1.png';
+import progStep2 from './assets/prog-step-2.png';
+import progStep3 from './assets/prog-step-3.png';
+import progBentoBrand from './assets/prog-bento-brand.png';
 
 // === IKON-IKON UNTUK GREEN JOBS PILLS ===
 const SettingIcon = () => (
@@ -68,7 +80,7 @@ const SunIcon = () => (
 
 const FactoryIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 20h20v-10l-4 3v-3l-4 3v-3l-4 3v-3l-8 7z"></path>
+    <path d="M2 20h20v-10l-4 3v-3l-4 3v-3l-8 7z"></path>
     <path d="M22 22H2"></path>
     <path d="M18 20v-4"></path>
     <path d="M14 20v-4"></path>
@@ -114,7 +126,8 @@ const ProductsPrograms = () => {
         <div className="pp-future-left">
           <h3 className="pp-future-left-title">First Step Journey<br/>Green Career</h3>
           <div className="polaroid-wrapper">
-            <div className="polaroid-placeholder-img"></div>
+            {/* FOTO 1: Polaroid Future */}
+            <img src={progFuture} alt="First Step Journey Green Career" />
           </div>
         </div>
         <div className="pp-future-right">
@@ -175,9 +188,10 @@ const ProductsPrograms = () => {
         
         <div className="pp-greenjobs-right">
           <div className="pp-collage">
-            <div className="img-placeholder img-1"></div>
-            <div className="img-placeholder img-2"></div>
-            <div className="img-placeholder img-3"></div>
+            {/* FOTO 2, 3, 4: Collage Green Jobs */}
+            <img src={progGreen1} alt="Green Jobs Collage 1" className="img-collage img-1" />
+            <img src={progGreen2} alt="Green Jobs Collage 2" className="img-collage img-2" />
+            <img src={progGreen3} alt="Green Jobs Collage 3" className="img-collage img-3" />
           </div>
         </div>
       </section>
@@ -200,7 +214,8 @@ const ProductsPrograms = () => {
               <p>Step up and take charge of your future. Discover how your unique skills can drive real environmental impact and open doors to a purpose-driven profession.</p>
             </div>
             <div className="path-item path-step2">
-              <div className="img-placeholder img-step2"></div>
+              {/* FOTO 6: Step 2 */}
+              <img src={progStep2} alt="Step 2 - Equip Skills" className="img-step img-step2" />
               <div className="pp-step-text">
                 <span className="step-num">Step 2</span>
                 <h3>Equip the Skills with GRIT</h3>
@@ -211,7 +226,8 @@ const ProductsPrograms = () => {
 
           <div className="pp-path-col right-col">
             <div className="path-item path-step1">
-              <div className="img-placeholder img-step1"></div>
+              {/* FOTO 5: Step 1 */}
+              <img src={progStep1} alt="Step 1 - Ownership Mentality" className="img-step img-step1" />
               <div className="pp-step-text">
                 <span className="step-num">Step 1</span>
                 <h3>Build an Ownership Mentality</h3>
@@ -219,7 +235,8 @@ const ProductsPrograms = () => {
               </div>
             </div>
             <div className="path-item path-step3">
-              <div className="img-placeholder img-step3"></div>
+              {/* FOTO 7: Step 3 */}
+              <img src={progStep3} alt="Step 3 - Execute Impact" className="img-step img-step3" />
               <div className="pp-step-text">
                 <span className="step-num">Step 3</span>
                 <h3>Execute & Impact</h3>
@@ -230,7 +247,7 @@ const ProductsPrograms = () => {
         </div>
       </section>
 
-      {/* 5. EXPLORE GREEN ECONOMY (DESAIN BARU) */}
+      {/* 5. EXPLORE GREEN ECONOMY */}
       <section className="pp-section pp-explore-section">
         <h2 className="pp-center-title" style={{ marginBottom: '60px' }}>Explore the Green Economy</h2>
         
@@ -238,15 +255,12 @@ const ProductsPrograms = () => {
           
           {/* Kolom 1 */}
           <div className="bento-col">
-            {/* Kartu: Sustainable Tech */}
             <div className="bento-card card-yellow tall">
               <div className="bento-user-icon">
-                {/* Nanti ganti <div> ini dengan <img src={...} /> ikon aslimu */}
               </div>
               <h3 className="courgette-title">Sustainable Tech <br/>& Innovation</h3>
               <p>Technology driven sustainability.</p>
             </div>
-            {/* Kartu: Corporate ESG */}
             <div className="bento-card card-white short">
               <div className="bento-svg-icon text-navy"><ShieldTickIcon /></div>
               <h3 className="courgette-title">Corporate ESG</h3>
@@ -256,13 +270,11 @@ const ProductsPrograms = () => {
 
           {/* Kolom 2 */}
           <div className="bento-col">
-            {/* Kartu: Renewable Energy */}
             <div className="bento-card card-white short">
               <div className="bento-svg-icon text-navy"><SunIcon /></div>
               <h3 className="courgette-title">Renewable Energy</h3>
               <p>Clean energy transition.</p>
             </div>
-            {/* Kartu: Circular Economy */}
             <div className="bento-card card-purple tall">
               <div className="bento-svg-icon large text-white"><FactoryIcon /></div>
               <h3 className="courgette-title">Circular Economy</h3>
@@ -272,14 +284,11 @@ const ProductsPrograms = () => {
 
           {/* Kolom 3 */}
           <div className="bento-col">
-            {/* Kartu: Sustainable Brand (Dengan Image Background) */}
+            {/* FOTO 8: Background untuk Sustainable Brand */}
             <div className="bento-card card-image tall">
-              <div className="bento-bg-placeholder">
-                {/* Nanti ganti bagian style background-color CSS-nya jadi gambar */}
-              </div>
+              <img src={progBentoBrand} alt="Sustainable Brand" className="bento-bg-image" />
               <h3 className="courgette-title text-white relative-z">Sustainable Brand <br/>& Comms</h3>
             </div>
-            {/* Kartu: E-Commerce (Ikon Shopping Bag di samping teks) */}
             <div className="bento-card card-white short">
               <div className="bento-title-row">
                 <h3 className="courgette-title">E-Commerce & <br/>Digital Trust</h3>

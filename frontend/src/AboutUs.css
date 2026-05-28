@@ -3,96 +3,51 @@
 /* ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
 
-.about-page { 
-  background-color: #FFF9F2; 
-  min-height: 100vh; 
-}
-
-.section-eyebrow { 
-  display: block; 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 14px; 
-  color: #FBB03B; 
-  letter-spacing: 2px; 
-  margin-bottom: 12px; 
-}
-
-.section-header-center { 
-  text-align: center; 
-  margin-bottom: 50px; 
-}
-
-.section-header-center h2 { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 42px; 
-  color: #1B1464; 
-  margin: 0; 
-}
-
-.section-header-center.text-white h2 { 
-  color: #FFFFFF; 
-}
+.about-page { background-color: #FFF9F2; min-height: 100vh; }
+.section-eyebrow { display: block; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #FBB03B; letter-spacing: 2px; margin-bottom: 12px; }
+.section-header-center { text-align: center; margin-bottom: 50px; }
+.section-header-center h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 42px; color: #1B1464; margin: 0; }
+.section-header-center.text-white h2 { color: #FFFFFF; }
 
 /* ========================================================= */
-/* HERO (DISAMAKAN DENGAN PAGE LAIN: ORANYE + ORNAMEN GAMBAR)*/
+/* 1. HERO SECTION (PERSIS SEPERTI PRODUCTS & PROGRAMS)      */
 /* ========================================================= */
-.about-hero { 
-  padding: 120px 20px 80px 20px !important; 
-  width: 100% !important; 
-  position: relative !important; 
-  display: flex !important; 
-  flex-direction: column !important; 
-  justify-content: center !important; 
-  align-items: center !important; 
-  background-color: #FBB03B; 
+.about-hero {
+  padding: 120px 20px 80px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-content { 
-  position: relative !important; 
-  z-index: 10 !important; 
-  text-align: center !important; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+.about-hero-content {
+  text-align: center;
+  z-index: 10;
 }
 
-.hero-content h1 { 
-  font-family: 'Quicksand', sans-serif !important; 
-  font-size: 52px !important; 
-  font-weight: 600 !important; 
-  color: #000000 !important; 
-  margin: 0 0 16px 0 !important; 
-  line-height: 1.2; 
+.about-hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 52px;
+  color: #000000;
+  margin: 0 0 16px 0;
 }
 
-.hero-content p { 
-  font-family: 'Quicksand', sans-serif !important; 
-  font-size: 16px !important; 
-  font-weight: 500 !important; 
-  color: #333333 !important; 
-  margin: 0 auto 40px auto !important; 
-  max-width: 700px; 
-  line-height: 1.6; 
+.about-hero p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
 }
 
-.breadcrumb { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 600; 
-  font-size: 14px; 
-  color: #1B1464; 
-  letter-spacing: normal; 
-}
-
-.home-link { 
-  color: #1B1464; 
-  cursor: pointer; 
-  transition: color 0.3s; 
-}
-
-.home-link:hover { 
-  color: #FBB03B; 
+.about-breadcrumb {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1B1464;
 }
 
 .separator { 
@@ -101,7 +56,7 @@
 }
 
 /* ========================================================= */
-/* WHY FSJ                                                   */
+/* SISA CSS ABOUT US LAMA (TETAP AMAN)                       */
 /* ========================================================= */
 .why-fsj-section { padding: 100px 10%; background-color: #FFFFFF; }
 .why-content { display: flex; align-items: center; gap: 60px; }
@@ -115,9 +70,6 @@
 .why-list li { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px; color: #1B1464; margin-bottom: 12px; }
 .why-image { width: 100%; height: 400px; object-fit: cover; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); }
 
-/* ========================================================= */
-/* VISION MISSION                                            */
-/* ========================================================= */
 .vision-mission-section { padding: 80px 10%; display: flex; flex-direction: column; gap: 40px; }
 .vm-row { display: flex; gap: 40px; align-items: stretch; }
 .vm-row.reverse { flex-direction: row-reverse; }
@@ -129,9 +81,6 @@
 .vm-text-card li { margin-bottom: 8px; }
 .vm-image-card { flex: 1; border-radius: 24px; object-fit: cover; min-height: 350px; width: 100%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
 
-/* ========================================================= */
-/* PILLARS                                                   */
-/* ========================================================= */
 .pillars-section { padding: 100px 10%; background-color: #1B1464; }
 .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .pillar-box { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
@@ -140,9 +89,6 @@
 .pillar-box h4 { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0 0 12px 0; }
 .pillar-box p { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 13px; color: #E0E0E0; line-height: 1.5; margin: 0; }
 
-/* ========================================================= */
-/* CULTURE & DIVISIONS                                       */
-/* ========================================================= */
 .culture-section { padding: 100px 10% 40px 10%; text-align: center; }
 .culture-header { margin-bottom: 60px; }
 .culture-subtitle { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: #FBB03B; display: block; margin-bottom: 12px; }
@@ -153,9 +99,6 @@
 .culture-text li { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 14px; color: #000000; line-height: 1.6; margin-bottom: 16px; }
 .culture-image-card { object-fit: cover; border-radius: 20px; width: 100%; height: 350px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
 
-/* ========================================================= */
-/* DIVISIONS DENGAN GAMBAR BACKGROUND, OVERLAY & NAMA PIC    */
-/* ========================================================= */
 .divisions-section { padding: 40px 10% 100px 10%; }
 .divisions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .divisions-header-card { grid-column: span 1; padding-right: 10px; }
@@ -164,66 +107,24 @@
 .divisions-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 13px; color: #636363; line-height: 1.5; }
 
 .div-card { 
-  position: relative; 
-  border-radius: 16px; 
-  height: 240px; 
-  padding: 24px; 
-  display: flex; 
-  flex-direction: column; 
-  overflow: hidden; 
-  transition: transform 0.3s ease; 
-  background-color: #1B1464; 
+  position: relative; border-radius: 16px; height: 240px; padding: 24px; display: flex; 
+  flex-direction: column; overflow: hidden; transition: transform 0.3s ease; background-color: #1B1464; 
 }
-
 .div-bg-image { 
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
   object-fit: cover; z-index: 0; transition: transform 0.4s ease; 
 }
-
 .div-card:hover .div-bg-image { transform: scale(1.1); }
 .div-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-
-/* Lapisan gelap (Overlay) agar teks putih selalu terbaca */
 .div-card::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(180deg, rgba(27, 20, 100, 0.95) 0%, rgba(27, 20, 100, 0.4) 100%);
-  z-index: 1;
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(27, 20, 100, 0.95) 0%, rgba(27, 20, 100, 0.4) 100%); z-index: 1;
 }
+.div-text-content { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.div-title-overlay { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; margin: 0; line-height: 1.3; }
+.div-person-name { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 14px; color: #FBB03B; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Wrapper teks agar title di atas dan nama di bawah */
-.div-text-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.div-title-overlay { 
-  font-family: 'Quicksand', sans-serif; 
-  font-weight: 700; 
-  font-size: 18px; 
-  color: #FFFFFF; 
-  margin: 0; 
-  line-height: 1.3; 
-}
-
-.div-person-name {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #FBB03B;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* ========================================================= */
-/* RESPONSIVE LAYOUT HP & TABLET                             */
-/* ========================================================= */
+/* RESPONSIVE LAYOUT */
 @media screen and (max-width: 1024px) {
   .why-content { flex-direction: column; }
   .vm-row, .vm-row.reverse { flex-direction: column; }
@@ -234,7 +135,5 @@
 }
 
 @media screen and (max-width: 600px) {
-  .about-hero { padding: 100px 20px 60px 20px !important; }
-  .hero-content h1 { font-size: 40px !important; }
   .pillars-grid, .divisions-grid { grid-template-columns: 1fr; }
 }

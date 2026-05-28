@@ -91,7 +91,6 @@
   gap: 60px;
   align-items: stretch;
   margin-top: 60px; 
-  /* Gradasi diperhalus rentangnya (22% ke 48%) agar lebih natural tapi aman dari teks */
   background: linear-gradient(90deg, #1B1464 0%, #1B1464 22%, #FFF9F2 48%, #FFF9F2 100%);
 }
 
@@ -119,11 +118,11 @@
   margin-top: auto; 
 }
 
-.polaroid-wrapper img, 
-.polaroid-placeholder-img {
+.polaroid-wrapper img {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1.1; 
+  object-fit: cover;
   background-color: #E0E0E0;
   border-radius: 8px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -216,9 +215,12 @@
 .pp-pill span { flex: 1; font-size: 15px; line-height: 1.4; }
 .pill-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-.pill-tech { background-color: #FFF3C9; border: 2px solid #FF9B00; .pill-icon { color: #FF9B00; } }
-.pill-design { background-color: #F9FAFC; border: 2px solid #013F84; .pill-icon { color: #013F84; } }
-.pill-business { background-color: #F0F0F0; border: 2px solid #1B1464; .pill-icon { color: #1B1464; } }
+.pill-tech { background-color: #FFF3C9; border: 2px solid #FF9B00; }
+.pill-tech .pill-icon { color: #FF9B00; }
+.pill-design { background-color: #F9FAFC; border: 2px solid #013F84; }
+.pill-design .pill-icon { color: #013F84; }
+.pill-business { background-color: #F0F0F0; border: 2px solid #1B1464; }
+.pill-business .pill-icon { color: #1B1464; }
 
 .pp-collage {
   position: relative;
@@ -226,15 +228,16 @@
   height: 440px; 
 }
 
-.pp-collage .img-placeholder {
+/* Pengaturan 3 gambar di Green Jobs Collage */
+.pp-collage .img-collage {
   position: absolute;
-  overflow: hidden;
+  object-fit: cover;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-.pp-collage .img-1 { top: 0; right: 0; width: 72%; height: 175px; background-color: #E0E0E0; border-radius: 0 40px 0 40px; }
-.pp-collage .img-2 { top: 130px; left: 0; width: 58%; height: 270px; background-color: #D6D6D6; border-radius: 40px 0 40px 0; z-index: 2;}
-.pp-collage .img-3 { bottom: 10px; right: 0; width: 43%; height: 190px; background-color: #CCCCCC; border-radius: 0 40px 0 40px; z-index: 1;}
+.pp-collage .img-1 { top: 0; right: 0; width: 72%; height: 175px; border-radius: 0 40px 0 40px; }
+.pp-collage .img-2 { top: 130px; left: 0; width: 58%; height: 270px; border-radius: 40px 0 40px 0; z-index: 2;}
+.pp-collage .img-3 { bottom: 10px; right: 0; width: 43%; height: 190px; border-radius: 0 40px 0 40px; z-index: 1;}
 
 /* ========================================================= */
 /* 4. YOUR PATH SECTION                                      */
@@ -299,16 +302,11 @@
   gap: 20px;
 }
 
-.path-item .img-placeholder {
+/* Gambar untuk Step Path */
+.path-item .img-step {
   width: 100%;
+  object-fit: cover;
   background-color: #E0E0E0;
-  border-radius: 12px;
-}
-
-.path-item img {
-  width: 100%;
-  height: auto; 
-  object-fit: cover; 
   border-radius: 12px;
 }
 
@@ -320,7 +318,6 @@
 .step-num { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 16px; color: #000000; }
 .pp-step-text h3 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 22px; color: #1B1464; margin: 0; }
 .pp-step-text p { font-family: 'Quicksand', sans-serif; font-weight: 400; font-size: 14px; color: #333333; line-height: 1.6; margin: 0; }
-
 
 /* ========================================================= */
 /* 5. EXPLORE BENTO GRID                                     */
@@ -355,8 +352,23 @@
 .card-purple .courgette-title { color: #FFFFFF; }
 .card-purple p { color: #FFFFFF !important; opacity: 0.9; }
 
-.card-image { justify-content: flex-end; overflow: hidden; }
-.bento-bg-placeholder { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #A3A3A3; z-index: 0; }
+/* Styling Kartu Bento dengan Background Gambar */
+.card-image { justify-content: flex-end; overflow: hidden; position: relative; }
+.bento-bg-image { 
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  object-fit: cover; 
+  z-index: 0; 
+}
+/* Overlay gelap agar teks terbaca */
+.card-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(27, 20, 100, 0.1) 0%, rgba(27, 20, 100, 0.8) 100%);
+  z-index: 1;
+}
 
 .text-white { color: #FFFFFF !important; }
 .relative-z { position: relative; z-index: 2; text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
@@ -391,7 +403,8 @@
   .bento-card.tall, .bento-card.short { height: auto; min-height: 200px; }
   .pp-pill { height: auto; padding: 20px 24px; }
   .pp-collage { display: flex; flex-direction: column; gap: 16px; min-height: auto; }
-  .pp-collage .img-placeholder { position: static; width: 100% !important; height: 200px !important; border-radius: 20px !important; }
+  
+  .pp-collage .img-collage { position: static; width: 100% !important; height: 200px !important; border-radius: 20px !important; }
   
   .pp-path-grid { display: flex; flex-direction: column; gap: 40px; }
   .pp-path-col { display: contents; } 

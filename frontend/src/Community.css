@@ -39,10 +39,7 @@
 /* 2. STRUCTURED PATHWAY */
 .com-pathway { padding: 60px 10%; }
 
-.pathway-container {
-  display: flex; align-items: center; justify-content: center; gap: 32px; width: 100%;
-}
-
+.pathway-container { display: flex; align-items: center; justify-content: center; gap: 32px; width: 100%; }
 .pathway-img-box { flex: 1; display: flex; align-items: center; justify-content: center; }
 .pathway-img-box .img-placeholder { width: 100%; height: 380px; border-radius: 24px; background-color: #E0E0E0; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03); }
 
@@ -68,47 +65,119 @@
 .spiral-decoration { position: absolute; bottom: -4px; right: -4px; opacity: 0.25; pointer-events: none; }
 .spiral-decoration svg { stroke: #1B1464; }
 
-/* 3. DISCOVER SCROLL */
+/* 3. READY TO DISCOVER (NEWS/INSPIRATION CARD STYLE) */
 .discover-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
 .discover-title-area { text-align: left; }
 .discover-header h2 { font-family: 'Quicksand', sans-serif; font-size: 32px; margin: 0; }
 
-.discover-scroll { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.discover-card { background-image: linear-gradient(#013F84, #013F84) !important; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; }
-.discover-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 63, 132, 0.3); }
-
-.card-img { height: 160px; width: 100%; background: #E0E0E0; border-radius: 0; }
-.card-content { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-.discover-card h3 { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 18px; margin: 0 0 12px 0; color: #FFFFFF !important; }
-.discover-card p { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 13px; color: #FFFFFF !important; opacity: 0.9; line-height: 1.6; margin: 0 0 24px 0; flex-grow: 1; }
-
-.btn-discover-card {
-  background-color: transparent; color: #FDBE34 !important; border: 1px solid #FDBE34; padding: 6px 14px 6px 20px;
-  border-radius: 999px; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 12px; cursor: pointer;
-  display: inline-flex; align-items: center; align-self: flex-start; gap: 10px; transition: all 0.3s ease;
+.news-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; 
 }
-.btn-discover-card:hover { background-color: #FDBE34; color: #1B1464 !important; }
-.btn-icon-circle { width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-.bg-yellow { background-color: #FDBE34; transition: all 0.3s ease; }
-.btn-discover-card:hover .bg-yellow { background-color: #1B1464; }
 
-/* 4. INSIGHTS PREVIEW */
+.news-card { 
+  background-color: #FFFFFF; 
+  border: 1px solid #EAEAEA; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.news-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06); 
+}
+
+.news-img-wrap { 
+  width: 100%; 
+  height: 180px; 
+  background-color: #E0E0E0; 
+}
+
+.news-content { 
+  padding: 24px; 
+  display: flex; 
+  flex-direction: column; 
+  flex-grow: 1; 
+}
+
+.news-tag { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; 
+  font-size: 12px; 
+  color: #FBB03B; 
+  margin-bottom: 8px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+.news-card h3 { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; 
+  font-size: 18px; 
+  color: #1B1464; 
+  margin: 0 0 12px 0; 
+  line-height: 1.3; 
+}
+
+.news-card p { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 500; 
+  font-size: 14px; 
+  color: #666666; 
+  line-height: 1.5; 
+  margin: 0 0 20px 0; 
+  flex-grow: 1; 
+}
+
+.news-link { 
+  font-family: 'Quicksand', sans-serif; 
+  font-weight: 700; 
+  font-size: 14px; 
+  color: #1B1464; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+}
+
+.news-link svg { stroke: #1B1464; transition: stroke 0.3s ease; }
+.news-link:hover { color: #FBB03B; }
+.news-link:hover svg { stroke: #FBB03B; }
+
+/* 4. GALLERY / LIFE AT FSJ SECTION */
 .insights-header-center { text-align: center; max-width: 750px; margin: 0 auto 50px auto; }
 .center-eyebrow { justify-content: center; display: flex; }
 .insights-desc { font-family: 'Quicksand', sans-serif; font-weight: 500; font-size: 15px; color: #666; line-height: 1.6; }
 
-.insights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-.ins-item-horizontal { display: flex; flex-direction: row; background-color: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 16px; overflow: hidden; height: 250px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.ins-item-horizontal:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
-.ins-img-wrap { width: 45%; background-color: #E0E0E0; }
-.ins-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.ins-text-wrap { width: 55%; padding: 24px; display: flex; flex-direction: column; box-sizing: border-box; }
-.ins-date { font-family: 'Quicksand', sans-serif; font-size: 13px; color: #FBB03B; font-weight: 700; margin-bottom: 8px; }
-.ins-text-wrap h4 { font-family: 'Quicksand', sans-serif; font-size: 20px; color: #000000; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3; }
-.ins-text-wrap p { font-family: 'Quicksand', sans-serif; font-size: 13px; color: #333333; margin: 0; line-height: 1.5; flex-grow: 1; }
-.ins-link-wrap { display: flex; justify-content: flex-end; margin-top: 15px; }
-.ins-download-link { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 14px; color: #1B1464; text-decoration: underline; display: flex; align-items: center; gap: 6px; transition: color 0.3s ease; }
-.ins-download-link:hover { color: #FBB03B; }
+.gallery-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: 250px; 
+  gap: 20px; 
+}
+
+.gallery-item { 
+  background-color: #F5F5F5; 
+  border-radius: 16px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-family: 'Quicksand', sans-serif; 
+  color: #A0A0A0; 
+  font-weight: 600; 
+  overflow: hidden; 
+  transition: transform 0.3s ease; 
+  border: 2px dashed #D0D0D0; 
+}
+
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
 
 
 /* ========================================================= */
@@ -212,7 +281,6 @@
   line-height: 1.3;
 }
 
-
 /* Kolom Tengah & Kanan: Kartu Putih */
 .impact-col-center, .impact-col-right {
   display: flex;
@@ -309,8 +377,6 @@
   background: linear-gradient(180deg, #FFF9F2 0%, #FFDFA6 60%, #FDBE34 100%);
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  
-  /* JARAK TAMBAHAN UNTUK MEMISAHKAN SECTION INI DENGAN FOOTER */
   margin-bottom: 80px; 
 }
 
@@ -323,7 +389,7 @@
 .challenge-image-banner {
   width: 100%;
   height: 400px;
-  background-color: #A3A3A3; /* Placeholder Abu-abu. Nanti diganti gambar */
+  background-color: #A3A3A3; 
   border-radius: 30px;
   position: relative;
   display: flex;
@@ -333,7 +399,6 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Supaya tombol lebih jelas jika gambar aslinya terang/gelap */
 .challenge-image-banner::before {
   content: "";
   position: absolute;
@@ -376,12 +441,11 @@
   .pathway-img-box .img-placeholder { height: 240px; }
   
   .discover-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .discover-scroll { grid-template-columns: 1fr; }
   
-  .insights-grid { grid-template-columns: 1fr; }
-  .ins-item-horizontal { flex-direction: column; height: auto; }
-  .ins-img-wrap { width: 100%; height: 200px; }
-  .ins-text-wrap { width: 100%; padding: 20px; }
+  /* GRID RESPONSIVE BARU UNTUK KARTU & GALLERY */
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .gallery-item.large, .gallery-item.wide { grid-column: span 1; grid-row: span 1; }
   
   .impact-bento-revised { grid-template-columns: 1fr; }
   .challenge-overlay-buttons { flex-direction: column; width: 80%; }
@@ -389,4 +453,8 @@
   
   .com-section { padding: 60px 5%; }
   .com-challenge-revised { margin-bottom: 60px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+}
+
+@media screen and (max-width: 600px) {
+  .news-grid { grid-template-columns: 1fr; }
 }

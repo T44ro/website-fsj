@@ -1,8 +1,26 @@
 import React from 'react';
 import './AboutUs.css';
 
-// 1. IMPORT BACKGROUND GAMBAR HERO
+// =====================================================================
+// 1. IMPORT BACKGROUND GAMBAR
+// Pastikan semua file ini sudah ada di folder src/assets/
+// =====================================================================
 import heroBg from './assets/about-hero-img.png';
+
+import aboutWhy from './assets/about-why.png';
+import aboutVision from './assets/about-vision.png';
+import aboutMission from './assets/about-mission.png';
+import aboutJose from './assets/about-jose.png';
+import aboutStairs from './assets/about-stairs.png';
+
+import divFounder from './assets/div-founder.png';
+import divProduct from './assets/div-product.png';
+import divVisual from './assets/div-visual.png';
+import divOperation from './assets/div-operation.png';
+import divBrand from './assets/div-brand.png';
+import divHuman from './assets/div-human.png';
+import divAdmin from './assets/div-admin.png';
+import divDigital from './assets/div-digital.png';
 
 // Ikon untuk Strategic Pillars
 const ShieldIcon = () => (<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBB03B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>);
@@ -57,9 +75,7 @@ const AboutUs = () => {
             </ul>
           </div>
           <div className="why-anim-area">
-            <div className="animation-placeholder">
-              <span>[ Illustration / Chart Placeholder ]</span>
-            </div>
+            <img src={aboutWhy} alt="Why FSJ" className="why-image" />
           </div>
         </div>
       </section>
@@ -75,7 +91,7 @@ const AboutUs = () => {
               through both soft and hard skills.
             </p>
           </div>
-          <div className="vm-image-card"></div>
+          <img src={aboutVision} alt="Vision FSJ" className="vm-image-card" />
         </div>
         <div className="vm-row reverse">
           <div className="vm-text-card">
@@ -88,7 +104,7 @@ const AboutUs = () => {
               <li>Drive impact-driven movement through cross-sector collaboration.</li>
             </ul>
           </div>
-          <div className="vm-image-card"></div>
+          <img src={aboutMission} alt="Mission FSJ" className="vm-image-card" />
         </div>
       </section>
 
@@ -136,8 +152,8 @@ const AboutUs = () => {
               <li><strong>Sustainability Skills:</strong> Future-proof your career. Apply ESG principles to your tech, design, or business skills.</li>
             </ul>
           </div>
-          <div className="culture-image-card"></div>
-          <div className="culture-image-card"></div>
+          <img src={aboutJose} alt="Bang Jose" className="culture-image-card" />
+          <img src={aboutStairs} alt="Journey Stairs" className="culture-image-card" />
         </div>
       </section>
 
@@ -147,13 +163,71 @@ const AboutUs = () => {
             <h2 className="divisions-title">The Divisions <br /> Driving <span className="divisions-highlight">Our Mission</span></h2>
             <p className="divisions-desc">Behind every impactful initiative is a dedicated team. Our divisions work collaboratively to design sustainable programs.</p>
           </div>
-          <div className="div-card card-soft-beige"><h3 className="text-black">Product & <br/> Strategy Marketing</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-navy">Visual Brand <br/> Communication</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-black">Operation & <br/> Program Execution</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-black">Brand & <br/> Event</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-navy">Human <br/> Capital</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-black">Administration <br/> & Report</h3></div>
-          <div className="div-card card-soft-beige"><h3 className="text-navy">Digital <br/> Marketing</h3></div>
+          
+          <div className="div-card">
+            <img src={divFounder} alt="Founder" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Founder</h3>
+              <p className="div-person-name">Jose Prima</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divProduct} alt="Product Strategy" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Product & <br/> Strategy Marketing</h3>
+              <p className="div-person-name">Felicia</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divVisual} alt="Visual Brand" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Visual Brand <br/> Communication</h3>
+              <p className="div-person-name">Adnan & Elza</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divOperation} alt="Operation Program" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Operation & <br/> Program Execution</h3>
+              <p className="div-person-name">Thian</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divBrand} alt="Brand Event" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Brand & <br/> Event</h3>
+              <p className="div-person-name">Benedicta</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divHuman} alt="Human Capital" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Human <br/> Capital</h3>
+              <p className="div-person-name">Nadiya Fauziyah</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divAdmin} alt="Admin Report" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Administration <br/> & Report</h3>
+              <p className="div-person-name">Putri</p>
+            </div>
+          </div>
+
+          <div className="div-card">
+            <img src={divDigital} alt="Digital Marketing" className="div-bg-image" />
+            <div className="div-text-content">
+              <h3 className="div-title-overlay">Digital <br/> Marketing</h3>
+              <p className="div-person-name">Hasna</p>
+            </div>
+          </div>
+          
         </div>
       </section>
     </div>

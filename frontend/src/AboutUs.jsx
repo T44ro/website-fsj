@@ -29,28 +29,27 @@ const TargetIcon = () => (<svg width="32" height="32" viewBox="0 0 24 24" fill="
 const TrendingIcon = () => (<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FBB03B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>);
 
 const AboutUs = () => {
+  // Gradien biru/ungu DIHAPUS, disamakan persis dengan halaman Program
   const heroStyle = {
-    backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.75), rgba(27, 20, 100, 0.8)), url(${heroBg})`,
+    backgroundImage: `url(${heroBg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundColor: '#1B1464'
+    backgroundColor: '#FBB03B'
   };
 
   return (
     <div className="about-page">
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (SUDAH DISAMAKAN DENGAN PAGE PROGRAMS) */}
       <section className="about-hero" style={heroStyle}>
-        <div className="hero-content">
+        <div className="about-hero-content">
           <h1>Who We Are</h1>
           <p>
             FSJ is an Empowerment platform for Indonesian Youth (ages 17-25) <br/>
             driven by Community-based learning, free programs, and live projects.
           </p>
-          <div className="breadcrumb">
-            <span className="home-link">HOME</span>
-            <span className="separator"> / </span>
-            <span className="about-link">ABOUT US</span>
+          <div className="about-breadcrumb">
+            <span>Home</span> <span className="separator"> / </span> <span>About Us</span>
           </div>
         </div>
       </section>

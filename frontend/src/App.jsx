@@ -8,8 +8,12 @@ import Community from './Community';
 import Contact from './Contact';         
 import Partnership from './Partnership'; 
 
+// IMPORT LOGO FSJ
+import fsjLogo from './assets/fsj-logo.png';
+
 function App() {
   const [activePage, setActivePage] = useState('home'); 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State untuk Hamburger Menu di HP
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
@@ -17,7 +21,7 @@ function App() {
       setActivePage(hash);
     }
     
-    // Menambahkan Font Awesome secara dinamis untuk ikon sosmed
+    // Menambahkan Font Awesome secara dinamis untuk ikon sosmed & hamburger
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
@@ -29,21 +33,31 @@ function App() {
     setActivePage(pageName);
     window.location.hash = pageName;
     window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false); // Tutup menu otomatis jika salah satu link diklik di HP
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <div className="site-shell">
       {/* HEADER / NAVIGATION BAR */}
       <header className="topbar">
-        {/* Sisi Kiri: Brand */}
+        {/* Sisi Kiri: Logo Brand */}
         <div className="header-left">
           <div className="brand" onClick={(e) => changePage('home', e)}>
-            <h2 style={{ margin: 0, color: '#1B1464', fontFamily: 'Quicksand', cursor: 'pointer' }}>FSJ</h2>
+            <img src={fsjLogo} alt="FSJ Logo" className="header-logo" />
           </div>
         </div>
         
+        {/* Tombol Hamburger (Hanya muncul di HP) */}
+        <div className="hamburger" onClick={toggleMobileMenu}>
+          <i className={isMobileMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+
         {/* Sisi Tengah: Menu Navigasi */}
-        <nav className="topnav">
+        <nav className={`topnav ${isMobileMenuOpen ? 'open' : ''}`}>
           <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
           <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
           <a href="#programs" className={activePage === 'programs' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('programs', e)}>Product & Programs</a>
@@ -57,10 +71,17 @@ function App() {
               <a href="#partnership" onClick={(e) => changePage('partnership', e)}>Partnership</a>
             </div>
           </div>
+
+          {/* Sisi Kanan: Sosial Media (Versi HP, masuk ke dalam menu dropdown) */}
+          <div className="social-header mobile-socials">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noreferrer"><i className="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer"><i className="fab fa-youtube"></i></a>
+          </div>
         </nav>
 
-        {/* Sisi Kanan: Sosial Media */}
-        <div className="header-right">
+        {/* Sisi Kanan: Sosial Media (Versi Desktop/Laptop) */}
+        <div className="header-right desktop-socials">
           <div className="social-header">
             <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fab fa-instagram"></i></a>
             <a href="https://tiktok.com" target="_blank" rel="noreferrer"><i className="fab fa-tiktok"></i></a>
@@ -96,8 +117,8 @@ function App() {
 
         <div className="footer-middle-row">
           <div className="footer-brand-info">
-            <h2 className="footer-logo-text">FSJ</h2>
-            {/* Teks footer sudah diringkas sesuai permintaan */}
+            {/* Logo dipasang juga di Footer */}
+            <img src={fsjLogo} alt="FSJ Logo" className="footer-logo" />
             <p>Helping Indonesian youth take their first step into professional careers and green jobs through an inclusive ecosystem.</p>
           </div>
           

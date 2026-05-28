@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
+
+// =====================================================================
+// SANGAT PENTING: IMPORT APP.CSS AGAR DESAIN GLOBAL MUNCUL!
+// =====================================================================
 import './App.css';
+
 import Home from './Home';        
 import AboutUs from './AboutUs'; 
 import ProductsPrograms from './ProductsPrograms'; 
@@ -10,7 +15,6 @@ import Partnership from './Partnership';
 
 // =====================================================================
 // MEMASUKKAN LOGO BARU DARI ASSETS
-// Pastikan nama file gambarnya benar 'fsj-logo.png' di dalam folder src/assets
 // =====================================================================
 import fsjLogo from './assets/fsj-logo.png'; 
 
@@ -38,7 +42,6 @@ const TiktokIcon = () => (
   </svg>
 );
 
-
 function App() {
   const [activePage, setActivePage] = useState('home'); 
 
@@ -60,41 +63,41 @@ function App() {
     <div className="site-shell">
       
       {/* HEADER / NAVIGATION BAR (TIGA PILAR SEIMBANG) */}
-      <header className="topbar">
+      <header className="topbar navbar"> {/* Perbaikan class agar sinkron dengan App.css */}
         
         {/* PILAR KIRI: BRAND DENGAN GAMBAR LOGO ASLI */}
-        <div className="brand" onClick={(e) => changePage('home', e)}>
+        <div className="brand nav-logo" onClick={(e) => changePage('home', e)}>
           <img src={fsjLogo} alt="First Step Journey Logo" className="header-logo" />
         </div>
         
         {/* PILAR TENGAH: MENU NAVIGASI */}
-        <nav className="topnav">
+        <nav className="topnav nav-links">
           <a href="#home" className={activePage === 'home' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('home', e)}>Home</a>
           <a href="#about" className={activePage === 'about' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('about', e)}>About Us</a>
           <a href="#programs" className={activePage === 'programs' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('programs', e)}>Product & Programs</a>
           <a href="#insights" className={activePage === 'insights' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('insights', e)}>Insights</a>
           <a href="#community" className={activePage === 'community' ? 'nav-item active' : 'nav-item'} onClick={(e) => changePage('community', e)}>Community</a>
           
-          <div className="nav-item-dropdown">
-            <span className={activePage === 'contact' || activePage === 'partnership' ? 'nav-item active' : 'nav-item'}>
+          <div className="nav-item-dropdown" style={{ position: 'relative', display: 'inline-block' }}>
+            <span className={activePage === 'contact' || activePage === 'partnership' ? 'nav-item active' : 'nav-item'} style={{cursor: 'pointer'}}>
               Contacts <span className="arrow-icon">▾</span>
             </span>
-            <div className="dropdown-content">
-              <a href="#contact" onClick={(e) => changePage('contact', e)}>Contact</a>
-              <a href="#partnership" onClick={(e) => changePage('partnership', e)}>Partnership</a>
+            <div className="dropdown-content" style={{ display: 'none', position: 'absolute', backgroundColor: '#fff', boxShadow: '0 8px 16px rgba(0,0,0,0.1)', padding: '12px', borderRadius: '8px', zIndex: 1 }}>
+              <a href="#contact" onClick={(e) => changePage('contact', e)} style={{display: 'block', margin: '8px 0', color: '#1B1464', textDecoration: 'none'}}>Contact</a>
+              <a href="#partnership" onClick={(e) => changePage('partnership', e)} style={{display: 'block', margin: '8px 0', color: '#1B1464', textDecoration: 'none'}}>Partnership</a>
             </div>
           </div>
         </nav>
 
-        {/* PILAR KANAN: SOCIAL MEDIA */}
-        <div className="social-links">
-          <a href="https://instagram.com/firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="Instagram FSJ">
+        {/* PILAR KANAN: SOCIAL MEDIA (Menggunakan styling btn-nav-join dari App.css) */}
+        <div className="social-links footer-socials" style={{ alignItems: 'center' }}>
+          <a href="https://instagram.com/firststepjourney" target="_blank" rel="noreferrer" className="social-icon" style={{color: '#1B1464', background: 'transparent'}} title="Instagram FSJ">
             <InstagramIcon />
           </a>
-          <a href="https://youtube.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="YouTube FSJ">
+          <a href="https://youtube.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-icon" style={{color: '#1B1464', background: 'transparent'}} title="YouTube FSJ">
             <YoutubeIcon />
           </a>
-          <a href="https://tiktok.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-btn" title="TikTok FSJ">
+          <a href="https://tiktok.com/@firststepjourney" target="_blank" rel="noreferrer" className="social-icon" style={{color: '#1B1464', background: 'transparent'}} title="TikTok FSJ">
             <TiktokIcon />
           </a>
         </div>
@@ -102,6 +105,7 @@ function App() {
 
       {/* SAKLAR KONTEN UTAMA */}
       <main className="main-content-wrapper">
+        <div className="nav-spacer"></div> {/* Menghindari konten tertutup navbar */}
         {activePage === 'home' && <Home changePage={changePage} />}
         {activePage === 'about' && <AboutUs />}
         {activePage === 'programs' && <ProductsPrograms />}
@@ -112,34 +116,34 @@ function App() {
       </main>
 
       {/* FOOTER */}
-      <footer className="site-footer">
+      <footer className="site-footer footer">
         <div className="footer-top">
           <div>
-            <p className="eyebrow">Stay Updated with First Step Journey!</p>
-            <div className="newsletter">
-              <input type="email" placeholder="Enter Your Email" />
-              <button className="primary-btn">Subscribe</button>
+            <p className="eyebrow" style={{ color: '#FBB03B', fontWeight: 'bold' }}>Stay Updated with First Step Journey!</p>
+            <div className="newsletter" style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
+              <input type="email" placeholder="Enter Your Email" style={{ padding: '10px 16px', borderRadius: '999px', border: 'none', flex: 1 }} />
+              <button className="primary-btn" style={{ padding: '10px 24px', borderRadius: '999px', border: 'none', backgroundColor: '#FBB03B', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>Subscribe</button>
             </div>
           </div>
-          <div className="footer-links">
-            <div>
-              <h3>About FSJ</h3>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Vision & Mission</a>
-              <a href="#about" onClick={(e) => changePage('about', e)}>Our Journey</a>
+          <div className="footer-links" style={{ display: 'flex', gap: '40px', gridColumn: 'span 3', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ color: '#FBB03B', marginBottom: '8px' }}>About FSJ</h3>
+              <a href="#about" onClick={(e) => changePage('about', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>Vision & Mission</a>
+              <a href="#about" onClick={(e) => changePage('about', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>Our Journey</a>
             </div>
-            <div>
-              <h3>Programs</h3>
-              <a href="#programs" onClick={(e) => changePage('programs', e)}>Internships</a>
-              <a href="#programs" onClick={(e) => changePage('programs', e)}>Mini Training</a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ color: '#FBB03B', marginBottom: '8px' }}>Programs</h3>
+              <a href="#programs" onClick={(e) => changePage('programs', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>Internships</a>
+              <a href="#programs" onClick={(e) => changePage('programs', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>Mini Training</a>
             </div>
-            <div>
-              <h3>Contacts</h3>
-              <a href="#contact" onClick={(e) => changePage('contact', e)}>General Contact</a>
-              <a href="#partnership" onClick={(e) => changePage('partnership', e)}>Partnership</a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h3 style={{ color: '#FBB03B', marginBottom: '8px' }}>Contacts</h3>
+              <a href="#contact" onClick={(e) => changePage('contact', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>General Contact</a>
+              <a href="#partnership" onClick={(e) => changePage('partnership', e)} style={{ color: '#E0E0E0', textDecoration: 'none' }}>Partnership</a>
             </div>
           </div>
         </div>
-        <div className="footer-base">
+        <div className="footer-bottom footer-base">
           <span>© 2026 Copyright • First Step Journey. All Rights Reserved.</span>
         </div>
       </footer>

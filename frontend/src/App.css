@@ -1,213 +1,127 @@
 /* ========================================================= */
-/* GLOBAL STYLES & RESET (APP.CSS)                           */
+/* GLOBAL STYLES & RESET                                     */
 /* ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #FFF9F2;
-  color: #333333;
-  overflow-x: hidden;
-}
-
-.site-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Quicksand', sans-serif; background-color: #FFF9F2; color: #333333; overflow-x: hidden; }
+.site-shell { display: flex; flex-direction: column; min-height: 100vh; }
 
 /* ========================================================= */
-/* HEADER & NAVIGATION BAR                                   */
+/* HEADER & NAVIGATION BAR (REVISI CENTER MENU & SOSMED)     */
 /* ========================================================= */
 .topbar {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 90px;
   background-color: #FFF9F2;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); z-index: 1000;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; /* Membagi menjadi 3 area */
+  padding: 0 5%; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+  z-index: 1000;
 }
 
-.brand { display: flex; align-items: center; }
-.brand img { height: 55px; width: auto; object-fit: contain; cursor: pointer; }
-.brand h2 { font-weight: 700; font-size: 28px; color: #1B1464; margin: 0; }
+/* Mengatur lebar area kiri dan kanan agar menu tengah benar-benar presisi di tengah */
+.header-left, .header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 
+.header-right { justify-content: flex-end; }
+
+.brand h2 { font-weight: 700; font-size: 28px; color: #1B1464; margin: 0; cursor: pointer; }
+
+/* Menu Navigasi di Tengah */
 .topnav {
-  display: flex; align-items: center; gap: 5px; background-color: #FFFFFF;
-  padding: 8px 12px; border-radius: 999px; border: 1px solid #EAEAEA;
+  display: flex; 
+  align-items: center; 
+  gap: 5px; 
+  background-color: #FFFFFF;
+  padding: 8px 12px; 
+  border-radius: 999px; 
+  border: 1px solid #EAEAEA;
 }
 
 .nav-item {
   text-decoration: none; color: #1B1464; font-weight: 600; font-size: 14px;
-  padding: 10px 20px; border-radius: 999px; transition: all 0.3s ease;
+  padding: 10px 18px; border-radius: 999px; transition: all 0.3s ease;
 }
-
 .nav-item:hover { background-color: rgba(251, 176, 59, 0.2); }
 .nav-item.active { background-color: #FBB03B; color: #FFFFFF; }
 
+/* Dropdown */
 .nav-item-dropdown { position: relative; display: inline-block; cursor: pointer; }
 .dropdown-content {
   display: none; position: absolute; background-color: #FFFFFF; min-width: 160px;
   box-shadow: 0px 8px 24px rgba(0,0,0,0.1); border-radius: 12px; z-index: 1000;
   padding: 10px 0; margin-top: 5px; left: 50%; transform: translateX(-50%); overflow: hidden;
 }
-.dropdown-content a { color: #1B1464; padding: 12px 20px; text-decoration: none; display: block; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 14px; transition: background-color 0.2s ease; }
+.dropdown-content a { color: #1B1464; padding: 12px 20px; text-decoration: none; display: block; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 13px; }
 .dropdown-content a:hover { background-color: #FFF9F2; color: #FBB03B; }
 .nav-item-dropdown:hover .dropdown-content { display: block; }
 
+/* Ikon Sosial Media di Header */
+.social-header { display: flex; gap: 18px; }
+.social-header a {
+  color: #1B1464;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.social-header a:hover { color: #FBB03B; transform: translateY(-2px); }
+
+/* Main Content */
 .main-content-wrapper { flex: 1; margin-top: 90px; }
 
 /* ========================================================= */
-/* FOOTER DESAIN BARU (PERBAIKAN TOTAL)                      */
+/* FOOTER                                                    */
 /* ========================================================= */
 .site-footer {
   background-color: #FBB03B; 
   padding: 80px 10% 30px 10%;
   color: #121212;
-  font-family: 'Quicksand', sans-serif;
 }
 
-/* --- ROW 1: Stay Updated & Newsletter --- */
 .footer-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  border-bottom: 1px solid rgba(27, 20, 100, 0.15); /* Garis pembatas tipis */
-  padding-bottom: 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 40px; border-bottom: 1px solid rgba(27, 20, 100, 0.15); padding-bottom: 40px;
 }
 
-.footer-heading h2 {
-  font-size: 32px;
-  font-weight: 800;
-  color: #000000;
-  line-height: 1.3;
-  margin: 0;
-}
+.footer-heading h2 { font-size: 30px; font-weight: 800; color: #000; line-height: 1.2; margin: 0; }
 
 .newsletter-box {
-  display: flex;
-  align-items: center;
-  background: transparent;
-  border: 1px solid #1B1464;
-  border-radius: 999px;
-  padding: 4px;
-  width: 400px; /* Lebar kolom input */
+  display: flex; align-items: center; background: transparent; border: 1.5px solid #1B1464;
+  border-radius: 999px; padding: 4px; width: 380px;
 }
-
 .newsletter-box input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #1B1464;
+  flex: 1; background: transparent; border: none; outline: none; padding: 10px 20px;
+  font-family: 'Quicksand'; font-weight: 600; font-size: 14px; color: #1B1464;
 }
-
-.newsletter-box input::placeholder { color: rgba(27, 20, 100, 0.7); }
-
 .btn-dark-blue {
-  background-color: #1B1464;
-  color: #FFFFFF;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #1B1464; color: #FFF; border: none; padding: 12px 28px;
+  border-radius: 999px; font-weight: 700; cursor: pointer;
 }
 
-.btn-dark-blue:hover { background-color: #013F84; }
+.footer-middle-row { display: flex; justify-content: space-between; gap: 60px; margin-bottom: 50px; }
+.footer-brand-info { flex: 1; max-width: 320px; }
+.footer-logo-text { font-size: 42px; font-weight: 800; color: #FFFFFF; margin: 0 0 10px 0; font-family: 'Courgette', cursive; }
+.footer-brand-info p { font-size: 14px; font-weight: 600; color: #121212; line-height: 1.6; }
 
-/* --- ROW 2: Logo & Kolom Links --- */
-.footer-middle-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 50px;
-}
-
-.footer-brand-info {
-  flex: 1;
-  max-width: 350px;
-}
-
-.footer-logo-text {
-  font-size: 48px;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin: 0 0 15px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  font-family: 'Courgette', cursive;
-}
-
-.footer-brand-info p {
-  font-size: 14px;
-  font-weight: 600;
-  color: #121212;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.footer-links-grid {
-  display: flex;
-  gap: 80px;
-}
-
-.footer-col h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: #000000;
-  margin-bottom: 20px;
-}
-
-.footer-col a {
-  display: block;
-  text-decoration: none;
-  color: #121212;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
+.footer-links-grid { display: flex; gap: 60px; }
+.footer-col h3 { font-size: 16px; font-weight: 800; margin-bottom: 18px; }
+.footer-col a { display: block; text-decoration: none; color: #121212; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
 .footer-col a:hover { color: #FFFFFF; }
 
-/* --- ROW 3: Copyright --- */
-.footer-bottom-row {
-  text-align: center;
-  padding-top: 25px;
-  border-top: 1px solid rgba(27, 20, 100, 0.15);
-}
+.footer-bottom-row { text-align: center; padding-top: 25px; border-top: 1px solid rgba(27, 20, 100, 0.1); }
+.footer-bottom-row p { font-size: 13px; font-weight: 600; }
 
-.footer-bottom-row p {
-  font-size: 13px;
-  font-weight: 600;
-  color: #121212;
-  margin: 0;
-}
-
-/* ========================================================= */
-/* RESPONSIVE DESIGN UNTUK HP / TABLET                       */
-/* ========================================================= */
+/* Responsive HP */
 @media screen and (max-width: 992px) {
-  .topbar { position: relative; padding: 20px 20px; flex-direction: column; justify-content: center; height: auto; }
-  .topnav { margin-top: 20px; flex-wrap: wrap; justify-content: center; border-radius: 20px; padding: 15px; }
-  .main-content-wrapper { margin-top: 0; }
-  
-  .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; padding-bottom: 30px; }
+  .topbar { position: relative; padding: 20px; flex-direction: column; height: auto; gap: 20px; }
+  .header-left, .header-right { flex: none; justify-content: center; width: 100%; }
+  .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
   .newsletter-box { width: 100%; }
-  
   .footer-middle-row { flex-direction: column; gap: 40px; }
-  .footer-links-grid { flex-wrap: wrap; gap: 40px; }
+  .footer-links-grid { flex-wrap: wrap; gap: 30px; }
 }

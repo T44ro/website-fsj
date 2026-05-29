@@ -5,7 +5,7 @@ import './Home.css';
 // =====================================================================
 // 1. IMPORT GAMBAR DARI FOLDER ASSETS
 // =====================================================================
-import heroBg from './assets/hero.png'; 
+import heroBg from './assets/hero-building.png'; 
 
 import offerCoaching from './assets/offer-coaching.png';
 import offerSoftSkills from './assets/offer-softskills.png';
@@ -23,11 +23,11 @@ import blogSelfAcceptance from './assets/blog-selfacceptance.png';
 import blogGreenCareer from './assets/blog-greencareer.png';
 import blogUX from './assets/blog-ux.png';
 
-import testi1 from './assets/testi-1.png';
-import testi2 from './assets/testi-2.png';
-import testi3 from './assets/testi-3.png';
-import testi4 from './assets/testi-4.png';
-import testi5 from './assets/testi-5.png';
+import testiBerliana from './assets/testi-berliana.png';
+import testiFitri from './assets/testi-fitri.png';
+import testiField from './assets/testi-field.png';
+import testiSocial from './assets/testi-social.png';
+import testiRevanisa from './assets/testi-revanisa.png';
 
 // === IKON ===
 const CheckIcon = () => (
@@ -56,12 +56,33 @@ const ArrowUpRightIcon = () => (
   </svg>
 );
 
+// DATA TESTIMONIALS BARU
 const testimonials = [
-  { id: 0, img: testi1, text: "FSJ benar-benar membantu saya menemukan langkah pertama karir saya yang sesungguhnya. Programnya sangat interaktif!" },
-  { id: 1, img: testi2, text: "Mentor di sini sangat berpengalaman. Saya belajar banyak hal tentang public speaking." },
-  { id: 2, img: testi3, text: "Terima kasih FSJ atas bimbingannya. Sekarang saya lebih percaya diri dalam interview kerja." },
-  { id: 3, img: testi4, text: "Komunitasnya sangat suportif. Menemukan teman-teman baru yang memiliki visi yang sama." },
-  { id: 4, img: testi5, text: "Pelatihan Figma dan UI/UX-nya sangat detail. Sangat membantu untuk students." },
+  { 
+    id: 0, 
+    img: testiBerliana, 
+    text: "Melalui proses perkembangan yang terstruktur di FSJ, saya belajar manajemen waktu yang efektif untuk menyeimbangkan tanggung jawab akademik, organisasi, dan komunitas." 
+  },
+  { 
+    id: 1, 
+    img: testiFitri, 
+    text: "Perjalanan ini memberdayakan saya untuk menjadi pemuda dari daerah yang mandiri, penuh inisiatif, dan bertanggung jawab penuh atas setiap pilihan karier saya." 
+  },
+  { 
+    id: 2, 
+    img: testiField, 
+    text: "Lingkungan di FSJ sangat suportif. Saya bertemu banyak ahli, mendapat insight karier, dan merasakan pertumbuhan profesional yang jauh lebih besar daripada di kampus." 
+  },
+  { 
+    id: 3, 
+    img: testiSocial, 
+    text: "Sebagai volunteer, FSJ adalah tempat belajar terbaik untuk social media & branding. Saya belajar pembuatan konten dan komunikasi efektif yang menghasilkan dampak nyata." 
+  },
+  { 
+    id: 4, 
+    img: testiRevanisa, 
+    text: "Materi personal branding dan pembuatan CV-nya sangat insightful! Benar-benar meningkatkan kepercayaan diri saya untuk proses rekrutmen. Overall, the event was amazing!" 
+  },
 ];
 
 const Home = () => {
@@ -90,7 +111,7 @@ const Home = () => {
 
   const shiftAmount = (2 - activeTesti) * 240;
 
-  // REVISI: Mengembalikan efek gelap (Dark Overlay) seperti Partnership Page
+  // HERO DENGAN EFEK GELAP AGAR TEKS TERBACA
   const heroPremiumStyle = {
     background: `linear-gradient(rgba(18, 18, 18, 0.75), rgba(27, 20, 100, 0.8)), url(${heroBg}) center/cover no-repeat`,
   };

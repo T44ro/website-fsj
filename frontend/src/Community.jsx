@@ -22,7 +22,7 @@ import life2 from './assets/life-2.png';
 import life3 from './assets/life-3.png';
 import life4 from './assets/life-4.png';
 
-// Univ Logos (4 logo kampus)
+// Univ Logos
 import logoUniv1 from './assets/logo-univ1.png';
 import logoUniv2 from './assets/logo-univ2.png';
 import logoUniv3 from './assets/logo-univ3.png';
@@ -31,9 +31,7 @@ import logoUniv4 from './assets/logo-univ4.png';
 // Challenge Banner
 import challengeBanner from './assets/challenge-banner.png';
 
-// =====================================================================
 // PARTNER LOGOS (1 - 26)
-// =====================================================================
 import partner1 from './assets/partner-1.png';
 import partner2 from './assets/partner-2.png';
 import partner3 from './assets/partner-3.png';
@@ -61,7 +59,6 @@ import partner24 from './assets/partner-24.png';
 import partner25 from './assets/partner-25.png';
 import partner26 from './assets/partner-26.png';
 
-// === IKON ===
 const ArrowUpRightIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1464" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -127,7 +124,6 @@ const Community = () => {
         </div>
         
         <div className="discover-scroll">
-          {/* Card 1 */}
           <div className="discover-card">
             <img src={blogDesign} alt="Design Thinking" className="card-img-real" />
             <div className="card-content">
@@ -138,7 +134,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-          {/* Card 2 */}
           <div className="discover-card">
             <img src={blogSelfAcceptance} alt="Self Acceptance" className="card-img-real" />
             <div className="card-content">
@@ -149,7 +144,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-          {/* Card 3 */}
           <div className="discover-card">
             <img src={blogGreenCareer} alt="Green Career Hub" className="card-img-real" />
             <div className="card-content">
@@ -160,7 +154,6 @@ const Community = () => {
               </button>
             </div>
           </div>
-          {/* Card 4 */}
           <div className="discover-card">
             <img src={blogUX} alt="UX Experiences" className="card-img-real" />
             <div className="card-content">
@@ -198,7 +191,7 @@ const Community = () => {
           <span className="com-eyebrow center-eyebrow">Result</span>
           <h2 className="section-title-center no-margin-bottom">What is Our True Impact?</h2>
           <p className="insights-desc">
-            Ultimately, a robust system must produce meaningful outputs. This final phase is no longer about oneself, but about how widely our collective work is felt by the ecosystem.
+            Ultimately, a robust system must produce meaningful outputs. This final phase is no longer about oneself, but about bagaimaan widely our collective work is felt by the ecosystem.
           </p>
         </div>
 
@@ -210,11 +203,13 @@ const Community = () => {
             </div>
             
             <div className="bento-blue-small">
+              {/* Grup Logo Univ dengan Badge 50+ */}
               <div className="univ-logos-group">
                 <img src={logoUniv1} alt="Univ 1" className="univ-logo-icon" />
                 <img src={logoUniv2} alt="Univ 2" className="univ-logo-icon" />
                 <img src={logoUniv3} alt="Univ 3" className="univ-logo-icon" />
                 <img src={logoUniv4} alt="Univ 4" className="univ-logo-icon" />
+                <div className="univ-logo-icon badge-50">50+</div>
               </div>
               <h4>Home to Interns from <br/>Top Universities</h4>
             </div>
@@ -223,35 +218,35 @@ const Community = () => {
           <div className="impact-col-center">
             <div className="bento-white-card flex-between">
               <h3 className="bento-title-dark">Collaborated With<br/>Top Partners</h3>
-              <p className="bento-desc-dark">Ensuring every program is impactful and career-ready.</p>
+              <p className="bento-desc-dark">Ensuring setiap program impactful dan career-ready.</p>
               
               <div className="partner-logos-grid">
-                <img src={partner1} alt="Partner 1" className="partner-logo-img" />
-                <img src={partner2} alt="Partner 2" className="partner-logo-img" />
-                <img src={partner3} alt="Partner 3" className="partner-logo-img" />
-                <img src={partner4} alt="Partner 4" className="partner-logo-img" />
-                <img src={partner5} alt="Partner 5" className="partner-logo-img" />
-                <img src={partner6} alt="Partner 6" className="partner-logo-img" />
-                <img src={partner7} alt="Partner 7" className="partner-logo-img" />
-                <img src={partner8} alt="Partner 8" className="partner-logo-img" />
-                <img src={partner9} alt="Partner 9" className="partner-logo-img" />
-                <img src={partner10} alt="Partner 10" className="partner-logo-img" />
-                <img src={partner11} alt="Partner 11" className="partner-logo-img" />
-                <img src={partner12} alt="Partner 12" className="partner-logo-img" />
-                <img src={partner13} alt="Partner 13" className="partner-logo-img" />
-                <img src={partner14} alt="Partner 14" className="partner-logo-img" />
-                <img src={partner15} alt="Partner 15" className="partner-logo-img" />
-                <img src={partner16} alt="Partner 16" className="partner-logo-img" />
-                <img src={partner17} alt="Partner 17" className="partner-logo-img" />
-                <img src={partner18} alt="Partner 18" className="partner-logo-img" />
-                <img src={partner19} alt="Partner 19" className="partner-logo-img" />
-                <img src={partner20} alt="Partner 20" className="partner-logo-img" />
-                <img src={partner21} alt="Partner 21" className="partner-logo-img" />
-                <img src={partner22} alt="Partner 22" className="partner-logo-img" />
-                <img src={partner23} alt="Partner 23" className="partner-logo-img" />
-                <img src={partner24} alt="Partner 24" className="partner-logo-img" />
-                <img src={partner25} alt="Partner 25" className="partner-logo-img" />
-                <img src={partner26} alt="Partner 26" className="partner-logo-img" />
+                <img src={partner1} alt="P1" className="partner-logo-img" />
+                <img src={partner2} alt="P2" className="partner-logo-img" />
+                <img src={partner3} alt="P3" className="partner-logo-img" />
+                <img src={partner4} alt="P4" className="partner-logo-img" />
+                <img src={partner5} alt="P5" className="partner-logo-img" />
+                <img src={partner6} alt="P6" className="partner-logo-img" />
+                <img src={partner7} alt="P7" className="partner-logo-img" />
+                <img src={partner8} alt="P8" className="partner-logo-img" />
+                <img src={partner9} alt="P9" className="partner-logo-img" />
+                <img src={partner10} alt="P10" className="partner-logo-img" />
+                <img src={partner11} alt="P11" className="partner-logo-img" />
+                <img src={partner12} alt="P12" className="partner-logo-img" />
+                <img src={partner13} alt="P13" className="partner-logo-img" />
+                <img src={partner14} alt="P14" className="partner-logo-img" />
+                <img src={partner15} alt="P15" className="partner-logo-img" />
+                <img src={partner16} alt="P16" className="partner-logo-img" />
+                <img src={partner17} alt="P17" className="partner-logo-img" />
+                <img src={partner18} alt="P18" className="partner-logo-img" />
+                <img src={partner19} alt="P19" className="partner-logo-img" />
+                <img src={partner20} alt="P20" className="partner-logo-img" />
+                <img src={partner21} alt="P21" className="partner-logo-img" />
+                <img src={partner22} alt="P22" className="partner-logo-img" />
+                <img src={partner23} alt="P23" className="partner-logo-img" />
+                <img src={partner24} alt="P24" className="partner-logo-img" />
+                <img src={partner25} alt="P25" className="partner-logo-img" />
+                <img src={partner26} alt="P26" className="partner-logo-img" />
               </div>
             </div>
           </div>

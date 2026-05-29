@@ -1,6 +1,65 @@
 import React from 'react';
 import './Community.css';
+
+// =====================================================================
+// 1. IMPORT BACKGROUND & GAMBAR
+// =====================================================================
 import heroBg from './assets/about-hero-img.png';
+
+// Pathway
+import pathway1 from './assets/pathway-1.png';
+import pathway2 from './assets/pathway-2.png';
+
+// Discover / Blog 
+import blogDesign from './assets/blog-design.png';
+import blogSelfAcceptance from './assets/blog-selfacceptance.png';
+import blogGreenCareer from './assets/blog-greencareer.png';
+import blogUX from './assets/blog-ux.png';
+
+// Life at FSJ Gallery
+import life1 from './assets/life-1.png';
+import life2 from './assets/life-2.png';
+import life3 from './assets/life-3.png';
+import life4 from './assets/life-4.png';
+
+// Univ Logos (4 logo kampus)
+import logoUniv1 from './assets/logo-univ1.png';
+import logoUniv2 from './assets/logo-univ2.png';
+import logoUniv3 from './assets/logo-univ3.png';
+import logoUniv4 from './assets/logo-univ4.png';
+
+// Challenge Banner
+import challengeBanner from './assets/challenge-banner.png';
+
+// =====================================================================
+// PARTNER LOGOS (1 - 26)
+// =====================================================================
+import partner1 from './assets/partner-1.png';
+import partner2 from './assets/partner-2.png';
+import partner3 from './assets/partner-3.png';
+import partner4 from './assets/partner-4.png';
+import partner5 from './assets/partner-5.png';
+import partner6 from './assets/partner-6.png';
+import partner7 from './assets/partner-7.png';
+import partner8 from './assets/partner-8.png';
+import partner9 from './assets/partner-9.png';
+import partner10 from './assets/partner-10.png';
+import partner11 from './assets/partner-11.png';
+import partner12 from './assets/partner-12.png';
+import partner13 from './assets/partner-13.png';
+import partner14 from './assets/partner-14.png';
+import partner15 from './assets/partner-15.png';
+import partner16 from './assets/partner-16.png';
+import partner17 from './assets/partner-17.png';
+import partner18 from './assets/partner-18.png';
+import partner19 from './assets/partner-19.png';
+import partner20 from './assets/partner-20.png';
+import partner21 from './assets/partner-21.png';
+import partner22 from './assets/partner-22.png';
+import partner23 from './assets/partner-23.png';
+import partner24 from './assets/partner-24.png';
+import partner25 from './assets/partner-25.png';
+import partner26 from './assets/partner-26.png';
 
 // === IKON ===
 const ArrowUpRightIcon = () => (
@@ -38,7 +97,7 @@ const Community = () => {
       <section className="com-section com-pathway">
         <div className="pathway-container">
           <div className="pathway-img-box">
-             <div className="img-placeholder"></div>
+             <img src={pathway1} alt="FSJ Pathway 1" className="img-full" />
           </div>
           <div className="pathway-text-block">
             <h2>Your Journey with FSJ: <br/>A Structured Pathway <br/>to Purposeful</h2>
@@ -53,12 +112,12 @@ const Community = () => {
             </div>
           </div>
           <div className="pathway-img-box">
-             <div className="img-placeholder"></div>
+             <img src={pathway2} alt="FSJ Pathway 2" className="img-full" />
           </div>
         </div>
       </section>
 
-      {/* 3. READY TO DISCOVER SECTION (KONTEN DIUBAH SESUAI GAMBAR) */}
+      {/* 3. READY TO DISCOVER SECTION */}
       <section className="com-section com-discover">
         <div className="discover-header">
           <div className="discover-title-area">
@@ -70,7 +129,7 @@ const Community = () => {
         <div className="discover-scroll">
           {/* Card 1 */}
           <div className="discover-card">
-            <div className="card-img"></div>
+            <img src={blogDesign} alt="Design Thinking" className="card-img-real" />
             <div className="card-content">
               <h3>Design Thinking for Visual Brands</h3>
               <p>Build trusted visual identities using human-centered design.</p>
@@ -81,7 +140,7 @@ const Community = () => {
           </div>
           {/* Card 2 */}
           <div className="discover-card">
-            <div className="card-img"></div>
+            <img src={blogSelfAcceptance} alt="Self Acceptance" className="card-img-real" />
             <div className="card-content">
               <h3>The Power of Self-Acceptance</h3>
               <p>Overcome self-doubt and build lasting professional confidence.</p>
@@ -92,7 +151,7 @@ const Community = () => {
           </div>
           {/* Card 3 */}
           <div className="discover-card">
-            <div className="card-img"></div>
+            <img src={blogGreenCareer} alt="Green Career Hub" className="card-img-real" />
             <div className="card-content">
               <h3>Launching the Green Career Hub</h3>
               <p>Essential strategies to enter the green workforce.</p>
@@ -103,7 +162,7 @@ const Community = () => {
           </div>
           {/* Card 4 */}
           <div className="discover-card">
-            <div className="card-img"></div>
+            <img src={blogUX} alt="UX Experiences" className="card-img-real" />
             <div className="card-content">
               <h3>Structuring Effective User Experiences</h3>
               <p>Design intuitive user flows and seamless digital interactions.</p>
@@ -115,7 +174,7 @@ const Community = () => {
         </div>
       </section>
 
-      {/* 4. GALLERY / LIFE AT FSJ SECTION (DESAIN GRID PROPORSIONAL BARU) */}
+      {/* 4. GALLERY / LIFE AT FSJ SECTION */}
       <section className="com-section com-gallery-new">
         <div className="insights-header-center">
           <span className="com-eyebrow center-eyebrow">GALLERY</span>
@@ -126,18 +185,10 @@ const Community = () => {
         </div>
 
         <div className="gallery-grid-proportional">
-          <div className="gal-item gal-main">
-            <span className="gal-label">Workshop Sessions</span>
-          </div>
-          <div className="gal-item gal-top-right">
-            <span className="gal-label">Community Networking</span>
-          </div>
-          <div className="gal-item gal-bottom-right-1">
-            <span className="gal-label">Mentoring</span>
-          </div>
-          <div className="gal-item gal-bottom-right-2">
-            <span className="gal-label">Live Projects</span>
-          </div>
+          <div className="gal-item gal-main"><img src={life1} alt="Life 1" /></div>
+          <div className="gal-item gal-top-right"><img src={life2} alt="Life 2" /></div>
+          <div className="gal-item gal-bottom-right-1"><img src={life3} alt="Life 3" /></div>
+          <div className="gal-item gal-bottom-right-2"><img src={life4} alt="Life 4" /></div>
         </div>
       </section>
 
@@ -147,44 +198,64 @@ const Community = () => {
           <span className="com-eyebrow center-eyebrow">Result</span>
           <h2 className="section-title-center no-margin-bottom">What is Our True Impact?</h2>
           <p className="insights-desc">
-            Ultimately, a robust system must produce meaningful outputs. This final phase is no longer about oneself, but about how widely our collective work is felt by the ecosystem, turning individual growth into a widespread footprint.
+            Ultimately, a robust system must produce meaningful outputs. This final phase is no longer about oneself, but about how widely our collective work is felt by the ecosystem.
           </p>
         </div>
 
         <div className="impact-bento-revised">
-          {/* Kolom Kiri */}
           <div className="impact-col-left">
             <div className="bento-blue-large">
               <h3>More Than 50+<br/>Active Alumni</h3>
               <p>Join a growing network of future leaders and professionals spread across the nation.</p>
             </div>
+            
             <div className="bento-blue-small">
-              <div className="avatar-group">
-                <div className="avatar-circle"></div>
-                <div className="avatar-circle"></div>
-                <div className="avatar-circle"></div>
-                <div className="avatar-circle"></div>
-                <div className="avatar-circle badge-50">50+</div>
+              <div className="univ-logos-group">
+                <img src={logoUniv1} alt="Univ 1" className="univ-logo-icon" />
+                <img src={logoUniv2} alt="Univ 2" className="univ-logo-icon" />
+                <img src={logoUniv3} alt="Univ 3" className="univ-logo-icon" />
+                <img src={logoUniv4} alt="Univ 4" className="univ-logo-icon" />
               </div>
-              <h4>Present in 100+<br/>Campuses & Institutions</h4>
+              <h4>Home to Interns from <br/>Top Universities</h4>
             </div>
           </div>
 
-          {/* Kolom Tengah */}
           <div className="impact-col-center">
-            <div className="bento-white-card">
-              <div className="partner-logos-area">
-                <div className="logo-dummy">Logoipsum</div>
-                <div className="logo-dummy">LOCO</div>
-                <div className="logo-dummy">Logoipsum</div>
-              </div>
+            <div className="bento-white-card flex-between">
               <h3 className="bento-title-dark">Collaborated With<br/>Top Partners</h3>
-              <p className="bento-desc-dark">From corporate leaders to top university organizations, our collaborations ensure every program is impactful and career-ready.</p>
-              <button className="btn-yellow-solid">View all partners</button>
+              <p className="bento-desc-dark">Ensuring every program is impactful and career-ready.</p>
+              
+              <div className="partner-logos-grid">
+                <img src={partner1} alt="Partner 1" className="partner-logo-img" />
+                <img src={partner2} alt="Partner 2" className="partner-logo-img" />
+                <img src={partner3} alt="Partner 3" className="partner-logo-img" />
+                <img src={partner4} alt="Partner 4" className="partner-logo-img" />
+                <img src={partner5} alt="Partner 5" className="partner-logo-img" />
+                <img src={partner6} alt="Partner 6" className="partner-logo-img" />
+                <img src={partner7} alt="Partner 7" className="partner-logo-img" />
+                <img src={partner8} alt="Partner 8" className="partner-logo-img" />
+                <img src={partner9} alt="Partner 9" className="partner-logo-img" />
+                <img src={partner10} alt="Partner 10" className="partner-logo-img" />
+                <img src={partner11} alt="Partner 11" className="partner-logo-img" />
+                <img src={partner12} alt="Partner 12" className="partner-logo-img" />
+                <img src={partner13} alt="Partner 13" className="partner-logo-img" />
+                <img src={partner14} alt="Partner 14" className="partner-logo-img" />
+                <img src={partner15} alt="Partner 15" className="partner-logo-img" />
+                <img src={partner16} alt="Partner 16" className="partner-logo-img" />
+                <img src={partner17} alt="Partner 17" className="partner-logo-img" />
+                <img src={partner18} alt="Partner 18" className="partner-logo-img" />
+                <img src={partner19} alt="Partner 19" className="partner-logo-img" />
+                <img src={partner20} alt="Partner 20" className="partner-logo-img" />
+                <img src={partner21} alt="Partner 21" className="partner-logo-img" />
+                <img src={partner22} alt="Partner 22" className="partner-logo-img" />
+                <img src={partner23} alt="Partner 23" className="partner-logo-img" />
+                <img src={partner24} alt="Partner 24" className="partner-logo-img" />
+                <img src={partner25} alt="Partner 25" className="partner-logo-img" />
+                <img src={partner26} alt="Partner 26" className="partner-logo-img" />
+              </div>
             </div>
           </div>
 
-          {/* Kolom Kanan */}
           <div className="impact-col-right">
             <div className="bento-white-card">
               <h3 className="bento-title-dark">Our Impact Scale</h3>
@@ -208,18 +279,18 @@ const Community = () => {
         <div className="challenge-header-revised">
           <h2 className="section-title-center no-margin-bottom">Your Next Challenge Awaits</h2>
           <p className="insights-desc">
-            Knowledge means nothing without execution. The next FSJ Internship batch is opening in mid-2026. Prepare yourself to validate your theories in a real-world setting and experience a truly transformative working environment.
+            Knowledge means nothing without execution. The next FSJ Internship batch is opening in mid-2026.
           </p>
         </div>
         
         <div className="challenge-image-banner">
+          <img src={challengeBanner} alt="FSJ Challenge" className="banner-img" />
           <div className="challenge-overlay-buttons">
             <button className="btn-outline-gold">Notify Me</button>
             <button className="btn-yellow-solid">Join the Waitlist</button>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

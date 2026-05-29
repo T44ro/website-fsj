@@ -1,6 +1,15 @@
 import React from 'react';
 import './Insights.css';
+
+// =====================================================================
+// 1. IMPORT GAMBAR HERO & ARTIKEL
+// =====================================================================
 import heroBg from './assets/about-hero-img.png'; 
+
+import blogDesign from './assets/blog-design.png';
+import blogSelfAcceptance from './assets/blog-selfacceptance.png';
+import blogGreenCareer from './assets/blog-greencareer.png';
+import blogUX from './assets/blog-ux.png';
 
 // === IKON-IKON ===
 const SearchIcon = () => (
@@ -17,20 +26,20 @@ const ArrowUpRightIcon = () => (
   </svg>
 );
 
-// === DATA DUMMY ARTIKEL ===
+// === DATA DUMMY ARTIKEL DENGAN GAMBAR ===
 const blogPosts = [
-  { id: 1, date: "March 10, 2026", category: "Frameworks", title: "Design Thinking for Visual Brands" },
-  { id: 2, date: "March 10, 2026", category: "Mindset", title: "The Power of Self-Acceptance" },
-  { id: 3, date: "March 10, 2026", category: "News", title: "Launching the Green Career Hub" },
-  { id: 4, date: "March 10, 2026", category: "News", title: "Wrapping Up Batch 2 Onboarding" },
-  { id: 5, date: "March 10, 2026", category: "Mindset", title: "Structuring Effective User Experiences" },
-  { id: 6, date: "March 10, 2026", category: "Frameworks", title: "Thinking Like a Visual Designer" },
+  { id: 1, date: "March 10, 2026", category: "Frameworks", title: "Design Thinking for Visual Brands", img: blogDesign },
+  { id: 2, date: "March 10, 2026", category: "Mindset", title: "The Power of Self-Acceptance", img: blogSelfAcceptance },
+  { id: 3, date: "March 10, 2026", category: "News", title: "Launching the Green Career Hub", img: blogGreenCareer },
+  { id: 4, date: "March 10, 2026", category: "News", title: "Wrapping Up Batch 2 Onboarding", img: blogGreenCareer }, // Menggunakan ulang gambar green career
+  { id: 5, date: "March 10, 2026", category: "Mindset", title: "Structuring Effective User Experiences", img: blogUX },
+  { id: 6, date: "March 10, 2026", category: "Frameworks", title: "Thinking Like a Visual Designer", img: blogDesign }, // Menggunakan ulang gambar design
 ];
 
 const recentPosts = [
-  { id: 1, date: "March 10, 2026", title: "Design Thinking for Visual Brands" },
-  { id: 2, date: "March 10, 2026", title: "The Power of Self-Acceptance" },
-  { id: 3, date: "March 10, 2026", title: "Launching the Green Career Hub" },
+  { id: 1, date: "March 10, 2026", title: "Design Thinking for Visual Brands", img: blogDesign },
+  { id: 2, date: "March 10, 2026", title: "The Power of Self-Acceptance", img: blogSelfAcceptance },
+  { id: 3, date: "March 10, 2026", title: "Launching the Green Career Hub", img: blogGreenCareer },
 ];
 
 const Insights = () => {
@@ -67,7 +76,8 @@ const Insights = () => {
             {blogPosts.map((post) => (
               <div key={post.id} className="ins-card">
                 <div className="ins-card-img">
-                  {/* <img src="..." alt={post.title} /> */}
+                  {/* Memanggil gambar dari data Array */}
+                  <img src={post.img} alt={post.title} />
                 </div>
                 <div className="ins-card-content">
                   <div className="ins-meta">
@@ -81,9 +91,6 @@ const Insights = () => {
               </div>
             ))}
           </div>
-          
-          {/* Bagian Pagination (Angka 1, 2, 3) sudah dihapus dari sini */}
-
         </div>
 
         {/* KOLOM KANAN (SIDEBAR) */}
@@ -113,7 +120,10 @@ const Insights = () => {
             <div className="ins-recent-list">
               {recentPosts.map(post => (
                 <div key={post.id} className="ins-recent-item">
-                  <div className="recent-img"></div>
+                  <div className="recent-img">
+                    {/* Memanggil gambar juga di Recent Posts dengan styling inline agar rapi */}
+                    <img src={post.img} alt={post.title} style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px'}} />
+                  </div>
                   <div className="recent-text">
                     <h5>{post.title}</h5>
                     <span>{post.date}</span>

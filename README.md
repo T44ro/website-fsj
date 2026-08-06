@@ -65,7 +65,7 @@ npm -v
    ```bash
    npm run dev
    ```
-   The backend server will run at `http://localhost:5000`.
+   The backend server will run at `htnpmtp://localhost:5000`.
 
 ---
 

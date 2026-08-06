@@ -110,7 +110,7 @@
 /* 2. ABOUT US SECTION                                       */
 /* ========================================================= */
 .home-about-section { 
-  background-color: #1B1464 !important;
+  background-color: #000000 !important;
   margin: 80px 10% 0 10%; padding: 60px 6%; border-radius: 32px; display: flex; justify-content: space-between; align-items: center; gap: 40px; 
 }
 
